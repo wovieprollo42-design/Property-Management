@@ -37,6 +37,7 @@ header from the preview server).
 ```
 shared/                         used by every page
   brand/                        the approved logo, web files cut from it, and favicons
+  samples/                      sample stock photos shown in the PREVIEW only (samples.json maps slot to photo)
   tokens.css                    brand colors, fonts, sizes, spacing (change a brand value here)
   base.css                      scoped type, layout and backgrounds
   components.css                buttons, photo placeholders, form slots, FAQ accordion, wordmark
@@ -84,6 +85,11 @@ page title.
 - **Add a rental listing or vacation property:** see the note at the top of
   `pages/available-rentals/02-current-listings.html` or `pages/vacation-rentals/02-property-cards.html`.
   Preview the card design at http://localhost:4321/preview-card-templates.
+
+**Photos:** the preview shows realistic sample stock photos (CC0, tagged "Sample photo") so the design can be
+judged with real imagery. They are not Bob's properties. The **Show photo slot details** button in the gray
+preview bar switches back to each slot's size, ratio and crop notes. The GHL exports never contain the sample
+photos; they keep the placeholders until Bob's approved photos are added.
 
 Details still waiting for confirmation appear in **dashed gold boxes** (for example
 `[Confirmed legal identity and DBA wording]`). Form, booking and signup areas are marked

@@ -91,6 +91,23 @@ const brandUrl = (name, mode) => {
 };
 const expandBrand = (html, mode) => html.replace(/\{\{brand:([\w.-]+)\}\}/g, (_, name) => brandUrl(name, mode));
 
+// Sample photos (preview only). shared/samples/samples.json maps a photo slot to a CC0 stock
+// photo. In the PREVIEW each mapped placeholder becomes that photo with a visible "Sample photo"
+// tag; the slot details stay in the markup and can be shown with the preview bar's switch.
+// The GHL EXPORTS keep the placeholders, so stock photos can never go live as Bob's property.
+const SAMPLES_DIR = join(ROOT, 'shared', 'samples');
+const SAMPLES = existsSync(join(SAMPLES_DIR, 'samples.json')) ? JSON.parse(readFileSync(join(SAMPLES_DIR, 'samples.json'), 'utf8')) : {};
+const HERO_SLOTS = new Set(['home-hero', 'long-term-hero', 'short-term-hero', 'about-hero', 'vacation-hero']);
+const sampleUrl = (file) => `/assets/samples/${file}?v=${createHash('md5').update(readFileSync(join(SAMPLES_DIR, file))).digest('hex').slice(0, 8)}`;
+function withSamplePhotos(html) {
+  return html.replace(/<div class="pmp-ph pmp-ph--(\w+)" data-photo-slot="([^"]+)">([\s\S]*?)<\/div>/g, (all, ratio, slot, inner) => {
+    const s = SAMPLES[slot];
+    if (!s) return all;
+    const load = HERO_SLOTS.has(slot) ? 'fetchpriority="high"' : 'loading="lazy"';
+    return `<div class="pmp-shot pmp-shot--${ratio}" data-photo-slot="${slot}"><img class="pmp-photo pmp-photo--${ratio}" src="${sampleUrl(s.large.file)}" srcset="${sampleUrl(s.small.file)} ${s.small.width}w, ${sampleUrl(s.large.file)} ${s.large.width}w" sizes="(min-width: 900px) 50vw, 100vw" alt="Sample stock photo: ${s.alt}" width="${s.large.width}" height="${s.large.height}" ${load} decoding="async"><span class="pmp-shot__tag">Sample photo</span>${inner}</div>`;
+  });
+}
+
 const FONT_LINKS = [
   '<link rel="preconnect" href="https://fonts.googleapis.com">',
   '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
@@ -292,8 +309,9 @@ const hash = (s) => createHash('md5').update(s).digest('hex').slice(0, 8);
 const coreVersion = hash(coreCss);
 const previewVersion = hash(previewCss);
 
+const previewJs = read(join(SHARED_DIR, 'preview', 'preview.js')).trim();
 const previewBar =
-  '<p class="pmp-preview-bar" role="note"><strong>Design preview</strong>Not published. Photos, forms, contact details, and booking links are placeholders until approved. <a href="/preview-card-templates">View card templates</a></p>';
+  '<div class="pmp-preview-bar" role="note"><p><strong>Design preview</strong>Not published. Photos are sample stock images until Bob’s own are approved; forms and booking links are placeholders. <a href="/preview-card-templates">View card templates</a></p><button type="button" class="pmp-preview-toggle" aria-pressed="false">Show photo slot details</button></div>';
 
 /* ---------- build every page --------------------------------------------- */
 
@@ -442,10 +460,13 @@ ${sectionCss}
 ${previewBar}
 ${header.html}
 <main id="main" tabindex="-1">
-${b.mainHtml}
+${withSamplePhotos(b.mainHtml)}
 </main>
 ${footer.html}
 ${scripts.map((js) => `<script>\n${js}\n</script>`).join('\n')}
+<script>
+${previewJs}
+</script>
 </body>
 </html>
 `;
@@ -453,6 +474,8 @@ ${scripts.map((js) => `<script>\n${js}\n</script>`).join('\n')}
 
 write(join(DIST, 'assets', 'pmp-core.css'), coreCss);
 write(join(DIST, 'assets', 'pmp-preview.css'), previewCss);
+mkdirSync(join(DIST, 'assets', 'samples'), { recursive: true });
+for (const name of readdirSync(SAMPLES_DIR).filter((f) => f.endsWith('.webp'))) writeFileSync(join(DIST, 'assets', 'samples', name), readFileSync(join(SAMPLES_DIR, name)));
 mkdirSync(join(DIST, 'assets', 'brand'), { recursive: true });
 for (const name of readdirSync(BRAND_DIR)) writeFileSync(join(DIST, 'assets', 'brand', name), readFileSync(join(BRAND_DIR, name)));
 write(
@@ -685,6 +708,29 @@ recommended crop, and approval status (approved / not approved / unreviewed).
       }
     }
   }
+  md += `
+## Sample photos shown in the preview
+
+At the owner's request (2026-10-01) the preview shows realistic **sample stock photos** in ${Object.keys(SAMPLES).length} slots, so
+the design can be judged with real imagery. They are **not** Bob's properties.
+
+- Every sample carries a visible "Sample photo" tag and alt text beginning "Sample stock photo:".
+- The preview bar's **Show photo slot details** switch brings back each slot's INSERT PHOTO details.
+- The **GHL exports do not contain the sample photos**; they keep the INSERT PHOTO placeholders, so a stock
+  photo cannot go live by mistake as a managed property.
+- Bob's portrait slot stays a placeholder: no stranger's photo is presented as Bob.
+- All are CC0 1.0 (public domain dedication) from StockSnap, found through Openverse: free for commercial
+  use, no attribution required. The files are the 960 px versions StockSnap publishes; the originals are larger.
+- Replace each one with an approved photo of a real managed property before launch (see \`installation-guide.md\`).
+
+| Slot | Sample shown | Photographer | Source page | Preview files |
+| --- | --- | --- | --- | --- |
+${Object.entries(SAMPLES).map(([slot, s]) => `| \`${slot}\` | ${s.alt} | ${s.credit.creator || 'not listed'} | ${s.credit.landing} | \`shared/samples/${s.large.file}\` (${s.large.width} × ${s.large.height}), \`${s.small.file}\` |`).join('\n')}
+
+Also reviewed, not used: Bob's Property Maintenance Professionals website shows five team headshots and six
+work photos. Nobody is identified as Bob, so no headshot is used; the work photos belong to the separate
+maintenance business. If Bob approves any of them for this site, record them in the table at the top.
+`;
   md += `
 ## Logo
 

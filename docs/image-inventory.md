@@ -36,6 +36,39 @@ recommended crop, and approval status (approved / not approved / unreviewed).
 | Card templates | `02-current-listings.html` | `listing-card` | 4:3 | Approved current photo of this property, exterior or main room. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the same 4:3 crop on every card. Honest alt text. | Placeholder |
 | Card templates | `02-property-cards.html` | `vacation-card` | 4:3 | Approved property exterior or distinctive room. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the same crop on every card. | Placeholder |
 
+## Sample photos shown in the preview
+
+At the owner's request (2026-10-01) the preview shows realistic **sample stock photos** in 12 slots, so
+the design can be judged with real imagery. They are **not** Bob's properties.
+
+- Every sample carries a visible "Sample photo" tag and alt text beginning "Sample stock photo:".
+- The preview bar's **Show photo slot details** switch brings back each slot's INSERT PHOTO details.
+- The **GHL exports do not contain the sample photos**; they keep the INSERT PHOTO placeholders, so a stock
+  photo cannot go live by mistake as a managed property.
+- Bob's portrait slot stays a placeholder: no stranger's photo is presented as Bob.
+- All are CC0 1.0 (public domain dedication) from StockSnap, found through Openverse: free for commercial
+  use, no attribution required. The files are the 960 px versions StockSnap publishes; the originals are larger.
+- Replace each one with an approved photo of a real managed property before launch (see `installation-guide.md`).
+
+| Slot | Sample shown | Photographer | Source page | Preview files |
+| --- | --- | --- | --- | --- |
+| `home-hero` | Two-story house with a two-car garage at dusk | Binyamin Mellish | https://stocksnap.io/photo/house-home-LJ515CPAKI | `shared/samples/home-hero-960.webp` (960 × 600), `home-hero-600.webp` |
+| `home-long-term` | Bright living room with a gray sofa and a coffee table | Nathan Fertig | https://stocksnap.io/photo/house-interior-WDVIQZEXML | `shared/samples/home-long-term-853.webp` (853 × 640), `home-long-term-600.webp` |
+| `home-short-term` | Log cabin among trees | Eneida Nieves | https://stocksnap.io/photo/log-cabin-T0BHAFEFFR | `shared/samples/home-short-term-855.webp` (855 × 641), `home-short-term-600.webp` |
+| `long-term-hero` | Single-story house with a front lawn and driveway | Binyamin Mellish | https://stocksnap.io/photo/house-home-L9VZ6SOGBB | `shared/samples/long-term-hero-960.webp` (960 × 600), `long-term-hero-600.webp` |
+| `long-term-property-care` | Dust mop cleaning a hardwood floor | Michal Jarmoluk | https://stocksnap.io/photo/mop-sweeping-J4C1WJDMMU | `shared/samples/long-term-property-care-853.webp` (853 × 640), `long-term-property-care-600.webp` |
+| `short-term-hero` | Covered porch with a sofa, wall clock and garden view | Joshua Ness | https://stocksnap.io/photo/house-home-CLD6T4J9VZ | `shared/samples/short-term-hero-960.webp` (960 × 600), `short-term-hero-600.webp` |
+| `short-term-guest-space` | Bright bedroom with a made bed and sheer curtains | Mary Whitney | https://stocksnap.io/photo/bedroom-bed-XWI13131WH | `shared/samples/short-term-guest-space-845.webp` (845 × 634), `short-term-guest-space-600.webp` |
+| `about-hero` | Front steps with potted mums and pumpkins | Kelly Ishmael | https://stocksnap.io/photo/exterior-pumpkins-OERCTRWJNA | `shared/samples/about-hero-960.webp` (960 × 600), `about-hero-600.webp` |
+| `faqs-intro` | Bright kitchen with an island and pendant lights | NeONBRAND | https://stocksnap.io/photo/house-interior-APBDJIC32G | `shared/samples/faqs-intro-853.webp` (853 × 640), `faqs-intro-600.webp` |
+| `quote-intro` | Planters and pumpkins beside a front door | Kelly Ishmael | https://stocksnap.io/photo/exterior-pumpkins-HUXJWKRME3 | `shared/samples/quote-intro-853.webp` (853 × 640), `quote-intro-600.webp` |
+| `prequal-rental-exterior` | House front with red roses along the porch | Kelly Ishmael | https://stocksnap.io/photo/flowers-exterior-AUG3VWTCBT | `shared/samples/prequal-rental-exterior-853.webp` (853 × 640), `prequal-rental-exterior-600.webp` |
+| `vacation-hero` | Wooden dock on a calm lake lined with pine trees | Aaron Burden | https://stocksnap.io/photo/dock-lake-XQEEEWL3SO | `shared/samples/vacation-hero-960.webp` (960 × 600), `vacation-hero-600.webp` |
+
+Also reviewed, not used: Bob's Property Maintenance Professionals website shows five team headshots and six
+work photos. Nobody is identified as Bob, so no headshot is used; the work photos belong to the separate
+maintenance business. If Bob approves any of them for this site, record them in the table at the top.
+
 ## Logo
 
 Supplied by the owner on 2026-10-01:

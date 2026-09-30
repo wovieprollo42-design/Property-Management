@@ -21,6 +21,13 @@ should not be assumed to work.
 Target size note: phone and email links that sit inside a sentence are exempt from the 24 px target rule
 (WCAG 2.2, 2.5.8 inline exception); every standalone link and button meets it.
 
+## Sample photos (preview only)
+
+- 12 photo slots show CC0 sample stock photos in the preview; each has a visible "Sample photo" tag and alt
+  text starting "Sample stock photo:". No broken images on any route.
+- The preview bar switch shows each slot's INSERT PHOTO details over the faded photo, and remembers the choice.
+- The GHL exports contain no sample photos (0 in every snippet); they keep the placeholders.
+
 ## Build checks (run on every `npm run build`)
 
 - All 13 routes, the 404 page and the internal card-templates page assemble from their section files.

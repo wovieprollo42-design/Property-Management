@@ -112,6 +112,9 @@ These are the only places that need real content. Everything else is final desig
 
 ### Photos (13 page slots, plus one per listing card; see `image-inventory.md`)
 
+The preview shows sample stock photos so the design looks real. **They are not in the exports and must not be
+used on the live site as if they were Bob's properties.** The exports keep the placeholders below.
+
 Each placeholder is a `<div class="pmp-ph ..." data-photo-slot="...">` block. The comment at the top of
 each section file gives the exact `<img>` tag to use instead. Upload the approved photo to the GHL
 media library, copy its URL, and replace the whole placeholder `div` with:
