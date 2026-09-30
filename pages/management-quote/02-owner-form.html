@@ -1,7 +1,9 @@
 <!--
   MANAGEMENT QUOTE · 02 OWNER FORM
   Background: #FFFEFB warm white (data-bg="white")
-  Layout: the form slot on the left, a short "what helps us review your inquiry" note on the right.
+  Layout: the form slot on the left; on the right a photo, a short "what helps us review your inquiry"
+          note, and a call panel.
+  Photo slot: quote-aside · source 1200 x 900 px · ratio 4:3 (a property detail, such as an address plate)
 
   FORM SLOT (data-slot="ghl-owner-form"): a NEW, dedicated GHL property-owner form goes here.
   The preview shows the planned field layout only. It is not a working form and sends nothing.
@@ -49,6 +51,15 @@
       </div>
 
       <aside class="pmp-quote-form__aside" aria-labelledby="pmp-quote-form-aside-title">
+        <div class="pmp-quote-form__photo">
+          <div class="pmp-ph pmp-ph--4x3" data-photo-slot="quote-aside">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Property detail from a real managed home, such as its address plate.</span>
+              <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: detail centered.</span>
+            </p>
+          </div>
+        </div>
         <h3 id="pmp-quote-form-aside-title">What helps us review your inquiry</h3>
         <ul class="pmp-checklist pmp-quote-form__list">
           <li>The property location</li>
@@ -134,8 +145,18 @@
   min-height: 104px;
 }
 
+#pmp-quote-owner-form .pmp-quote-form__photo {
+  margin: -30px -28px 24px;
+  border-bottom: 3px solid var(--pmp-gold);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__photo .pmp-ph {
+  border: 0;
+}
+
 #pmp-quote-owner-form .pmp-quote-form__aside {
   align-self: start;
+  overflow: hidden;
   padding: 28px;
   background-color: var(--pmp-ivory);
   border-top: 2px solid var(--pmp-gold);

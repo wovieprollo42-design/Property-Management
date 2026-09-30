@@ -1,8 +1,9 @@
 <!--
   AVAILABLE RENTALS · 03 HOW TO GET STARTED
   Background: #E9EDE9 pale sage gray (data-bg="sage")
-  Layout: heading and prequalification button on the left; three numbered steps on the right, with
-          the "no guarantee" note directly under them.
+  Layout: heading, prequalification button and a photo on the left; three numbered steps on the right,
+          with the "no guarantee" note directly under them.
+  Photo slot: rentals-steps · source 800 x 1000 px · ratio 4:5 (a move-in detail, such as a key)
 -->
 <section class="pmp pmp-sec" id="pmp-rentals-how-to-get-started" data-bg="sage" aria-labelledby="pmp-rentals-how-to-get-started-title">
   <div class="pmp-wrap">
@@ -10,6 +11,15 @@
       <div class="pmp-rentals-start__head">
         <h2 id="pmp-rentals-how-to-get-started-title">How to get started</h2>
         <a class="pmp-btn pmp-btn--primary pmp-rentals-start__btn" href="/rental-prequalification">Complete Rental Prequalification {{arrow}}</a>
+        <div class="pmp-rentals-start__media pmp-marks">
+          <div class="pmp-ph pmp-ph--4x5" data-photo-slot="rentals-steps">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Move-in detail at a real rental, such as a key at the door.</span>
+              <span class="pmp-ph__spec">Source 800 × 1000 px · Display ratio 4:5 · Crop: detail centered.</span>
+            </p>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -32,6 +42,11 @@
 
 #pmp-rentals-how-to-get-started .pmp-rentals-start__btn {
   margin-top: 28px;
+}
+
+#pmp-rentals-how-to-get-started .pmp-rentals-start__media {
+  width: min(100%, 320px);
+  margin-top: 36px;
 }
 
 #pmp-rentals-how-to-get-started .pmp-rentals-start__steps li {

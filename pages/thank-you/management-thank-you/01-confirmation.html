@@ -1,13 +1,15 @@
 <!--
   OWNER THANK YOU · 01 CONFIRMATION
   Background: #F8F5EC ivory (data-bg="ivory")
-  Layout: calm, single confirmation panel. No image needed.
+  Layout: calm confirmation panel with a photo beside it on wider screens.
+  Photo slot: ty-owner · source 800 x 1000 px · ratio 4:5 (optional; the page works without it)
   Show this page only as the owner form's redirect after a successful submission, never from a button.
   Keep it out of navigation and set it to noindex.
   Contact details confirmed by the owner on 2026-10-01.
 -->
 <section class="pmp pmp-sec" id="pmp-ty-owner-confirmation" data-bg="ivory" aria-labelledby="pmp-ty-owner-confirmation-title">
   <div class="pmp-wrap">
+    <div class="pmp-ty-owner__grid">
     <div class="pmp-ty-owner__panel pmp-marks">
       <svg class="pmp-ty-owner__mark" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
         <rect x="1" y="1" width="46" height="46" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
@@ -22,12 +24,44 @@
         <a class="pmp-btn pmp-btn--secondary" href="/">Back to Home</a>
       </div>
     </div>
+    <div class="pmp-ty-owner__media pmp-marks pmp-marks--frame">
+      <div class="pmp-ph pmp-ph--4x5" data-photo-slot="ty-owner">
+        <p class="pmp-ph__label">
+          <span class="pmp-ph__tag">INSERT PHOTO</span>
+          <span class="pmp-ph__desc">Exterior of a real managed home.</span>
+          <span class="pmp-ph__spec">Source 800 × 1000 px · Display ratio 4:5 · Crop: subject centered.</span>
+        </p>
+      </div>
+    </div>
+    </div>
   </div>
 </section>
 
 <style>
 #pmp-ty-owner-confirmation {
   padding-block: clamp(56px, calc(32px + 6vw), 120px);
+}
+
+#pmp-ty-owner-confirmation .pmp-ty-owner__grid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+#pmp-ty-owner-confirmation .pmp-ty-owner__media {
+  display: none;
+  margin: 0 18px 18px 0;
+}
+
+@media (min-width: 900px) {
+  #pmp-ty-owner-confirmation .pmp-ty-owner__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: clamp(40px, 6vw, 88px);
+  }
+
+  #pmp-ty-owner-confirmation .pmp-ty-owner__media {
+    display: block;
+  }
 }
 
 #pmp-ty-owner-confirmation .pmp-ty-owner__panel {

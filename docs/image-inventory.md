@@ -23,22 +23,47 @@ recommended crop, and approval status (approved / not approved / unreviewed).
 | Home | `01-hero.html` | `home-hero` | 8:5 | Approved exterior of a well-kept managed rental in natural daylight, with clear architecture. | Source 1920 × 1200 px · Display ratio 8:5 · Crop: keep the building near the center for mobile. | Placeholder |
 | Home | `02-management-services.html` | `home-long-term` | 4:3 | An actual residential long-term rental, exterior or bright interior. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the whole home or main room in frame. | Placeholder |
 | Home | `02-management-services.html` | `home-short-term` | 4:3 | An actual vacation rental, exterior or inviting living space. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the whole home or main room in frame. | Placeholder |
+| Home | `03-owner-approach.html` | `home-approach` | 4:5 | Close detail of a cared-for managed property, such as its front entry. | Source 800 × 1000 px · Display ratio 4:5 · Crop: keep the detail centered. | Placeholder |
+| Home | `04-getting-started.html` | `home-start-bg` | bg | Background: a calm, wide view of a managed property or its setting, toned into the navy. | Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges. | Placeholder |
+| Home | `05-other-visitor-paths.html` | `home-path-rentals` | 4:3 | Inviting interior of a real long-term rental (not presented as available). | Source 1200 × 900 px · Display ratio 4:3 · Crop: the main room, level horizon. | Placeholder |
+| Home | `05-other-visitor-paths.html` | `home-path-vacation` | 4:3 | Approved vacation property or its lake or woodland setting. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the home or view centered. | Placeholder |
 | Long-Term Rental Management | `01-hero.html` | `long-term-hero` | 8:5 | Approved exterior or bright interior of a real long-term rental. | Source 1600 × 1000 px · Display ratio 8:5 · Crop: preserve the main architectural details. No resident belongings without permission. | Placeholder |
 | Long-Term Rental Management | `02-service-scope.html` | `long-term-property-care` | 4:3 | Real, approved turnover or property-care scene at a long-term rental. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the work being done in frame. | Placeholder |
+| Long-Term Rental Management | `03-scope-and-transition.html` | `long-term-transition` | 4:3 | Clean, ready interior of a real rental between tenants. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the whole room, level horizon. | Placeholder |
+| Long-Term Rental Management | `04-final-action.html` | `long-term-cta` | 4:5 | Keys, a front door or another handover detail from a real managed rental. | Source 800 × 1000 px · Display ratio 4:5 · Crop: detail centered. | Placeholder |
 | Short-Term Rental Management | `01-hero.html` | `short-term-hero` | 8:5 | Approved vacation-home exterior or inviting living space. | Source 1600 × 1000 px · Display ratio 8:5 · Crop: preserve the main architectural details. Show no amenity the home does not offer. | Placeholder |
 | Short-Term Rental Management | `02-service-scope.html` | `short-term-guest-space` | 4:3 | Real turnover-ready room or approved guest space. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the full room readable; do not crop out the feature described. | Placeholder |
+| Short-Term Rental Management | `03-plan-and-guest-experience.html` | `short-term-guest-experience` | 4:3 | Welcoming guest space in an approved vacation property. | Source 1200 × 900 px · Display ratio 4:3 · Crop: show only features the home really has. | Placeholder |
+| Short-Term Rental Management | `04-final-action.html` | `short-term-cta` | 4:5 | Approved vacation property exterior in its setting. | Source 800 × 1000 px · Display ratio 4:5 · Crop: keep the home centered. | Placeholder |
 | About | `01-hero.html` | `about-hero` | 8:5 | Approved image of Bob or the team at a property. | Source 1600 × 1000 px · Display ratio 8:5 · Crop: keep people and the property both readable. Use only an approved photo. | Placeholder |
 | About | `02-leadership.html` | `about-bob-portrait` | 4:5 | Bob Blaisdell’s approved professional portrait. | Source 800 × 1000 px · Display ratio 4:5 · Crop: keep face and shoulders comfortably framed. | Placeholder |
+| About | `03-principles.html` | `about-principles` | 4:5 | Cared-for interior of a real managed property. | Source 800 × 1000 px · Display ratio 4:5 · Crop: the room, level horizon. | Placeholder |
+| About | `04-related-business-and-cta.html` | `about-maintenance` | 4:3 | Tools or repair work at a real managed property. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the work in frame. | Placeholder |
 | FAQs | `01-intro.html` | `faqs-intro` | 4:3 | Optional small image of an actual property. | Source 1000 × 750 px · Display ratio 4:3 · Crop: one clear detail or exterior. | Placeholder |
+| FAQs | `02-owner-questions.html` | `faqs-owners` | 4:5 | Exterior of a real managed home. | Source 800 × 1000 px · Display ratio 4:5 · Crop: the whole home, centered. | Placeholder |
+| FAQs | `03-renter-questions.html` | `faqs-renters` | 4:5 | Move-in detail at a real rental, such as a key at the door. | Source 800 × 1000 px · Display ratio 4:5 · Crop: detail centered. | Placeholder |
+| FAQs | `04-next-steps.html` | `faqs-next-owners` | 4:3 | Exterior of a real managed home. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the home centered. | Placeholder |
+| FAQs | `04-next-steps.html` | `faqs-next-renters` | 4:3 | Interior of a real long-term rental (not presented as available). | Source 1200 × 900 px · Display ratio 4:3 · Crop: the main room. | Placeholder |
+| FAQs | `04-next-steps.html` | `faqs-next-guests` | 4:3 | Approved vacation property or its lake or woodland setting. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the view centered. | Placeholder |
 | Management Quote | `01-intro.html` | `quote-intro` | 4:3 | Actual property detail or warm exterior. | Source 1200 × 900 px · Display ratio 4:3 · Crop: one clear detail; keep the image small so the form stays close. | Placeholder |
+| Management Quote | `02-owner-form.html` | `quote-aside` | 4:3 | Property detail from a real managed home, such as its address plate. | Source 1200 × 900 px · Display ratio 4:3 · Crop: detail centered. | Placeholder |
+| Management Quote | `03-what-happens-next.html` | `quote-next-bg` | bg | Background: a real managed home, toned into the navy. | Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges. | Placeholder |
+| Owner Thank You | `01-confirmation.html` | `ty-owner` | 4:5 | Exterior of a real managed home. | Source 800 × 1000 px · Display ratio 4:5 · Crop: subject centered. | Placeholder |
+| Available Rentals | `01-intro.html` | `rentals-intro` | 4:3 | Inviting interior of a real long-term rental (general, not a listing). | Source 1200 × 900 px · Display ratio 4:3 · Crop: the main room. | Placeholder |
+| Available Rentals | `03-how-to-get-started.html` | `rentals-steps` | 4:5 | Move-in detail at a real rental, such as a key at the door. | Source 800 × 1000 px · Display ratio 4:5 · Crop: detail centered. | Placeholder |
+| Rental Prequalification | `01-intro.html` | `prequal-intro` | 4:3 | Move-in detail at a real rental, such as a key at the door. | Source 1200 × 900 px · Display ratio 4:3 · Crop: detail centered. | Placeholder |
 | Rental Prequalification | `03-expectations.html` | `prequal-rental-exterior` | 4:3 | Optional small approved rental exterior. | Source 1000 × 750 px · Display ratio 4:3 · Crop: the full front of the home. | Placeholder |
+| Applicant Thank You | `01-confirmation.html` | `ty-applicant` | 4:5 | Move-in detail at a real rental, such as a key at the door. | Source 800 × 1000 px · Display ratio 4:5 · Crop: subject centered. | Placeholder |
 | Vacation Rentals | `01-hero.html` | `vacation-hero` | 8:5 | One approved vacation home landscape. | Source 1920 × 1200 px · Display ratio 8:5 · Crop: keep the home right of center; the text panel covers the lower left on desktop. | Placeholder |
+| Vacation Rentals | `03-before-you-book.html` | `vacation-before` | 4:5 | Setting of an approved vacation property, such as its lake or dock. | Source 800 × 1000 px · Display ratio 4:5 · Crop: horizon in the upper third. | Placeholder |
+| Vacation Rentals | `04-guest-updates.html` | `vacation-updates-bg` | bg | Background: an approved property's lake or woodland view, toned into the navy. | Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges. | Placeholder |
+| Vacation Rentals | `05-owner-path.html` | `vacation-owner` | 4:3 | Exterior of an approved vacation property in its setting. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the home centered. | Placeholder |
 | Card templates | `02-current-listings.html` | `listing-card` | 4:3 | Approved current photo of this property, exterior or main room. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the same 4:3 crop on every card. Honest alt text. | Placeholder |
 | Card templates | `02-property-cards.html` | `vacation-card` | 4:3 | Approved property exterior or distinctive room. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the same crop on every card. | Placeholder |
 
 ## Sample photos shown in the preview
 
-At the owner's request (2026-10-01) the preview shows realistic **sample stock photos** in 12 slots, so
+At the owner's request (2026-10-01) the preview shows realistic **sample stock photos** in 37 slots, so
 the design can be judged with real imagery. They are **not** Bob's properties.
 
 - Every sample carries a visible "Sample photo" tag and alt text beginning "Sample stock photo:".
@@ -64,6 +89,31 @@ the design can be judged with real imagery. They are **not** Bob's properties.
 | `quote-intro` | Planters and pumpkins beside a front door | Kelly Ishmael | https://stocksnap.io/photo/exterior-pumpkins-HUXJWKRME3 | `shared/samples/quote-intro-853.webp` (853 × 640), `quote-intro-600.webp` |
 | `prequal-rental-exterior` | House front with red roses along the porch | Kelly Ishmael | https://stocksnap.io/photo/flowers-exterior-AUG3VWTCBT | `shared/samples/prequal-rental-exterior-853.webp` (853 × 640), `prequal-rental-exterior-600.webp` |
 | `vacation-hero` | Wooden dock on a calm lake lined with pine trees | Aaron Burden | https://stocksnap.io/photo/dock-lake-XQEEEWL3SO | `shared/samples/vacation-hero-960.webp` (960 × 600), `vacation-hero-600.webp` |
+| `home-approach` | Key in the lock of an open front door | WDnet Studio | https://stocksnap.io/photo/keys-door-Z1TKDI29FZ | `shared/samples/home-approach-512.webp` (512 × 640), `home-approach-384.webp` |
+| `home-start-bg` | Wooden dock on a lake at dusk | Kate Tandy | https://stocksnap.io/photo/sunset-lake-9ED76457E9 | `shared/samples/home-start-bg-960.webp` (960 × 540), `home-start-bg-600.webp` |
+| `home-path-rentals` | Sunlit dining room with a wooden table | Kelly Ishmael | https://stocksnap.io/photo/dining-room-DYTXNUKGP2 | `shared/samples/home-path-rentals-853.webp` (853 × 640), `home-path-rentals-600.webp` |
+| `home-path-vacation` | Cabin among snowy pines at night | paul itkin | https://stocksnap.io/photo/nature-landscape-1IIK44BI01 | `shared/samples/home-path-vacation-853.webp` (853 × 640), `home-path-vacation-600.webp` |
+| `long-term-transition` | Bright, tidy dining area inside a home | Kristin Hardwick | https://stocksnap.io/photo/interior-dining-VMJ6JJFFWR | `shared/samples/long-term-transition-827.webp` (827 × 620), `long-term-transition-600.webp` |
+| `long-term-cta` | Set of keys on a dark surface | George Becker | https://stocksnap.io/photo/keys-door-MO3XRZ5T5E | `shared/samples/long-term-cta-511.webp` (511 × 639), `long-term-cta-383.webp` |
+| `short-term-guest-experience` | Fireplace glowing beside an open book | Pavan Trikutam | https://stocksnap.io/photo/book-pages-BD0AC07780 | `shared/samples/short-term-guest-experience-853.webp` (853 × 640), `short-term-guest-experience-600.webp` |
+| `short-term-cta` | Log cabin in a pine forest | Olivier Guillard | https://stocksnap.io/photo/wood-logs-HJAYJG4OLY | `shared/samples/short-term-cta-512.webp` (512 × 640), `short-term-cta-384.webp` |
+| `about-principles` | Bright dining room with a table and chairs | Kristin Hardwick | https://stocksnap.io/photo/interior-dining-LHKILYV8X0 | `shared/samples/about-principles-512.webp` (512 × 640), `about-principles-384.webp` |
+| `about-maintenance` | Drill and hand tools on a wooden workbench | Taduuda | https://stocksnap.io/photo/tools-hammer-6K150QNG2N | `shared/samples/about-maintenance-853.webp` (853 × 640), `about-maintenance-600.webp` |
+| `faqs-owners` | White farmhouse on a snowy field under a blue sky | Pete Johnson | https://stocksnap.io/photo/abandoned-desolate-EXGI9RIO44 | `shared/samples/faqs-owners-512.webp` (512 × 640), `faqs-owners-384.webp` |
+| `faqs-renters` | Hand holding a house key | Daryn Bartlett | https://stocksnap.io/photo/key-necklace-HTOTME2TTP | `shared/samples/faqs-renters-514.webp` (514 × 643), `faqs-renters-386.webp` |
+| `faqs-next-owners` | Two-story house with a two-car garage at dusk | Binyamin Mellish | https://stocksnap.io/photo/house-home-LJ515CPAKI | `shared/samples/faqs-next-owners-853.webp` (853 × 640), `faqs-next-owners-600.webp` |
+| `faqs-next-renters` | Living room with bookshelves and a fireplace | Mike Birdy | https://stocksnap.io/photo/house-home-6KJ12UWOKQ | `shared/samples/faqs-next-renters-720.webp` (720 × 540), `faqs-next-renters-540.webp` |
+| `faqs-next-guests` | Sunset over a lake seen through trees | Tricia Gray | https://stocksnap.io/photo/sunset-lake-VSCGP1X7OE | `shared/samples/faqs-next-guests-853.webp` (853 × 640), `faqs-next-guests-600.webp` |
+| `quote-aside` | House number on a weathered wooden door | Candace McDaniel | https://stocksnap.io/photo/old-building-T13V0PBPMS | `shared/samples/quote-aside-853.webp` (853 × 640), `quote-aside-600.webp` |
+| `quote-next-bg` | Single-story house with a front lawn and driveway | Binyamin Mellish | https://stocksnap.io/photo/house-home-L9VZ6SOGBB | `shared/samples/quote-next-bg-960.webp` (960 × 540), `quote-next-bg-600.webp` |
+| `rentals-intro` | Living room with bookshelves and a fireplace | Mike Birdy | https://stocksnap.io/photo/house-home-6KJ12UWOKQ | `shared/samples/rentals-intro-720.webp` (720 × 540), `rentals-intro-540.webp` |
+| `rentals-steps` | Key in the lock of an open front door | WDnet Studio | https://stocksnap.io/photo/keys-door-Z1TKDI29FZ | `shared/samples/rentals-steps-512.webp` (512 × 640), `rentals-steps-384.webp` |
+| `prequal-intro` | Hand holding a house key | Daryn Bartlett | https://stocksnap.io/photo/key-necklace-HTOTME2TTP | `shared/samples/prequal-intro-856.webp` (856 × 642), `prequal-intro-600.webp` |
+| `vacation-before` | Dock stretching into a calm lake | Burst | https://stocksnap.io/photo/dock-lake-U94B4HVBAO | `shared/samples/vacation-before-512.webp` (512 × 640), `vacation-before-384.webp` |
+| `vacation-updates-bg` | Sunset over a lake seen through trees | Tricia Gray | https://stocksnap.io/photo/sunset-lake-VSCGP1X7OE | `shared/samples/vacation-updates-bg-960.webp` (960 × 540), `vacation-updates-bg-600.webp` |
+| `vacation-owner` | Red cabin in the snow among trees | Patrick Tomasso | https://stocksnap.io/photo/snow-cold-9P5EDI0D26 | `shared/samples/vacation-owner-960.webp` (960 × 720), `vacation-owner-600.webp` |
+| `ty-owner` | Single-story house with a front lawn | Binyamin Mellish | https://stocksnap.io/photo/house-home-L9VZ6SOGBB | `shared/samples/ty-owner-512.webp` (512 × 640), `ty-owner-384.webp` |
+| `ty-applicant` | Hand holding a house key | Daryn Bartlett | https://stocksnap.io/photo/key-necklace-HTOTME2TTP | `shared/samples/ty-applicant-514.webp` (514 × 643), `ty-applicant-386.webp` |
 
 Also reviewed, not used: Bob's Property Maintenance Professionals website shows five team headshots and six
 work photos. Nobody is identified as Bob, so no headshot is used; the work photos belong to the separate

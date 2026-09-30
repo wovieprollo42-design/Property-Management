@@ -129,6 +129,42 @@ main:focus {
   display: none;
 }
 
+/* Photo cards: the shot sits flush with a gold rule under it */
+.pmp .pmp-pcard > .pmp-shot {
+  border-bottom: 3px solid #AD8950;
+}
+
+/* Photo bands: the sample photo is toned into the navy section behind the content */
+.pmp .pmp-shot--bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: transparent;
+}
+
+.pmp .pmp-shot--bg .pmp-photo {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  opacity: 0.22;
+  mix-blend-mode: luminosity;
+}
+
+.pmp .pmp-shot--bg .pmp-shot__tag {
+  top: auto;
+  left: auto;
+  right: 12px;
+  bottom: 12px;
+}
+
+html.pmp-show-slots .pmp .pmp-shot--bg .pmp-ph__label {
+  left: auto;
+  right: 12px;
+  bottom: 12px;
+  max-width: 360px;
+}
+
 /* "Show photo slot details": the slot information returns over a faded photo. */
 html.pmp-show-slots .pmp .pmp-shot .pmp-photo {
   opacity: 0.18;

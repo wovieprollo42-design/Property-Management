@@ -3,6 +3,7 @@
   Background: #F8F5EC ivory (data-bg="ivory") holding a #172D3B navy panel
   Layout: left, the note about the separate maintenance business with its outbound link;
           right, a navy panel with the owner call to action and links to both service pages.
+  Photo slot: about-maintenance · source 1200 x 900 px · ratio 4:3 (above the maintenance note)
   External link: Property Maintenance Professionals, https://www.propertymaintenanceprofessionals.net/
   (a separate business and website; it opens in a new tab).
 -->
@@ -10,6 +11,15 @@
   <div class="pmp-wrap">
     <div class="pmp-about-cta__grid">
       <div class="pmp-about-cta__maint">
+        <div class="pmp-about-cta__media pmp-marks">
+          <div class="pmp-ph pmp-ph--4x3" data-photo-slot="about-maintenance">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Tools or repair work at a real managed property.</span>
+              <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: the work in frame.</span>
+            </p>
+          </div>
+        </div>
         <h2>Management and maintenance support</h2>
         <p class="pmp-about-cta__text">We coordinate property needs within the management agreement. For separate repair and remodeling services, explore Property Maintenance Professionals.</p>
         <a class="pmp-btn pmp-btn--secondary" href="https://www.propertymaintenanceprofessionals.net/" target="_blank" rel="noopener">Explore Maintenance Services {{external}}<span class="pmp-sr"> (opens in a new tab)</span></a>
@@ -43,7 +53,13 @@
   align-self: center;
 }
 
+#pmp-about-related-business-and-cta .pmp-about-cta__media {
+  max-width: 460px;
+  margin-bottom: 32px;
+}
+
 #pmp-about-related-business-and-cta .pmp-about-cta__panel {
+  align-self: center;
   padding: clamp(32px, 5vw, 56px);
   border-radius: var(--pmp-radius);
 }

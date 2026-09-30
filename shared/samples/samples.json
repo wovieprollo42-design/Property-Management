@@ -262,5 +262,555 @@
       "landing": "https://stocksnap.io/photo/dock-lake-XQEEEWL3SO",
       "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
     }
+  },
+  "home-approach": {
+    "alt": "Key in the lock of an open front door",
+    "large": {
+      "file": "home-approach-512.webp",
+      "width": 512,
+      "height": 640,
+      "kb": 14.2
+    },
+    "small": {
+      "file": "home-approach-384.webp",
+      "width": 384,
+      "height": 480,
+      "kb": 9.2
+    },
+    "credit": {
+      "title": "Keys Door",
+      "creator": "WDnet Studio",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/keys-door-Z1TKDI29FZ",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "home-start-bg": {
+    "alt": "Wooden dock on a lake at dusk",
+    "large": {
+      "file": "home-start-bg-960.webp",
+      "width": 960,
+      "height": 540,
+      "kb": 32.3
+    },
+    "small": {
+      "file": "home-start-bg-600.webp",
+      "width": 600,
+      "height": 338,
+      "kb": 15.3
+    },
+    "credit": {
+      "title": "Sunset Lake",
+      "creator": "Kate Tandy",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/sunset-lake-9ED76457E9",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "home-path-rentals": {
+    "alt": "Sunlit dining room with a wooden table",
+    "large": {
+      "file": "home-path-rentals-853.webp",
+      "width": 853,
+      "height": 640,
+      "kb": 55
+    },
+    "small": {
+      "file": "home-path-rentals-600.webp",
+      "width": 600,
+      "height": 450,
+      "kb": 32.2
+    },
+    "credit": {
+      "title": "Dining Room",
+      "creator": "Kelly Ishmael",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/dining-room-DYTXNUKGP2",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "home-path-vacation": {
+    "alt": "Cabin among snowy pines at night",
+    "large": {
+      "file": "home-path-vacation-853.webp",
+      "width": 853,
+      "height": 640,
+      "kb": 88.4
+    },
+    "small": {
+      "file": "home-path-vacation-600.webp",
+      "width": 600,
+      "height": 450,
+      "kb": 42.5
+    },
+    "credit": {
+      "title": "Nature Landscape",
+      "creator": "paul itkin",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/nature-landscape-1IIK44BI01",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "long-term-transition": {
+    "alt": "Bright, tidy dining area inside a home",
+    "large": {
+      "file": "long-term-transition-827.webp",
+      "width": 827,
+      "height": 620,
+      "kb": 26.8
+    },
+    "small": {
+      "file": "long-term-transition-600.webp",
+      "width": 600,
+      "height": 450,
+      "kb": 15
+    },
+    "credit": {
+      "title": "Interior Dining",
+      "creator": "Kristin Hardwick",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/interior-dining-VMJ6JJFFWR",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "long-term-cta": {
+    "alt": "Set of keys on a dark surface",
+    "large": {
+      "file": "long-term-cta-511.webp",
+      "width": 511,
+      "height": 639,
+      "kb": 30.2
+    },
+    "small": {
+      "file": "long-term-cta-383.webp",
+      "width": 383,
+      "height": 479,
+      "kb": 18
+    },
+    "credit": {
+      "title": "Keys Door",
+      "creator": "George Becker",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/keys-door-MO3XRZ5T5E",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "short-term-guest-experience": {
+    "alt": "Fireplace glowing beside an open book",
+    "large": {
+      "file": "short-term-guest-experience-853.webp",
+      "width": 853,
+      "height": 640,
+      "kb": 17.9
+    },
+    "small": {
+      "file": "short-term-guest-experience-600.webp",
+      "width": 600,
+      "height": 450,
+      "kb": 11.9
+    },
+    "credit": {
+      "title": "Book Pages",
+      "creator": "Pavan Trikutam",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/book-pages-BD0AC07780",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "short-term-cta": {
+    "alt": "Log cabin in a pine forest",
+    "large": {
+      "file": "short-term-cta-512.webp",
+      "width": 512,
+      "height": 640,
+      "kb": 107.8
+    },
+    "small": {
+      "file": "short-term-cta-384.webp",
+      "width": 384,
+      "height": 480,
+      "kb": 58.6
+    },
+    "credit": {
+      "title": "Wood Logs",
+      "creator": "Olivier Guillard",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/wood-logs-HJAYJG4OLY",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "about-principles": {
+    "alt": "Bright dining room with a table and chairs",
+    "large": {
+      "file": "about-principles-512.webp",
+      "width": 512,
+      "height": 640,
+      "kb": 39.3
+    },
+    "small": {
+      "file": "about-principles-384.webp",
+      "width": 384,
+      "height": 480,
+      "kb": 19.2
+    },
+    "credit": {
+      "title": "Interior Dining",
+      "creator": "Kristin Hardwick",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/interior-dining-LHKILYV8X0",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "about-maintenance": {
+    "alt": "Drill and hand tools on a wooden workbench",
+    "large": {
+      "file": "about-maintenance-853.webp",
+      "width": 853,
+      "height": 640,
+      "kb": 80.2
+    },
+    "small": {
+      "file": "about-maintenance-600.webp",
+      "width": 600,
+      "height": 450,
+      "kb": 46.1
+    },
+    "credit": {
+      "title": "Tools Hammer",
+      "creator": "Taduuda",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/tools-hammer-6K150QNG2N",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "faqs-owners": {
+    "alt": "White farmhouse on a snowy field under a blue sky",
+    "large": {
+      "file": "faqs-owners-512.webp",
+      "width": 512,
+      "height": 640,
+      "kb": 23.6
+    },
+    "small": {
+      "file": "faqs-owners-384.webp",
+      "width": 384,
+      "height": 480,
+      "kb": 14.2
+    },
+    "credit": {
+      "title": "Abandoned Desolate",
+      "creator": "Pete Johnson",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/abandoned-desolate-EXGI9RIO44",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "faqs-renters": {
+    "alt": "Hand holding a house key",
+    "large": {
+      "file": "faqs-renters-514.webp",
+      "width": 514,
+      "height": 643,
+      "kb": 14.5
+    },
+    "small": {
+      "file": "faqs-renters-386.webp",
+      "width": 386,
+      "height": 483,
+      "kb": 10
+    },
+    "credit": {
+      "title": "Key Necklace",
+      "creator": "Daryn Bartlett",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/key-necklace-HTOTME2TTP",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "faqs-next-owners": {
+    "alt": "Two-story house with a two-car garage at dusk",
+    "large": {
+      "file": "faqs-next-owners-853.webp",
+      "width": 853,
+      "height": 640,
+      "kb": 58.2
+    },
+    "small": {
+      "file": "faqs-next-owners-600.webp",
+      "width": 600,
+      "height": 450,
+      "kb": 31.9
+    },
+    "credit": {
+      "title": "House Home",
+      "creator": "Binyamin Mellish",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/house-home-LJ515CPAKI",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "faqs-next-renters": {
+    "alt": "Living room with bookshelves and a fireplace",
+    "large": {
+      "file": "faqs-next-renters-720.webp",
+      "width": 720,
+      "height": 540,
+      "kb": 53.6
+    },
+    "small": {
+      "file": "faqs-next-renters-540.webp",
+      "width": 540,
+      "height": 405,
+      "kb": 33.1
+    },
+    "credit": {
+      "title": "House Home",
+      "creator": "Mike Birdy",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/house-home-6KJ12UWOKQ",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "faqs-next-guests": {
+    "alt": "Sunset over a lake seen through trees",
+    "large": {
+      "file": "faqs-next-guests-853.webp",
+      "width": 853,
+      "height": 640,
+      "kb": 111.7
+    },
+    "small": {
+      "file": "faqs-next-guests-600.webp",
+      "width": 600,
+      "height": 450,
+      "kb": 58.6
+    },
+    "credit": {
+      "title": "Sunset Lake",
+      "creator": "Tricia Gray",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/sunset-lake-VSCGP1X7OE",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "quote-aside": {
+    "alt": "House number on a weathered wooden door",
+    "large": {
+      "file": "quote-aside-853.webp",
+      "width": 853,
+      "height": 640,
+      "kb": 86.9
+    },
+    "small": {
+      "file": "quote-aside-600.webp",
+      "width": 600,
+      "height": 450,
+      "kb": 45.8
+    },
+    "credit": {
+      "title": "Old Building",
+      "creator": "Candace McDaniel",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/old-building-T13V0PBPMS",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "quote-next-bg": {
+    "alt": "Single-story house with a front lawn and driveway",
+    "large": {
+      "file": "quote-next-bg-960.webp",
+      "width": 960,
+      "height": 540,
+      "kb": 94.6
+    },
+    "small": {
+      "file": "quote-next-bg-600.webp",
+      "width": 600,
+      "height": 338,
+      "kb": 40.1
+    },
+    "credit": {
+      "title": "House Home",
+      "creator": "Binyamin Mellish",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/house-home-L9VZ6SOGBB",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "rentals-intro": {
+    "alt": "Living room with bookshelves and a fireplace",
+    "large": {
+      "file": "rentals-intro-720.webp",
+      "width": 720,
+      "height": 540,
+      "kb": 53.6
+    },
+    "small": {
+      "file": "rentals-intro-540.webp",
+      "width": 540,
+      "height": 405,
+      "kb": 33.1
+    },
+    "credit": {
+      "title": "House Home",
+      "creator": "Mike Birdy",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/house-home-6KJ12UWOKQ",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "rentals-steps": {
+    "alt": "Key in the lock of an open front door",
+    "large": {
+      "file": "rentals-steps-512.webp",
+      "width": 512,
+      "height": 640,
+      "kb": 14.2
+    },
+    "small": {
+      "file": "rentals-steps-384.webp",
+      "width": 384,
+      "height": 480,
+      "kb": 9.2
+    },
+    "credit": {
+      "title": "Keys Door",
+      "creator": "WDnet Studio",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/keys-door-Z1TKDI29FZ",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "prequal-intro": {
+    "alt": "Hand holding a house key",
+    "large": {
+      "file": "prequal-intro-856.webp",
+      "width": 856,
+      "height": 642,
+      "kb": 19.5
+    },
+    "small": {
+      "file": "prequal-intro-600.webp",
+      "width": 600,
+      "height": 450,
+      "kb": 11.8
+    },
+    "credit": {
+      "title": "Key Necklace",
+      "creator": "Daryn Bartlett",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/key-necklace-HTOTME2TTP",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "vacation-before": {
+    "alt": "Dock stretching into a calm lake",
+    "large": {
+      "file": "vacation-before-512.webp",
+      "width": 512,
+      "height": 640,
+      "kb": 13.5
+    },
+    "small": {
+      "file": "vacation-before-384.webp",
+      "width": 384,
+      "height": 480,
+      "kb": 8.3
+    },
+    "credit": {
+      "title": "Dock Lake",
+      "creator": "Burst",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/dock-lake-U94B4HVBAO",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "vacation-updates-bg": {
+    "alt": "Sunset over a lake seen through trees",
+    "large": {
+      "file": "vacation-updates-bg-960.webp",
+      "width": 960,
+      "height": 540,
+      "kb": 107.7
+    },
+    "small": {
+      "file": "vacation-updates-bg-600.webp",
+      "width": 600,
+      "height": 338,
+      "kb": 45.9
+    },
+    "credit": {
+      "title": "Sunset Lake",
+      "creator": "Tricia Gray",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/sunset-lake-VSCGP1X7OE",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "vacation-owner": {
+    "alt": "Red cabin in the snow among trees",
+    "large": {
+      "file": "vacation-owner-960.webp",
+      "width": 960,
+      "height": 720,
+      "kb": 177.5
+    },
+    "small": {
+      "file": "vacation-owner-600.webp",
+      "width": 600,
+      "height": 450,
+      "kb": 66.3
+    },
+    "credit": {
+      "title": "Snow Cold",
+      "creator": "Patrick Tomasso",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/snow-cold-9P5EDI0D26",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "ty-owner": {
+    "alt": "Single-story house with a front lawn",
+    "large": {
+      "file": "ty-owner-512.webp",
+      "width": 512,
+      "height": 640,
+      "kb": 48.4
+    },
+    "small": {
+      "file": "ty-owner-384.webp",
+      "width": 384,
+      "height": 480,
+      "kb": 28
+    },
+    "credit": {
+      "title": "House Home",
+      "creator": "Binyamin Mellish",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/house-home-L9VZ6SOGBB",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
+  "ty-applicant": {
+    "alt": "Hand holding a house key",
+    "large": {
+      "file": "ty-applicant-514.webp",
+      "width": 514,
+      "height": 643,
+      "kb": 14.5
+    },
+    "small": {
+      "file": "ty-applicant-386.webp",
+      "width": 386,
+      "height": 483,
+      "kb": 10
+    },
+    "credit": {
+      "title": "Key Necklace",
+      "creator": "Daryn Bartlett",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/key-necklace-HTOTME2TTP",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
   }
 }

@@ -1,8 +1,8 @@
 <!--
   AVAILABLE RENTALS · 01 INTRO
   Background: #F8F5EC ivory (data-bg="ivory")
-  Layout: compact heading band for renters. No photo, so listings come into view quickly; the logo's
-          skyline, drawn in line, fills the right side on wider screens (decorative).
+  Layout: heading band for renters with a photo on the right (a general interior, not a listing).
+  Photo slot: rentals-intro · source 1200 x 900 px · ratio 4:3
 -->
 <section class="pmp pmp-sec" id="pmp-rentals-intro" data-bg="ivory" aria-labelledby="pmp-rentals-intro-title">
   <div class="pmp-wrap">
@@ -13,7 +13,15 @@
         <p class="pmp-lead pmp-rentals-intro__lead">Browse our current long-term rental listings. Review each property’s details, rent, and availability before completing the preliminary prequalification form.</p>
         <a class="pmp-textlink pmp-rentals-intro__link" href="#pmp-rentals-how-to-get-started">How to get started {{arrow}}</a>
       </div>
-      <div class="pmp-rentals-intro__art" aria-hidden="true">{{motif}}</div>
+      <div class="pmp-rentals-intro__media pmp-marks">
+        <div class="pmp-ph pmp-ph--4x3" data-photo-slot="rentals-intro">
+          <p class="pmp-ph__label">
+            <span class="pmp-ph__tag">INSERT PHOTO</span>
+            <span class="pmp-ph__desc">Inviting interior of a real long-term rental (general, not a listing).</span>
+            <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: the main room.</span>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -37,8 +45,8 @@
   margin-top: 20px;
 }
 
-#pmp-rentals-intro .pmp-rentals-intro__art {
-  display: none;
+#pmp-rentals-intro .pmp-rentals-intro__media {
+  width: min(100%, 520px);
 }
 
 #pmp-rentals-intro .pmp-rentals-intro__link {
@@ -52,9 +60,7 @@
     align-items: center;
   }
 
-  #pmp-rentals-intro .pmp-rentals-intro__art {
-    display: block;
-    width: min(100%, 440px);
+  #pmp-rentals-intro .pmp-rentals-intro__media {
     justify-self: end;
   }
 }

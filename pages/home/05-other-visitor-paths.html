@@ -1,32 +1,54 @@
 <!--
   HOME · 05 OTHER VISITOR PATHS (renters and guests)
   Background: #F8F5EC ivory (data-bg="ivory")
-  Layout: short text on the left; two large link rows on the right, separated by hairlines.
-          Deliberately quieter than the owner sections above.
-  No photo in this section.
+  Layout: short text on the left; two photo cards on the right, one for long-term renters and one
+          for vacation guests. Quieter than the owner sections, but image-led.
+  Photo slots: home-path-rentals, home-path-vacation · source 1200 x 900 px · ratio 4:3 each
+  These represent the two paths, not specific listings: never show a home here as "available".
+  Replace each placeholder with:
+    <img class="pmp-photo pmp-photo--4x3" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL SCENE"
+         width="1200" height="900" loading="lazy" decoding="async">
 -->
 <section class="pmp pmp-sec" id="pmp-home-other-visitor-paths" data-bg="ivory" aria-labelledby="pmp-home-other-visitor-paths-title">
   <div class="pmp-wrap">
     <div class="pmp-home-paths__grid">
-      <div>
+      <div class="pmp-home-paths__intro">
         <p class="pmp-ribbon">For renters and guests</p>
         <h2 id="pmp-home-other-visitor-paths-title">Looking for a home or a getaway?</h2>
         <p class="pmp-home-paths__text">Browse our current long-term rentals or explore vacation properties through their approved booking pages.</p>
       </div>
 
-      <ul class="pmp-home-paths__links">
+      <ul class="pmp-home-paths__cards">
         <li>
-          <a class="pmp-home-paths__link" href="/available-rentals">
-            <span class="pmp-home-paths__meta">Long-term rentals</span>
-            <span class="pmp-home-paths__label">View Available Rentals</span>
-            {{arrow}}
+          <a class="pmp-pcard" href="/available-rentals">
+            <div class="pmp-ph pmp-ph--4x3" data-photo-slot="home-path-rentals">
+              <p class="pmp-ph__label">
+                <span class="pmp-ph__tag">INSERT PHOTO</span>
+                <span class="pmp-ph__desc">Inviting interior of a real long-term rental (not presented as available).</span>
+                <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: the main room, level horizon.</span>
+              </p>
+            </div>
+            <span class="pmp-pcard__body">
+              <span class="pmp-pcard__meta">Long-term rentals</span>
+              <span class="pmp-pcard__title">View Available Rentals</span>
+              {{arrow}}
+            </span>
           </a>
         </li>
         <li>
-          <a class="pmp-home-paths__link" href="/vacation-rentals">
-            <span class="pmp-home-paths__meta">Vacation properties</span>
-            <span class="pmp-home-paths__label">Explore Vacation Rentals</span>
-            {{arrow}}
+          <a class="pmp-pcard" href="/vacation-rentals">
+            <div class="pmp-ph pmp-ph--4x3" data-photo-slot="home-path-vacation">
+              <p class="pmp-ph__label">
+                <span class="pmp-ph__tag">INSERT PHOTO</span>
+                <span class="pmp-ph__desc">Approved vacation property or its lake or woodland setting.</span>
+                <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the home or view centered.</span>
+              </p>
+            </div>
+            <span class="pmp-pcard__body">
+              <span class="pmp-pcard__meta">Vacation properties</span>
+              <span class="pmp-pcard__title">Explore Vacation Rentals</span>
+              {{arrow}}
+            </span>
           </a>
         </li>
       </ul>
@@ -38,7 +60,7 @@
 #pmp-home-other-visitor-paths .pmp-home-paths__grid {
   display: grid;
   gap: 32px;
-  align-items: end;
+  align-items: center;
 }
 
 #pmp-home-other-visitor-paths .pmp-home-paths__text {
@@ -46,67 +68,25 @@
   margin-top: 16px;
 }
 
-#pmp-home-other-visitor-paths .pmp-home-paths__links {
-  border-top: 1px solid var(--pmp-line-strong);
-}
-
-#pmp-home-other-visitor-paths .pmp-home-paths__links li {
-  border-bottom: 1px solid var(--pmp-line-strong);
-}
-
-#pmp-home-other-visitor-paths .pmp-home-paths__link {
+#pmp-home-other-visitor-paths .pmp-home-paths__cards {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-areas:
-    "meta arrow"
-    "label arrow";
-  align-items: center;
-  column-gap: 16px;
-  padding: 20px 4px 22px 0;
-  text-decoration: none;
-  color: var(--pmp-navy);
+  gap: 20px;
 }
 
-#pmp-home-other-visitor-paths .pmp-home-paths__meta {
-  grid-area: meta;
-  font-size: 14px;
-  color: var(--pmp-slate);
-}
-
-#pmp-home-other-visitor-paths .pmp-home-paths__label {
-  grid-area: label;
-  font-family: var(--pmp-font-head);
-  font-size: clamp(20px, calc(17px + 0.8vw), 26px);
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: -0.015em;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-  transition: text-decoration-color var(--pmp-dur) var(--pmp-ease);
-}
-
-#pmp-home-other-visitor-paths .pmp-home-paths__link svg {
-  grid-area: arrow;
-  width: 20px;
-  height: 20px;
-  color: var(--pmp-bronze);
-  transition: transform var(--pmp-dur) var(--pmp-ease);
-}
-
-#pmp-home-other-visitor-paths .pmp-home-paths__link:hover .pmp-home-paths__label {
-  text-decoration-color: var(--pmp-gold);
-}
-
-#pmp-home-other-visitor-paths .pmp-home-paths__link:hover svg {
-  transform: translateX(4px);
+@media (min-width: 600px) {
+  #pmp-home-other-visitor-paths .pmp-home-paths__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 900px) {
   #pmp-home-other-visitor-paths .pmp-home-paths__grid {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-    gap: clamp(40px, 8vw, 120px);
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: clamp(40px, 6vw, 88px);
+  }
+
+  #pmp-home-other-visitor-paths .pmp-home-paths__cards {
+    gap: 28px;
   }
 }
 </style>

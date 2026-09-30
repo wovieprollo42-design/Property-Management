@@ -1,7 +1,9 @@
 <!--
   VACATION RENTALS · 03 BEFORE YOU BOOK
   Background: #E9EDE9 pale sage gray (data-bg="sage")
-  Layout: heading and closing sentence on the left; the five things to review as a checklist on the right.
+  Layout: heading, closing sentence and a photo on the left; the five things to review as a checklist
+          on the right.
+  Photo slot: vacation-before · source 800 x 1000 px · ratio 4:5 (an approved property's lake or setting)
 -->
 <section class="pmp pmp-sec" id="pmp-vacation-before-you-book" data-bg="sage" aria-labelledby="pmp-vacation-before-you-book-title">
   <div class="pmp-wrap">
@@ -9,6 +11,15 @@
       <div>
         <h2 id="pmp-vacation-before-you-book-title">Before you book</h2>
         <p class="pmp-vacation-book__text">Review these on the property’s booking page. Availability and pricing are confirmed during the reservation process.</p>
+        <div class="pmp-vacation-book__media pmp-marks">
+          <div class="pmp-ph pmp-ph--4x5" data-photo-slot="vacation-before">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Setting of an approved vacation property, such as its lake or dock.</span>
+              <span class="pmp-ph__spec">Source 800 × 1000 px · Display ratio 4:5 · Crop: horizon in the upper third.</span>
+            </p>
+          </div>
+        </div>
       </div>
       <ul class="pmp-vacation-book__list">
         <li><span aria-hidden="true">01</span>Your dates</li>
@@ -30,6 +41,11 @@
 #pmp-vacation-before-you-book .pmp-vacation-book__text {
   max-width: 30em;
   margin-top: 16px;
+}
+
+#pmp-vacation-before-you-book .pmp-vacation-book__media {
+  width: min(100%, 320px);
+  margin-top: 32px;
 }
 
 #pmp-vacation-before-you-book .pmp-vacation-book__list {
@@ -67,6 +83,7 @@
   #pmp-vacation-before-you-book .pmp-vacation-book__grid {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     gap: clamp(48px, 7vw, 104px);
+    align-items: center;
   }
 }
 </style>

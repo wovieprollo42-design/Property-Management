@@ -23,7 +23,7 @@ Target size note: phone and email links that sit inside a sentence are exempt fr
 
 ## Sample photos (preview only)
 
-- 12 photo slots show CC0 sample stock photos in the preview; each has a visible "Sample photo" tag and alt
+- 37 photo slots show CC0 sample stock photos in the preview, including photo cards and navy photo bands; each has a visible "Sample photo" tag and alt
   text starting "Sample stock photo:". No broken images on any route.
 - The preview bar switch shows each slot's INSERT PHOTO details over the faded photo, and remembers the choice.
 - The GHL exports contain no sample photos (0 in every snippet); they keep the placeholders.

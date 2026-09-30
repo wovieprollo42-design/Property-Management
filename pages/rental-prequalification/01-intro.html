@@ -1,7 +1,9 @@
 <!--
   RENTAL PREQUALIFICATION · 01 INTRO
   Background: #F8F5EC ivory (data-bg="ivory")
-  Layout: heading and introduction on the left; a warm white "have this ready" panel on the right.
+  Layout: heading and introduction on the left; on the right a photo with the warm white
+          "have this ready" panel overlapping its lower edge.
+  Photo slot: prequal-intro · source 1200 x 900 px · ratio 4:3 (a move-in detail, such as a key)
   This page is for renters only. It is separate from the owner quote page.
 -->
 <section class="pmp pmp-sec" id="pmp-prequal-intro" data-bg="ivory" aria-labelledby="pmp-prequal-intro-title">
@@ -13,6 +15,16 @@
         <p class="pmp-lead pmp-prequal-intro__lead">Complete the preliminary prequalification form below. Once we review your information, we’ll contact you about showing availability and next steps.</p>
       </div>
 
+      <div class="pmp-prequal-intro__side">
+      <div class="pmp-prequal-intro__media">
+        <div class="pmp-ph pmp-ph--4x3" data-photo-slot="prequal-intro">
+          <p class="pmp-ph__label">
+            <span class="pmp-ph__tag">INSERT PHOTO</span>
+            <span class="pmp-ph__desc">Move-in detail at a real rental, such as a key at the door.</span>
+            <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: detail centered.</span>
+          </p>
+        </div>
+      </div>
       <div class="pmp-prequal-intro__ready pmp-marks">
         <p class="pmp-prequal-intro__ready-title">Have this information ready</p>
         <ul class="pmp-checklist">
@@ -20,6 +32,7 @@
           <li>Your desired move-in date</li>
           <li>The requested rental and employment information</li>
         </ul>
+      </div>
       </div>
     </div>
   </div>
@@ -45,7 +58,15 @@
   margin-top: 20px;
 }
 
+#pmp-prequal-intro .pmp-prequal-intro__media {
+  border-bottom: 3px solid var(--pmp-gold);
+}
+
 #pmp-prequal-intro .pmp-prequal-intro__ready {
+  position: relative;
+  z-index: 1;
+  margin: -48px 0 0 24px;
+  box-shadow: var(--pmp-shadow);
   padding: 28px;
   background-color: var(--pmp-white);
   border: 1px solid var(--pmp-line);

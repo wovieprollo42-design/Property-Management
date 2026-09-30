@@ -210,6 +210,119 @@
   color: var(--pmp-slate);
 }
 
+/* ---------- Photo band: a photo layered behind a navy section's content ---
+   The section gets .pmp-has-bg; its first child is <div class="pmp-ph pmp-ph--bg">.
+   Until a photo is approved the band stays solid navy with a small slot note. */
+.pmp.pmp-has-bg {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.pmp .pmp-ph--bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: block;
+  aspect-ratio: auto;
+  background-color: transparent;
+  background-image: none;
+  border: 0;
+}
+
+.pmp .pmp-ph--bg .pmp-ph__label {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: auto;
+  max-width: min(340px, calc(100% - 16px));
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 12px;
+  border: 1px solid var(--pmp-line);
+  border-radius: 3px;
+}
+
+.pmp .pmp-ph--bg .pmp-ph__tag {
+  position: static;
+  margin-bottom: 4px;
+}
+
+/* While the band's photo is still a placeholder, keep room for its note below the content.
+   (Temporary state only; it disappears once the approved photo replaces the placeholder.) */
+.pmp.pmp-has-bg:has(> .pmp-ph--bg) {
+  padding-bottom: calc(var(--pmp-sec-pad) + 112px) !important;
+}
+
+/* ---------- Photo card: an image-led link (photo on top, title and arrow below) */
+.pmp .pmp-pcard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--pmp-navy);
+  text-decoration: none;
+  background-color: var(--pmp-white);
+  border: 1px solid var(--pmp-line);
+  border-radius: var(--pmp-radius);
+  overflow: hidden;
+  transition: box-shadow var(--pmp-dur) var(--pmp-ease), transform var(--pmp-dur) var(--pmp-ease);
+}
+
+.pmp .pmp-pcard:hover {
+  box-shadow: var(--pmp-shadow);
+  transform: translateY(-3px);
+}
+
+.pmp .pmp-pcard > .pmp-ph,
+.pmp .pmp-pcard > .pmp-photo {
+  border: 0;
+  border-bottom: 3px solid var(--pmp-gold);
+}
+
+.pmp .pmp-pcard .pmp-photo {
+  transition: transform 600ms var(--pmp-ease);
+}
+
+.pmp .pmp-pcard:hover .pmp-photo {
+  transform: scale(1.04);
+}
+
+.pmp .pmp-pcard__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 16px;
+  padding: 18px 22px 22px;
+}
+
+.pmp .pmp-pcard__meta {
+  grid-column: 1;
+  font-size: 14px;
+  color: var(--pmp-slate);
+}
+
+.pmp .pmp-pcard__title {
+  grid-column: 1;
+  font-family: var(--pmp-font-head);
+  font-size: clamp(19px, calc(17px + 0.5vw), 23px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.pmp .pmp-pcard__body svg {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 22px;
+  height: 22px;
+  color: var(--pmp-bronze);
+  transition: transform var(--pmp-dur) var(--pmp-ease);
+}
+
+.pmp .pmp-pcard:hover .pmp-pcard__body svg {
+  transform: translateX(4px);
+}
+
 /* ---------- Brand motif and swoosh (inline SVG from {{motif}} / {{swoosh}}) */
 /* The roofs are filled with the surrounding background so the towers pass behind them.
    A section can set --pmp-motif-fill on the motif's wrapper (for example to sage). */

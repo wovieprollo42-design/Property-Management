@@ -38,7 +38,7 @@ Owners: **Bob** confirms business facts and scope, **Jocel** installs and config
 
 - [ ] Real, approved photos for each slot, with photo permission and honest alt text. No generic luxury
       stock, and no photo that implies an amenity, location or management relationship that is not true.
-- [ ] The preview's **sample stock photos** (12 slots, tagged "Sample photo") are for design review only.
+- [ ] The preview's **sample stock photos** (37 slots, tagged "Sample photo") are for design review only.
       Replace every one with an approved photo of a real managed property; none may go live as Bob's.
 - [ ] Tell us which of the team headshots on the Property Maintenance Professionals site (if any) is Bob,
       or send his approved headshot for the About page.

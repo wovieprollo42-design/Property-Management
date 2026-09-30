@@ -1,7 +1,8 @@
 <!--
   FAQS · 03 RENTER AND GUEST QUESTIONS
   Background: #E9EDE9 pale sage gray (data-bg="sage")
-  Layout: same two-column pattern as the owner questions, on the alternate background.
+  Layout: same two-column pattern as the owner questions, on the alternate background, with a photo.
+  Photo slot: faqs-renters · source 800 x 1000 px · ratio 4:5 (a renter's arrival detail, such as a key)
 -->
 <section class="pmp pmp-sec" id="pmp-faqs-renter-questions" data-bg="sage" aria-labelledby="pmp-faqs-renter-questions-title">
   <div class="pmp-wrap">
@@ -9,6 +10,15 @@
       <div class="pmp-faqs-renter__head">
         <p class="pmp-ribbon">For renters and guests</p>
         <h2 id="pmp-faqs-renter-questions-title">Questions about rentals</h2>
+        <div class="pmp-faqs-renter__media pmp-marks">
+          <div class="pmp-ph pmp-ph--4x5" data-photo-slot="faqs-renters">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Move-in detail at a real rental, such as a key at the door.</span>
+              <span class="pmp-ph__spec">Source 800 × 1000 px · Display ratio 4:5 · Crop: detail centered.</span>
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="pmp-faq">
@@ -33,6 +43,11 @@
 
 #pmp-faqs-renter-questions .pmp-faqs-renter__head h2 {
   max-width: 11em;
+}
+
+#pmp-faqs-renter-questions .pmp-faqs-renter__media {
+  width: min(100%, 260px);
+  margin-top: 28px;
 }
 
 @media (min-width: 900px) {

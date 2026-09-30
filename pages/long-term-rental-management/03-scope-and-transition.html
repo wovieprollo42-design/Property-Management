@@ -3,7 +3,8 @@
   Background: #E9EDE9 pale sage gray (data-bg="sage")
   Layout: two blocks. Left: what is reviewed and what the agreement explains, set as a short
           specification. Right: a warm white panel for owners with a vacancy or an existing tenant.
-  No photo in this section.
+  Photo slot: long-term-transition · source 1200 x 900 px · ratio 4:3 (top of the vacancy panel):
+  a clean, ready interior of a real rental. Replace the placeholder with an <img class="pmp-photo pmp-photo--4x3">.
 -->
 <section class="pmp pmp-sec" id="pmp-ltr-scope-and-transition" data-bg="sage" aria-label="Scope and transition">
   <div class="pmp-wrap">
@@ -24,6 +25,15 @@
       </div>
 
       <div class="pmp-ltr-transition__panel pmp-marks">
+        <div class="pmp-ltr-transition__photo">
+          <div class="pmp-ph pmp-ph--4x3" data-photo-slot="long-term-transition">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Clean, ready interior of a real rental between tenants.</span>
+              <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: the whole room, level horizon.</span>
+            </p>
+          </div>
+        </div>
         <h2>Have a vacancy or an existing tenant?</h2>
         <p class="pmp-ltr-transition__text">Tell us where the rental is located and what help you need. We can discuss leasing a vacancy or transitioning an occupied property into management.</p>
       </div>
@@ -71,10 +81,20 @@
 }
 
 #pmp-ltr-scope-and-transition .pmp-ltr-transition__panel {
+  --panel-pad: clamp(28px, 4vw, 48px);
   align-self: start;
-  padding: clamp(28px, 4vw, 48px);
+  padding: var(--panel-pad);
   background-color: var(--pmp-white);
   border: 1px solid var(--pmp-line);
+}
+
+#pmp-ltr-scope-and-transition .pmp-ltr-transition__photo {
+  margin: calc(-1 * var(--panel-pad)) calc(-1 * var(--panel-pad)) 28px;
+  border-bottom: 3px solid var(--pmp-gold);
+}
+
+#pmp-ltr-scope-and-transition .pmp-ltr-transition__photo .pmp-ph {
+  border: 0;
 }
 
 @media (min-width: 600px) {

@@ -110,7 +110,7 @@ GHL rows ever shows a different color.
 
 These are the only places that need real content. Everything else is final design.
 
-### Photos (13 page slots, plus one per listing card; see `image-inventory.md`)
+### Photos (40 photo slots including the card templates; see `image-inventory.md`)
 
 The preview shows sample stock photos so the design looks real. **They are not in the exports and must not be
 used on the live site as if they were Bob's properties.** The exports keep the placeholders below.
@@ -124,7 +124,18 @@ media library, copy its URL, and replace the whole placeholder `div` with:
      width="1200" height="900" loading="lazy" decoding="async">
 ```
 
-Use the ratio class of the slot (`--8x5`, `--4x3` or `--4x5`) and its source width and height. The
+Use the ratio class of the slot (`--8x5`, `--4x3` or `--4x5`) and its source width and height.
+
+**Photo bands** (`pmp-ph--bg`, on navy sections such as Home "Getting started", Quote "What happens next"
+and Vacation "Hear about future stays") take a wide photo toned into the navy. Replace the placeholder with:
+
+```html
+<img class="pmp-photo" src="PHOTO-URL" alt="" width="1920" height="1080" loading="lazy" decoding="async"
+     style="position:absolute;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;opacity:.22;mix-blend-mode:luminosity">
+```
+
+Keep `alt=""` there: the photo is decorative behind text. Check that the white text stays easy to read.
+**Photo cards** (`pmp-pcard`) use the normal 4:3 replacement inside the link. The
 first photo on each page (the hero) uses `fetchpriority="high"` instead of `loading="lazy"`. Compress
 photos before uploading. Write alt text that describes what is really in the photo, without adding
 towns or claims that are not confirmed. Then rebuild and re-paste the section.

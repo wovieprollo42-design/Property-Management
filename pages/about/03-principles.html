@@ -1,13 +1,23 @@
 <!--
   ABOUT · 03 PRINCIPLES
   Background: #E9EDE9 pale sage gray (data-bg="sage")
-  Layout: three principles as rows, term on the left and meaning on the right, like a specification.
-  No photo in this section.
+  Layout: heading and a portrait-format photo on the left; the three principles as rows on the right.
+  Photo slot: about-principles · source 800 x 1000 px · ratio 4:5 (a cared-for interior)
 -->
 <section class="pmp pmp-sec" id="pmp-about-principles" data-bg="sage" aria-labelledby="pmp-about-principles-title">
   <div class="pmp-wrap">
+    <div class="pmp-about-principles__grid">
     <div class="pmp-about-principles__head">
       <h2 id="pmp-about-principles-title">What guides our work</h2>
+      <div class="pmp-about-principles__media pmp-marks">
+          <div class="pmp-ph pmp-ph--4x5" data-photo-slot="about-principles">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Cared-for interior of a real managed property.</span>
+              <span class="pmp-ph__spec">Source 800 × 1000 px · Display ratio 4:5 · Crop: the room, level horizon.</span>
+            </p>
+          </div>
+      </div>
     </div>
 
     <ol class="pmp-about-principles__list">
@@ -27,12 +37,23 @@
         <p>Keep owners, residents, guests, and service providers informed about relevant work.</p>
       </li>
     </ol>
+    </div>
   </div>
 </section>
 
 <style>
+#pmp-about-principles .pmp-about-principles__grid {
+  display: grid;
+  gap: 36px;
+}
+
+#pmp-about-principles .pmp-about-principles__media {
+  width: min(100%, 340px);
+  margin-top: 28px;
+}
+
 #pmp-about-principles .pmp-about-principles__list {
-  margin-top: clamp(28px, 4vw, 48px);
+  margin-top: 0;
   border-top: 1px solid var(--pmp-line-strong);
 }
 
@@ -59,8 +80,14 @@
 }
 
 @media (min-width: 900px) {
+  #pmp-about-principles .pmp-about-principles__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: clamp(48px, 6vw, 88px);
+    align-items: start;
+  }
+
   #pmp-about-principles .pmp-about-principles__list li {
-    grid-template-columns: 64px minmax(0, 4fr) minmax(0, 6fr);
+    grid-template-columns: 56px minmax(0, 4fr) minmax(0, 6fr);
     gap: 24px;
     align-items: baseline;
     padding: 32px 0;

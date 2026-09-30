@@ -1,9 +1,17 @@
 <!--
   MANAGEMENT QUOTE · 03 WHAT HAPPENS NEXT
-  Background: #E9EDE9 pale sage gray (data-bg="sage")
+  Background: #172D3B deep navy (data-bg="navy") with a photo band behind the content
+              (slot quote-next-bg, shown toned into the navy). Set the GHL section to navy too.
   Layout: the after-submission paragraph set as four stages along a gold line.
 -->
-<section class="pmp pmp-sec" id="pmp-quote-what-happens-next" data-bg="sage" aria-labelledby="pmp-quote-what-happens-next-title">
+<section class="pmp pmp-sec pmp-has-bg" id="pmp-quote-what-happens-next" data-bg="navy" aria-labelledby="pmp-quote-what-happens-next-title">
+  <div class="pmp-ph pmp-ph--bg" data-photo-slot="quote-next-bg">
+    <p class="pmp-ph__label">
+      <span class="pmp-ph__tag">INSERT PHOTO</span>
+      <span class="pmp-ph__desc">Background: a real managed home, toned into the navy.</span>
+      <span class="pmp-ph__spec">Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges.</span>
+    </p>
+  </div>
   <div class="pmp-wrap">
     <h2 id="pmp-quote-what-happens-next-title">What happens next?</h2>
 
@@ -36,7 +44,7 @@
   left: 0;
   width: 11px;
   height: 11px;
-  background-color: var(--pmp-sage);
+  background-color: var(--pmp-navy);
   border: 2px solid var(--pmp-gold);
   transform: rotate(45deg);
 }
@@ -57,7 +65,7 @@
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: var(--pmp-bronze);
+  color: var(--pmp-gold);
 }
 
 #pmp-quote-what-happens-next .pmp-quote-next__stages p {
@@ -67,7 +75,7 @@
   font-size: clamp(18px, calc(16.4px + 0.4vw), 21px);
   font-weight: 600;
   line-height: 1.4;
-  color: var(--pmp-navy);
+  color: var(--pmp-white);
 }
 
 @media (min-width: 900px) {

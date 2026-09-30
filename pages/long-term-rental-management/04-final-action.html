@@ -1,14 +1,24 @@
 <!--
   LONG-TERM RENTAL MANAGEMENT · 04 FINAL ACTION
   Background: #F8F5EC ivory (data-bg="ivory") holding a #172D3B navy panel
-  Layout: navy call-to-action panel with the four details an owner should share, then a quiet
-          cross-link to the short-term page.
+  Layout: navy call-to-action panel: a photo on the left, then the heading, the four details an owner
+          should share and the buttons; a quiet cross-link to the short-term page below.
+  Photo slot: long-term-cta · source 800 x 1000 px · ratio 4:5
   Internal link rule: if this page ever mentions repair or remodeling services, link to the separate
   Property Maintenance Professionals website (https://www.propertymaintenanceprofessionals.net/).
 -->
 <section class="pmp pmp-sec" id="pmp-ltr-final-action" data-bg="ivory" aria-labelledby="pmp-ltr-final-action-title">
   <div class="pmp-wrap">
     <div class="pmp-ltr-final__panel pmp-dark pmp-marks">
+      <div class="pmp-ltr-final__photo">
+          <div class="pmp-ph pmp-ph--4x5" data-photo-slot="long-term-cta">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Keys, a front door or another handover detail from a real managed rental.</span>
+              <span class="pmp-ph__spec">Source 800 × 1000 px · Display ratio 4:5 · Crop: detail centered.</span>
+            </p>
+          </div>
+      </div>
       <div class="pmp-ltr-final__copy">
         <h2 id="pmp-ltr-final-action-title">Start with your property details</h2>
         <p class="pmp-ltr-final__text">Share the location, number of units, current occupancy, and your main concerns. We’ll use that information to discuss whether our services fit.</p>
@@ -78,10 +88,32 @@
   margin-top: 36px;
 }
 
+#pmp-ltr-final-action .pmp-ltr-final__photo {
+  max-width: 340px;
+  border: 1px solid var(--pmp-line-light);
+}
+
+#pmp-ltr-final-action .pmp-ltr-final__photo .pmp-ph {
+  border: 0;
+}
+
+@media (min-width: 600px) {
+  #pmp-ltr-final-action .pmp-ltr-final__details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+  }
+}
+
 @media (min-width: 900px) {
   #pmp-ltr-final-action .pmp-ltr-final__panel {
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-    gap: clamp(40px, 6vw, 88px);
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: 28px clamp(40px, 5vw, 72px);
+  }
+
+  #pmp-ltr-final-action .pmp-ltr-final__photo {
+    grid-row: 1 / span 2;
+    align-self: center;
   }
 }
 </style>

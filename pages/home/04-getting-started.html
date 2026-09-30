@@ -1,11 +1,19 @@
 <!--
   HOME · 04 GETTING STARTED (how it starts + the owner call to action)
-  Background: #172D3B deep navy (data-bg="navy") with warm white text
+  Background: #172D3B deep navy (data-bg="navy") with warm white text, plus a photo band behind the
+              content (slot home-start-bg, shown toned into the navy). Set the GHL section to navy too.
   Layout: three numbered steps joined by a gold line, like marks on a plan.
           The owner call to action sits beside the heading.
   No photo in this section.
 -->
-<section class="pmp pmp-sec" id="pmp-home-getting-started" data-bg="navy" aria-labelledby="pmp-home-getting-started-title">
+<section class="pmp pmp-sec pmp-has-bg" id="pmp-home-getting-started" data-bg="navy" aria-labelledby="pmp-home-getting-started-title">
+  <div class="pmp-ph pmp-ph--bg" data-photo-slot="home-start-bg">
+    <p class="pmp-ph__label">
+      <span class="pmp-ph__tag">INSERT PHOTO</span>
+      <span class="pmp-ph__desc">Background: a calm, wide view of a managed property or its setting, toned into the navy.</span>
+      <span class="pmp-ph__spec">Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges.</span>
+    </p>
+  </div>
   <div class="pmp-wrap">
     <div class="pmp-home-start__head">
       <div>

@@ -3,15 +3,25 @@
   Background: #E9EDE9 pale sage gray (data-bg="sage")
   Layout: concise editorial statement. Heading on the left; on the right the approach
           paragraph is set as three details an owner cares about, then the approval note.
-  No photo in this section. The logo's skyline, drawn in line, fills the space under the heading on
-  desktop (decorative, hidden from screen readers and on small screens).
+  Photo slot: home-approach · source 800 x 1000 px · ratio 4:5 (a close property detail under the heading)
+  Replace the placeholder with:
+    <img class="pmp-photo pmp-photo--4x5" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL DETAIL"
+         width="800" height="1000" loading="lazy" decoding="async">
 -->
 <section class="pmp pmp-sec" id="pmp-home-owner-approach" data-bg="sage" aria-labelledby="pmp-home-owner-approach-title">
   <div class="pmp-wrap">
     <div class="pmp-home-approach__grid">
       <div class="pmp-home-approach__head">
         <h2 id="pmp-home-owner-approach-title">An owner’s approach to property care</h2>
-        <div class="pmp-home-approach__art" aria-hidden="true">{{motif}}</div>
+        <div class="pmp-home-approach__media pmp-marks">
+          <div class="pmp-ph pmp-ph--4x5" data-photo-slot="home-approach">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Close detail of a cared-for managed property, such as its front entry.</span>
+              <span class="pmp-ph__spec">Source 800 × 1000 px · Display ratio 4:5 · Crop: keep the detail centered.</span>
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="pmp-home-approach__body">
@@ -83,16 +93,15 @@
   color: var(--pmp-navy);
 }
 
-#pmp-home-owner-approach .pmp-home-approach__art {
-  display: none;
-  --pmp-motif-fill: var(--pmp-sage);
+#pmp-home-owner-approach .pmp-home-approach__media {
+  width: min(100%, 340px);
+  margin-top: 32px;
 }
 
 @media (min-width: 900px) {
-  #pmp-home-owner-approach .pmp-home-approach__art {
-    display: block;
+  #pmp-home-owner-approach .pmp-home-approach__media {
     width: min(100%, 380px);
-    margin-top: 48px;
+    margin-top: 44px;
   }
 
   #pmp-home-owner-approach .pmp-home-approach__grid {

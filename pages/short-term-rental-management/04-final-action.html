@@ -1,11 +1,22 @@
 <!--
   SHORT-TERM RENTAL MANAGEMENT · 04 FINAL ACTION
   Background: #F8F5EC ivory (data-bg="ivory") holding a #172D3B navy panel
-  Layout: navy call-to-action panel, then a quiet cross-link to the long-term page.
+  Layout: navy call-to-action panel with a photo, the heading and text, and the buttons; then a quiet
+          cross-link to the long-term page.
+  Photo slot: short-term-cta · source 800 x 1000 px · ratio 4:5
 -->
 <section class="pmp pmp-sec" id="pmp-str-final-action" data-bg="ivory" aria-labelledby="pmp-str-final-action-title">
   <div class="pmp-wrap">
     <div class="pmp-str-final__panel pmp-dark pmp-marks">
+      <div class="pmp-str-final__photo">
+          <div class="pmp-ph pmp-ph--4x5" data-photo-slot="short-term-cta">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Approved vacation property exterior in its setting.</span>
+              <span class="pmp-ph__spec">Source 800 × 1000 px · Display ratio 4:5 · Crop: keep the home centered.</span>
+            </p>
+          </div>
+      </div>
       <div class="pmp-str-final__copy">
         <h2 id="pmp-str-final-action-title">Let’s talk about your property</h2>
         <p class="pmp-str-final__text">Already hosting or getting ready for your first guests? Tell us about the property and where you need support.</p>
@@ -41,11 +52,20 @@
   margin-top: 36px;
 }
 
+#pmp-str-final-action .pmp-str-final__photo {
+  max-width: 300px;
+  border: 1px solid var(--pmp-line-light);
+}
+
+#pmp-str-final-action .pmp-str-final__photo .pmp-ph {
+  border: 0;
+}
+
 @media (min-width: 900px) {
   #pmp-str-final-action .pmp-str-final__panel {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: end;
-    gap: 48px;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) auto;
+    align-items: center;
+    gap: clamp(32px, 4vw, 56px);
   }
 
   #pmp-str-final-action .pmp-str-final__actions {

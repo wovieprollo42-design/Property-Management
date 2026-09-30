@@ -1,7 +1,8 @@
 <!--
   FAQS · 02 OWNER QUESTIONS
   Background: #FFFEFB warm white (data-bg="white")
-  Layout: heading column on the left (stays in view on desktop), accordion on the right.
+  Layout: heading column on the left with a photo (stays in view on desktop), accordion on the right.
+  Photo slot: faqs-owners · source 800 x 1000 px · ratio 4:5 (a real managed home's exterior)
   The accordion uses native details/summary elements, so it works with the keyboard and needs no script.
 
   HELD QUESTION (not published): "Do you offer guaranteed rent?"
@@ -16,6 +17,15 @@
         <p class="pmp-ribbon">For owners</p>
         <h2 id="pmp-faqs-owner-questions-title">Questions from property owners</h2>
         <a class="pmp-textlink pmp-faqs-owner__ask" href="/management-quote">Ask About Management {{arrow}}</a>
+        <div class="pmp-faqs-owner__media pmp-marks">
+          <div class="pmp-ph pmp-ph--4x5" data-photo-slot="faqs-owners">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Exterior of a real managed home.</span>
+              <span class="pmp-ph__spec">Source 800 × 1000 px · Display ratio 4:5 · Crop: the whole home, centered.</span>
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="pmp-faq">
@@ -56,6 +66,11 @@
 
 #pmp-faqs-owner-questions .pmp-faqs-owner__ask {
   margin-top: 16px;
+}
+
+#pmp-faqs-owner-questions .pmp-faqs-owner__media {
+  width: min(100%, 260px);
+  margin-top: 28px;
 }
 
 @media (min-width: 900px) {
