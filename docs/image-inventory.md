@@ -64,14 +64,15 @@ recommended crop, and approval status (approved / not approved / unreviewed).
 
 ## Sample photos shown in the preview
 
-At the owner's request (2026-10-01) the preview shows realistic **sample stock photos** in 38 slots, so
+At the owner's request (2026-10-01) the preview shows realistic **sample stock photos** in 39 slots, so
 the design can be judged with real imagery. They are **not** Bob's properties.
 
 - Every sample carries a visible "Sample photo" tag and alt text beginning "Sample stock photo:".
 - The preview bar's **Show photo slot details** switch brings back each slot's INSERT PHOTO details.
 - The **GHL exports do not contain the sample photos**; they keep the INSERT PHOTO placeholders, so a stock
   photo cannot go live by mistake as a managed property.
-- Bob's portrait slot stays a placeholder: no stranger's photo is presented as Bob.
+- Bob's portrait (`about-bob-portrait`) is Bob's own headshot, sent by the owner on 2026-10-02 (the same edit is on
+  propertymaintenanceprofessionals.net). It is real, so it has no "Sample photo" tag and its alt text is "Bob Blaisdell".
 - All are CC0 1.0 (public domain dedication) from StockSnap, found through Openverse: free for commercial
   use, no attribution required. The files are the 960 px versions StockSnap publishes; the originals are larger.
 - Replace each one with an approved photo of a real managed property before launch (see `installation-guide.md`).
@@ -87,6 +88,7 @@ the design can be judged with real imagery. They are **not** Bob's properties.
 | `short-term-hero` | Covered porch with a sofa, wall clock and garden view | Joshua Ness | https://stocksnap.io/photo/house-home-CLD6T4J9VZ | `shared/samples/short-term-hero-960.webp` (960 × 600), `short-term-hero-600.webp` |
 | `short-term-guest-space` | Bright bedroom with a made bed and sheer curtains | Mary Whitney | https://stocksnap.io/photo/bedroom-bed-XWI13131WH | `shared/samples/short-term-guest-space-845.webp` (845 × 634), `short-term-guest-space-600.webp` |
 | `about-hero` | Front steps with potted mums and pumpkins | Kelly Ishmael | https://stocksnap.io/photo/exterior-pumpkins-OERCTRWJNA | `shared/samples/about-hero-960.webp` (960 × 600), `about-hero-600.webp` |
+| `about-bob-portrait` | Bob Blaisdell | Owner supplied | https://www.propertymaintenanceprofessionals.net/ | `shared/samples/about-bob-portrait-400.webp` (400 × 500), `about-bob-portrait-320.webp` |
 | `faqs-intro` | Bright kitchen with an island and pendant lights | NeONBRAND | https://stocksnap.io/photo/house-interior-APBDJIC32G | `shared/samples/faqs-intro-853.webp` (853 × 640), `faqs-intro-600.webp` |
 | `quote-intro` | Planters and pumpkins beside a front door | Kelly Ishmael | https://stocksnap.io/photo/exterior-pumpkins-HUXJWKRME3 | `shared/samples/quote-intro-853.webp` (853 × 640), `quote-intro-600.webp` |
 | `prequal-rental-exterior` | House front with red roses along the porch | Kelly Ishmael | https://stocksnap.io/photo/flowers-exterior-AUG3VWTCBT | `shared/samples/prequal-rental-exterior-853.webp` (853 × 640), `prequal-rental-exterior-600.webp` |

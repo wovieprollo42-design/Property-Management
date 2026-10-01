@@ -197,6 +197,29 @@
       "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
     }
   },
+  "about-bob-portrait": {
+    "alt": "Bob Blaisdell",
+    "real": true,
+    "large": {
+      "file": "about-bob-portrait-400.webp",
+      "width": 400,
+      "height": 500,
+      "kb": 28
+    },
+    "small": {
+      "file": "about-bob-portrait-320.webp",
+      "width": 320,
+      "height": 400,
+      "kb": 17.3
+    },
+    "credit": {
+      "title": "Bob Blaisdell headshot",
+      "creator": "Owner supplied",
+      "source": "Sent by the owner on 2026-10-02; this edit (dark studio background) is the one already published on propertymaintenanceprofessionals.net",
+      "landing": "https://www.propertymaintenanceprofessionals.net/",
+      "license": "Bob's own photo, used with the owner's go-ahead"
+    }
+  },
   "faqs-intro": {
     "alt": "Bright kitchen with an island and pendant lights",
     "large": {

@@ -111,7 +111,7 @@ function withSamplePhotos(html) {
     const s = SAMPLES[slot];
     if (!s) return all;
     const load = HERO_SLOTS.has(slot) ? 'fetchpriority="high"' : 'loading="lazy"';
-    return `<div class="pmp-shot pmp-shot--${ratio}" data-photo-slot="${slot}"><img class="pmp-photo pmp-photo--${ratio}" src="${sampleUrl(s.large.file)}" srcset="${sampleUrl(s.small.file)} ${s.small.width}w, ${sampleUrl(s.large.file)} ${s.large.width}w" sizes="(min-width: 900px) 50vw, 100vw" alt="Sample stock photo: ${s.alt}" width="${s.large.width}" height="${s.large.height}" ${load} decoding="async"><span class="pmp-shot__tag">Sample photo</span>${inner}</div>`;
+    return `<div class="pmp-shot pmp-shot--${ratio}" data-photo-slot="${slot}"><img class="pmp-photo pmp-photo--${ratio}" src="${sampleUrl(s.large.file)}" srcset="${sampleUrl(s.small.file)} ${s.small.width}w, ${sampleUrl(s.large.file)} ${s.large.width}w" sizes="(min-width: 900px) 50vw, 100vw" alt="${s.real ? s.alt : `Sample stock photo: ${s.alt}`}" width="${s.large.width}" height="${s.large.height}" ${load} decoding="async">${s.real ? '' : '<span class="pmp-shot__tag">Sample photo</span>'}${inner}</div>`;
   });
 }
 
@@ -836,7 +836,8 @@ the design can be judged with real imagery. They are **not** Bob's properties.
 - The preview bar's **Show photo slot details** switch brings back each slot's INSERT PHOTO details.
 - The **GHL exports do not contain the sample photos**; they keep the INSERT PHOTO placeholders, so a stock
   photo cannot go live by mistake as a managed property.
-- Bob's portrait slot stays a placeholder: no stranger's photo is presented as Bob.
+- Bob's portrait (\`about-bob-portrait\`) is Bob's own headshot, sent by the owner on 2026-10-02 (the same edit is on
+  propertymaintenanceprofessionals.net). It is real, so it has no "Sample photo" tag and its alt text is "Bob Blaisdell".
 - All are CC0 1.0 (public domain dedication) from StockSnap, found through Openverse: free for commercial
   use, no attribution required. The files are the 960 px versions StockSnap publishes; the originals are larger.
 - Replace each one with an approved photo of a real managed property before launch (see \`installation-guide.md\`).
