@@ -100,9 +100,8 @@ GHL rows ever shows a different color.
 4. The header marks the current page automatically, and its dropdown and mobile menu work inside GHL
    with no extra setup.
 5. **Logo:** the header and footer snippets already contain the logo, embedded in the code, so they show it
-   with no upload. To make the pages lighter, you can upload `exports/ghl/brand/logo-name.webp` and
-   `logo-full.webp` to the GHL media library and replace the long `data:image/webp;base64,…` value in each
-   snippet's `src` with the media URL.
+   with no upload. To make the pages lighter, you can upload `exports/ghl/brand/logo-full.webp` to the GHL media
+   library and replace the long `data:image/webp;base64,…` value in each snippet's `src` with the media URL.
 6. **Favicon:** in the site settings, upload `exports/ghl/brand/favicon-192.png` (or `favicon.ico`) as the
    favicon.
 

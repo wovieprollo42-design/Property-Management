@@ -129,13 +129,11 @@ transparent background. Nothing was redrawn, recolored or stretched.
 
 | File | Size | Used for |
 | --- | --- | --- |
-| `logo-name.webp` | 480 × 121 | Header: the name block (PROPERTY / MANAGEMENT banner / PROFESSIONALS) as the banner-shaped wordmark |
-| `logo-full.webp` | 440 × 290 | Footer: the full logo on a warm white plate (its charcoal lettering would vanish on navy) |
+| `logo-full.webp` | 440 × 290 | Header (full logo, as the owner asked on 2026-10-01) and footer (on a warm white plate, because its charcoal lettering would vanish on navy) |
+| `logo-name.webp` | 480 × 121 | Not used on the site: the name block alone, kept as an option for tight spaces |
 | `favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` | 32 to 192 px | Browser tab and phone home-screen icons, from the logo's skyline and roofs |
 
-**Needs approval:** showing only the name block in the header (the full stacked logo is too tall to read at
-header size). If Bob has a horizontal logo file, use it instead. A true vector (SVG paths, not an embedded
-image) would give sharper results at every size.
+If Bob has a true vector logo (SVG paths, not an embedded image), it would give sharper results at every size.
 
 The skyline line drawing used in photo placeholders and as decoration is a simple illustration in the spirit
 of the logo, not a copy of it.

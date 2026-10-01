@@ -20,8 +20,7 @@ Owners: **Bob** confirms business facts and scope, **Jocel** installs and config
 - [ ] The one approved HTTPS domain for the site (canonicals, sitemap). The email suggests
       propertymanagementprofessionals.net, but it is not assumed until confirmed.
 - [x] Logo supplied (2026-10-01). Web files and favicons were cut from it (see `image-inventory.md`).
-- [ ] Approve the header treatment: only the logo's name block is shown in the header, the full logo is in
-      the footer. Send a horizontal or true-vector logo if one exists.
+- [x] Header shows the full logo, as the owner asked (2026-10-01). A true-vector logo file would be sharper.
 - [ ] Bob's preferred public title (About page, portrait alt text). No title is shown until confirmed.
 - [ ] Long-term service scope as written on `/long-term-rental-management` (marketing and leasing,
       screening and placement, rent collection and reporting, tenant communication, maintenance

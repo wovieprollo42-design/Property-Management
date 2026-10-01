@@ -1,10 +1,10 @@
 <!--
   SHARED HEADER · used on every page and exported to exports/ghl/shared/header.html
   Background: #FFFEFB warm white (data-bg="white"), with a #172D3B navy contact bar on top.
-  Logo: the approved logo (shared/brand/logo-original.svg), used unaltered. The header shows its
-        name block (PROPERTY / MANAGEMENT banner / PROFESSIONALS) as the banner-shaped wordmark the
-        brief asks for; the full logo with its skyline icon is in the footer. Nothing is redrawn,
-        recolored or stretched.
+  Logo: the full approved logo (shared/brand/logo-original.svg: skyline, roofs and the
+        PROPERTY / MANAGEMENT / PROFESSIONALS name), as the owner asked on 2026-10-01. It is used
+        unaltered, on a transparent background; nothing is redrawn, recolored or stretched.
+        Height: 68 px on phones, 84 px from 720 px wide, 100 px on full desktop.
         {{brand:...}} becomes a file URL in the preview and an embedded image in the GHL export.
   Contact: phone and email confirmed by the owner on 2026-10-01.
   Behavior (script below): Management Services dropdown, mobile menu, current-page marking.
@@ -23,7 +23,7 @@
 
   <div class="pmp-wrap pmp-header__bar">
     <a class="pmp-header__brand" href="/" aria-label="Property Management Professionals, home">
-      <img class="pmp-header__logo-name" src="{{brand:logo-name.webp}}" alt="" width="240" height="60">
+      <img class="pmp-header__logo" src="{{brand:logo-full.webp}}" alt="" width="440" height="290">
     </a>
 
     <nav class="pmp-header__nav" aria-label="Main">
@@ -165,7 +165,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  min-height: 80px;
+  min-height: 88px;
 }
 
 #pmp-header .pmp-header__brand {
@@ -178,10 +178,10 @@
   text-decoration: none;
 }
 
-#pmp-header .pmp-header__logo-name {
+#pmp-header .pmp-header__logo {
   width: auto;
   max-width: none;
-  height: 38px;
+  height: 68px;
 }
 
 #pmp-header .pmp-header__mcontact {
@@ -361,7 +361,7 @@
 #pmp-header .pmp-header__toggle[aria-expanded="true"] .pmp-header__toggle-icon span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
 
 #pmp-header .pmp-header__panel {
-  max-height: calc(100vh - 122px);
+  max-height: calc(100vh - 146px);
   overflow-y: auto;
   padding: 8px 0 28px;
   background-color: var(--pmp-white);
@@ -454,8 +454,12 @@
     display: none;
   }
 
-  #pmp-header .pmp-header__logo-name {
-    height: 46px;
+  #pmp-header .pmp-header__bar {
+    min-height: 104px;
+  }
+
+  #pmp-header .pmp-header__logo {
+    height: 84px;
   }
 }
 
@@ -470,7 +474,11 @@
   }
 
   #pmp-header .pmp-header__bar {
-    min-height: 88px;
+    min-height: 120px;
+  }
+
+  #pmp-header .pmp-header__logo {
+    height: 100px;
   }
 }
 
