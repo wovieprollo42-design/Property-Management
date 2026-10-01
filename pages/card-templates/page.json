@@ -1,0 +1,20 @@
+{
+  "key": "card-templates",
+  "name": "Card templates",
+  "route": "/preview-card-templates",
+  "internal": true,
+  "title": "Card Templates (Internal Preview) | Property Management Professionals",
+  "description": "Internal design preview of listing and vacation property card templates. Not a public page.",
+  "productionRobots": "not published",
+  "inSitemap": false,
+  "mainAction": "Review card layouts",
+  "sections": [
+    "01-intro.html",
+    "../available-rentals/02-current-listings.html",
+    "../vacation-rentals/02-property-cards.html"
+  ],
+  "populate": {
+    "../available-rentals/02-current-listings.html": "../available-rentals/templates/listing-card.html",
+    "../vacation-rentals/02-property-cards.html": "../vacation-rentals/templates/property-card.html"
+  }
+}

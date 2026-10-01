@@ -1,0 +1,18 @@
+{
+  "key": "quote",
+  "name": "Management Quote",
+  "route": "/management-quote",
+  "title": "Request a Property Management Quote | East Central MN",
+  "description": "Tell us about your long-term or short-term rental in East Central Minnesota and discuss management services for your property.",
+  "productionRobots": "index, follow",
+  "inSitemap": true,
+  "mainAction": "Owner form",
+  "keywordTheme": "Property management quote; owner inquiry",
+  "supportingThemes": "Management consultation; rental management services; property-owner inquiry",
+  "sections": [
+    "01-intro.html",
+    "02-owner-form.html",
+    "03-what-happens-next.html",
+    "04-rental-instead.html"
+  ]
+}

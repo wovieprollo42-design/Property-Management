@@ -1,0 +1,90 @@
+<!--
+  AVAILABLE RENTALS · 03 HOW TO GET STARTED
+  Background: #E9EDE9 pale sage gray (data-bg="sage")
+  Layout: heading and prequalification button on the left; three numbered steps on the right, with
+          the "no guarantee" note directly under them.
+-->
+<section class="pmp pmp-sec" id="pmp-rentals-how-to-get-started" data-bg="sage" aria-labelledby="pmp-rentals-how-to-get-started-title">
+  <div class="pmp-wrap">
+    <div class="pmp-rentals-start__grid">
+      <div class="pmp-rentals-start__head">
+        <p class="pmp-eyebrow">Process</p>
+        <h2 id="pmp-rentals-how-to-get-started-title">How to get started</h2>
+        <a class="pmp-btn pmp-btn--primary pmp-rentals-start__btn" href="/rental-prequalification">Complete Rental Prequalification {{arrow}}</a>
+      </div>
+
+      <div>
+        <ol class="pmp-rentals-start__steps">
+          <li><span aria-hidden="true">1</span><p>Choose a property that interests you.</p></li>
+          <li><span aria-hidden="true">2</span><p>Complete preliminary prequalification.</p></li>
+          <li><span aria-hidden="true">3</span><p>Our team reviews your information and contacts you about showing availability and next steps.</p></li>
+        </ol>
+        <p class="pmp-rentals-start__note">Submitting information does not guarantee approval, a showing, or a reserved property.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-rentals-how-to-get-started .pmp-rentals-start__grid {
+  display: grid;
+  gap: 36px;
+}
+
+#pmp-rentals-how-to-get-started .pmp-rentals-start__btn {
+  margin-top: 28px;
+}
+
+#pmp-rentals-how-to-get-started .pmp-rentals-start__steps li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-rentals-how-to-get-started .pmp-rentals-start__steps li:first-child {
+  border-top: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-rentals-how-to-get-started .pmp-rentals-start__steps span {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  font-family: var(--pmp-font-head);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--pmp-navy);
+  background-color: var(--pmp-white);
+  border: 1px solid var(--pmp-gold);
+  border-radius: 50%;
+}
+
+#pmp-rentals-how-to-get-started .pmp-rentals-start__steps p {
+  padding-top: 7px;
+  font-family: var(--pmp-font-head);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--pmp-navy);
+}
+
+#pmp-rentals-how-to-get-started .pmp-rentals-start__note {
+  max-width: 34em;
+  margin-top: 20px;
+  padding: 14px 18px;
+  font-size: var(--pmp-text-sm);
+  color: var(--pmp-navy);
+  background-color: var(--pmp-white);
+  border-left: 2px solid var(--pmp-gold);
+}
+
+@media (min-width: 900px) {
+  #pmp-rentals-how-to-get-started .pmp-rentals-start__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(48px, 7vw, 104px);
+  }
+}
+</style>

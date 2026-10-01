@@ -1,0 +1,465 @@
+<!--
+  SHARED HEADER · used on every page and exported to exports/ghl/shared/header.html
+  Background: #FFFEFB warm white (data-bg="white")
+  Logo: no approved logo file yet, so the full business name is a text wordmark.
+        To use an approved logo later, replace the <span class="pmp-wordmark">...</span>
+        inside .pmp-header__brand with <img src="LOGO-URL" alt="Property Management Professionals" width="..." height="...">
+  Behavior (script below): Management Services dropdown, mobile menu, current-page marking.
+  Icons: {{arrow}} and {{caret}} are filled in by build.mjs.
+-->
+<header class="pmp pmp-header" id="pmp-header" data-bg="white">
+  <div class="pmp-wrap pmp-header__bar">
+    <a class="pmp-header__brand" href="/" aria-label="Property Management Professionals, home">
+      <span class="pmp-wordmark">
+        <span class="pmp-wordmark__top">Property Management</span>
+        <span class="pmp-wordmark__bottom">Professionals</span>
+      </span>
+    </a>
+
+    <nav class="pmp-header__nav" aria-label="Main">
+      <ul class="pmp-header__list">
+        <li><a class="pmp-header__link" href="/">Home</a></li>
+        <li class="pmp-header__item">
+          <button type="button" class="pmp-header__link pmp-header__menu-btn" aria-expanded="false" aria-controls="pmp-header-services">
+            Management Services {{caret}}
+          </button>
+          <div class="pmp-header__dropdown" id="pmp-header-services">
+            <ul>
+              <li>
+                <a class="pmp-header__drop-link" href="/long-term-rental-management">
+                  <span class="pmp-header__drop-title">Long-Term Rental Management</span>
+                  <span class="pmp-header__drop-text">Leasing, tenant communication, rent collection, and maintenance coordination</span>
+                </a>
+              </li>
+              <li>
+                <a class="pmp-header__drop-link" href="/short-term-rental-management">
+                  <span class="pmp-header__drop-title">Short-Term Rental Management</span>
+                  <span class="pmp-header__drop-text">Listings, guest communication, turnovers, and performance reviews</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li><a class="pmp-header__link" href="/available-rentals">Available Rentals</a></li>
+        <li><a class="pmp-header__link" href="/vacation-rentals">Vacation Rentals</a></li>
+        <li><a class="pmp-header__link" href="/about">About</a></li>
+        <li><a class="pmp-header__link" href="/faqs">FAQs</a></li>
+      </ul>
+    </nav>
+
+    <a class="pmp-btn pmp-btn--primary pmp-header__cta" href="/management-quote"><span>Request a <span class="pmp-header__cta-extra">Management </span>Quote</span></a>
+
+    <button type="button" class="pmp-header__toggle" aria-expanded="false" aria-controls="pmp-header-panel">
+      <span class="pmp-header__toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="pmp-header__toggle-label">Menu</span>
+    </button>
+  </div>
+
+  <div class="pmp-header__panel" id="pmp-header-panel" hidden>
+    <div class="pmp-wrap">
+      <nav aria-label="Main menu">
+        <ul class="pmp-header__mlist">
+          <li><a class="pmp-header__mlink" href="/">Home</a></li>
+          <li class="pmp-header__mgroup">
+            <span class="pmp-header__mlabel" id="pmp-header-mgroup">Management Services</span>
+            <ul aria-labelledby="pmp-header-mgroup">
+              <li><a class="pmp-header__mlink pmp-header__mlink--sub" href="/long-term-rental-management">Long-Term Rental Management</a></li>
+              <li><a class="pmp-header__mlink pmp-header__mlink--sub" href="/short-term-rental-management">Short-Term Rental Management</a></li>
+            </ul>
+          </li>
+          <li><a class="pmp-header__mlink" href="/available-rentals">Available Rentals</a></li>
+          <li><a class="pmp-header__mlink" href="/vacation-rentals">Vacation Rentals</a></li>
+          <li><a class="pmp-header__mlink" href="/about">About</a></li>
+          <li><a class="pmp-header__mlink" href="/faqs">FAQs</a></li>
+        </ul>
+        <a class="pmp-btn pmp-btn--primary pmp-header__mcta" href="/management-quote">Request a Management Quote {{arrow}}</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+#pmp-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--pmp-line);
+}
+
+#pmp-header .pmp-header__bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 76px;
+}
+
+#pmp-header .pmp-header__brand {
+  display: inline-flex;
+  margin-right: auto;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+#pmp-header .pmp-header__nav {
+  display: none;
+}
+
+#pmp-header .pmp-header__list {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+#pmp-header .pmp-header__item {
+  position: relative;
+}
+
+#pmp-header .pmp-header__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 10px 11px;
+  font-family: var(--pmp-font-head);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--pmp-navy);
+  text-decoration: none;
+  white-space: nowrap;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+#pmp-header .pmp-header__link::after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  bottom: 6px;
+  height: 2px;
+  background-color: var(--pmp-gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--pmp-dur) var(--pmp-ease);
+}
+
+#pmp-header .pmp-header__link:hover::after,
+#pmp-header .pmp-header__link[aria-current="page"]::after,
+#pmp-header .pmp-header__menu-btn.is-current::after,
+#pmp-header .pmp-header__item.is-open .pmp-header__menu-btn::after {
+  transform: scaleX(1);
+}
+
+#pmp-header .pmp-header__menu-btn svg {
+  width: 12px;
+  height: 12px;
+  transition: transform var(--pmp-dur) var(--pmp-ease);
+}
+
+#pmp-header .pmp-header__item.is-open .pmp-header__menu-btn svg {
+  transform: rotate(180deg);
+}
+
+#pmp-header .pmp-header__dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 60;
+  display: none;
+  width: 340px;
+  padding: 8px;
+  background-color: var(--pmp-white);
+  border: 1px solid var(--pmp-line);
+  border-top: 2px solid var(--pmp-gold);
+  border-radius: 0 0 var(--pmp-radius-lg) var(--pmp-radius-lg);
+  box-shadow: var(--pmp-shadow);
+}
+
+#pmp-header .pmp-header__item.is-open .pmp-header__dropdown {
+  display: block;
+}
+
+#pmp-header .pmp-header__drop-link {
+  display: block;
+  padding: 12px 14px;
+  border-radius: var(--pmp-radius);
+  text-decoration: none;
+  transition: background-color var(--pmp-dur) var(--pmp-ease);
+}
+
+#pmp-header .pmp-header__drop-link:hover,
+#pmp-header .pmp-header__drop-link[aria-current="page"] {
+  background-color: var(--pmp-ivory);
+}
+
+#pmp-header .pmp-header__drop-title {
+  display: block;
+  font-family: var(--pmp-font-head);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--pmp-navy);
+}
+
+#pmp-header .pmp-header__drop-text {
+  display: block;
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--pmp-slate);
+}
+
+#pmp-header .pmp-header__cta {
+  display: none;
+  min-height: 44px;
+  padding: 10px 18px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+#pmp-header .pmp-header__cta-extra {
+  display: none;
+}
+
+#pmp-header .pmp-header__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 14px;
+  font-family: var(--pmp-font-head);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--pmp-navy);
+  background-color: var(--pmp-white);
+  border: 1px solid var(--pmp-line-strong);
+  border-radius: var(--pmp-radius);
+  cursor: pointer;
+}
+
+#pmp-header .pmp-header__toggle-icon {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 12px;
+}
+
+#pmp-header .pmp-header__toggle-icon span {
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background-color: var(--pmp-navy);
+  transition: transform var(--pmp-dur) var(--pmp-ease), opacity var(--pmp-dur) var(--pmp-ease);
+}
+
+#pmp-header .pmp-header__toggle-icon span:nth-child(1) { top: 0; }
+#pmp-header .pmp-header__toggle-icon span:nth-child(2) { top: 5px; }
+#pmp-header .pmp-header__toggle-icon span:nth-child(3) { top: 10px; }
+
+#pmp-header .pmp-header__toggle[aria-expanded="true"] .pmp-header__toggle-icon span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+#pmp-header .pmp-header__toggle[aria-expanded="true"] .pmp-header__toggle-icon span:nth-child(2) { opacity: 0; }
+#pmp-header .pmp-header__toggle[aria-expanded="true"] .pmp-header__toggle-icon span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+
+#pmp-header .pmp-header__panel {
+  max-height: calc(100vh - 77px);
+  overflow-y: auto;
+  padding: 8px 0 28px;
+  background-color: var(--pmp-white);
+  border-top: 1px solid var(--pmp-line);
+}
+
+#pmp-header .pmp-header__panel[hidden] {
+  display: none;
+}
+
+#pmp-header .pmp-header__mlink {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 8px 0;
+  font-family: var(--pmp-font-head);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--pmp-navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--pmp-line);
+}
+
+#pmp-header .pmp-header__mlink[aria-current="page"] {
+  box-shadow: inset 3px 0 0 var(--pmp-gold);
+  padding-left: 14px;
+}
+
+#pmp-header .pmp-header__mgroup {
+  padding-top: 16px;
+  border-bottom: 1px solid var(--pmp-line);
+}
+
+#pmp-header .pmp-header__mlabel {
+  display: block;
+  font-family: var(--pmp-font-head);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pmp-bronze);
+}
+
+#pmp-header .pmp-header__mlink--sub {
+  min-height: 48px;
+  padding-left: 18px;
+  font-size: 17px;
+}
+
+#pmp-header .pmp-header__mgroup li:last-child .pmp-header__mlink--sub {
+  border-bottom: 0;
+}
+
+#pmp-header .pmp-header__mcta {
+  width: 100%;
+  margin-top: 24px;
+}
+
+@media (min-width: 440px) {
+  #pmp-header .pmp-header__cta {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 439px) {
+  #pmp-header .pmp-header__toggle-label {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 720px) {
+  #pmp-header .pmp-header__cta-extra {
+    display: inline;
+  }
+
+  #pmp-header .pmp-header__bar {
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1240px) {
+  #pmp-header .pmp-header__nav {
+    display: block;
+  }
+
+  #pmp-header .pmp-header__toggle,
+  #pmp-header .pmp-header__panel {
+    display: none;
+  }
+
+  #pmp-header .pmp-header__bar {
+    min-height: 84px;
+  }
+}
+</style>
+
+<script>
+(function () {
+  var root = document.getElementById('pmp-header');
+  if (!root || root.getAttribute('data-pmp-ready')) return;
+  root.setAttribute('data-pmp-ready', 'true');
+
+  /* Mark the current page. Works in the preview and on the GHL site. */
+  var here = (window.location.pathname.replace(/\/+$/, '') || '/').toLowerCase();
+  var links = root.querySelectorAll('a[href^="/"]');
+  for (var i = 0; i < links.length; i++) {
+    var a = links[i];
+    if (a.classList.contains('pmp-btn') || a.classList.contains('pmp-header__brand')) continue;
+    var target = (a.getAttribute('href').replace(/\/+$/, '') || '/').toLowerCase();
+    if (target === here) a.setAttribute('aria-current', 'page');
+  }
+
+  /* Management Services dropdown */
+  var item = root.querySelector('.pmp-header__item');
+  var btn = root.querySelector('.pmp-header__menu-btn');
+  var menu = root.querySelector('.pmp-header__dropdown');
+  if (menu.querySelector('[aria-current="page"]')) btn.classList.add('is-current');
+  var closeTimer = null;
+  var openedByHover = false;
+
+  function setMenu(open, focusFirst) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    item.classList.toggle('is-open', open);
+    if (!open) openedByHover = false;
+    if (open && focusFirst) menu.querySelector('a').focus();
+  }
+
+  btn.addEventListener('click', function () {
+    if (openedByHover) { openedByHover = false; return; }
+    setMenu(btn.getAttribute('aria-expanded') !== 'true');
+  });
+
+  btn.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown') { e.preventDefault(); setMenu(true, true); }
+  });
+
+  item.addEventListener('keydown', function (e) {
+    var menuLinks = menu.querySelectorAll('a');
+    var index = Array.prototype.indexOf.call(menuLinks, e.target);
+    if (e.key === 'Escape' && item.classList.contains('is-open')) {
+      setMenu(false);
+      btn.focus();
+    } else if (index > -1 && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+      e.preventDefault();
+      var next = e.key === 'ArrowDown' ? index + 1 : index - 1;
+      if (next < 0) { btn.focus(); return; }
+      menuLinks[Math.min(next, menuLinks.length - 1)].focus();
+    }
+  });
+
+  item.addEventListener('focusout', function (e) {
+    if (!item.contains(e.relatedTarget)) setMenu(false);
+  });
+
+  item.addEventListener('pointerenter', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    clearTimeout(closeTimer);
+    if (btn.getAttribute('aria-expanded') !== 'true') {
+      setMenu(true);
+      openedByHover = true;
+    }
+  });
+
+  item.addEventListener('pointerleave', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    closeTimer = setTimeout(function () {
+      if (!item.contains(document.activeElement)) setMenu(false);
+      else openedByHover = false;
+    }, 200);
+  });
+
+  /* Mobile and tablet menu */
+  var toggle = root.querySelector('.pmp-header__toggle');
+  var label = root.querySelector('.pmp-header__toggle-label');
+  var panel = root.querySelector('.pmp-header__panel');
+
+  function setPanel(open) {
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    label.textContent = open ? 'Close' : 'Menu';
+    panel.hidden = !open;
+  }
+
+  toggle.addEventListener('click', function () { setPanel(panel.hidden); });
+
+  root.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !panel.hidden) { setPanel(false); toggle.focus(); }
+  });
+
+  var desktop = window.matchMedia('(min-width: 1240px)');
+  var onChange = function (e) { if (e.matches) setPanel(false); };
+  if (desktop.addEventListener) desktop.addEventListener('change', onChange);
+  else if (desktop.addListener) desktop.addListener(onChange);
+})();
+</script>

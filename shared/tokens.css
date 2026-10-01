@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Property Management Professionals · Design tokens
+   --------------------------------------------------------------------------
+   Every token lives on the .pmp wrapper class, never on :root, so nothing
+   here can restyle other elements on a GHL page. Every section, the header
+   and the footer carry the .pmp class, so they all read these values.
+
+   Change a brand value here and it changes on every page and every export
+   after you run:  npm run build
+   ========================================================================== */
+
+.pmp {
+  /* Brand palette (Master Brief, sections 2 and 13) */
+  --pmp-navy: #172D3B;    /* headings, primary buttons, footer, emphasis   */
+  --pmp-ivory: #F8F5EC;   /* page and main sections                        */
+  --pmp-gold: #AD8950;    /* decorative only: lines, marks, focus on navy  */
+  --pmp-bronze: #70562B;  /* small accent text on light surfaces           */
+  --pmp-slate: #43535B;   /* body text                                     */
+  --pmp-white: #FFFEFB;   /* header, cards, reading areas                  */
+  --pmp-sage: #E9EDE9;    /* alternate sections and photo placeholders     */
+
+  /* Hairlines (navy or warm white at low opacity; borders only, never fills) */
+  --pmp-line: rgba(23, 45, 59, 0.16);
+  --pmp-line-strong: rgba(23, 45, 59, 0.34);
+  --pmp-line-light: rgba(255, 254, 251, 0.24);
+
+  /* Type families: Manrope for headings, navigation and buttons; DM Sans for body.
+     Arial is the fallback, so the layout holds if web fonts do not load. */
+  --pmp-font-head: "Manrope", Arial, sans-serif;
+  --pmp-font-body: "DM Sans", Arial, sans-serif;
+
+  /* Type scale. Each value slides between the mobile and desktop size in the brief. */
+  --pmp-text: clamp(16px, calc(14.6px + 0.36vw), 18px);      /* body 16 -> 18      */
+  --pmp-text-sm: clamp(14px, calc(13.3px + 0.18vw), 15px);   /* notes and labels   */
+  --pmp-lead: clamp(18px, calc(16.2px + 0.45vw), 21px);      /* intro paragraphs   */
+  --pmp-h1-home: clamp(36px, calc(24.5px + 2.95vw), 56px);   /* home H1 36 -> 56   */
+  --pmp-h1: clamp(32px, calc(25.4px + 1.7vw), 44px);         /* other H1 32 -> 44  */
+  --pmp-h2: clamp(26px, calc(22.7px + 0.85vw), 32px);        /* H2 26 -> 32        */
+  --pmp-h3: clamp(20px, calc(18.9px + 0.28vw), 22px);        /* H3 20 -> 22        */
+
+  /* 8 px spacing scale */
+  --pmp-s1: 8px;
+  --pmp-s2: 16px;
+  --pmp-s3: 24px;
+  --pmp-s4: 32px;
+  --pmp-s5: 40px;
+  --pmp-s6: 48px;
+  --pmp-s8: 64px;
+  --pmp-s10: 80px;
+
+  /* Layout */
+  --pmp-maxw: 1200px;                                        /* content width      */
+  --pmp-readw: 760px;                                        /* reading pages      */
+  --pmp-gutter: clamp(20px, calc(16px + 1.2vw), 32px);       /* side padding 20/32 */
+  --pmp-sec-pad: clamp(48px, calc(34px + 3.6vw), 88px);      /* section padding    */
+
+  /* Shape, depth and motion */
+  --pmp-radius: 4px;
+  --pmp-radius-lg: 6px;
+  --pmp-shadow: 0 1px 2px rgba(23, 45, 59, 0.06), 0 12px 32px -16px rgba(23, 45, 59, 0.22);
+  --pmp-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --pmp-dur: 180ms;
+
+  /* Breakpoints (documented here; CSS media queries cannot read variables):
+     600px  small tablet · 900px  split layouts · 1180px  full desktop navigation */
+}

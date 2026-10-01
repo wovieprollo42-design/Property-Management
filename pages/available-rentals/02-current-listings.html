@@ -1,0 +1,161 @@
+<!--
+  AVAILABLE RENTALS · 02 CURRENT LISTINGS
+  Background: #FFFEFB warm white (data-bg="white")
+  Layout: listing grid (two cards per row on desktop), or the honest empty state below when no
+          listing is approved. No current public listing is approved by the Master Brief.
+
+  TO ADD AN APPROVED LISTING
+  1. Copy templates/listing-card.html between the CARDS:START and CARDS:END markers, once per listing.
+  2. Replace every [bracketed] value with verified details, and swap the photo placeholder for the
+     approved image (1200 x 900 px, consistent 4:3 crop, honest alt text).
+  3. Delete everything between EMPTY:START and EMPTY:END.
+  Only verified, approved, currently available listings. Check availability and advertising approval in
+  DoorLoop and with Bob. Never copy the internal address roster here. Each listing's detail view also
+  needs verified fees, deposits, lease terms and requirements.
+  Preview the populated layout at /preview-card-templates.
+-->
+<section class="pmp pmp-sec" id="pmp-rentals-current-listings" data-bg="white" aria-labelledby="pmp-rentals-current-listings-title">
+  <div class="pmp-wrap">
+    <div class="pmp-rentals-list__layout">
+      <div class="pmp-rentals-list__head">
+        <h2 id="pmp-rentals-current-listings-title">Current rental listings</h2>
+        <p class="pmp-rentals-list__intro">Listings appear here once their details, rent, and availability are confirmed.</p>
+      </div>
+
+      <ul class="pmp-rentals-list__grid">
+        <!-- CARDS:START -->
+        <!-- CARDS:END -->
+      </ul>
+
+      <!-- EMPTY:START -->
+      <div class="pmp-rentals-list__empty pmp-marks">
+        <svg class="pmp-rentals-list__drawing" viewBox="0 0 120 80" width="120" height="80" aria-hidden="true" focusable="false">
+          <path d="M10 76h100M22 76V38L60 12l38 26v38M50 76V54h20v22M30 44h12v10H30zM78 44h12v10H78z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        <p class="pmp-rentals-list__empty-title">We do not have any available long-term rentals listed right now.</p>
+        <p>Please check back for updates.</p>
+      </div>
+      <!-- EMPTY:END -->
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-rentals-current-listings .pmp-rentals-list__layout {
+  display: grid;
+  gap: 28px;
+}
+
+#pmp-rentals-current-listings .pmp-rentals-list__intro {
+  max-width: 26em;
+  margin-top: 12px;
+}
+
+#pmp-rentals-current-listings .pmp-rentals-list__grid {
+  display: grid;
+  gap: 40px;
+}
+
+#pmp-rentals-current-listings .pmp-rentals-list__grid:empty {
+  display: none;
+}
+
+#pmp-rentals-current-listings .pmp-listing {
+  display: grid;
+  background-color: var(--pmp-white);
+  border: 1px solid var(--pmp-line);
+  border-radius: var(--pmp-radius);
+}
+
+#pmp-rentals-current-listings .pmp-listing .pmp-ph,
+#pmp-rentals-current-listings .pmp-listing .pmp-photo {
+  border: 0;
+  border-bottom: 1px solid var(--pmp-line);
+}
+
+#pmp-rentals-current-listings .pmp-listing__body {
+  padding: 24px clamp(20px, 3vw, 28px) 28px;
+}
+
+#pmp-rentals-current-listings .pmp-listing__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin-top: 12px;
+  font-family: var(--pmp-font-head);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--pmp-navy);
+}
+
+#pmp-rentals-current-listings .pmp-listing__terms {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 14px 0;
+  border-block: 1px solid var(--pmp-line);
+}
+
+#pmp-rentals-current-listings .pmp-listing__terms div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+#pmp-rentals-current-listings .pmp-listing__terms dt {
+  min-width: 7.5em;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--pmp-slate);
+}
+
+#pmp-rentals-current-listings .pmp-listing__terms dd {
+  font-family: var(--pmp-font-head);
+  font-weight: 600;
+  color: var(--pmp-navy);
+}
+
+#pmp-rentals-current-listings .pmp-listing__feature {
+  margin: 16px 0 24px;
+}
+
+#pmp-rentals-current-listings .pmp-rentals-list__empty {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  padding: clamp(32px, 5vw, 56px);
+  background-color: var(--pmp-ivory);
+  border: 1px solid var(--pmp-line);
+}
+
+#pmp-rentals-current-listings .pmp-rentals-list__drawing {
+  width: 96px;
+  height: 64px;
+  margin-bottom: 12px;
+  color: var(--pmp-gold);
+}
+
+#pmp-rentals-current-listings .pmp-rentals-list__empty-title {
+  max-width: 24em;
+  font-family: var(--pmp-font-head);
+  font-size: clamp(20px, calc(17.6px + 0.6vw), 24px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--pmp-navy);
+}
+
+@media (min-width: 900px) {
+  #pmp-rentals-current-listings .pmp-rentals-list__layout {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: clamp(48px, 7vw, 104px);
+    row-gap: 36px;
+    align-items: start;
+  }
+
+  #pmp-rentals-current-listings .pmp-rentals-list__grid {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 48px;
+  }
+}
+</style>

@@ -1,0 +1,86 @@
+/* ==========================================================================
+   PREVIEW ONLY · page shell for the local design preview
+   --------------------------------------------------------------------------
+   These page-level rules (html, body, skip link, preview notice bar) are NOT
+   part of the GHL exports. GHL controls its own page shell.
+   ========================================================================== */
+
+html {
+  scroll-padding-top: 100px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F8F5EC;
+}
+
+body {
+  min-width: 320px;
+}
+
+main:focus {
+  outline: none;
+}
+
+/* Skip link: hidden until a keyboard user tabs to it */
+.pmp-skip {
+  position: absolute;
+  top: -200px;
+  left: 16px;
+  z-index: 100;
+  padding: 12px 18px;
+  font: 600 15px/1.2 "Manrope", Arial, sans-serif;
+  color: #FFFEFB;
+  background-color: #172D3B;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.pmp-skip:focus {
+  top: 12px;
+  outline: 2px solid #AD8950;
+  outline-offset: 2px;
+}
+
+/* Preview notice bar: tells reviewers this is not the published site */
+.pmp-preview-bar {
+  margin: 0;
+  padding: 8px 20px;
+  font: 500 13px/1.45 "DM Sans", Arial, sans-serif;
+  color: #43535B;
+  text-align: center;
+  background-color: #E9EDE9;
+  border-bottom: 1px dashed #AD8950;
+}
+
+.pmp-preview-bar strong {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #70562B;
+  margin-right: 6px;
+}
+
+.pmp-preview-bar a {
+  color: #172D3B;
+  font-weight: 600;
+  text-underline-offset: 3px;
+  text-decoration-color: #AD8950;
+}
+
+.pmp-preview-bar a:focus-visible {
+  outline: 2px solid #172D3B;
+  outline-offset: 2px;
+}

@@ -1,0 +1,79 @@
+<!--
+  FAQS · 01 INTRO
+  Background: #F8F5EC ivory (data-bg="ivory")
+  Layout: heading, introduction and jump links on the left; an optional small property photo on the
+          right. The page stays easy to scan without the photo: delete the media block if none is approved.
+  Photo slot: faqs-intro · source 1000 x 750 px · ratio 4:3 (optional)
+  Replace the placeholder with:
+    <img class="pmp-photo pmp-photo--4x3" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL PROPERTY DETAIL"
+         width="1000" height="750" decoding="async">
+-->
+<section class="pmp pmp-sec" id="pmp-faqs-intro" data-bg="ivory" aria-labelledby="pmp-faqs-intro-title">
+  <div class="pmp-wrap">
+    <div class="pmp-faqs-intro__grid">
+      <div class="pmp-faqs-intro__copy">
+        <p class="pmp-eyebrow">FAQs</p>
+        <h1 id="pmp-faqs-intro-title">Property management questions, answered</h1>
+        <p class="pmp-lead">Here are the questions owners and renters often ask before taking the next step. If your property has a particular need, send us the details.</p>
+        <nav class="pmp-faqs-intro__jump" aria-label="Question groups">
+          <a class="pmp-textlink" href="#pmp-faqs-owner-questions">Questions from property owners {{arrow}}</a>
+          <a class="pmp-textlink" href="#pmp-faqs-renter-questions">Questions about rentals {{arrow}}</a>
+        </nav>
+      </div>
+
+      <div class="pmp-faqs-intro__media pmp-marks">
+        <div class="pmp-ph pmp-ph--4x3" data-photo-slot="faqs-intro">
+          <p class="pmp-ph__label">
+            <span class="pmp-ph__tag">INSERT PHOTO</span>
+            <span class="pmp-ph__desc">Optional small image of an actual property.</span>
+            <span class="pmp-ph__spec">Source 1000 × 750 px · Display ratio 4:3 · Crop: one clear detail or exterior.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-faqs-intro {
+  padding-top: clamp(40px, calc(18px + 4.4vw), 80px);
+}
+
+#pmp-faqs-intro .pmp-faqs-intro__grid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+#pmp-faqs-intro .pmp-faqs-intro__copy h1 {
+  max-width: 13em;
+}
+
+#pmp-faqs-intro .pmp-faqs-intro__copy .pmp-lead {
+  max-width: 32em;
+  margin-top: 20px;
+}
+
+#pmp-faqs-intro .pmp-faqs-intro__jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+  margin-top: 24px;
+}
+
+#pmp-faqs-intro .pmp-faqs-intro__media {
+  max-width: 460px;
+}
+
+@media (min-width: 900px) {
+  #pmp-faqs-intro .pmp-faqs-intro__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: clamp(48px, 7vw, 104px);
+  }
+
+  #pmp-faqs-intro .pmp-faqs-intro__media {
+    justify-self: end;
+    width: 100%;
+  }
+}
+</style>

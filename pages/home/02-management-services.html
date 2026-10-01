@@ -1,0 +1,120 @@
+<!--
+  HOME · 02 MANAGEMENT SERVICES (two ways we help owners)
+  Background: #FFFEFB warm white (data-bg="white")
+  Layout: two-service comparison. On desktop the columns are staggered around a center hairline:
+          short-term sits beside the heading, long-term sits below it.
+  Photo slots: home-long-term, home-short-term · source 1200 x 900 px · ratio 4:3 each
+  Replace each placeholder with:
+    <img class="pmp-photo pmp-photo--4x3" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL PROPERTY"
+         width="1200" height="900" loading="lazy" decoding="async">
+-->
+<section class="pmp pmp-sec" id="pmp-home-management-services" data-bg="white" aria-labelledby="pmp-home-management-services-title">
+  <div class="pmp-wrap">
+    <div class="pmp-home-services__grid">
+      <div class="pmp-home-services__head">
+        <p class="pmp-eyebrow">Two ways we help owners</p>
+        <h2 id="pmp-home-management-services-title">Management that fits your rental</h2>
+      </div>
+
+      <div class="pmp-home-services__option pmp-home-services__option--long">
+        <div class="pmp-marks">
+          <div class="pmp-ph pmp-ph--4x3" data-photo-slot="home-long-term">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">An actual residential long-term rental, exterior or bright interior.</span>
+              <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the whole home or main room in frame. Confirm property type and photo permission.</span>
+            </p>
+          </div>
+        </div>
+        <div class="pmp-home-services__body">
+          <p class="pmp-home-services__kicker"><span>01</span>For long-term rental owners</p>
+          <h3>Long-term rentals</h3>
+          <p>Help with rental marketing, leasing steps, tenant communication, rent collection, reporting, and maintenance coordination within the agreed scope.</p>
+          <a class="pmp-btn pmp-btn--secondary" href="/long-term-rental-management">Explore Long-Term Management {{arrow}}</a>
+        </div>
+      </div>
+
+      <div class="pmp-home-services__option pmp-home-services__option--short">
+        <div class="pmp-marks">
+          <div class="pmp-ph pmp-ph--4x3" data-photo-slot="home-short-term">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">An actual vacation rental, exterior or inviting living space.</span>
+              <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the whole home or main room in frame. Confirm property type and photo permission.</span>
+            </p>
+          </div>
+        </div>
+        <div class="pmp-home-services__body">
+          <p class="pmp-home-services__kicker"><span>02</span>For vacation rental owners</p>
+          <h3>Short-term rentals</h3>
+          <p>Help coordinating listings, guest communication, cleaning, property needs, and performance reviews within the agreed scope.</p>
+          <a class="pmp-btn pmp-btn--secondary" href="/short-term-rental-management">Explore Short-Term Management {{arrow}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-home-management-services .pmp-home-services__grid {
+  display: grid;
+  gap: 56px;
+}
+
+#pmp-home-management-services .pmp-home-services__head h2 {
+  max-width: 14em;
+}
+
+#pmp-home-management-services .pmp-home-services__body {
+  margin-top: 32px;
+}
+
+#pmp-home-management-services .pmp-home-services__kicker {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-family: var(--pmp-font-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pmp-bronze);
+}
+
+#pmp-home-management-services .pmp-home-services__kicker span {
+  padding-right: 12px;
+  border-right: 1px solid var(--pmp-gold);
+}
+
+#pmp-home-management-services .pmp-home-services__body p:not(.pmp-home-services__kicker) {
+  max-width: 34em;
+  margin: 12px 0 24px;
+}
+
+@media (min-width: 900px) {
+  #pmp-home-management-services .pmp-home-services__grid {
+    position: relative;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "head short"
+      "long short";
+    column-gap: clamp(56px, 8vw, 112px);
+    row-gap: 56px;
+  }
+
+  #pmp-home-management-services .pmp-home-services__grid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: var(--pmp-line);
+  }
+
+  #pmp-home-management-services .pmp-home-services__head { grid-area: head; align-self: end; }
+  #pmp-home-management-services .pmp-home-services__option--long { grid-area: long; }
+  #pmp-home-management-services .pmp-home-services__option--short { grid-area: short; }
+}
+</style>

@@ -1,0 +1,74 @@
+<!--
+  FAQS · 04 NEXT STEPS
+  Background: #F8F5EC ivory (data-bg="ivory")
+  Layout: three columns separated by hairlines, one next step per audience (owner, renter, guest).
+-->
+<section class="pmp pmp-sec" id="pmp-faqs-next-steps" data-bg="ivory" aria-labelledby="pmp-faqs-next-steps-title">
+  <div class="pmp-wrap">
+    <h2 id="pmp-faqs-next-steps-title">Find your next step</h2>
+    <ul class="pmp-faqs-next__list">
+      <li>
+        <p class="pmp-faqs-next__who">Property owners</p>
+        <a class="pmp-btn pmp-btn--primary" href="/management-quote">Ask About Management {{arrow}}</a>
+      </li>
+      <li>
+        <p class="pmp-faqs-next__who">Long-term renters</p>
+        <a class="pmp-btn pmp-btn--secondary" href="/available-rentals">View Available Rentals {{arrow}}</a>
+      </li>
+      <li>
+        <p class="pmp-faqs-next__who">Vacation guests</p>
+        <a class="pmp-btn pmp-btn--secondary" href="/vacation-rentals">Explore Vacation Rentals {{arrow}}</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+#pmp-faqs-next-steps .pmp-faqs-next__list {
+  display: grid;
+  margin-top: 28px;
+  border-top: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-faqs-next-steps .pmp-faqs-next__list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-faqs-next-steps .pmp-faqs-next__who {
+  font-family: var(--pmp-font-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pmp-bronze);
+}
+
+@media (max-width: 599px) {
+  #pmp-faqs-next-steps .pmp-faqs-next__list li .pmp-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  #pmp-faqs-next-steps .pmp-faqs-next__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-bottom: 1px solid var(--pmp-line-strong);
+  }
+
+  #pmp-faqs-next-steps .pmp-faqs-next__list li {
+    padding: 28px 28px 32px;
+    border-bottom: 0;
+    border-left: 1px solid var(--pmp-line-strong);
+  }
+
+  #pmp-faqs-next-steps .pmp-faqs-next__list li:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+</style>

@@ -1,0 +1,68 @@
+<!--
+  ABOUT · 04 RELATED BUSINESS AND CALL TO ACTION
+  Background: #F8F5EC ivory (data-bg="ivory") holding a #172D3B navy panel
+  Layout: left, the note about the separate maintenance business with its outbound link;
+          right, a navy panel with the owner call to action and links to both service pages.
+  External link: Property Maintenance Professionals, https://www.propertymaintenanceprofessionals.net/
+  (a separate business and website; it opens in a new tab).
+-->
+<section class="pmp pmp-sec" id="pmp-about-related-business-and-cta" data-bg="ivory" aria-label="Maintenance support and next step">
+  <div class="pmp-wrap">
+    <div class="pmp-about-cta__grid">
+      <div class="pmp-about-cta__maint">
+        <p class="pmp-eyebrow">Related business</p>
+        <h2>Management and maintenance support</h2>
+        <p class="pmp-about-cta__text">We coordinate property needs within the management agreement. For separate repair and remodeling services, explore Property Maintenance Professionals.</p>
+        <a class="pmp-btn pmp-btn--secondary" href="https://www.propertymaintenanceprofessionals.net/" target="_blank" rel="noopener">Explore Maintenance Services {{external}}<span class="pmp-sr"> (opens in a new tab)</span></a>
+      </div>
+
+      <div class="pmp-about-cta__panel pmp-dark pmp-marks">
+        <h2>Tell us what you need help managing</h2>
+        <p class="pmp-about-cta__text">Share your property location, rental type, and goals so we can discuss the next step.</p>
+        <a class="pmp-btn pmp-btn--light" href="/management-quote">Request a Management Quote {{arrow}}</a>
+        <ul class="pmp-about-cta__links">
+          <li><a class="pmp-textlink" href="/long-term-rental-management">Explore Long-Term Management {{arrow}}</a></li>
+          <li><a class="pmp-textlink" href="/short-term-rental-management">Explore Short-Term Management {{arrow}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-about-related-business-and-cta .pmp-about-cta__grid {
+  display: grid;
+  gap: 48px;
+}
+
+#pmp-about-related-business-and-cta .pmp-about-cta__text {
+  max-width: 32em;
+  margin: 16px 0 28px;
+}
+
+#pmp-about-related-business-and-cta .pmp-about-cta__maint {
+  align-self: center;
+}
+
+#pmp-about-related-business-and-cta .pmp-about-cta__panel {
+  padding: clamp(32px, 5vw, 56px);
+  border-radius: var(--pmp-radius);
+}
+
+#pmp-about-related-business-and-cta .pmp-about-cta__panel .pmp-about-cta__text {
+  color: var(--pmp-white);
+}
+
+#pmp-about-related-business-and-cta .pmp-about-cta__links {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--pmp-line-light);
+}
+
+@media (min-width: 900px) {
+  #pmp-about-related-business-and-cta .pmp-about-cta__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(48px, 7vw, 104px);
+  }
+}
+</style>

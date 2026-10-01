@@ -1,0 +1,13 @@
+{
+  "key": "not-found",
+  "name": "Page not found (404)",
+  "route": "/404",
+  "title": "Page Not Found | Property Management Professionals",
+  "description": "The page you were looking for could not be found. Visit the home page or request a management quote.",
+  "productionRobots": "noindex",
+  "inSitemap": false,
+  "mainAction": "Back to Home",
+  "sections": [
+    "01-message.html"
+  ]
+}

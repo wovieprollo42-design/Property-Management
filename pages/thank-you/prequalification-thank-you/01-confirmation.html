@@ -1,0 +1,64 @@
+<!--
+  APPLICANT THANK YOU · 01 CONFIRMATION
+  Background: #F8F5EC ivory (data-bg="ivory")
+  Layout: calm, single confirmation panel. No image needed.
+  Show this page only as the applicant form's redirect after a successful submission, never from a
+  button. Keep it out of navigation and set it to noindex.
+-->
+<section class="pmp pmp-sec" id="pmp-ty-applicant-confirmation" data-bg="ivory" aria-labelledby="pmp-ty-applicant-confirmation-title">
+  <div class="pmp-wrap">
+    <div class="pmp-ty-applicant__panel pmp-marks">
+      <svg class="pmp-ty-applicant__mark" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
+        <rect x="1" y="1" width="46" height="46" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M14 24.5l7 7 13-15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="pmp-eyebrow">Prequalification received</p>
+      <h1 id="pmp-ty-applicant-confirmation-title">Your preliminary prequalification has been received</h1>
+      <p class="pmp-lead pmp-ty-applicant__text">Thank you for sending your information. Our team will review it and contact you about showing availability and next steps for the property you selected.</p>
+      <p class="pmp-ty-applicant__note">This confirmation does not mean you have been approved, scheduled for a showing, or assigned a reserved property.</p>
+      <div class="pmp-btns pmp-ty-applicant__actions">
+        <a class="pmp-btn pmp-btn--primary" href="/available-rentals">View Available Rentals {{arrow}}</a>
+        <a class="pmp-btn pmp-btn--secondary" href="/">Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-ty-applicant-confirmation {
+  padding-block: clamp(56px, calc(32px + 6vw), 120px);
+}
+
+#pmp-ty-applicant-confirmation .pmp-ty-applicant__panel {
+  max-width: 820px;
+  padding: clamp(28px, 5vw, 56px);
+  background-color: var(--pmp-white);
+  border: 1px solid var(--pmp-line);
+}
+
+#pmp-ty-applicant-confirmation .pmp-ty-applicant__mark {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  color: var(--pmp-gold);
+}
+
+#pmp-ty-applicant-confirmation .pmp-ty-applicant__text {
+  max-width: 32em;
+  margin-top: 20px;
+}
+
+#pmp-ty-applicant-confirmation .pmp-ty-applicant__note {
+  max-width: 34em;
+  margin-top: 16px;
+  padding: 12px 16px;
+  font-size: var(--pmp-text-sm);
+  color: var(--pmp-navy);
+  background-color: var(--pmp-ivory);
+  border-left: 2px solid var(--pmp-gold);
+}
+
+#pmp-ty-applicant-confirmation .pmp-ty-applicant__actions {
+  margin-top: 32px;
+}
+</style>

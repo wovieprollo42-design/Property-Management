@@ -1,0 +1,51 @@
+<!--
+  VACATION RENTALS · 04 OPTIONAL GUEST UPDATES
+  Background: #F8F5EC ivory (data-bg="ivory")
+  Layout: text on the left, the guest signup slot on the right.
+
+  SIGNUP SLOT (data-slot="guest-email-signup"): a separate guest email signup form, added only when
+  sender identity and unsubscribe handling are ready. Consent is stored separately (source, timestamp,
+  wording/version, withdrawal status). Suggested inline success message for the form itself:
+  "Thanks for signing up. We'll send the vacation rental updates you chose. You can unsubscribe at any time."
+  If the signup is not ready at launch, remove this whole section rather than showing an empty slot.
+-->
+<section class="pmp pmp-sec" id="pmp-vacation-guest-updates" data-bg="ivory" aria-labelledby="pmp-vacation-guest-updates-title">
+  <div class="pmp-wrap">
+    <div class="pmp-vacation-updates__grid">
+      <div>
+        <p class="pmp-eyebrow">Optional guest updates</p>
+        <h2 id="pmp-vacation-guest-updates-title">Hear about future stays</h2>
+        <p class="pmp-vacation-updates__text">Interested in occasional vacation rental updates and seasonal offers? Sign up for the updates you choose.</p>
+      </div>
+
+      <div class="pmp-slot" data-slot="guest-email-signup">
+        <p class="pmp-slot__tag">Signup slot · not connected</p>
+        <p class="pmp-slot__title">Separate guest email signup form</p>
+        <ul class="pmp-slot__notes">
+          <li>Added only when sender identity and unsubscribe handling are ready.</li>
+          <li>Separate from the owner and applicant forms; guests choose which updates they receive.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-vacation-guest-updates .pmp-vacation-updates__grid {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+
+#pmp-vacation-guest-updates .pmp-vacation-updates__text {
+  max-width: 30em;
+  margin-top: 16px;
+}
+
+@media (min-width: 900px) {
+  #pmp-vacation-guest-updates .pmp-vacation-updates__grid {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+    gap: clamp(48px, 7vw, 104px);
+  }
+}
+</style>

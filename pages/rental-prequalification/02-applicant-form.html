@@ -1,0 +1,46 @@
+<!--
+  RENTAL PREQUALIFICATION · 02 APPLICANT FORM
+  Background: #FFFEFB warm white (data-bg="white")
+  Layout: one comfortable reading column with the applicant form slot.
+
+  FORM SLOT (data-slot="applicant-form"): a SEPARATE applicant form goes here. It is not the owner form.
+  - The previously supplied GHL form (ID recorded in docs/launch-checklist.md) must be inspected and
+    approved before it is embedded. If Bob selects a DoorLoop preliminary form instead, use that
+    approved destination.
+  - Keep the form's own submit button. Do not add a separate page-level submit button.
+  - After testing, successful submissions go to /prequalification-thank-you.
+  - Before launch, Bob and a qualified housing reviewer check the form's questions (children, local
+    origin, criminal/eviction history, fees, move-in funds) against actual policy and applicable rules,
+    and every policy link in the form points at an approved page. The certification checkbox is not an
+    SMS marketing opt-in. Screening details stay out of sales and guest campaigns.
+  In GHL: replace the whole <div class="pmp-slot" data-slot="applicant-form">...</div> block with the
+  approved form element or embed. See docs/installation-guide.md.
+-->
+<section class="pmp pmp-sec" id="pmp-prequal-applicant-form" data-bg="white" aria-labelledby="pmp-prequal-applicant-form-title">
+  <div class="pmp-wrap">
+    <div class="pmp-read pmp-prequal-form__col">
+      <h2 id="pmp-prequal-applicant-form-title">Complete your preliminary prequalification</h2>
+
+      <div class="pmp-slot pmp-prequal-form__slot" data-slot="applicant-form">
+        <p class="pmp-slot__tag">Form slot · not connected</p>
+        <p class="pmp-slot__title">Applicant prequalification form</p>
+        <p class="pmp-prequal-form__desc">The approved applicant form will appear here: either the existing GHL form after it has been reviewed, or a DoorLoop preliminary form if Bob selects one. This preview does not collect or send anything.</p>
+        <ul class="pmp-slot__notes">
+          <li>Separate from the owner quote form; applicant details never enter owner or guest campaigns.</li>
+          <li>The form keeps its own submit button. There is no extra page-level button.</li>
+          <li>After a successful test submission, the form leads to <code>/prequalification-thank-you</code>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-prequal-applicant-form .pmp-prequal-form__slot {
+  margin-top: 28px;
+}
+
+#pmp-prequal-applicant-form .pmp-prequal-form__desc {
+  margin-top: 8px;
+}
+</style>

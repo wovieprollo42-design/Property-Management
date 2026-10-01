@@ -1,0 +1,57 @@
+<!--
+  ABOUT · 02 LEADERSHIP
+  Background: #FFFEFB warm white (data-bg="white")
+  Layout: portrait on the left, text on the right.
+  Photo slot: about-bob-portrait · source 800 x 1000 px · ratio 4:5
+  Alt text: "Bob Blaisdell" plus his confirmed public title.
+  Identity check: confirm Bob's preferred public title and the exact legal / DBA relationship before
+  adding either to this section. No title is shown until then.
+  Replace the placeholder with:
+    <img class="pmp-photo pmp-photo--4x5" src="PHOTO-URL" alt="Bob Blaisdell, CONFIRMED TITLE"
+         width="800" height="1000" loading="lazy" decoding="async">
+-->
+<section class="pmp pmp-sec" id="pmp-about-leadership" data-bg="white" aria-labelledby="pmp-about-leadership-title">
+  <div class="pmp-wrap">
+    <div class="pmp-about-lead__grid">
+      <div class="pmp-about-lead__media pmp-marks">
+        <div class="pmp-ph pmp-ph--4x5" data-photo-slot="about-bob-portrait">
+          <p class="pmp-ph__label">
+            <span class="pmp-ph__tag">INSERT PHOTO</span>
+            <span class="pmp-ph__desc">Bob Blaisdell’s approved professional portrait.</span>
+            <span class="pmp-ph__spec">Source 800 × 1000 px · Display ratio 4:5 · Crop: keep face and shoulders comfortably framed.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="pmp-about-lead__copy">
+        <p class="pmp-eyebrow">Leadership</p>
+        <h2 id="pmp-about-leadership-title">Led by Bob Blaisdell</h2>
+        <p class="pmp-lead">Bob leads the business with a focus on property ownership, management, and ongoing property care. The goal is practical support with clear responsibilities for every property.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-about-leadership .pmp-about-lead__grid {
+  display: grid;
+  gap: 40px;
+}
+
+#pmp-about-leadership .pmp-about-lead__media {
+  max-width: 420px;
+}
+
+#pmp-about-leadership .pmp-about-lead__copy .pmp-lead {
+  max-width: 30em;
+  margin-top: 20px;
+}
+
+@media (min-width: 900px) {
+  #pmp-about-leadership .pmp-about-lead__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    gap: clamp(48px, 8vw, 120px);
+    align-items: center;
+  }
+}
+</style>

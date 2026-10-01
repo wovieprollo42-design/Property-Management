@@ -1,0 +1,68 @@
+<!--
+  RENTAL PREQUALIFICATION · 01 INTRO
+  Background: #F8F5EC ivory (data-bg="ivory")
+  Layout: heading and introduction on the left; a warm white "have this ready" panel on the right.
+  This page is for renters only. It is separate from the owner quote page.
+-->
+<section class="pmp pmp-sec" id="pmp-prequal-intro" data-bg="ivory" aria-labelledby="pmp-prequal-intro-title">
+  <div class="pmp-wrap">
+    <div class="pmp-prequal-intro__grid">
+      <div>
+        <p class="pmp-eyebrow">Rental prequalification</p>
+        <h1 id="pmp-prequal-intro-title">Interested in renting one of our properties?</h1>
+        <p class="pmp-lead pmp-prequal-intro__lead">Complete the preliminary prequalification form below. Once we review your information, we’ll contact you about showing availability and next steps.</p>
+      </div>
+
+      <div class="pmp-prequal-intro__ready pmp-marks">
+        <p class="pmp-prequal-intro__ready-title">Have this information ready</p>
+        <ul class="pmp-checklist">
+          <li>The property name or address</li>
+          <li>Your desired move-in date</li>
+          <li>The requested rental and employment information</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-prequal-intro {
+  padding-top: clamp(40px, calc(18px + 4.4vw), 80px);
+}
+
+#pmp-prequal-intro .pmp-prequal-intro__grid {
+  display: grid;
+  gap: 40px;
+  align-items: end;
+}
+
+#pmp-prequal-intro h1 {
+  max-width: 13em;
+}
+
+#pmp-prequal-intro .pmp-prequal-intro__lead {
+  max-width: 32em;
+  margin-top: 20px;
+}
+
+#pmp-prequal-intro .pmp-prequal-intro__ready {
+  padding: 28px;
+  background-color: var(--pmp-white);
+  border: 1px solid var(--pmp-line);
+}
+
+#pmp-prequal-intro .pmp-prequal-intro__ready-title {
+  margin-bottom: 16px;
+  font-family: var(--pmp-font-head);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--pmp-navy);
+}
+
+@media (min-width: 900px) {
+  #pmp-prequal-intro .pmp-prequal-intro__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(48px, 7vw, 104px);
+  }
+}
+</style>

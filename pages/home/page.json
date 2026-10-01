@@ -1,0 +1,19 @@
+{
+  "key": "home",
+  "name": "Home",
+  "route": "/",
+  "title": "Property Management in East Central Minnesota",
+  "description": "Property management for long-term and short-term rentals in East Central Minnesota. Tell us about your property and request a management quote.",
+  "productionRobots": "index, follow",
+  "inSitemap": true,
+  "mainAction": "Request a Management Quote",
+  "keywordTheme": "Property management in East Central Minnesota; owner overview",
+  "supportingThemes": "Rental property management; long-term management; vacation rental management",
+  "sections": [
+    "01-hero.html",
+    "02-management-services.html",
+    "03-owner-approach.html",
+    "04-getting-started.html",
+    "05-other-visitor-paths.html"
+  ]
+}

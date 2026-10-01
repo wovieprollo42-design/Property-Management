@@ -1,0 +1,18 @@
+{
+  "key": "str",
+  "name": "Short-Term Rental Management",
+  "route": "/short-term-rental-management",
+  "title": "Short-Term Rental Management | East Central Minnesota",
+  "description": "Get support with vacation rental listings, guest communication, pricing, and turnovers in East Central Minnesota. Discuss your property with our team.",
+  "productionRobots": "index, follow",
+  "inSitemap": true,
+  "mainAction": "Owner quote",
+  "keywordTheme": "Short-term rental management in East Central Minnesota; owner services",
+  "supportingThemes": "Vacation rental management; guest communication; turnover coordination",
+  "sections": [
+    "01-hero.html",
+    "02-service-scope.html",
+    "03-plan-and-guest-experience.html",
+    "04-final-action.html"
+  ]
+}

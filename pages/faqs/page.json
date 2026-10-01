@@ -1,0 +1,18 @@
+{
+  "key": "faqs",
+  "name": "FAQs",
+  "route": "/faqs",
+  "title": "Property Management FAQs | Property Management Professionals",
+  "description": "Answers about rental management services, fees, maintenance, owner inquiries, and rental prequalification in East Central Minnesota.",
+  "productionRobots": "index, follow",
+  "inSitemap": true,
+  "mainAction": "Owner quote",
+  "keywordTheme": "Property management questions; owner and visitor guidance",
+  "supportingThemes": "Management fees; service area; rental management process",
+  "sections": [
+    "01-intro.html",
+    "02-owner-questions.html",
+    "03-renter-questions.html",
+    "04-next-steps.html"
+  ]
+}

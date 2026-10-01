@@ -1,0 +1,128 @@
+<!--
+  LONG-TERM RENTAL MANAGEMENT · 02 SERVICE SCOPE
+  Background: #FFFEFB warm white (data-bg="white")
+  Layout: a numbered specification list on the right; the heading and a property-care photo stay
+          in view on the left while the list scrolls (desktop only).
+  Photo slot: long-term-property-care · source 1200 x 900 px · ratio 4:3
+  Choose a genuine turnover or property-care scene rather than staged paperwork.
+  Replace the placeholder with:
+    <img class="pmp-photo pmp-photo--4x3" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL SCENE"
+         width="1200" height="900" loading="lazy" decoding="async">
+  Scope note: do not describe standalone tenant placement as a package until Bob confirms it.
+-->
+<section class="pmp pmp-sec" id="pmp-ltr-service-scope" data-bg="white" aria-labelledby="pmp-ltr-service-scope-title">
+  <div class="pmp-wrap">
+    <div class="pmp-ltr-scope__grid">
+      <div class="pmp-ltr-scope__aside">
+        <p class="pmp-eyebrow">Service scope</p>
+        <h2 id="pmp-ltr-service-scope-title">Support throughout the rental cycle</h2>
+        <div class="pmp-ltr-scope__media pmp-marks">
+          <div class="pmp-ph pmp-ph--4x3" data-photo-slot="long-term-property-care">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Real, approved turnover or property-care scene at a long-term rental.</span>
+              <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the work being done in frame.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <ol class="pmp-ltr-scope__list">
+        <li>
+          <span class="pmp-ltr-scope__num" aria-hidden="true">01</span>
+          <div>
+            <h3>Marketing and leasing</h3>
+            <p>Organize property details, advertise approved vacancies, and coordinate inquiries and leasing steps.</p>
+          </div>
+        </li>
+        <li>
+          <span class="pmp-ltr-scope__num" aria-hidden="true">02</span>
+          <div>
+            <h3>Screening and placement</h3>
+            <p>Coordinate applications and screening under the property’s approved criteria and applicable requirements.</p>
+          </div>
+        </li>
+        <li>
+          <span class="pmp-ltr-scope__num" aria-hidden="true">03</span>
+          <div>
+            <h3>Rent collection and reporting</h3>
+            <p>Track payments and provide reporting included in your agreement.</p>
+          </div>
+        </li>
+        <li>
+          <span class="pmp-ltr-scope__num" aria-hidden="true">04</span>
+          <div>
+            <h3>Tenant communication</h3>
+            <p>Handle routine questions and coordinate next steps when a concern comes up.</p>
+          </div>
+        </li>
+        <li>
+          <span class="pmp-ltr-scope__num" aria-hidden="true">05</span>
+          <div>
+            <h3>Maintenance coordination</h3>
+            <p>Track repair needs and arrange work within the agreed approval process.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-ltr-service-scope .pmp-ltr-scope__grid {
+  display: grid;
+  gap: 40px;
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__aside h2 {
+  max-width: 12em;
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__media {
+  margin-top: 36px;
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__list {
+  border-top: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__list li {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 12px;
+  padding: 26px 0 28px;
+  border-bottom: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__num {
+  padding-top: 5px;
+  font-family: var(--pmp-font-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--pmp-bronze);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__list p {
+  max-width: 34em;
+  margin-top: 8px;
+}
+
+@media (min-width: 900px) {
+  #pmp-ltr-service-scope .pmp-ltr-scope__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(48px, 7vw, 104px);
+    align-items: start;
+  }
+
+  #pmp-ltr-service-scope .pmp-ltr-scope__aside {
+    position: sticky;
+    top: 112px;
+  }
+
+  #pmp-ltr-service-scope .pmp-ltr-scope__list li {
+    grid-template-columns: 64px minmax(0, 1fr);
+    padding: 32px 0 34px;
+  }
+}
+</style>

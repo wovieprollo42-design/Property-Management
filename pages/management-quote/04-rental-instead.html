@@ -1,0 +1,34 @@
+<!--
+  MANAGEMENT QUOTE · 04 LOOKING FOR A RENTAL INSTEAD
+  Background: #F8F5EC ivory (data-bg="ivory")
+  Layout: one compact row that sends renters to their own path, so they do not use the owner form.
+-->
+<section class="pmp pmp-sec" id="pmp-quote-rental-instead" data-bg="ivory" aria-labelledby="pmp-quote-rental-instead-title">
+  <div class="pmp-wrap">
+    <div class="pmp-quote-renter__row">
+      <h2 id="pmp-quote-rental-instead-title">Looking for a rental instead?</h2>
+      <div class="pmp-btns">
+        <a class="pmp-btn pmp-btn--secondary" href="/available-rentals">View Available Rentals {{arrow}}</a>
+        <a class="pmp-btn pmp-btn--secondary" href="/rental-prequalification">Complete Rental Prequalification {{arrow}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-quote-rental-instead {
+  padding-block: clamp(40px, calc(28px + 2.4vw), 64px);
+}
+
+#pmp-quote-rental-instead .pmp-quote-renter__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 40px;
+}
+
+#pmp-quote-rental-instead h2 {
+  font-size: clamp(24px, calc(21.6px + 0.6vw), 28px);
+}
+</style>

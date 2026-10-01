@@ -1,0 +1,57 @@
+<!--
+  SHORT-TERM RENTAL MANAGEMENT · 04 FINAL ACTION
+  Background: #F8F5EC ivory (data-bg="ivory") holding a #172D3B navy panel
+  Layout: navy call-to-action panel, then a quiet cross-link to the long-term page.
+-->
+<section class="pmp pmp-sec" id="pmp-str-final-action" data-bg="ivory" aria-labelledby="pmp-str-final-action-title">
+  <div class="pmp-wrap">
+    <div class="pmp-str-final__panel pmp-dark pmp-marks">
+      <div class="pmp-str-final__copy">
+        <p class="pmp-eyebrow">Next step</p>
+        <h2 id="pmp-str-final-action-title">Let’s talk about your property</h2>
+        <p class="pmp-str-final__text">Already hosting or getting ready for your first guests? Tell us about the property and where you need support.</p>
+      </div>
+      <div class="pmp-btns pmp-str-final__actions">
+        <a class="pmp-btn pmp-btn--light" href="/management-quote">Request a Management Quote {{arrow}}</a>
+        <a class="pmp-btn pmp-btn--outline-light" href="/vacation-rentals">Explore Our Vacation Rentals</a>
+      </div>
+    </div>
+    <p class="pmp-str-final__cross">Own a long-term rental? <a class="pmp-textlink" href="/long-term-rental-management">Explore Long-Term Management {{arrow}}</a></p>
+  </div>
+</section>
+
+<style>
+#pmp-str-final-action .pmp-str-final__panel {
+  display: grid;
+  gap: 32px;
+  padding: clamp(32px, 5vw, 64px);
+  border-radius: var(--pmp-radius);
+}
+
+#pmp-str-final-action .pmp-str-final__text {
+  max-width: 32em;
+  margin-top: 16px;
+  color: var(--pmp-white);
+}
+
+#pmp-str-final-action .pmp-str-final__cross {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin-top: 36px;
+}
+
+@media (min-width: 900px) {
+  #pmp-str-final-action .pmp-str-final__panel {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 48px;
+  }
+
+  #pmp-str-final-action .pmp-str-final__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+</style>

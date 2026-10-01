@@ -1,0 +1,97 @@
+<!--
+  SHORT-TERM RENTAL MANAGEMENT · 03 PLAN AND GUEST EXPERIENCE
+  Background: #FFFEFB warm white (data-bg="white")
+  Layout: a large statement for the planning approach, then a three-part band that breaks the guest
+          experience paragraph into the three things that help guests know what to expect.
+  No photo in this section.
+-->
+<section class="pmp pmp-sec" id="pmp-str-plan-and-guest-experience" data-bg="white" aria-label="Plan and guest experience">
+  <div class="pmp-wrap">
+    <div class="pmp-str-plan__intro">
+      <div>
+        <p class="pmp-eyebrow">How we start</p>
+        <h2>A plan built around your rental</h2>
+      </div>
+      <p class="pmp-lead">We start with your property, current booking channels, and goals. Then we discuss responsibilities, communication, and the services that fit your setup.</p>
+    </div>
+
+    <div class="pmp-str-plan__guest">
+      <div class="pmp-str-plan__guest-head">
+        <h2>Protect the guest experience</h2>
+        <p>Accurate listings, clear arrival information, and coordinated turnovers help guests know what to expect. Defined responsibilities help the owner and team respond when something needs attention.</p>
+      </div>
+      <ul class="pmp-str-plan__parts">
+        <li><span aria-hidden="true">01</span>Accurate listings</li>
+        <li><span aria-hidden="true">02</span>Clear arrival information</li>
+        <li><span aria-hidden="true">03</span>Coordinated turnovers</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-str-plan-and-guest-experience .pmp-str-plan__intro {
+  display: grid;
+  gap: 20px;
+}
+
+#pmp-str-plan-and-guest-experience .pmp-str-plan__intro h2 {
+  max-width: 12em;
+}
+
+#pmp-str-plan-and-guest-experience .pmp-str-plan__intro .pmp-lead {
+  max-width: 32em;
+  color: var(--pmp-navy);
+}
+
+#pmp-str-plan-and-guest-experience .pmp-str-plan__guest {
+  display: grid;
+  gap: 32px;
+  margin-top: clamp(48px, 7vw, 88px);
+  padding-top: clamp(32px, 5vw, 56px);
+  border-top: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-str-plan-and-guest-experience .pmp-str-plan__guest-head p {
+  max-width: 34em;
+  margin-top: 16px;
+}
+
+#pmp-str-plan-and-guest-experience .pmp-str-plan__parts {
+  display: grid;
+  border-top: 1px solid var(--pmp-line);
+}
+
+#pmp-str-plan-and-guest-experience .pmp-str-plan__parts li {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 18px 0;
+  font-family: var(--pmp-font-head);
+  font-size: clamp(19px, calc(17px + 0.5vw), 23px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--pmp-navy);
+  border-bottom: 1px solid var(--pmp-line);
+}
+
+#pmp-str-plan-and-guest-experience .pmp-str-plan__parts span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--pmp-bronze);
+}
+
+@media (min-width: 900px) {
+  #pmp-str-plan-and-guest-experience .pmp-str-plan__intro {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(48px, 6vw, 88px);
+    align-items: end;
+  }
+
+  #pmp-str-plan-and-guest-experience .pmp-str-plan__guest {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(48px, 6vw, 88px);
+  }
+}
+</style>

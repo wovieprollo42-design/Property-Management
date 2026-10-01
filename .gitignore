@@ -1,0 +1,14 @@
+# Generated preview (rebuild with: npm run build)
+dist/
+
+# Dependencies and local tooling
+node_modules/
+
+# Secrets and deployment settings never go in this repository
+.env
+.env.*
+.vercel/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,77 @@
+<!--
+  RENTAL PREQUALIFICATION · 03 EXPECTATIONS
+  Background: #E9EDE9 pale sage gray (data-bg="sage")
+  Layout: text and the back button on the left; an optional small rental photo on the right.
+          Delete the media block if no photo is approved; the text stands on its own.
+  Photo slot: prequal-rental-exterior · source 1000 x 750 px · ratio 4:3 (optional)
+  Replace the placeholder with:
+    <img class="pmp-photo pmp-photo--4x3" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL EXTERIOR"
+         width="1000" height="750" loading="lazy" decoding="async">
+-->
+<section class="pmp pmp-sec" id="pmp-prequal-expectations" data-bg="sage" aria-labelledby="pmp-prequal-expectations-title">
+  <div class="pmp-wrap">
+    <div class="pmp-prequal-exp__grid">
+      <div>
+        <p class="pmp-eyebrow">Expectations</p>
+        <h2 id="pmp-prequal-expectations-title">What happens after you submit?</h2>
+        <p class="pmp-prequal-exp__text">Our team reviews the information and follows up about the property you selected. Additional application and screening steps may be required.</p>
+        <p class="pmp-prequal-exp__note">Submission does not guarantee approval, a showing, or a reserved property.</p>
+        <p class="pmp-prequal-exp__text">Lease, deposit, and move-in requirements are explained during the leasing process.</p>
+        <a class="pmp-btn pmp-btn--secondary pmp-prequal-exp__btn" href="/available-rentals">Back to Available Rentals {{arrow}}</a>
+      </div>
+
+      <div class="pmp-prequal-exp__media pmp-marks">
+        <div class="pmp-ph pmp-ph--4x3" data-photo-slot="prequal-rental-exterior">
+          <p class="pmp-ph__label">
+            <span class="pmp-ph__tag">INSERT PHOTO</span>
+            <span class="pmp-ph__desc">Optional small approved rental exterior.</span>
+            <span class="pmp-ph__spec">Source 1000 × 750 px · Display ratio 4:3 · Crop: the full front of the home.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-prequal-expectations .pmp-prequal-exp__grid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+#pmp-prequal-expectations .pmp-prequal-exp__text {
+  max-width: 34em;
+  margin-top: 16px;
+}
+
+#pmp-prequal-expectations .pmp-prequal-exp__note {
+  max-width: 34em;
+  margin-top: 16px;
+  padding: 14px 18px;
+  font-weight: 500;
+  color: var(--pmp-navy);
+  background-color: var(--pmp-white);
+  border-left: 2px solid var(--pmp-gold);
+}
+
+#pmp-prequal-expectations .pmp-prequal-exp__btn {
+  margin-top: 28px;
+}
+
+#pmp-prequal-expectations .pmp-prequal-exp__media {
+  max-width: 420px;
+}
+
+@media (min-width: 900px) {
+  #pmp-prequal-expectations .pmp-prequal-exp__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: clamp(48px, 7vw, 104px);
+  }
+
+  #pmp-prequal-expectations .pmp-prequal-exp__media {
+    justify-self: end;
+    width: 100%;
+  }
+}
+</style>

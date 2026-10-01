@@ -1,0 +1,50 @@
+<!--
+  AVAILABLE RENTALS · 01 INTRO
+  Background: #F8F5EC ivory (data-bg="ivory")
+  Layout: compact heading band for renters; no photo, so listings come into view quickly.
+-->
+<section class="pmp pmp-sec" id="pmp-rentals-intro" data-bg="ivory" aria-labelledby="pmp-rentals-intro-title">
+  <div class="pmp-wrap">
+    <div class="pmp-rentals-intro__grid">
+      <div>
+        <p class="pmp-eyebrow">Available rentals · Long-term</p>
+        <h1 id="pmp-rentals-intro-title">Find your next rental in East Central Minnesota</h1>
+      </div>
+      <div>
+        <p class="pmp-lead">Browse our current long-term rental listings. Review each property’s details, rent, and availability before completing the preliminary prequalification form.</p>
+        <a class="pmp-textlink pmp-rentals-intro__link" href="#pmp-rentals-how-to-get-started">How to get started {{arrow}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-rentals-intro {
+  padding-block: clamp(40px, calc(18px + 4.4vw), 80px) clamp(40px, calc(24px + 3vw), 64px);
+}
+
+#pmp-rentals-intro .pmp-rentals-intro__grid {
+  display: grid;
+  gap: 20px;
+}
+
+#pmp-rentals-intro h1 {
+  max-width: 13em;
+}
+
+#pmp-rentals-intro .pmp-lead {
+  max-width: 32em;
+}
+
+#pmp-rentals-intro .pmp-rentals-intro__link {
+  margin-top: 12px;
+}
+
+@media (min-width: 900px) {
+  #pmp-rentals-intro .pmp-rentals-intro__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(40px, 6vw, 88px);
+    align-items: end;
+  }
+}
+</style>

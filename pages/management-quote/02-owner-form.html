@@ -1,0 +1,174 @@
+<!--
+  MANAGEMENT QUOTE · 02 OWNER FORM
+  Background: #FFFEFB warm white (data-bg="white")
+  Layout: the form slot on the left, a short "what helps us review your inquiry" note on the right.
+
+  FORM SLOT (data-slot="ghl-owner-form"): a NEW, dedicated GHL property-owner form goes here.
+  The preview shows the planned field layout only. It is not a working form and sends nothing.
+    Required: name, email, property city/state, rental type, support needed
+    Optional: phone, property address, number of units/properties, occupancy,
+              desired start timing, preferred contact method
+  - Keep any messaging opt-in separate from submitting the inquiry, with wording that matches the
+    actual messaging program.
+  - The form's own submit action should redirect to /management-thank-you after a successful test.
+  - Owner submissions go to the owner pipeline only: never to applicant screening or guest promotions.
+  In GHL: delete the whole <div class="pmp-slot" data-slot="ghl-owner-form">...</div> block and place
+  the GHL Form element (or its embed code) in the same spot. See docs/installation-guide.md.
+-->
+<section class="pmp pmp-sec" id="pmp-quote-owner-form" data-bg="white" aria-labelledby="pmp-quote-owner-form-title">
+  <div class="pmp-wrap">
+    <div class="pmp-quote-form__grid">
+      <div class="pmp-quote-form__main">
+        <h2 id="pmp-quote-owner-form-title">Request a management conversation</h2>
+
+        <div class="pmp-slot pmp-quote-form__slot" data-slot="ghl-owner-form">
+          <p class="pmp-slot__tag">Form slot · not connected</p>
+          <p class="pmp-slot__title">Dedicated GHL property-owner form</p>
+          <p class="pmp-quote-form__plan-intro">Planned field layout. This preview does not collect or send anything.</p>
+
+          <div class="pmp-quote-form__fields">
+            <div class="pmp-quote-form__field"><span class="pmp-quote-form__label">Name <em>Required</em></span><span class="pmp-quote-form__box" aria-hidden="true"></span></div>
+            <div class="pmp-quote-form__field"><span class="pmp-quote-form__label">Email <em>Required</em></span><span class="pmp-quote-form__box" aria-hidden="true"></span></div>
+            <div class="pmp-quote-form__field"><span class="pmp-quote-form__label">Property city and state <em>Required</em></span><span class="pmp-quote-form__box" aria-hidden="true"></span></div>
+            <div class="pmp-quote-form__field"><span class="pmp-quote-form__label">Rental type <em>Required</em></span><span class="pmp-quote-form__box pmp-quote-form__box--choice" aria-hidden="true">Long-term · Short-term</span></div>
+            <div class="pmp-quote-form__field pmp-quote-form__field--wide"><span class="pmp-quote-form__label">Support needed <em>Required</em></span><span class="pmp-quote-form__box pmp-quote-form__box--tall" aria-hidden="true"></span></div>
+            <div class="pmp-quote-form__field"><span class="pmp-quote-form__label">Phone <em class="pmp-quote-form__opt">Optional</em></span><span class="pmp-quote-form__box" aria-hidden="true"></span></div>
+            <div class="pmp-quote-form__field"><span class="pmp-quote-form__label">Property address <em class="pmp-quote-form__opt">Optional</em></span><span class="pmp-quote-form__box" aria-hidden="true"></span></div>
+            <div class="pmp-quote-form__field"><span class="pmp-quote-form__label">Number of units or properties <em class="pmp-quote-form__opt">Optional</em></span><span class="pmp-quote-form__box" aria-hidden="true"></span></div>
+            <div class="pmp-quote-form__field"><span class="pmp-quote-form__label">Occupancy <em class="pmp-quote-form__opt">Optional</em></span><span class="pmp-quote-form__box" aria-hidden="true"></span></div>
+            <div class="pmp-quote-form__field"><span class="pmp-quote-form__label">Desired start timing <em class="pmp-quote-form__opt">Optional</em></span><span class="pmp-quote-form__box" aria-hidden="true"></span></div>
+            <div class="pmp-quote-form__field"><span class="pmp-quote-form__label">Preferred contact method <em class="pmp-quote-form__opt">Optional</em></span><span class="pmp-quote-form__box" aria-hidden="true"></span></div>
+          </div>
+
+          <ul class="pmp-slot__notes">
+            <li>Messaging opt-ins stay separate from submitting the inquiry, with wording that matches the actual program.</li>
+            <li>After a successful test submission, the form’s own submit action leads to <code>/management-thank-you</code>.</li>
+            <li>Owner inquiries go to the owner pipeline only, never to applicant screening or guest promotions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="pmp-quote-form__aside" aria-labelledby="pmp-quote-form-aside-title">
+        <h3 id="pmp-quote-form-aside-title">What helps us review your inquiry</h3>
+        <ul class="pmp-checklist pmp-quote-form__list">
+          <li>The property location</li>
+          <li>The number of units</li>
+          <li>Current occupancy</li>
+          <li>Your main concerns</li>
+        </ul>
+        <p class="pmp-quote-form__aside-note">We’ll use that information to discuss whether our services fit.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-quote-owner-form .pmp-quote-form__grid {
+  display: grid;
+  gap: 40px;
+}
+
+#pmp-quote-owner-form .pmp-quote-form__slot {
+  margin-top: 28px;
+}
+
+#pmp-quote-owner-form .pmp-quote-form__plan-intro {
+  margin-top: 4px;
+  font-size: var(--pmp-text-sm);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__fields {
+  display: grid;
+  gap: 18px 20px;
+  margin: 24px 0;
+  padding: 24px 0;
+  border-block: 1px solid var(--pmp-line);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin-bottom: 8px;
+  font-family: var(--pmp-font-head);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--pmp-navy);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__label em {
+  font-family: var(--pmp-font-body);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pmp-bronze);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__label .pmp-quote-form__opt {
+  color: var(--pmp-slate);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__box {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 14px;
+  font-size: 14px;
+  color: var(--pmp-slate);
+  background-color: var(--pmp-ivory);
+  border: 1px solid var(--pmp-line-strong);
+  border-radius: var(--pmp-radius);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__box--tall {
+  min-height: 104px;
+}
+
+#pmp-quote-owner-form .pmp-quote-form__aside {
+  align-self: start;
+  padding: 28px;
+  background-color: var(--pmp-ivory);
+  border-top: 2px solid var(--pmp-gold);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__aside h3 {
+  font-size: 19px;
+}
+
+#pmp-quote-owner-form .pmp-quote-form__list {
+  margin-top: 18px;
+}
+
+#pmp-quote-owner-form .pmp-quote-form__aside-note {
+  margin-top: 18px;
+  padding-top: 16px;
+  font-size: var(--pmp-text-sm);
+  border-top: 1px solid var(--pmp-line);
+}
+
+@media (min-width: 600px) {
+  #pmp-quote-owner-form .pmp-quote-form__fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #pmp-quote-owner-form .pmp-quote-form__field--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 900px) {
+  #pmp-quote-owner-form .pmp-quote-form__grid {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    gap: clamp(40px, 5vw, 72px);
+  }
+
+  #pmp-quote-owner-form .pmp-quote-form__aside {
+    position: sticky;
+    top: 112px;
+    margin-top: 64px;
+  }
+}
+</style>

@@ -1,0 +1,95 @@
+<!--
+  LONG-TERM RENTAL MANAGEMENT · 03 SCOPE AND TRANSITION
+  Background: #E9EDE9 pale sage gray (data-bg="sage")
+  Layout: two blocks. Left: what is reviewed and what the agreement explains, set as a short
+          specification. Right: a warm white panel for owners with a vacancy or an existing tenant.
+  No photo in this section.
+-->
+<section class="pmp pmp-sec" id="pmp-ltr-scope-and-transition" data-bg="sage" aria-label="Scope and transition">
+  <div class="pmp-wrap">
+    <div class="pmp-ltr-transition__grid">
+      <div class="pmp-ltr-transition__included">
+        <p class="pmp-eyebrow">Scope</p>
+        <h2>Know what is included</h2>
+        <p class="pmp-ltr-transition__text">We review your property, occupancy, condition, and goals before recommending an arrangement. Services, fees, maintenance responsibilities, and approval limits are explained in the management agreement.</p>
+        <dl class="pmp-ltr-transition__spec">
+          <div>
+            <dt>We review</dt>
+            <dd>Property · Occupancy · Condition · Goals</dd>
+          </div>
+          <div>
+            <dt>The agreement explains</dt>
+            <dd>Services · Fees · Maintenance responsibilities · Approval limits</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="pmp-ltr-transition__panel pmp-marks">
+        <p class="pmp-eyebrow">Vacancies and existing tenants</p>
+        <h2>Have a vacancy or an existing tenant?</h2>
+        <p class="pmp-ltr-transition__text">Tell us where the rental is located and what help you need. We can discuss leasing a vacancy or transitioning an occupied property into management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-ltr-scope-and-transition .pmp-ltr-transition__grid {
+  display: grid;
+  gap: 48px;
+}
+
+#pmp-ltr-scope-and-transition .pmp-ltr-transition__text {
+  max-width: 34em;
+  margin-top: 16px;
+}
+
+#pmp-ltr-scope-and-transition .pmp-ltr-transition__spec {
+  margin-top: 28px;
+  border-top: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-ltr-scope-and-transition .pmp-ltr-transition__spec div {
+  display: grid;
+  gap: 4px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-ltr-scope-and-transition .pmp-ltr-transition__spec dt {
+  font-family: var(--pmp-font-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pmp-bronze);
+}
+
+#pmp-ltr-scope-and-transition .pmp-ltr-transition__spec dd {
+  font-family: var(--pmp-font-head);
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--pmp-navy);
+}
+
+#pmp-ltr-scope-and-transition .pmp-ltr-transition__panel {
+  align-self: start;
+  padding: clamp(28px, 4vw, 48px);
+  background-color: var(--pmp-white);
+  border: 1px solid var(--pmp-line);
+}
+
+@media (min-width: 600px) {
+  #pmp-ltr-scope-and-transition .pmp-ltr-transition__spec div {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 900px) {
+  #pmp-ltr-scope-and-transition .pmp-ltr-transition__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(48px, 6vw, 88px);
+  }
+}
+</style>

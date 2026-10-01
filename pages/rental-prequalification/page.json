@@ -1,0 +1,17 @@
+{
+  "key": "prequal",
+  "name": "Rental Prequalification",
+  "route": "/rental-prequalification",
+  "title": "Rental Prequalification | Property Management Professionals",
+  "description": "Interested in one of our long-term rentals? Complete preliminary prequalification so our team can review your information and next steps.",
+  "productionRobots": "index, follow",
+  "inSitemap": true,
+  "mainAction": "Separate applicant form",
+  "keywordTheme": "Rental prequalification; applicant next step",
+  "supportingThemes": "Preliminary rental inquiry; showing process; application steps",
+  "sections": [
+    "01-intro.html",
+    "02-applicant-form.html",
+    "03-expectations.html"
+  ]
+}

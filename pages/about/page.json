@@ -1,0 +1,18 @@
+{
+  "key": "about",
+  "name": "About",
+  "route": "/about",
+  "title": "About Us | Property Management Professionals",
+  "description": "Meet Property Management Professionals and learn about our practical approach to rental management and property care in East Central Minnesota.",
+  "productionRobots": "index, follow",
+  "inSitemap": true,
+  "mainAction": "Owner quote",
+  "keywordTheme": "Property Management Professionals; business identity",
+  "supportingThemes": "Local property management team; Bob Blaisdell; property care approach",
+  "sections": [
+    "01-hero.html",
+    "02-leadership.html",
+    "03-principles.html",
+    "04-related-business-and-cta.html"
+  ]
+}

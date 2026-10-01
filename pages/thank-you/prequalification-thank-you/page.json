@@ -1,0 +1,13 @@
+{
+  "key": "ty-applicant",
+  "name": "Applicant Thank You",
+  "route": "/prequalification-thank-you",
+  "title": "Prequalification Received | Property Management Professionals",
+  "description": "Your preliminary prequalification has been received. Our team will review it and contact you about showing availability and next steps.",
+  "productionRobots": "noindex",
+  "inSitemap": false,
+  "mainAction": "Return to listings",
+  "sections": [
+    "01-confirmation.html"
+  ]
+}

@@ -1,0 +1,109 @@
+<!--
+  SHORT-TERM RENTAL MANAGEMENT · 02 SERVICE SCOPE
+  Background: #E9EDE9 pale sage gray (data-bg="sage")
+  Layout: the photo on the left; on the right a two-column grid of the five services, each under a
+          short gold rule. The sixth cell restates that every service follows the agreed scope.
+  Photo slot: short-term-guest-space · source 1200 x 900 px · ratio 4:3
+  Replace the placeholder with:
+    <img class="pmp-photo pmp-photo--4x3" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL ROOM"
+         width="1200" height="900" loading="lazy" decoding="async">
+-->
+<section class="pmp pmp-sec" id="pmp-str-service-scope" data-bg="sage" aria-labelledby="pmp-str-service-scope-title">
+  <div class="pmp-wrap">
+    <div class="pmp-str-scope__head">
+      <p class="pmp-eyebrow">Service scope</p>
+      <h2 id="pmp-str-service-scope-title">Support for your property and guests</h2>
+    </div>
+
+    <div class="pmp-str-scope__grid">
+      <div class="pmp-str-scope__media pmp-marks">
+        <div class="pmp-ph pmp-ph--4x3" data-photo-slot="short-term-guest-space">
+          <p class="pmp-ph__label">
+            <span class="pmp-ph__tag">INSERT PHOTO</span>
+            <span class="pmp-ph__desc">Real turnover-ready room or approved guest space.</span>
+            <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the full room readable; do not crop out the feature described.</span>
+          </p>
+        </div>
+      </div>
+
+      <ul class="pmp-str-scope__list">
+        <li>
+          <h3>Listings</h3>
+          <p>Keep descriptions, photos, and guest information organized and accurate.</p>
+        </li>
+        <li>
+          <h3>Pricing strategy</h3>
+          <p>Review pricing and availability as part of the agreed scope.</p>
+        </li>
+        <li>
+          <h3>Guest communication</h3>
+          <p>Coordinate questions and stay information.</p>
+        </li>
+        <li>
+          <h3>Turnovers</h3>
+          <p>Coordinate cleaning between stays and follow up on reported property needs.</p>
+        </li>
+        <li>
+          <h3>Performance</h3>
+          <p>Review property activity and discuss practical improvements.</p>
+        </li>
+        <li class="pmp-str-scope__note">
+          <p>Each service is part of the scope you agree to for your property.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-str-service-scope .pmp-str-scope__head h2 {
+  max-width: 14em;
+}
+
+#pmp-str-service-scope .pmp-str-scope__grid {
+  display: grid;
+  gap: 48px;
+  margin-top: clamp(32px, 5vw, 56px);
+}
+
+#pmp-str-service-scope .pmp-str-scope__list {
+  display: grid;
+  gap: 32px;
+}
+
+#pmp-str-service-scope .pmp-str-scope__list li {
+  padding-top: 18px;
+  border-top: 2px solid var(--pmp-gold);
+}
+
+#pmp-str-service-scope .pmp-str-scope__list p {
+  margin-top: 8px;
+}
+
+#pmp-str-service-scope .pmp-str-scope__list .pmp-str-scope__note {
+  border-top: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-str-service-scope .pmp-str-scope__note p {
+  margin-top: 0;
+  font-family: var(--pmp-font-head);
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--pmp-navy);
+}
+
+@media (min-width: 600px) {
+  #pmp-str-service-scope .pmp-str-scope__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px 32px;
+  }
+}
+
+@media (min-width: 900px) {
+  #pmp-str-service-scope .pmp-str-scope__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(48px, 6vw, 88px);
+    align-items: start;
+  }
+}
+</style>

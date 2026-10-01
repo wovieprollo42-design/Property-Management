@@ -1,0 +1,45 @@
+<!--
+  FAQS · 03 RENTER AND GUEST QUESTIONS
+  Background: #E9EDE9 pale sage gray (data-bg="sage")
+  Layout: same two-column pattern as the owner questions, on the alternate background.
+-->
+<section class="pmp pmp-sec" id="pmp-faqs-renter-questions" data-bg="sage" aria-labelledby="pmp-faqs-renter-questions-title">
+  <div class="pmp-wrap">
+    <div class="pmp-faqs-renter__grid">
+      <div class="pmp-faqs-renter__head">
+        <p class="pmp-eyebrow">For renters and guests</p>
+        <h2 id="pmp-faqs-renter-questions-title">Questions about rentals</h2>
+      </div>
+
+      <div class="pmp-faq">
+        <details class="pmp-faq__item">
+          <summary><h3 class="pmp-faq__q">How do I request a showing?</h3><span class="pmp-faq__icon" aria-hidden="true"></span></summary>
+          <div class="pmp-faq__a"><p>Review an available property and complete our preliminary prequalification form. After review, our team will contact you about showing availability and next steps. Submission does not guarantee a showing or approval.</p></div>
+        </details>
+        <details class="pmp-faq__item">
+          <summary><h3 class="pmp-faq__q">How do I book a vacation rental?</h3><span class="pmp-faq__icon" aria-hidden="true"></span></summary>
+          <div class="pmp-faq__a"><p>Visit Vacation Rentals and follow the approved booking link for the property. Review live availability, total price, and terms during the booking process.</p></div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-faqs-renter-questions .pmp-faqs-renter__grid {
+  display: grid;
+  gap: 32px;
+}
+
+#pmp-faqs-renter-questions .pmp-faqs-renter__head h2 {
+  max-width: 11em;
+}
+
+@media (min-width: 900px) {
+  #pmp-faqs-renter-questions .pmp-faqs-renter__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: clamp(48px, 6vw, 96px);
+    align-items: start;
+  }
+}
+</style>

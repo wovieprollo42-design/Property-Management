@@ -1,0 +1,14 @@
+{
+  "key": "privacy",
+  "name": "Privacy Policy (review draft)",
+  "route": "/privacy-policy",
+  "title": "Privacy Policy | Property Management Professionals",
+  "description": "Learn how Property Management Professionals handles website inquiries, rental information, guest communications, and communication choices.",
+  "productionRobots": "noindex until the reviewed policy is approved, then index, follow",
+  "inSitemap": false,
+  "mainAction": "Read policy",
+  "sections": [
+    "01-title.html",
+    "02-policy-content.html"
+  ]
+}

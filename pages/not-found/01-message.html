@@ -1,0 +1,44 @@
+<!--
+  404 · 01 MESSAGE
+  Background: #F8F5EC ivory (data-bg="ivory")
+  Shown with a real 404 status for any address that is not a page. It never falls back to Home.
+  In GHL, set this as the site's 404 page if the site builder offers one.
+-->
+<section class="pmp pmp-sec" id="pmp-not-found-message" data-bg="ivory" aria-labelledby="pmp-not-found-message-title">
+  <div class="pmp-wrap">
+    <div class="pmp-read pmp-nf__box">
+      <p class="pmp-eyebrow">Page not found</p>
+      <h1 id="pmp-not-found-message-title">We could not find that page</h1>
+      <p class="pmp-nf__text">The address may be mistyped, or the page may have moved. These links lead to the main parts of the site.</p>
+      <div class="pmp-btns">
+        <a class="pmp-btn pmp-btn--primary" href="/">Back to Home {{arrow}}</a>
+        <a class="pmp-btn pmp-btn--secondary" href="/management-quote">Request a Management Quote</a>
+      </div>
+      <ul class="pmp-nf__links">
+        <li><a class="pmp-textlink" href="/available-rentals">View Available Rentals</a></li>
+        <li><a class="pmp-textlink" href="/vacation-rentals">Explore Vacation Rentals</a></li>
+        <li><a class="pmp-textlink" href="/faqs">Read the FAQs</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-not-found-message {
+  padding-block: clamp(64px, calc(40px + 6vw), 128px);
+}
+
+#pmp-not-found-message .pmp-nf__text {
+  max-width: 34em;
+  margin: 20px 0 32px;
+}
+
+#pmp-not-found-message .pmp-nf__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 28px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--pmp-line);
+}
+</style>

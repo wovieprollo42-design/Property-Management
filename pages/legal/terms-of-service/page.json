@@ -1,0 +1,14 @@
+{
+  "key": "terms",
+  "name": "Terms of Service (review draft)",
+  "route": "/terms-of-service",
+  "title": "Terms of Service | Property Management Professionals",
+  "description": "Read website and messaging terms for Property Management Professionals, including inquiries, rental information, and communication preferences.",
+  "productionRobots": "noindex until the reviewed terms are approved, then index, follow",
+  "inSitemap": false,
+  "mainAction": "Read terms",
+  "sections": [
+    "01-title.html",
+    "02-terms-content.html"
+  ]
+}

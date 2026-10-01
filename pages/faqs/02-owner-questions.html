@@ -1,0 +1,73 @@
+<!--
+  FAQS · 02 OWNER QUESTIONS
+  Background: #FFFEFB warm white (data-bg="white")
+  Layout: heading column on the left (stays in view on desktop), accordion on the right.
+  The accordion uses native details/summary elements, so it works with the keyboard and needs no script.
+
+  HELD QUESTION (not published): "Do you offer guaranteed rent?"
+  Hold this question until Bob confirms that a selected-property guaranteed-rent or master-lease
+  arrangement is currently offered and approves the wording. To add it later, copy one
+  <details class="pmp-faq__item"> block below and fill in the approved answer.
+-->
+<section class="pmp pmp-sec" id="pmp-faqs-owner-questions" data-bg="white" aria-labelledby="pmp-faqs-owner-questions-title">
+  <div class="pmp-wrap">
+    <div class="pmp-faqs-owner__grid">
+      <div class="pmp-faqs-owner__head">
+        <p class="pmp-eyebrow">For owners</p>
+        <h2 id="pmp-faqs-owner-questions-title">Questions from property owners</h2>
+        <a class="pmp-textlink pmp-faqs-owner__ask" href="/management-quote">Ask About Management {{arrow}}</a>
+      </div>
+
+      <div class="pmp-faq">
+        <details class="pmp-faq__item">
+          <summary><h3 class="pmp-faq__q">Do you manage long-term and short-term rentals?</h3><span class="pmp-faq__icon" aria-hidden="true"></span></summary>
+          <div class="pmp-faq__a"><p>We provide support for both rental types. The services and responsibilities are discussed for each property and recorded in the management agreement.</p></div>
+        </details>
+        <details class="pmp-faq__item">
+          <summary><h3 class="pmp-faq__q">Where do you provide services?</h3><span class="pmp-faq__icon" aria-hidden="true"></span></summary>
+          <div class="pmp-faq__a"><p>We focus on East Central Minnesota. Send us the property location so we can confirm whether it falls within our service area.</p></div>
+        </details>
+        <details class="pmp-faq__item">
+          <summary><h3 class="pmp-faq__q">What does property management cost?</h3><span class="pmp-faq__icon" aria-hidden="true"></span></summary>
+          <div class="pmp-faq__a"><p>Fees depend on the property and agreed services. Request a quote so we can review your needs and explain the applicable fees.</p></div>
+        </details>
+        <details class="pmp-faq__item">
+          <summary><h3 class="pmp-faq__q">Who pays for repairs?</h3><span class="pmp-faq__icon" aria-hidden="true"></span></summary>
+          <div class="pmp-faq__a"><p>The agreement explains maintenance responsibilities, charges, and owner approval requirements. We review those details before management begins.</p></div>
+        </details>
+        <details class="pmp-faq__item">
+          <summary><h3 class="pmp-faq__q">Can you help if my rental is vacant?</h3><span class="pmp-faq__icon" aria-hidden="true"></span></summary>
+          <div class="pmp-faq__a"><p>Tell us about the vacancy, property condition, and intended availability date. We can discuss rental marketing and leasing support.</p></div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-faqs-owner-questions .pmp-faqs-owner__grid {
+  display: grid;
+  gap: 32px;
+}
+
+#pmp-faqs-owner-questions .pmp-faqs-owner__head h2 {
+  max-width: 11em;
+}
+
+#pmp-faqs-owner-questions .pmp-faqs-owner__ask {
+  margin-top: 16px;
+}
+
+@media (min-width: 900px) {
+  #pmp-faqs-owner-questions .pmp-faqs-owner__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: clamp(48px, 6vw, 96px);
+    align-items: start;
+  }
+
+  #pmp-faqs-owner-questions .pmp-faqs-owner__head {
+    position: sticky;
+    top: 112px;
+  }
+}
+</style>

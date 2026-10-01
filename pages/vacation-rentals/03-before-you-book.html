@@ -1,0 +1,73 @@
+<!--
+  VACATION RENTALS · 03 BEFORE YOU BOOK
+  Background: #E9EDE9 pale sage gray (data-bg="sage")
+  Layout: heading and closing sentence on the left; the five things to review as a checklist on the right.
+-->
+<section class="pmp pmp-sec" id="pmp-vacation-before-you-book" data-bg="sage" aria-labelledby="pmp-vacation-before-you-book-title">
+  <div class="pmp-wrap">
+    <div class="pmp-vacation-book__grid">
+      <div>
+        <p class="pmp-eyebrow">Booking expectations</p>
+        <h2 id="pmp-vacation-before-you-book-title">Before you book</h2>
+        <p class="pmp-vacation-book__text">Review these on the property’s booking page. Availability and pricing are confirmed during the reservation process.</p>
+      </div>
+      <ul class="pmp-vacation-book__list">
+        <li><span aria-hidden="true">01</span>Your dates</li>
+        <li><span aria-hidden="true">02</span>Guest count</li>
+        <li><span aria-hidden="true">03</span>Total price</li>
+        <li><span aria-hidden="true">04</span>House rules</li>
+        <li><span aria-hidden="true">05</span>Cancellation terms</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-vacation-before-you-book .pmp-vacation-book__grid {
+  display: grid;
+  gap: 32px;
+}
+
+#pmp-vacation-before-you-book .pmp-vacation-book__text {
+  max-width: 30em;
+  margin-top: 16px;
+}
+
+#pmp-vacation-before-you-book .pmp-vacation-book__list {
+  display: grid;
+  border-top: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-vacation-before-you-book .pmp-vacation-book__list li {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 15px 0;
+  font-family: var(--pmp-font-head);
+  font-size: clamp(18px, calc(16.4px + 0.4vw), 21px);
+  font-weight: 600;
+  color: var(--pmp-navy);
+  border-bottom: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-vacation-before-you-book .pmp-vacation-book__list span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--pmp-bronze);
+}
+
+@media (min-width: 600px) {
+  #pmp-vacation-before-you-book .pmp-vacation-book__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
+  }
+}
+
+@media (min-width: 900px) {
+  #pmp-vacation-before-you-book .pmp-vacation-book__grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(48px, 7vw, 104px);
+  }
+}
+</style>

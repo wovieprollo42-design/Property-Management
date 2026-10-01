@@ -1,0 +1,18 @@
+{
+  "key": "ltr",
+  "name": "Long-Term Rental Management",
+  "route": "/long-term-rental-management",
+  "title": "Long-Term Rental Management | East Central Minnesota",
+  "description": "Get help with leasing, tenant communication, rent collection, and maintenance coordination for your East Central Minnesota rental. Request a quote.",
+  "productionRobots": "index, follow",
+  "inSitemap": true,
+  "mainAction": "Owner quote",
+  "keywordTheme": "Long-term rental management in East Central Minnesota; owner services",
+  "supportingThemes": "Leasing coordination; tenant communication; rental maintenance coordination",
+  "sections": [
+    "01-hero.html",
+    "02-service-scope.html",
+    "03-scope-and-transition.html",
+    "04-final-action.html"
+  ]
+}

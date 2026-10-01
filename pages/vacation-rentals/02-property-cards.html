@@ -1,0 +1,171 @@
+<!--
+  VACATION RENTALS · 02 PROPERTY CARDS
+  Background: #FFFEFB warm white (data-bg="white")
+  Layout: property grid (three cards per row on wide screens) or the honest empty state, then the
+          booking destination slot.
+
+  TO ADD AN APPROVED PROPERTY
+  1. Copy templates/property-card.html between the CARDS:START and CARDS:END markers, once per property.
+  2. Replace every [bracketed] value with current, verified details. Its button must point at the
+     confirmed booking page or the approved current listing (it opens in a new tab).
+  3. Delete everything between EMPTY:START and EMPTY:END.
+  Booking check: do not show "Book Direct", live rates, or an untested PMS connection. Use the approved
+  current listing link until a direct booking flow works. Do not build a custom availability calendar,
+  price calculator, checkout or reservation database here.
+
+  BOOKING SLOT (data-slot="pms-booking"): reserved for the approved PMS-hosted booking destination or
+  widget (OwnerRez is the planned system) once booking, availability, payment, modification and
+  cancellation flows have been tested. Remove the slot if the site only links out to booking pages.
+-->
+<section class="pmp pmp-sec" id="pmp-vacation-property-cards" data-bg="white" aria-labelledby="pmp-vacation-property-cards-title">
+  <div class="pmp-wrap">
+    <div class="pmp-vacation-cards__layout">
+      <div class="pmp-vacation-cards__head">
+        <h2 id="pmp-vacation-property-cards-title">Explore our properties</h2>
+        <p class="pmp-vacation-cards__intro">Each property links to its own booking page, where current availability, rates, and stay requirements are shown.</p>
+      </div>
+
+      <ul class="pmp-vacation-cards__grid">
+        <!-- CARDS:START -->
+        <!-- CARDS:END -->
+      </ul>
+
+      <!-- EMPTY:START -->
+      <div class="pmp-vacation-cards__empty">
+        <svg class="pmp-vacation-cards__drawing" viewBox="0 0 120 80" width="120" height="80" aria-hidden="true" focusable="false">
+          <path d="M8 76h104M20 76V40l26-22 26 22v36M72 40l14-12 14 12v36M38 76V58h16v18M28 46h10v8H28zM82 50h8v8h-8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        <p class="pmp-vacation-cards__empty-title">We do not have any vacation properties listed here right now.</p>
+        <p>Please check back for updates.</p>
+      </div>
+      <!-- EMPTY:END -->
+
+      <div class="pmp-slot pmp-vacation-cards__slot" data-slot="pms-booking">
+        <p class="pmp-slot__tag">Booking slot · not connected</p>
+        <p class="pmp-slot__title">Approved booking destination or booking widget</p>
+        <ul class="pmp-slot__notes">
+          <li>Each property card links to its confirmed booking page or approved current listing.</li>
+          <li>A booking widget can be embedded here later, only after booking, availability, payment, change and cancellation flows are tested.</li>
+          <li>No live rates, availability or “Book Direct” wording until then.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-vacation-property-cards .pmp-vacation-cards__layout {
+  display: grid;
+  gap: 28px;
+}
+
+#pmp-vacation-property-cards .pmp-vacation-cards__intro {
+  max-width: 26em;
+  margin-top: 12px;
+}
+
+#pmp-vacation-property-cards .pmp-vacation-cards__grid {
+  display: grid;
+  gap: 36px;
+}
+
+#pmp-vacation-property-cards .pmp-vacation-cards__grid:empty {
+  display: none;
+}
+
+#pmp-vacation-property-cards .pmp-vacation-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--pmp-white);
+  border: 1px solid var(--pmp-line);
+  border-radius: var(--pmp-radius);
+}
+
+#pmp-vacation-property-cards .pmp-vacation-card .pmp-ph,
+#pmp-vacation-property-cards .pmp-vacation-card .pmp-photo {
+  border: 0;
+  border-bottom: 1px solid var(--pmp-line);
+}
+
+#pmp-vacation-property-cards .pmp-vacation-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px clamp(20px, 2.4vw, 26px) 26px;
+}
+
+#pmp-vacation-property-cards .pmp-vacation-card__stay {
+  margin-top: 10px;
+}
+
+#pmp-vacation-property-cards .pmp-vacation-card__facts {
+  margin-top: 14px;
+  font-family: var(--pmp-font-head);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--pmp-navy);
+}
+
+#pmp-vacation-property-cards .pmp-vacation-card__amenities {
+  margin: 12px 0 22px;
+  font-size: var(--pmp-text-sm);
+}
+
+#pmp-vacation-property-cards .pmp-vacation-card .pmp-btn {
+  margin-top: auto;
+}
+
+#pmp-vacation-property-cards .pmp-vacation-cards__empty {
+  display: grid;
+  justify-items: start;
+  gap: 8px;
+  padding: clamp(32px, 5vw, 56px);
+  background-color: var(--pmp-ivory);
+  border: 1px solid var(--pmp-line);
+}
+
+#pmp-vacation-property-cards .pmp-vacation-cards__drawing {
+  width: 96px;
+  height: 64px;
+  margin-bottom: 12px;
+  color: var(--pmp-gold);
+}
+
+#pmp-vacation-property-cards .pmp-vacation-cards__empty-title {
+  max-width: 24em;
+  font-family: var(--pmp-font-head);
+  font-size: clamp(20px, calc(17.6px + 0.6vw), 24px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--pmp-navy);
+}
+
+
+@media (min-width: 900px) {
+  #pmp-vacation-property-cards .pmp-vacation-cards__layout {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: clamp(48px, 7vw, 104px);
+    row-gap: 36px;
+    align-items: start;
+  }
+
+  #pmp-vacation-property-cards .pmp-vacation-cards__grid,
+  #pmp-vacation-property-cards .pmp-vacation-cards__slot {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 700px) {
+  #pmp-vacation-property-cards .pmp-vacation-cards__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  #pmp-vacation-property-cards .pmp-vacation-cards__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+</style>

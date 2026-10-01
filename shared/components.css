@@ -1,0 +1,523 @@
+/* ==========================================================================
+   Property Management Professionals · Shared components
+   --------------------------------------------------------------------------
+   Buttons, links, photo placeholders, gold corner marks, integration slots,
+   pending-detail tokens, checklists and the FAQ accordion. All scoped to .pmp.
+   ========================================================================== */
+
+/* ---------- Buttons ---------------------------------------------------------
+   Primary: navy. Secondary: warm white with a navy outline.
+   On navy: --light (warm white) and --outline-light.
+   Hover adds a gold baseline, the site's recurring architectural line. */
+.pmp .pmp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 22px;
+  font-family: var(--pmp-font-head);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  border: 1px solid transparent;
+  border-radius: var(--pmp-radius);
+  cursor: pointer;
+  transition: box-shadow var(--pmp-dur) var(--pmp-ease), border-color var(--pmp-dur) var(--pmp-ease), background-color var(--pmp-dur) var(--pmp-ease);
+}
+
+.pmp .pmp-btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--pmp-dur) var(--pmp-ease);
+}
+
+.pmp .pmp-btn:hover svg {
+  transform: translateX(3px);
+}
+
+.pmp .pmp-btn--primary {
+  background-color: var(--pmp-navy);
+  border-color: var(--pmp-navy);
+  color: var(--pmp-white);
+}
+
+.pmp .pmp-btn--secondary {
+  background-color: var(--pmp-white);
+  border-color: var(--pmp-navy);
+  color: var(--pmp-navy);
+}
+
+.pmp .pmp-btn--light {
+  background-color: var(--pmp-white);
+  border-color: var(--pmp-white);
+  color: var(--pmp-navy);
+}
+
+.pmp .pmp-btn--outline-light {
+  background-color: var(--pmp-navy);
+  border-color: rgba(255, 254, 251, 0.6);
+  color: var(--pmp-white);
+}
+
+.pmp .pmp-btn--primary:hover,
+.pmp .pmp-btn--secondary:hover,
+.pmp .pmp-btn--light:hover,
+.pmp .pmp-btn--outline-light:hover {
+  box-shadow: inset 0 -3px 0 var(--pmp-gold);
+}
+
+.pmp .pmp-btn--outline-light:hover {
+  border-color: var(--pmp-white);
+}
+
+.pmp .pmp-btns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+}
+
+@media (max-width: 599px) {
+  .pmp .pmp-btns > .pmp-btn {
+    width: 100%;
+  }
+}
+
+/* ---------- Text link with arrow ---------------------------------------- */
+.pmp .pmp-textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-family: var(--pmp-font-head);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--pmp-navy);
+  text-decoration: underline;
+  text-decoration-color: var(--pmp-gold);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  transition: text-decoration-color var(--pmp-dur) var(--pmp-ease);
+}
+
+.pmp .pmp-textlink svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--pmp-dur) var(--pmp-ease);
+}
+
+.pmp .pmp-textlink:hover {
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+}
+
+.pmp .pmp-textlink:hover svg {
+  transform: translateX(3px);
+}
+
+.pmp[data-bg="navy"] .pmp-textlink,
+.pmp .pmp-dark .pmp-textlink {
+  color: var(--pmp-white);
+}
+
+/* ---------- Photo placeholder -------------------------------------------
+   A solid sage block that reserves the photo's area and states what belongs
+   there. Faint rule-of-thirds lines hint at the crop. Replace the whole
+   .pmp-ph element with an <img class="pmp-photo pmp-photo--RATIO"> later. */
+.pmp .pmp-ph {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: clamp(12px, 2vw, 20px);
+  background-color: var(--pmp-sage);
+  border: 1px solid var(--pmp-line-strong);
+  color: var(--pmp-navy);
+}
+
+.pmp .pmp-ph--8x5 { aspect-ratio: 8 / 5; }
+.pmp .pmp-ph--4x3 { aspect-ratio: 4 / 3; }
+.pmp .pmp-ph--4x5 { aspect-ratio: 4 / 5; }
+
+.pmp .pmp-ph::before,
+.pmp .pmp-ph::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border: 0 solid rgba(23, 45, 59, 0.12);
+}
+
+.pmp .pmp-ph::before {
+  top: 0;
+  bottom: 0;
+  left: 33.333%;
+  right: 33.333%;
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
+.pmp .pmp-ph::after {
+  left: 0;
+  right: 0;
+  top: 33.333%;
+  bottom: 33.333%;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.pmp .pmp-ph__label {
+  position: relative;
+  max-width: 36em;
+  padding: 12px 14px;
+  background-color: var(--pmp-white);
+  border: 1px solid var(--pmp-line);
+  border-left: 2px solid var(--pmp-gold);
+  font-family: var(--pmp-font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--pmp-navy);
+}
+
+.pmp .pmp-ph__tag {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--pmp-font-head);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.pmp .pmp-ph__desc {
+  display: block;
+  font-weight: 500;
+}
+
+.pmp .pmp-ph__spec {
+  display: block;
+  margin-top: 6px;
+  color: var(--pmp-slate);
+}
+
+/* Approved photos use the same ratios as their placeholders. */
+.pmp .pmp-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: var(--pmp-sage);
+}
+
+.pmp .pmp-photo--8x5 { aspect-ratio: 8 / 5; }
+.pmp .pmp-photo--4x3 { aspect-ratio: 4 / 3; }
+.pmp .pmp-photo--4x5 { aspect-ratio: 4 / 5; }
+
+/* ---------- Gold corner marks: the signature detail ----------------------
+   Two gold L-shaped marks, like a drawing's crop marks, sit just outside a
+   photo's top-left and bottom-right corners. --frame draws a full thin gold
+   frame offset behind the photo instead (home hero). */
+.pmp .pmp-marks {
+  position: relative;
+}
+
+.pmp .pmp-marks::before,
+.pmp .pmp-marks::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  border: 0 solid var(--pmp-gold);
+}
+
+.pmp .pmp-marks::before {
+  top: -10px;
+  left: -10px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.pmp .pmp-marks::after {
+  right: -10px;
+  bottom: -10px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+}
+
+.pmp .pmp-marks--frame::before {
+  top: 18px;
+  left: 18px;
+  right: -18px;
+  bottom: -18px;
+  z-index: 0;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--pmp-gold);
+}
+
+.pmp .pmp-marks--frame::after {
+  display: none;
+}
+
+.pmp .pmp-marks--frame > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 599px) {
+  .pmp .pmp-marks::before,
+  .pmp .pmp-marks::after {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pmp .pmp-marks::before { top: -7px; left: -7px; }
+  .pmp .pmp-marks::after { right: -7px; bottom: -7px; }
+
+  .pmp .pmp-marks--frame::before {
+    top: 10px;
+    left: 10px;
+    right: -10px;
+    bottom: -10px;
+  }
+}
+
+/* ---------- Integration slot ---------------------------------------------
+   Marks where a GHL form, the PMS booking destination or the guest signup
+   will go. It never pretends to work. */
+.pmp .pmp-slot {
+  background-color: var(--pmp-white);
+  border: 1px dashed var(--pmp-gold);
+  border-radius: var(--pmp-radius-lg);
+  padding: clamp(20px, 3vw, 32px);
+  color: var(--pmp-slate);
+}
+
+.pmp .pmp-slot__tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  font-family: var(--pmp-font-head);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pmp-bronze);
+  background-color: var(--pmp-ivory);
+  border: 1px solid var(--pmp-gold);
+  border-radius: 3px;
+}
+
+.pmp .pmp-slot__title {
+  font-family: var(--pmp-font-head);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--pmp-navy);
+}
+
+.pmp .pmp-slot__notes {
+  margin-top: 12px;
+  font-size: var(--pmp-text-sm);
+  line-height: 1.55;
+}
+
+.pmp .pmp-slot__notes li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.pmp .pmp-slot__notes li + li {
+  margin-top: 6px;
+}
+
+.pmp .pmp-slot__notes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 1px;
+  background-color: var(--pmp-bronze);
+}
+
+.pmp .pmp-slot code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92em;
+  color: var(--pmp-navy);
+}
+
+/* ---------- Pending detail token -----------------------------------------
+   A detail Bob still has to confirm (phone, email, legal wording). The dashed
+   gold outline makes it obvious in review; it must be replaced before launch. */
+.pmp .pmp-pending {
+  display: inline;
+  padding: 1px 6px;
+  font-family: var(--pmp-font-head);
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--pmp-bronze);
+  background-color: var(--pmp-white);
+  border: 1px dashed var(--pmp-gold);
+  border-radius: 3px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.pmp[data-bg="navy"] .pmp-pending,
+.pmp .pmp-dark .pmp-pending {
+  color: var(--pmp-white);
+  background-color: var(--pmp-navy);
+}
+
+/* ---------- Checklist with small gold ticks ------------------------------ */
+.pmp .pmp-checklist li {
+  position: relative;
+  padding-left: 28px;
+}
+
+.pmp .pmp-checklist li + li {
+  margin-top: 10px;
+}
+
+.pmp .pmp-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.5em;
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid var(--pmp-gold);
+  border-bottom: 2px solid var(--pmp-gold);
+  transform: rotate(-45deg);
+}
+
+/* ---------- FAQ accordion (native details/summary, no script) ------------ */
+.pmp .pmp-faq {
+  border-top: 1px solid var(--pmp-line-strong);
+}
+
+.pmp .pmp-faq__item {
+  border-bottom: 1px solid var(--pmp-line-strong);
+}
+
+.pmp .pmp-faq__item > summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.pmp .pmp-faq__item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.pmp .pmp-faq__q {
+  font-family: var(--pmp-font-head);
+  font-size: var(--pmp-h3);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--pmp-navy);
+}
+
+.pmp .pmp-faq__icon {
+  position: relative;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  margin-top: 1px;
+  border: 1px solid var(--pmp-line-strong);
+  border-radius: 50%;
+  background-color: var(--pmp-white);
+  transition: border-color var(--pmp-dur) var(--pmp-ease), transform var(--pmp-dur) var(--pmp-ease);
+}
+
+.pmp .pmp-faq__icon::before,
+.pmp .pmp-faq__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 2px;
+  margin: -1px 0 0 -5px;
+  background-color: var(--pmp-navy);
+  transition: transform var(--pmp-dur) var(--pmp-ease);
+}
+
+.pmp .pmp-faq__icon::after {
+  transform: rotate(90deg);
+}
+
+.pmp .pmp-faq__item[open] .pmp-faq__icon {
+  border-color: var(--pmp-gold);
+}
+
+.pmp .pmp-faq__item[open] .pmp-faq__icon::after {
+  transform: rotate(0deg);
+}
+
+.pmp .pmp-faq__item > summary:hover .pmp-faq__icon {
+  border-color: var(--pmp-navy);
+}
+
+.pmp .pmp-faq__a {
+  max-width: 64ch;
+  padding: 0 52px 24px 0;
+}
+
+@media (max-width: 599px) {
+  .pmp .pmp-faq__a {
+    padding-right: 0;
+  }
+}
+
+/* ---------- Wordmark (used when no approved logo exists) ----------------- */
+.pmp .pmp-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding-left: 14px;
+  border-left: 2px solid var(--pmp-gold);
+  font-family: var(--pmp-font-head);
+  line-height: 1.1;
+  color: var(--pmp-navy);
+  text-decoration: none;
+}
+
+.pmp .pmp-wordmark__top {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.pmp .pmp-wordmark__bottom {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pmp-bronze);
+}
+
+.pmp .pmp-wordmark--light {
+  color: var(--pmp-white);
+}
+
+.pmp .pmp-wordmark--light .pmp-wordmark__bottom {
+  color: var(--pmp-white);
+}

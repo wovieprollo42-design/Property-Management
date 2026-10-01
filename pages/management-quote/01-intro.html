@@ -1,0 +1,79 @@
+<!--
+  MANAGEMENT QUOTE · 01 INTRO
+  Background: #F8F5EC ivory (data-bg="ivory")
+  Layout: compact. Heading and introduction on the left, a small property photo on the right, so the
+          form below comes into view quickly.
+  Photo slot: quote-intro · source 1200 x 900 px · ratio 4:3
+  Replace the placeholder with:
+    <img class="pmp-photo pmp-photo--4x3" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL PROPERTY"
+         width="1200" height="900" decoding="async">
+-->
+<section class="pmp pmp-sec" id="pmp-quote-intro" data-bg="ivory" aria-labelledby="pmp-quote-intro-title">
+  <div class="pmp-wrap">
+    <div class="pmp-quote-intro__grid">
+      <div>
+        <p class="pmp-eyebrow">Management quote</p>
+        <h1 id="pmp-quote-intro-title">Tell us about your property</h1>
+        <p class="pmp-lead pmp-quote-intro__lead">Looking for help managing a long-term rental or vacation property? Share a few details below. Our team will review your inquiry and contact you about your needs and next steps.</p>
+        <p class="pmp-quote-intro__hint">If you are unsure what services you need, tell us what takes the most time or causes the most concern.</p>
+        <a class="pmp-textlink pmp-quote-intro__jump" href="#pmp-quote-owner-form">Go to the form {{arrow}}</a>
+      </div>
+
+      <div class="pmp-quote-intro__media pmp-marks">
+        <div class="pmp-ph pmp-ph--4x3" data-photo-slot="quote-intro">
+          <p class="pmp-ph__label">
+            <span class="pmp-ph__tag">INSERT PHOTO</span>
+            <span class="pmp-ph__desc">Actual property detail or warm exterior.</span>
+            <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: one clear detail; keep the image small so the form stays close.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-quote-intro {
+  padding-block: clamp(40px, calc(18px + 4.4vw), 72px);
+}
+
+#pmp-quote-intro .pmp-quote-intro__grid {
+  display: grid;
+  gap: 36px;
+  align-items: center;
+}
+
+#pmp-quote-intro .pmp-quote-intro__lead {
+  max-width: 32em;
+  margin-top: 20px;
+}
+
+#pmp-quote-intro .pmp-quote-intro__hint {
+  max-width: 34em;
+  margin-top: 16px;
+  padding-left: 18px;
+  border-left: 2px solid var(--pmp-gold);
+  font-weight: 500;
+  color: var(--pmp-navy);
+}
+
+#pmp-quote-intro .pmp-quote-intro__jump {
+  margin-top: 16px;
+}
+
+#pmp-quote-intro .pmp-quote-intro__media {
+  max-width: 420px;
+}
+
+@media (min-width: 900px) {
+  #pmp-quote-intro .pmp-quote-intro__grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: clamp(48px, 7vw, 104px);
+  }
+
+  #pmp-quote-intro .pmp-quote-intro__media {
+    justify-self: end;
+    width: 100%;
+  }
+}
+</style>

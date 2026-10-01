@@ -1,0 +1,13 @@
+{
+  "key": "ty-owner",
+  "name": "Owner Thank You",
+  "route": "/management-thank-you",
+  "title": "Inquiry Received | Property Management Professionals",
+  "description": "Your management inquiry has been received. Our team will review the details and contact you about your property.",
+  "productionRobots": "noindex",
+  "inSitemap": false,
+  "mainAction": "Return to services",
+  "sections": [
+    "01-confirmation.html"
+  ]
+}

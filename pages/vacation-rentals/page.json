@@ -1,0 +1,19 @@
+{
+  "key": "vacation",
+  "name": "Vacation Rentals",
+  "route": "/vacation-rentals",
+  "title": "Vacation Rentals in East Central Minnesota",
+  "description": "Explore East Central Minnesota vacation properties, compare verified features, and use each property's booking link for current availability and rates.",
+  "productionRobots": "index, follow",
+  "inSitemap": true,
+  "mainAction": "Approved property booking destination",
+  "keywordTheme": "Vacation rentals in East Central Minnesota; guest search",
+  "supportingThemes": "Vacation homes; places to stay; property booking information",
+  "sections": [
+    "01-hero.html",
+    "02-property-cards.html",
+    "03-before-you-book.html",
+    "04-guest-updates.html",
+    "05-owner-path.html"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "key": "rentals",
+  "name": "Available Rentals",
+  "route": "/available-rentals",
+  "title": "Available Rentals in East Central Minnesota",
+  "description": "Explore current long-term rental listings in East Central Minnesota. Review property details and complete preliminary prequalification to get started.",
+  "productionRobots": "index, follow",
+  "inSitemap": true,
+  "mainAction": "Approved listing and prequalification",
+  "keywordTheme": "Available long-term rentals in East Central Minnesota; renter search",
+  "supportingThemes": "Homes for rent; rental availability; rental prequalification",
+  "sections": [
+    "01-intro.html",
+    "02-current-listings.html",
+    "03-how-to-get-started.html"
+  ]
+}

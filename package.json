@@ -1,0 +1,15 @@
+{
+  "name": "property-management-professionals",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Design preview and GHL section exports for the Property Management Professionals website.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node serve.mjs",
+    "preview": "node build.mjs && node serve.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

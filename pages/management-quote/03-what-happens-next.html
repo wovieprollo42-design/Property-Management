@@ -1,0 +1,103 @@
+<!--
+  MANAGEMENT QUOTE · 03 WHAT HAPPENS NEXT
+  Background: #E9EDE9 pale sage gray (data-bg="sage")
+  Layout: the after-submission paragraph set as four stages along a gold line.
+-->
+<section class="pmp pmp-sec" id="pmp-quote-what-happens-next" data-bg="sage" aria-labelledby="pmp-quote-what-happens-next-title">
+  <div class="pmp-wrap">
+    <p class="pmp-eyebrow">After submission</p>
+    <h2 id="pmp-quote-what-happens-next-title">What happens next?</h2>
+
+    <ol class="pmp-quote-next__stages">
+      <li><span class="pmp-quote-next__num" aria-hidden="true">01</span><p>We review your property details.</p></li>
+      <li><span class="pmp-quote-next__num" aria-hidden="true">02</span><p>We clarify the support you need.</p></li>
+      <li><span class="pmp-quote-next__num" aria-hidden="true">03</span><p>We discuss whether our services fit.</p></li>
+      <li><span class="pmp-quote-next__num" aria-hidden="true">04</span><p>We provide proposed fees and scope before you agree to management services.</p></li>
+    </ol>
+  </div>
+</section>
+
+<style>
+#pmp-quote-what-happens-next .pmp-quote-next__stages {
+  position: relative;
+  display: grid;
+  gap: 28px;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+
+#pmp-quote-what-happens-next .pmp-quote-next__stages li {
+  position: relative;
+  padding-left: 40px;
+}
+
+#pmp-quote-what-happens-next .pmp-quote-next__stages li::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  background-color: var(--pmp-sage);
+  border: 2px solid var(--pmp-gold);
+  transform: rotate(45deg);
+}
+
+#pmp-quote-what-happens-next .pmp-quote-next__stages li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  bottom: -24px;
+  left: 5px;
+  width: 1px;
+  background-color: var(--pmp-gold);
+}
+
+#pmp-quote-what-happens-next .pmp-quote-next__num {
+  display: block;
+  font-family: var(--pmp-font-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--pmp-bronze);
+}
+
+#pmp-quote-what-happens-next .pmp-quote-next__stages p {
+  max-width: 18em;
+  margin-top: 6px;
+  font-family: var(--pmp-font-head);
+  font-size: clamp(18px, calc(16.4px + 0.4vw), 21px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--pmp-navy);
+}
+
+@media (min-width: 900px) {
+  #pmp-quote-what-happens-next .pmp-quote-next__stages {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+    padding-top: 32px;
+  }
+
+  #pmp-quote-what-happens-next .pmp-quote-next__stages::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--pmp-gold);
+  }
+
+  #pmp-quote-what-happens-next .pmp-quote-next__stages li {
+    padding-left: 0;
+  }
+
+  #pmp-quote-what-happens-next .pmp-quote-next__stages li::before {
+    top: -32px;
+  }
+
+  #pmp-quote-what-happens-next .pmp-quote-next__stages li:not(:last-child)::after {
+    display: none;
+  }
+}
+</style>

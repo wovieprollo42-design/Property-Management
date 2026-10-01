@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Production sitemap template. Replace YOUR-CONFIRMED-DOMAIN before use.
+     Contains only pages meant to be indexed at launch. Generated 2026-10-01. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://YOUR-CONFIRMED-DOMAIN/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-CONFIRMED-DOMAIN/long-term-rental-management</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-CONFIRMED-DOMAIN/short-term-rental-management</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-CONFIRMED-DOMAIN/about</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-CONFIRMED-DOMAIN/faqs</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-CONFIRMED-DOMAIN/management-quote</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-CONFIRMED-DOMAIN/available-rentals</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-CONFIRMED-DOMAIN/rental-prequalification</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-CONFIRMED-DOMAIN/vacation-rentals</loc>
+  </url>
+</urlset>

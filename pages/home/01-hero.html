@@ -1,0 +1,163 @@
+<!--
+  HOME · 01 HERO
+  Background: #F8F5EC ivory (data-bg="ivory")
+  Layout: asymmetric split. Owner-focused copy on the left, main property photo on the right
+          inside a thin offset gold frame. A ribbon at the bottom lists the work owners hand over.
+  Photo slot: home-hero · source 1920 x 1200 px · ratio 8:5
+  Alt text must describe the actual property, without implying a location or management
+  relationship that has not been confirmed.
+  Replace the placeholder with:
+    <img class="pmp-photo pmp-photo--8x5" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL PROPERTY"
+         width="1920" height="1200" fetchpriority="high" decoding="async">
+-->
+<section class="pmp pmp-sec" id="pmp-home-hero" data-bg="ivory" aria-labelledby="pmp-home-hero-title">
+  <div class="pmp-wrap">
+    <div class="pmp-home-hero__grid">
+      <div class="pmp-home-hero__copy">
+        <p class="pmp-eyebrow">Long-term and short-term rentals</p>
+        <h1 class="pmp-h1-home" id="pmp-home-hero-title">Property management in East Central Minnesota</h1>
+        <p class="pmp-lead pmp-home-hero__lead">Owning a rental takes time, attention, and the right people. Property Management Professionals helps owners coordinate leasing, communication, maintenance, and the day-to-day work of caring for a rental.</p>
+        <p class="pmp-home-hero__note">Tell us about your property and the support you need.</p>
+        <div class="pmp-btns pmp-home-hero__actions">
+          <a class="pmp-btn pmp-btn--primary" href="/management-quote">Request a Management Quote {{arrow}}</a>
+          <a class="pmp-textlink" href="#pmp-home-getting-started">How getting started works</a>
+        </div>
+      </div>
+
+      <div class="pmp-home-hero__media">
+        <div class="pmp-marks pmp-marks--frame">
+          <div class="pmp-ph pmp-ph--8x5" data-photo-slot="home-hero">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">Approved exterior of a well-kept managed rental in natural daylight, with clear architecture.</span>
+              <span class="pmp-ph__spec">Source 1920 × 1200 px · Display ratio 8:5 · Crop: keep the building near the center for mobile.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pmp-home-hero__scope">
+      <p class="pmp-home-hero__scope-label">The work we help owners coordinate</p>
+      <ul class="pmp-home-hero__scope-list">
+        <li><span class="pmp-home-hero__num">01</span>Leasing coordination</li>
+        <li><span class="pmp-home-hero__num">02</span>Tenant and guest communication</li>
+        <li><span class="pmp-home-hero__num">03</span>Maintenance coordination</li>
+        <li><span class="pmp-home-hero__num">04</span>Turnovers</li>
+        <li><span class="pmp-home-hero__num">05</span>Reporting</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+#pmp-home-hero {
+  padding-top: clamp(40px, calc(18px + 4.4vw), 80px);
+  padding-bottom: 0;
+}
+
+#pmp-home-hero .pmp-home-hero__grid {
+  display: grid;
+  gap: 48px;
+  align-items: center;
+}
+
+#pmp-home-hero .pmp-home-hero__lead {
+  max-width: 34em;
+  margin-top: 24px;
+}
+
+#pmp-home-hero .pmp-home-hero__note {
+  max-width: 34em;
+  margin-top: 14px;
+  font-weight: 500;
+  color: var(--pmp-navy);
+}
+
+#pmp-home-hero .pmp-home-hero__actions {
+  margin-top: 32px;
+}
+
+#pmp-home-hero .pmp-home-hero__media {
+  padding: 0 18px 18px 0;
+}
+
+#pmp-home-hero .pmp-home-hero__scope {
+  margin-top: clamp(56px, calc(40px + 3.5vw), 96px);
+  border-top: 1px solid var(--pmp-line-strong);
+}
+
+#pmp-home-hero .pmp-home-hero__scope-label {
+  padding: 18px 0 4px;
+  font-family: var(--pmp-font-head);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pmp-bronze);
+}
+
+#pmp-home-hero .pmp-home-hero__scope-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 20px;
+}
+
+#pmp-home-hero .pmp-home-hero__scope-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 0 18px;
+  font-family: var(--pmp-font-head);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--pmp-navy);
+  border-bottom: 1px solid var(--pmp-line);
+}
+
+#pmp-home-hero .pmp-home-hero__scope-list li:last-child {
+  grid-column: 1 / -1;
+  border-bottom: 0;
+}
+
+#pmp-home-hero .pmp-home-hero__num {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--pmp-bronze);
+}
+
+@media (min-width: 900px) {
+  #pmp-home-hero .pmp-home-hero__grid {
+    grid-template-columns: minmax(0, 11fr) minmax(0, 13fr);
+    gap: clamp(40px, 5vw, 72px);
+  }
+}
+
+@media (min-width: 1100px) {
+  #pmp-home-hero .pmp-home-hero__scope {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  #pmp-home-hero .pmp-home-hero__scope-label {
+    padding: 26px 24px 32px 0;
+    line-height: 1.5;
+  }
+
+  #pmp-home-hero .pmp-home-hero__scope-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 0;
+  }
+
+  #pmp-home-hero .pmp-home-hero__scope-list li,
+  #pmp-home-hero .pmp-home-hero__scope-list li:last-child {
+    grid-column: auto;
+    padding: 24px 20px 36px;
+    border-bottom: 0;
+    border-left: 1px solid var(--pmp-line);
+  }
+}
+</style>
