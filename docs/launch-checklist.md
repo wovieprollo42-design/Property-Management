@@ -10,11 +10,18 @@ Owners: **Bob** confirms business facts and scope, **Jocel** installs and config
 ## A. Business facts to confirm (Bob)
 
 - [ ] Management DBA and exact legal footer wording (footer, both legal pages)
-- [ ] Management phone number (footer)
-- [ ] Management email address (footer, owner thank-you page), plus the info@ sender and reply address
-- [ ] The one approved HTTPS domain for the site (canonicals, sitemap)
-- [ ] Approved horizontal logo (SVG, or transparent PNG at least 800 px wide) and permission to use it;
-      the favicon is then made from that logo. Until then the header and footer use a text wordmark.
+- [x] Management phone number: **(612) 210-8424** (confirmed 2026-10-01; header, footer, heroes, quote page,
+      owner thank-you page, legal drafts)
+- [x] Management email: **info@mg.propertymanagementprofessionals.net** (confirmed 2026-10-01; same places)
+- [ ] Check that this email **receives and answers mail**. An `mg.` subdomain is usually a sending-only
+      domain set up for GHL email, so replies may go nowhere. If a different inbox is preferred (for example
+      info@propertymanagementprofessionals.net), change it in `shared/header.html`, `shared/footer.html`,
+      the home and service heroes, the quote page, the owner thank-you page and both legal drafts.
+- [ ] The one approved HTTPS domain for the site (canonicals, sitemap). The email suggests
+      propertymanagementprofessionals.net, but it is not assumed until confirmed.
+- [x] Logo supplied (2026-10-01). Web files and favicons were cut from it (see `image-inventory.md`).
+- [ ] Approve the header treatment: only the logo's name block is shown in the header, the full logo is in
+      the footer. Send a horizontal or true-vector logo if one exists.
 - [ ] Bob's preferred public title (About page, portrait alt text). No title is shown until confirmed.
 - [ ] Long-term service scope as written on `/long-term-rental-management` (marketing and leasing,
       screening and placement, rent collection and reporting, tenant communication, maintenance
@@ -77,7 +84,8 @@ Owners: **Bob** confirms business facts and scope, **Jocel** installs and config
 
 ## E. Legal review drafts (qualified reviewer)
 
-- [ ] Privacy Policy: effective date, legal operator/DBA, privacy email, mailing address, phone, the
+- [ ] Privacy Policy: effective date, legal operator/DBA, mailing address, confirm the listed email is the
+      right privacy contact, the
       providers actually used, the actual mobile opt-in sharing practice, cookies and analytics actually
       used, and actual retention and security practice.
 - [ ] Terms of Service: effective date, operator and support contact, booking provider name, and the

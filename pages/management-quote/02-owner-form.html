@@ -57,6 +57,13 @@
           <li>Your main concerns</li>
         </ul>
         <p class="pmp-quote-form__aside-note">We’ll use that information to discuss whether our services fit.</p>
+        <div class="pmp-quote-form__call">
+          <p class="pmp-quote-form__call-title">Prefer to talk first?</p>
+          <p class="pmp-contact pmp-quote-form__contact">
+            <a href="tel:+16122108424">{{phone}}<span>(612) 210-8424</span></a>
+            <a href="mailto:info@mg.propertymanagementprofessionals.net">{{mail}}<span>info@mg.propertymanagementprofessionals.net</span></a>
+          </p>
+        </div>
       </aside>
     </div>
   </div>
@@ -147,6 +154,31 @@
   padding-top: 16px;
   font-size: var(--pmp-text-sm);
   border-top: 1px solid var(--pmp-line);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__call {
+  margin-top: 22px;
+  padding: 18px 20px;
+  background-color: var(--pmp-navy);
+  color: var(--pmp-white);
+  border-radius: var(--pmp-radius);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__call-title {
+  font-family: var(--pmp-font-head);
+  font-weight: 700;
+  color: var(--pmp-white);
+}
+
+#pmp-quote-owner-form .pmp-quote-form__contact {
+  flex-direction: column;
+  gap: 0;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+#pmp-quote-owner-form .pmp-quote-form__contact a:focus-visible {
+  outline-color: var(--pmp-gold);
 }
 
 @media (min-width: 600px) {

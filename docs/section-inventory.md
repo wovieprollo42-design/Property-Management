@@ -52,7 +52,7 @@ H1: Long-term rental management for local property owners
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/long-term-rental-management/01-hero.html` | `#pmp-ltr-hero` | Warm ivory `#F8F5EC` | long-term-hero (8:5) | · | · | `exports/ghl/long-term-rental-management/01-hero.html` |
+| 1 | `pages/long-term-rental-management/01-hero.html` | `#pmp-ltr-hero` | Deep navy `#172D3B` | long-term-hero (8:5) | · | · | `exports/ghl/long-term-rental-management/01-hero.html` |
 | 2 | `pages/long-term-rental-management/02-service-scope.html` | `#pmp-ltr-service-scope` | Warm white `#FFFEFB` | long-term-property-care (4:3) | · | · | `exports/ghl/long-term-rental-management/02-service-scope.html` |
 | 3 | `pages/long-term-rental-management/03-scope-and-transition.html` | `#pmp-ltr-scope-and-transition` | Pale sage gray `#E9EDE9` | · | · | · | `exports/ghl/long-term-rental-management/03-scope-and-transition.html` |
 | 4 | `pages/long-term-rental-management/04-final-action.html` | `#pmp-ltr-final-action` | Warm ivory `#F8F5EC` | · | · | · | `exports/ghl/long-term-rental-management/04-final-action.html` |
@@ -63,7 +63,7 @@ H1: Short-term rental management in East Central Minnesota
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/short-term-rental-management/01-hero.html` | `#pmp-str-hero` | Warm ivory `#F8F5EC` | short-term-hero (8:5) | · | · | `exports/ghl/short-term-rental-management/01-hero.html` |
+| 1 | `pages/short-term-rental-management/01-hero.html` | `#pmp-str-hero` | Deep navy `#172D3B` | short-term-hero (8:5) | · | · | `exports/ghl/short-term-rental-management/01-hero.html` |
 | 2 | `pages/short-term-rental-management/02-service-scope.html` | `#pmp-str-service-scope` | Pale sage gray `#E9EDE9` | short-term-guest-space (4:3) | · | · | `exports/ghl/short-term-rental-management/02-service-scope.html` |
 | 3 | `pages/short-term-rental-management/03-plan-and-guest-experience.html` | `#pmp-str-plan-and-guest-experience` | Warm white `#FFFEFB` | · | · | · | `exports/ghl/short-term-rental-management/03-plan-and-guest-experience.html` |
 | 4 | `pages/short-term-rental-management/04-final-action.html` | `#pmp-str-final-action` | Warm ivory `#F8F5EC` | · | · | · | `exports/ghl/short-term-rental-management/04-final-action.html` |
@@ -107,7 +107,7 @@ H1: Thanks for telling us about your property
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/thank-you/management-thank-you/01-confirmation.html` | `#pmp-ty-owner-confirmation` | Warm ivory `#F8F5EC` | · | · | 1 | `exports/ghl/thank-you/management-thank-you/01-confirmation.html` |
+| 1 | `pages/thank-you/management-thank-you/01-confirmation.html` | `#pmp-ty-owner-confirmation` | Warm ivory `#F8F5EC` | · | · | · | `exports/ghl/thank-you/management-thank-you/01-confirmation.html` |
 
 ## Available Rentals · `/available-rentals`
 
@@ -155,8 +155,8 @@ H1: Privacy policy
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/legal/privacy-policy/01-title.html` | `#pmp-privacy-title` | Warm ivory `#F8F5EC` | · | · | 5 | `exports/ghl/legal/privacy-policy/01-title.html` |
-| 2 | `pages/legal/privacy-policy/02-policy-content.html` | `#pmp-privacy-policy-content` | Warm white `#FFFEFB` | · | · | 7 | `exports/ghl/legal/privacy-policy/02-policy-content.html` |
+| 1 | `pages/legal/privacy-policy/01-title.html` | `#pmp-privacy-title` | Warm ivory `#F8F5EC` | · | · | 3 | `exports/ghl/legal/privacy-policy/01-title.html` |
+| 2 | `pages/legal/privacy-policy/02-policy-content.html` | `#pmp-privacy-policy-content` | Warm white `#FFFEFB` | · | · | 6 | `exports/ghl/legal/privacy-policy/02-policy-content.html` |
 
 ## Terms of Service (review draft) · `/terms-of-service`
 
@@ -164,8 +164,8 @@ H1: Terms of service
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/legal/terms-of-service/01-title.html` | `#pmp-terms-title` | Warm ivory `#F8F5EC` | · | · | 3 | `exports/ghl/legal/terms-of-service/01-title.html` |
-| 2 | `pages/legal/terms-of-service/02-terms-content.html` | `#pmp-terms-terms-content` | Warm white `#FFFEFB` | · | · | 3 | `exports/ghl/legal/terms-of-service/02-terms-content.html` |
+| 1 | `pages/legal/terms-of-service/01-title.html` | `#pmp-terms-title` | Warm ivory `#F8F5EC` | · | · | 2 | `exports/ghl/legal/terms-of-service/01-title.html` |
+| 2 | `pages/legal/terms-of-service/02-terms-content.html` | `#pmp-terms-terms-content` | Warm white `#FFFEFB` | · | · | 2 | `exports/ghl/legal/terms-of-service/02-terms-content.html` |
 
 ## Page not found (404) · `/404`
 

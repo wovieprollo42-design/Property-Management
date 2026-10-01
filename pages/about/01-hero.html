@@ -1,7 +1,8 @@
 <!--
   ABOUT · 01 HERO
   Background: #F8F5EC ivory (data-bg="ivory")
-  Layout: heading and introduction in two columns, then a wide photo of Bob or the team at a property.
+  Layout: heading and introduction in two columns, then a wide photo of Bob or the team at a property,
+          sitting on a deep navy band that runs across the bottom of the section.
   Photo slot: about-hero · source 1600 x 1000 px · ratio 8:5
   Do not use an unapproved personal photo.
   Replace the placeholder with:
@@ -32,7 +33,20 @@
 
 <style>
 #pmp-about-hero {
+  position: relative;
+  overflow: clip;
   padding-top: clamp(40px, calc(18px + 4.4vw), 80px);
+}
+
+#pmp-about-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: clamp(120px, 24vw, 320px);
+  background-color: var(--pmp-navy);
+  border-top: 3px solid var(--pmp-gold);
 }
 
 #pmp-about-hero .pmp-about-hero__intro {
@@ -49,6 +63,7 @@
 }
 
 #pmp-about-hero .pmp-about-hero__media {
+  z-index: 1;
   margin-top: clamp(40px, 6vw, 72px);
 }
 

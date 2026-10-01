@@ -88,7 +88,7 @@ Background colors used by the sections:
 Also set the **page background** (page or site settings) to warm ivory `#F8F5EC`, so no gap between
 GHL rows ever shows a different color.
 
-## Step 4 · Header and footer
+## Step 4 · Header, footer, logo and favicon
 
 1. On the first page, install `shared/header.html` as the **first** section (background `#FFFEFB`) and
    `shared/footer.html` as the **last** section (background `#172D3B`).
@@ -99,6 +99,12 @@ GHL rows ever shows a different color.
    want it. Check that the sticky header does not cover the dropdown or jump links.
 4. The header marks the current page automatically, and its dropdown and mobile menu work inside GHL
    with no extra setup.
+5. **Logo:** the header and footer snippets already contain the logo, embedded in the code, so they show it
+   with no upload. To make the pages lighter, you can upload `exports/ghl/brand/logo-name.webp` and
+   `logo-full.webp` to the GHL media library and replace the long `data:image/webp;base64,…` value in each
+   snippet's `src` with the media URL.
+6. **Favicon:** in the site settings, upload `exports/ghl/brand/favicon-192.png` (or `favicon.ico`) as the
+   favicon.
 
 ## Step 5 · Replacement points
 
@@ -162,8 +168,9 @@ state stays.
 ### Pending details (dashed gold boxes)
 
 Search the source for `pmp-pending`. Replace each box, and the `<span class="pmp-pending">` around
-it, with the confirmed wording: management phone and email, legal identity and DBA wording (footer,
-owner thank-you page), and every item in the legal drafts.
+it, with the confirmed wording: the legal identity and DBA wording (footer) and the remaining items in the
+legal drafts (effective date, operator, mailing address and the policy details). The phone number and email
+are already in place.
 
 ## Step 6 · Check the installed page
 

@@ -1,54 +1,58 @@
 <!--
   SHARED FOOTER · used on every page and exported to exports/ghl/shared/footer.html
   Background: #172D3B deep navy (data-bg="navy") with warm white text and a gold top line.
-  Pending details (dashed gold boxes) must be replaced with confirmed wording before launch:
-    - management phone, management email, legal identity / DBA wording
-  Links follow the Master Brief footer list.
+  Logo: the full approved logo sits on a warm white plate, because its charcoal lettering would
+        disappear on navy. The logo itself is not recolored.
+  Contact: phone and email confirmed by the owner on 2026-10-01.
+  Still pending (dashed gold box): the confirmed legal identity and DBA wording.
 -->
 <footer class="pmp pmp-footer" id="pmp-footer" data-bg="navy">
   <div class="pmp-wrap">
     <div class="pmp-footer__top">
       <div class="pmp-footer__brand">
-        <a class="pmp-wordmark pmp-wordmark--light" href="/" aria-label="Property Management Professionals, home">
-          <span class="pmp-wordmark__top">Property Management</span>
-          <span class="pmp-wordmark__bottom">Professionals</span>
+        <a class="pmp-footer__plate" href="/" aria-label="Property Management Professionals, home">
+          <img src="{{brand:logo-full.webp}}" alt="" width="280" height="185" decoding="async">
         </a>
         <p class="pmp-footer__tagline">Rental management and property care in East Central Minnesota.</p>
-        <p class="pmp-footer__contact">
-          <span class="pmp-pending">[Confirmed management phone]</span>
-          <span class="pmp-pending">[Confirmed management email]</span>
+        <p class="pmp-contact pmp-footer__contact">
+          <a href="tel:+16122108424">{{phone}}<span>(612) 210-8424</span></a>
+          <a href="mailto:info@mg.propertymanagementprofessionals.net">{{mail}}<span>info@mg.propertymanagementprofessionals.net</span></a>
         </p>
-        <div class="pmp-footer__cta">
-          <a class="pmp-btn pmp-btn--light" href="/management-quote">Request a Management Quote {{arrow}}</a>
-        </div>
       </div>
 
-      <nav class="pmp-footer__nav" aria-label="Footer">
-        <div class="pmp-footer__group">
-          <p class="pmp-footer__label" id="pmp-footer-owners">For owners</p>
-          <ul aria-labelledby="pmp-footer-owners">
-            <li><a href="/long-term-rental-management">Long-Term Management</a></li>
-            <li><a href="/short-term-rental-management">Short-Term Management</a></li>
-            <li><a href="/management-quote">Request a Quote</a></li>
-            <li><a href="/faqs">FAQs</a></li>
-          </ul>
+      <div class="pmp-footer__side">
+        <div class="pmp-footer__cta">
+          <p class="pmp-footer__cta-title">Tell us about your property</p>
+          <a class="pmp-btn pmp-btn--light" href="/management-quote">Request a Management Quote {{arrow}}</a>
         </div>
-        <div class="pmp-footer__group">
-          <p class="pmp-footer__label" id="pmp-footer-visitors">Renters and guests</p>
-          <ul aria-labelledby="pmp-footer-visitors">
-            <li><a href="/available-rentals">Available Rentals</a></li>
-            <li><a href="/vacation-rentals">Vacation Rentals</a></li>
-          </ul>
-        </div>
-        <div class="pmp-footer__group">
-          <p class="pmp-footer__label" id="pmp-footer-company">Company</p>
-          <ul aria-labelledby="pmp-footer-company">
-            <li><a href="/about">About</a></li>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms-of-service">Terms of Service</a></li>
-          </ul>
-        </div>
-      </nav>
+
+        <nav class="pmp-footer__nav" aria-label="Footer">
+          <div class="pmp-footer__group">
+            <p class="pmp-footer__label" id="pmp-footer-owners">For owners</p>
+            <ul aria-labelledby="pmp-footer-owners">
+              <li><a href="/long-term-rental-management">Long-Term Management</a></li>
+              <li><a href="/short-term-rental-management">Short-Term Management</a></li>
+              <li><a href="/management-quote">Request a Quote</a></li>
+              <li><a href="/faqs">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="pmp-footer__group">
+            <p class="pmp-footer__label" id="pmp-footer-visitors">Renters and guests</p>
+            <ul aria-labelledby="pmp-footer-visitors">
+              <li><a href="/available-rentals">Available Rentals</a></li>
+              <li><a href="/vacation-rentals">Vacation Rentals</a></li>
+            </ul>
+          </div>
+          <div class="pmp-footer__group">
+            <p class="pmp-footer__label" id="pmp-footer-company">Company</p>
+            <ul aria-labelledby="pmp-footer-company">
+              <li><a href="/about">About</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/terms-of-service">Terms of Service</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
 
     <div class="pmp-footer__bottom">
@@ -60,7 +64,7 @@
 
 <style>
 #pmp-footer {
-  padding-block: clamp(48px, calc(34px + 3.6vw), 80px) 32px;
+  padding-block: clamp(56px, calc(36px + 4vw), 88px) 32px;
   border-top: 3px solid var(--pmp-gold);
   font-size: 16px;
   color: rgba(255, 254, 251, 0.86);
@@ -71,30 +75,74 @@
   gap: 48px;
 }
 
+#pmp-footer .pmp-footer__plate {
+  position: relative;
+  display: inline-block;
+  padding: 18px 24px;
+  background-color: var(--pmp-white);
+  border-radius: var(--pmp-radius);
+  line-height: 0;
+}
+
+#pmp-footer .pmp-footer__plate::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  width: 26px;
+  height: 26px;
+  border-right: 2px solid var(--pmp-gold);
+  border-bottom: 2px solid var(--pmp-gold);
+}
+
+#pmp-footer .pmp-footer__plate img {
+  width: 220px;
+  height: auto;
+}
+
 #pmp-footer .pmp-footer__tagline {
   max-width: 30em;
-  margin-top: 20px;
+  margin-top: 28px;
   font-size: 17px;
   color: var(--pmp-white);
 }
 
 #pmp-footer .pmp-footer__contact {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 10px;
-  margin-top: 14px;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 12px;
   font-size: 15px;
+  color: var(--pmp-white);
+}
+
+#pmp-footer .pmp-footer__contact a:focus-visible {
+  outline-color: var(--pmp-gold);
 }
 
 #pmp-footer .pmp-footer__cta {
-  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  padding: 24px 28px;
+  border: 1px solid var(--pmp-line-light);
+  border-left: 3px solid var(--pmp-gold);
+}
+
+#pmp-footer .pmp-footer__cta-title {
+  font-family: var(--pmp-font-head);
+  font-size: clamp(20px, calc(17.6px + 0.6vw), 24px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--pmp-white);
 }
 
 #pmp-footer .pmp-footer__nav {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 32px 24px;
+  margin-top: 40px;
 }
 
 #pmp-footer .pmp-footer__label {
@@ -147,10 +195,10 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   #pmp-footer .pmp-footer__top {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    gap: 64px;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    gap: clamp(48px, 7vw, 104px);
   }
 }
 </style>

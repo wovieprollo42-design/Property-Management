@@ -36,6 +36,7 @@ header from the preview server).
 
 ```
 shared/                         used by every page
+  brand/                        the approved logo, web files cut from it, and favicons
   tokens.css                    brand colors, fonts, sizes, spacing (change a brand value here)
   base.css                      scoped type, layout and backgrounds
   components.css                buttons, photo placeholders, form slots, FAQ accordion, wordmark
@@ -85,7 +86,7 @@ page title.
   Preview the card design at http://localhost:4321/preview-card-templates.
 
 Details still waiting for confirmation appear in **dashed gold boxes** (for example
-`[Confirmed management phone]`). Form, booking and signup areas are marked
+`[Confirmed legal identity and DBA wording]`). Form, booking and signup areas are marked
 **"not connected"**. Both are intentional and listed in `docs/launch-checklist.md`.
 
 ## 4. Documents

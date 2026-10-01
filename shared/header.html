@@ -1,19 +1,29 @@
 <!--
   SHARED HEADER · used on every page and exported to exports/ghl/shared/header.html
-  Background: #FFFEFB warm white (data-bg="white")
-  Logo: no approved logo file yet, so the full business name is a text wordmark.
-        To use an approved logo later, replace the <span class="pmp-wordmark">...</span>
-        inside .pmp-header__brand with <img src="LOGO-URL" alt="Property Management Professionals" width="..." height="...">
+  Background: #FFFEFB warm white (data-bg="white"), with a #172D3B navy contact bar on top.
+  Logo: the approved logo (shared/brand/logo-original.svg), used unaltered. The header shows its
+        name block (PROPERTY / MANAGEMENT banner / PROFESSIONALS) as the banner-shaped wordmark the
+        brief asks for; the full logo with its skyline icon is in the footer. Nothing is redrawn,
+        recolored or stretched.
+        {{brand:...}} becomes a file URL in the preview and an embedded image in the GHL export.
+  Contact: phone and email confirmed by the owner on 2026-10-01.
   Behavior (script below): Management Services dropdown, mobile menu, current-page marking.
-  Icons: {{arrow}} and {{caret}} are filled in by build.mjs.
+  On scroll the contact bar slides away and the main bar stays pinned (position: sticky; top: -40px).
 -->
 <header class="pmp pmp-header" id="pmp-header" data-bg="white">
+  <div class="pmp-header__util">
+    <div class="pmp-wrap pmp-header__util-row">
+      <p class="pmp-header__util-text">Rental management and property care in East Central Minnesota</p>
+      <p class="pmp-header__util-contact">
+        <a href="tel:+16122108424">{{phone}}<span>(612) 210-8424</span></a>
+        <a href="mailto:info@mg.propertymanagementprofessionals.net">{{mail}}<span class="pmp-header__email-full">info@mg.propertymanagementprofessionals.net</span><span class="pmp-header__email-short">Email us</span></a>
+      </p>
+    </div>
+  </div>
+
   <div class="pmp-wrap pmp-header__bar">
     <a class="pmp-header__brand" href="/" aria-label="Property Management Professionals, home">
-      <span class="pmp-wordmark">
-        <span class="pmp-wordmark__top">Property Management</span>
-        <span class="pmp-wordmark__bottom">Professionals</span>
-      </span>
+      <img class="pmp-header__logo-name" src="{{brand:logo-name.webp}}" alt="" width="240" height="60">
     </a>
 
     <nav class="pmp-header__nav" aria-label="Main">
@@ -73,6 +83,10 @@
           <li><a class="pmp-header__mlink" href="/faqs">FAQs</a></li>
         </ul>
         <a class="pmp-btn pmp-btn--primary pmp-header__mcta" href="/management-quote">Request a Management Quote {{arrow}}</a>
+        <p class="pmp-contact pmp-header__mcontact">
+          <a href="tel:+16122108424">{{phone}}<span>(612) 210-8424</span></a>
+          <a href="mailto:info@mg.propertymanagementprofessionals.net">{{mail}}<span>info@mg.propertymanagementprofessionals.net</span></a>
+        </p>
       </nav>
     </div>
   </div>
@@ -81,23 +95,103 @@
 <style>
 #pmp-header {
   position: sticky;
-  top: 0;
+  top: -40px;
   z-index: 50;
   border-bottom: 1px solid var(--pmp-line);
+  box-shadow: 0 1px 0 rgba(23, 45, 59, 0.04), 0 10px 24px -20px rgba(23, 45, 59, 0.5);
+}
+
+#pmp-header .pmp-header__util {
+  height: 40px;
+  background-color: var(--pmp-navy);
+  color: var(--pmp-white);
+  border-bottom: 2px solid var(--pmp-gold);
+}
+
+#pmp-header .pmp-header__util-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 38px;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+#pmp-header .pmp-header__util-text {
+  display: none;
+  letter-spacing: 0.02em;
+  color: rgba(255, 254, 251, 0.82);
+}
+
+#pmp-header .pmp-header__util-contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+}
+
+#pmp-header .pmp-header__util-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  font-weight: 500;
+  color: var(--pmp-white);
+  text-decoration: none;
+}
+
+#pmp-header .pmp-header__util-contact a:hover span {
+  text-decoration: underline;
+  text-decoration-color: var(--pmp-gold);
+  text-underline-offset: 3px;
+}
+
+#pmp-header .pmp-header__util-contact svg {
+  width: 14px;
+  height: 14px;
+  color: var(--pmp-gold);
+}
+
+#pmp-header .pmp-header__util-contact a:focus-visible {
+  outline-color: var(--pmp-gold);
+}
+
+#pmp-header .pmp-header__email-full {
+  display: none;
 }
 
 #pmp-header .pmp-header__bar {
   display: flex;
   align-items: center;
   gap: 16px;
-  min-height: 76px;
+  min-height: 80px;
 }
 
 #pmp-header .pmp-header__brand {
   display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
   margin-right: auto;
-  padding: 8px 0;
+  padding: 10px 0;
   text-decoration: none;
+}
+
+#pmp-header .pmp-header__logo-name {
+  width: auto;
+  max-width: none;
+  height: 38px;
+}
+
+#pmp-header .pmp-header__mcontact {
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--pmp-line);
+  font-size: 15px;
+  color: var(--pmp-navy);
 }
 
 #pmp-header .pmp-header__nav {
@@ -267,7 +361,7 @@
 #pmp-header .pmp-header__toggle[aria-expanded="true"] .pmp-header__toggle-icon span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
 
 #pmp-header .pmp-header__panel {
-  max-height: calc(100vh - 77px);
+  max-height: calc(100vh - 122px);
   overflow-y: auto;
   padding: 8px 0 28px;
   background-color: var(--pmp-white);
@@ -347,6 +441,22 @@
   #pmp-header .pmp-header__bar {
     gap: 20px;
   }
+
+  #pmp-header .pmp-header__util-text {
+    display: block;
+  }
+
+  #pmp-header .pmp-header__email-full {
+    display: inline;
+  }
+
+  #pmp-header .pmp-header__email-short {
+    display: none;
+  }
+
+  #pmp-header .pmp-header__logo-name {
+    height: 46px;
+  }
 }
 
 @media (min-width: 1240px) {
@@ -360,9 +470,10 @@
   }
 
   #pmp-header .pmp-header__bar {
-    min-height: 84px;
+    min-height: 88px;
   }
 }
+
 </style>
 
 <script>

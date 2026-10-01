@@ -1,8 +1,25 @@
 # QA report · design preview
 
-Tested 2026-10-01 in Chrome (headless, current stable) against the local preview server.
+Tested 2026-10-01 in Chrome (headless, current stable) against the local preview server, then run again
+in full after the brand redesign (real logo, contact bar, navy heroes, new photo placeholders) the same day.
 All checks below passed on the final build. "Not verified" items at the end were **not** tested and
 should not be assumed to work.
+
+## "Does it look AI-generated?" audit (design gate)
+
+| Tell | Result | Evidence |
+| --- | --- | --- |
+| Purple or indigo default palette | Clean | 0 hits; palette is the brief's navy, ivory, muted gold, bronze, slate, warm white, sage |
+| Gradients, gradient text, glass blur, grain | Clean | 0 gradients or `backdrop-filter` in source |
+| Fade-in on scroll everywhere | Clean | No scroll animations; motion is limited to hover and focus states |
+| Em dashes in visitor copy | Clean | 0 in the built pages |
+| Self-praise ("trusted", "seamless", "premier"…) | Clean | 0 |
+| Small label above every heading | **Fixed** | Was 38 (on every section); now 11, on page intros only, plus 8 ribbons in the logo's banner shape |
+| Empty gray photo boxes | **Fixed** | Placeholders now carry a line drawing in the logo's spirit, an INSERT PHOTO tag and a caption bar |
+| Generic type | Judgement: kept | Manrope and DM Sans are the brief's chosen pair, not a default |
+
+Target size note: phone and email links that sit inside a sentence are exempt from the 24 px target rule
+(WCAG 2.2, 2.5.8 inline exception); every standalone link and button meets it.
 
 ## Build checks (run on every `npm run build`)
 

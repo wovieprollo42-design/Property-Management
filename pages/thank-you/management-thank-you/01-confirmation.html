@@ -4,7 +4,7 @@
   Layout: calm, single confirmation panel. No image needed.
   Show this page only as the owner form's redirect after a successful submission, never from a button.
   Keep it out of navigation and set it to noindex.
-  Pending: the confirmed management email address.
+  Contact details confirmed by the owner on 2026-10-01.
 -->
 <section class="pmp pmp-sec" id="pmp-ty-owner-confirmation" data-bg="ivory" aria-labelledby="pmp-ty-owner-confirmation-title">
   <div class="pmp-wrap">
@@ -16,7 +16,7 @@
       <p class="pmp-eyebrow">Inquiry received</p>
       <h1 id="pmp-ty-owner-confirmation-title">Thanks for telling us about your property</h1>
       <p class="pmp-lead pmp-ty-owner__text">We’ve received your management inquiry. Our team will review the details and contact you to discuss your property and the support you need.</p>
-      <p class="pmp-ty-owner__more">If you have more to share, contact us at <span class="pmp-pending">[Confirmed management email]</span>.</p>
+      <p class="pmp-ty-owner__more">If you have more to share, contact us at <a href="mailto:info@mg.propertymanagementprofessionals.net">info@mg.propertymanagementprofessionals.net</a> or <a href="tel:+16122108424">(612) 210-8424</a>.</p>
       <div class="pmp-btns pmp-ty-owner__actions">
         <a class="pmp-btn pmp-btn--primary" href="/long-term-rental-management">Explore Our Management Services {{arrow}}</a>
         <a class="pmp-btn pmp-btn--secondary" href="/">Back to Home</a>
@@ -51,6 +51,13 @@
 
 #pmp-ty-owner-confirmation .pmp-ty-owner__more {
   margin-top: 16px;
+  overflow-wrap: anywhere;
+}
+
+#pmp-ty-owner-confirmation .pmp-ty-owner__more a {
+  font-weight: 600;
+  color: var(--pmp-navy);
+  text-decoration-color: var(--pmp-gold);
 }
 
 #pmp-ty-owner-confirmation .pmp-ty-owner__actions {

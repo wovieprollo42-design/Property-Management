@@ -14,7 +14,7 @@ Set these in the GHL page settings (not inside a Custom JS/HTML element).
 ## Install order
 
 1. `exports/ghl/shared/header.html` (full-width section, background `#FFFEFB`)
-2. `01-hero.html` (full-width section, background `#F8F5EC`)
+2. `01-hero.html` (full-width section, background `#172D3B`)
 3. `02-service-scope.html` (full-width section, background `#FFFEFB`)
 4. `03-scope-and-transition.html` (full-width section, background `#E9EDE9`)
 5. `04-final-action.html` (full-width section, background `#F8F5EC`)
@@ -24,7 +24,7 @@ Set these in the GHL page settings (not inside a Custom JS/HTML element).
 
 | # | Snippet | GHL section and row background |
 | --- | --- | --- |
-| 1 | `01-hero.html` | Warm ivory `#F8F5EC` |
+| 1 | `01-hero.html` | Deep navy `#172D3B` |
 | 2 | `02-service-scope.html` | Warm white `#FFFEFB` |
 | 3 | `03-scope-and-transition.html` | Pale sage gray `#E9EDE9` |
 | 4 | `04-final-action.html` | Warm ivory `#F8F5EC` |

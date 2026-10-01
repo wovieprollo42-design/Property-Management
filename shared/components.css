@@ -127,84 +127,180 @@
 }
 
 /* ---------- Photo placeholder -------------------------------------------
-   A solid sage block that reserves the photo's area and states what belongs
-   there. Faint rule-of-thirds lines hint at the crop. Replace the whole
+   A solid sage frame that reserves the photo's area. A line drawing in the
+   logo's spirit (towers, two roofs, a gold ground arc) sits in the middle;
+   "INSERT PHOTO" sits top left; a warm white caption bar at the bottom says
+   what belongs there, its source size, ratio and crop. Replace the whole
    .pmp-ph element with an <img class="pmp-photo pmp-photo--RATIO"> later. */
 .pmp .pmp-ph {
   position: relative;
-  isolation: isolate;
   display: flex;
   align-items: flex-end;
   width: 100%;
   aspect-ratio: 4 / 3;
-  padding: clamp(12px, 2vw, 20px);
+  padding: 0;
   background-color: var(--pmp-sage);
-  border: 1px solid var(--pmp-line-strong);
+  background-image: url("{{placeholder-art}}");
+  background-repeat: no-repeat;
+  background-position: 50% 34%;
+  background-size: min(58%, 420px) auto;
+  border: 1px solid var(--pmp-line);
   color: var(--pmp-navy);
 }
 
-.pmp .pmp-ph--8x5 { aspect-ratio: 8 / 5; }
+.pmp .pmp-ph--8x5 { aspect-ratio: 8 / 5; background-size: min(46%, 440px) auto; }
 .pmp .pmp-ph--4x3 { aspect-ratio: 4 / 3; }
-.pmp .pmp-ph--4x5 { aspect-ratio: 4 / 5; }
-
-.pmp .pmp-ph::before,
-.pmp .pmp-ph::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  pointer-events: none;
-  border: 0 solid rgba(23, 45, 59, 0.12);
-}
-
-.pmp .pmp-ph::before {
-  top: 0;
-  bottom: 0;
-  left: 33.333%;
-  right: 33.333%;
-  border-left-width: 1px;
-  border-right-width: 1px;
-}
-
-.pmp .pmp-ph::after {
-  left: 0;
-  right: 0;
-  top: 33.333%;
-  bottom: 33.333%;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-}
+.pmp .pmp-ph--4x5 { aspect-ratio: 4 / 5; background-size: min(72%, 360px) auto; background-position: 50% 30%; }
 
 .pmp .pmp-ph__label {
-  position: relative;
-  max-width: 36em;
-  padding: 12px 14px;
+  width: 100%;
+  margin-top: 64px;
+  padding: 12px 16px 13px;
   background-color: var(--pmp-white);
-  border: 1px solid var(--pmp-line);
-  border-left: 2px solid var(--pmp-gold);
+  border-top: 1px solid var(--pmp-line);
   font-family: var(--pmp-font-body);
   font-size: 13px;
   line-height: 1.5;
   color: var(--pmp-navy);
 }
 
+@media (max-width: 599px) {
+  .pmp .pmp-ph,
+  .pmp .pmp-ph--8x5,
+  .pmp .pmp-ph--4x5 {
+    background-position: 50% 46px;
+    background-size: min(64%, 300px) auto;
+  }
+
+  .pmp .pmp-ph__label {
+    margin-top: 168px;
+  }
+}
+
 .pmp .pmp-ph__tag {
-  display: block;
-  margin-bottom: 4px;
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--pmp-font-head);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
+  color: var(--pmp-navy);
+}
+
+.pmp .pmp-ph__tag::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  background-color: var(--pmp-gold);
 }
 
 .pmp .pmp-ph__desc {
   display: block;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .pmp .pmp-ph__spec {
   display: block;
-  margin-top: 6px;
+  margin-top: 3px;
+  font-size: 12px;
   color: var(--pmp-slate);
+}
+
+/* ---------- Brand motif and swoosh (inline SVG from {{motif}} / {{swoosh}}) */
+/* The roofs are filled with the surrounding background so the towers pass behind them.
+   A section can set --pmp-motif-fill on the motif's wrapper (for example to sage). */
+.pmp .pmp-motif {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pmp .pmp-motif .m-line { stroke: var(--pmp-navy); }
+.pmp .pmp-motif .m-house { stroke: var(--pmp-navy); fill: var(--pmp-motif-fill, var(--pmp-ivory)); }
+.pmp .pmp-motif .m-gold { stroke: var(--pmp-gold); }
+.pmp .pmp-motif .m-soft { stroke: var(--pmp-navy); stroke-opacity: 0.35; }
+
+.pmp .pmp-dark .pmp-motif .m-house,
+.pmp[data-bg="navy"] .pmp-motif .m-house {
+  fill: var(--pmp-motif-fill, var(--pmp-navy));
+}
+
+.pmp .pmp-dark .pmp-motif .m-line,
+.pmp .pmp-dark .pmp-motif .m-house,
+.pmp .pmp-dark .pmp-motif .m-soft,
+.pmp[data-bg="navy"] .pmp-motif .m-line,
+.pmp[data-bg="navy"] .pmp-motif .m-house,
+.pmp[data-bg="navy"] .pmp-motif .m-soft {
+  stroke: var(--pmp-white);
+}
+
+.pmp .pmp-swoosh {
+  display: block;
+  width: min(240px, 60%);
+  height: auto;
+}
+
+/* ---------- Ribbon: the logo's banner shape, with notched ends ----------- */
+.pmp .pmp-ribbon {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 6px 20px;
+  font-family: var(--pmp-font-head);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pmp-white);
+  background-color: var(--pmp-navy);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%, 9px 50%);
+}
+
+.pmp .pmp-ribbon + h1,
+.pmp .pmp-ribbon + h2,
+.pmp .pmp-ribbon + h3 {
+  margin-top: 18px;
+}
+
+.pmp .pmp-dark .pmp-ribbon,
+.pmp[data-bg="navy"] .pmp-ribbon {
+  color: var(--pmp-navy);
+  background-color: var(--pmp-white);
+}
+
+/* ---------- Contact rows (phone and email) ------------------------------- */
+.pmp .pmp-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.pmp .pmp-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.pmp .pmp-contact a svg {
+  width: 16px;
+  height: 16px;
+  color: var(--pmp-gold);
+}
+
+.pmp .pmp-contact a:hover span {
+  text-decoration: underline;
+  text-decoration-color: var(--pmp-gold);
+  text-underline-offset: 4px;
 }
 
 /* Approved photos use the same ratios as their placeholders. */

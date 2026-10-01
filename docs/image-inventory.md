@@ -21,8 +21,8 @@ recommended crop, and approval status (approved / not approved / unreviewed).
 | Page | Section | Slot | Ratio | What belongs there | Source size and crop guidance | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | Home | `01-hero.html` | `home-hero` | 8:5 | Approved exterior of a well-kept managed rental in natural daylight, with clear architecture. | Source 1920 × 1200 px · Display ratio 8:5 · Crop: keep the building near the center for mobile. | Placeholder |
-| Home | `02-management-services.html` | `home-long-term` | 4:3 | An actual residential long-term rental, exterior or bright interior. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the whole home or main room in frame. Confirm property type and photo permission. | Placeholder |
-| Home | `02-management-services.html` | `home-short-term` | 4:3 | An actual vacation rental, exterior or inviting living space. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the whole home or main room in frame. Confirm property type and photo permission. | Placeholder |
+| Home | `02-management-services.html` | `home-long-term` | 4:3 | An actual residential long-term rental, exterior or bright interior. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the whole home or main room in frame. | Placeholder |
+| Home | `02-management-services.html` | `home-short-term` | 4:3 | An actual vacation rental, exterior or inviting living space. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the whole home or main room in frame. | Placeholder |
 | Long-Term Rental Management | `01-hero.html` | `long-term-hero` | 8:5 | Approved exterior or bright interior of a real long-term rental. | Source 1600 × 1000 px · Display ratio 8:5 · Crop: preserve the main architectural details. No resident belongings without permission. | Placeholder |
 | Long-Term Rental Management | `02-service-scope.html` | `long-term-property-care` | 4:3 | Real, approved turnover or property-care scene at a long-term rental. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the work being done in frame. | Placeholder |
 | Short-Term Rental Management | `01-hero.html` | `short-term-hero` | 8:5 | Approved vacation-home exterior or inviting living space. | Source 1600 × 1000 px · Display ratio 8:5 · Crop: preserve the main architectural details. Show no amenity the home does not offer. | Placeholder |
@@ -38,7 +38,21 @@ recommended crop, and approval status (approved / not approved / unreviewed).
 
 ## Logo
 
-No approved logo was supplied, so the header and footer use a clean text wordmark (the full business name
-with a thin gold rule). When an approved horizontal logo is available (SVG preferred, or a transparent PNG at
-least 800 px wide), swap it into `shared/header.html` and `shared/footer.html` without distorting it, and
-build the favicon set from the same logo.
+Supplied by the owner on 2026-10-01:
+https://assets.cdn.filesafe.space/swY61qxZ1CfPz1q1mNN3/media/6abbca2712c0bdec2cb03d03.svg
+(saved as `shared/brand/logo-original.svg`). The file is a 1080 × 1080 SVG wrapping a raster image on a
+white square, so it cannot sit on a colored background as-is. The web files below were cut from it with a
+transparent background. Nothing was redrawn, recolored or stretched.
+
+| File | Size | Used for |
+| --- | --- | --- |
+| `logo-name.webp` | 480 × 121 | Header: the name block (PROPERTY / MANAGEMENT banner / PROFESSIONALS) as the banner-shaped wordmark |
+| `logo-full.webp` | 440 × 290 | Footer: the full logo on a warm white plate (its charcoal lettering would vanish on navy) |
+| `favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` | 32 to 192 px | Browser tab and phone home-screen icons, from the logo's skyline and roofs |
+
+**Needs approval:** showing only the name block in the header (the full stacked logo is too tall to read at
+header size). If Bob has a horizontal logo file, use it instead. A true vector (SVG paths, not an embedded
+image) would give sharper results at every size.
+
+The skyline line drawing used in photo placeholders and as decoration is a simple illustration in the spirit
+of the logo, not a copy of it.

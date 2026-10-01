@@ -43,6 +43,54 @@ const ICONS = {
   external: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M6.5 3H3.5A1.5 1.5 0 0 0 2 4.5v8A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V9.5M9.5 2H14v4.5M14 2 7.5 8.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 };
 
+// Contact icons (line icons, currentColor)
+ICONS.phone = '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5.2 1.8 6.6 5 5.2 6.3a8.6 8.6 0 0 0 4.5 4.5L11 9.4l3.2 1.4-.5 2.6a1.4 1.4 0 0 1-1.5 1.1A11.9 11.9 0 0 1 1.5 3.8a1.4 1.4 0 0 1 1.1-1.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>';
+ICONS.mail = '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><rect x="1.5" y="3" width="13" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m2 4 6 5 6-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>';
+
+// Brand motif: a line drawing of the logo's idea (towers behind two gabled roofs, over a gold
+// ground arc). Colors come from CSS classes so it works on light and navy sections.
+// paint(kind) returns the color attributes for each layer: kind is line, gold, house or soft.
+const MOTIF_PATHS = (paint) => `
+  <g ${paint('line')} stroke-width="2"><path d="M118 176V100h30v76"/><path d="M152 176V64h52v112"/><path d="M164 82h10M184 82h10M164 98h10M184 98h10M164 114h10M184 114h10"/><path d="M208 176V26h58v150"/><path d="M222 46h10M242 46h10M222 64h10M242 64h10M222 82h10M242 82h10M222 100h10M242 100h10"/><path d="M270 176V76h44v100"/><path d="M284 96h16M284 112h16M284 128h16"/><path d="M318 176v-62h30v62"/></g>
+  <path d="M270 76h44" ${paint('gold')} stroke-width="3"/><path d="M208 26h58" ${paint('gold')} stroke-width="2"/>
+  <g ${paint('house')} stroke-width="2"><path d="M204 162v52h128v-52L268 118z"/><path d="M258 176h20v20h-20zM268 176v20M258 186h20"/><path d="M84 160v54h134v-54L151 112z"/><path d="M139 170h24v24h-24zM151 170v24M139 182h24"/></g>
+  <path d="M218 153.4 268 116l82 60" ${paint('line')} stroke-width="2.5"/>
+  <path d="M60 176 151 110l92 66" ${paint('gold')} stroke-width="4"/>
+  <path d="M36 236c110-34 298-34 408-6" ${paint('gold')} stroke-width="3"/>
+  <path d="M74 248c96-20 236-20 332-4" ${paint('soft')} stroke-width="1.5"/>`;
+// Inline version: colors come from CSS (.pmp-motif .m-line and friends in components.css).
+ICONS.motif = `<svg class="pmp-motif" viewBox="0 0 480 260" width="480" height="260" aria-hidden="true" focusable="false" fill="none" stroke-linecap="round" stroke-linejoin="round">${MOTIF_PATHS((kind) => `class="m-${kind}"`).replace(/\n\s*/g, '')}</svg>`;
+ICONS.swoosh = '<svg class="pmp-swoosh" viewBox="0 0 240 20" width="240" height="20" aria-hidden="true" focusable="false" fill="none" stroke-linecap="round"><path d="M3 16C70 3 170 2 237 12" stroke="#AD8950" stroke-width="3"/><path d="M40 19c52-7 110-8 160-2" stroke="#172D3B" stroke-opacity=".35" stroke-width="1.2"/></svg>';
+
+// The same drawing on the sage photo placeholders, as a CSS background (sage fill, softer lines).
+const PLACEHOLDER_ART = `data:image/svg+xml,${encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" fill="none" stroke-linecap="round" stroke-linejoin="round">${MOTIF_PATHS(
+    (kind) => ({
+      line: 'stroke="#172D3B" stroke-opacity=".38"',
+      gold: 'stroke="#AD8950"',
+      house: 'stroke="#172D3B" stroke-opacity=".38" fill="#E9EDE9"',
+      soft: 'stroke="#172D3B" stroke-opacity=".25"',
+    })[kind]
+  ).replace(/\n\s*/g, '')}</svg>`
+)}`;
+
+// Brand files in shared/brand. {{brand:file}} becomes a versioned URL in the preview and an
+// embedded data URI in the GHL exports, so snippets show the logo without any upload step.
+const BRAND_DIR = join(ROOT, 'shared', 'brand');
+const BRAND_TYPES = { '.webp': 'image/webp', '.png': 'image/png', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
+const brandFile = (name) => {
+  const file = join(BRAND_DIR, name);
+  if (!existsSync(file)) { errors.push(`shared/brand: missing ${name}`); return null; }
+  return readFileSync(file);
+};
+const brandUrl = (name, mode) => {
+  const buf = brandFile(name);
+  if (!buf) return '';
+  if (mode === 'export') return `data:${BRAND_TYPES[name.slice(name.lastIndexOf('.'))]};base64,${buf.toString('base64')}`;
+  return `/assets/brand/${name}?v=${createHash('md5').update(buf).digest('hex').slice(0, 8)}`;
+};
+const expandBrand = (html, mode) => html.replace(/\{\{brand:([\w.-]+)\}\}/g, (_, name) => brandUrl(name, mode));
+
 const FONT_LINKS = [
   '<link rel="preconnect" href="https://fonts.googleapis.com">',
   '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
@@ -66,7 +114,7 @@ function write(file, content) {
 
 const stripComments = (html) => html.replace(/<!--[\s\S]*?-->/g, '');
 const expandIcons = (html) =>
-  html.replace(/\{\{(arrow|caret|external)\}\}/g, (_, name) => ICONS[name]);
+  html.replace(/\{\{(arrow|caret|external|phone|mail|motif|swoosh)\}\}/g, (_, name) => ICONS[name]);
 const textOf = (html) =>
   html
     .replace(/<style[\s\S]*?<\/style>/g, ' ')
@@ -233,7 +281,7 @@ pages.sort((a, b) => ORDER.indexOf(a.route) - ORDER.indexOf(b.route));
 const tokensCss = read(join(SHARED_DIR, 'tokens.css'));
 const baseCss = read(join(SHARED_DIR, 'base.css'));
 const componentsCss = read(join(SHARED_DIR, 'components.css'));
-const coreCss = [tokensCss, baseCss, componentsCss].join('\n\n');
+const coreCss = [tokensCss, baseCss, componentsCss].join('\n\n').replace('{{placeholder-art}}', PLACEHOLDER_ART);
 lintCss(coreCss, 'shared/core', ['.pmp']);
 const previewCss = read(join(SHARED_DIR, 'preview', 'preview.css'));
 
@@ -373,7 +421,9 @@ function previewDocument(b) {
 <meta name="description" content="${escapeAttr(page.description)}">
 <!-- Design preview: every route stays out of search results. Production robots: ${page.productionRobots} -->
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="data:,">
+<link rel="icon" href="${brandUrl('favicon.ico', 'preview')}" sizes="32x32">
+<link rel="icon" type="image/png" href="${brandUrl('favicon-192.png', 'preview')}" sizes="192x192">
+<link rel="apple-touch-icon" href="${brandUrl('apple-touch-icon.png', 'preview')}">
 ${FONT_LINKS}
 <link rel="stylesheet" href="/assets/pmp-core.css?v=${coreVersion}">
 <link rel="stylesheet" href="/assets/pmp-preview.css?v=${previewVersion}">
@@ -403,6 +453,8 @@ ${scripts.map((js) => `<script>\n${js}\n</script>`).join('\n')}
 
 write(join(DIST, 'assets', 'pmp-core.css'), coreCss);
 write(join(DIST, 'assets', 'pmp-preview.css'), previewCss);
+mkdirSync(join(DIST, 'assets', 'brand'), { recursive: true });
+for (const name of readdirSync(BRAND_DIR)) writeFileSync(join(DIST, 'assets', 'brand', name), readFileSync(join(BRAND_DIR, name)));
 write(
   join(DIST, 'robots.txt'),
   `# Design preview. Every page carries <meta name="robots" content="noindex, nofollow">
@@ -417,7 +469,7 @@ Allow: /
 for (const b of builtPages) {
   const route = b.page.route;
   const out = route === '/' ? join(DIST, 'index.html') : route === '/404' ? join(DIST, '404.html') : join(DIST, ...route.slice(1).split('/'), 'index.html');
-  write(out, previewDocument(b));
+  write(out, expandBrand(previewDocument(b), 'preview'));
 }
 
 /* ---------- 2. GHL exports (exports/ghl/) -------------------------------- */
@@ -426,14 +478,17 @@ const coreMin = minifyCss(coreCss);
 
 function snippet(label, component) {
   const bgHex = BACKGROUNDS[component.bg].hex;
-  return `<!-- Property Management Professionals | ${label} | GHL section background ${bgHex} | built ${BUILD_DATE} -->
+  return expandBrand(`<!-- Property Management Professionals | ${label} | GHL section background ${bgHex} | built ${BUILD_DATE} -->
 ${FONT_LINKS}
 <style>${coreMin}${minifyCss(component.css)}</style>
 ${component.html}
-${component.js ? `<script>\n${component.js}\n</script>\n` : ''}`;
+${component.js ? `<script>\n${component.js}\n</script>\n` : ''}`, 'export');
 }
 
 write(join(EXPORTS, 'shared', 'header.html'), snippet('Shared header', header));
+// Logo and favicon files, ready for the GHL media library and site settings
+mkdirSync(join(EXPORTS, 'brand'), { recursive: true });
+for (const name of readdirSync(BRAND_DIR)) writeFileSync(join(EXPORTS, 'brand', name), readFileSync(join(BRAND_DIR, name)));
 write(join(EXPORTS, 'shared', 'footer.html'), snippet('Shared footer', footer));
 
 const exportPages = builtPages.filter((b) => !b.page.internal && b.page.route !== '/404');
@@ -633,10 +688,24 @@ recommended crop, and approval status (approved / not approved / unreviewed).
   md += `
 ## Logo
 
-No approved logo was supplied, so the header and footer use a clean text wordmark (the full business name
-with a thin gold rule). When an approved horizontal logo is available (SVG preferred, or a transparent PNG at
-least 800 px wide), swap it into \`shared/header.html\` and \`shared/footer.html\` without distorting it, and
-build the favicon set from the same logo.
+Supplied by the owner on 2026-10-01:
+https://assets.cdn.filesafe.space/swY61qxZ1CfPz1q1mNN3/media/6abbca2712c0bdec2cb03d03.svg
+(saved as \`shared/brand/logo-original.svg\`). The file is a 1080 × 1080 SVG wrapping a raster image on a
+white square, so it cannot sit on a colored background as-is. The web files below were cut from it with a
+transparent background. Nothing was redrawn, recolored or stretched.
+
+| File | Size | Used for |
+| --- | --- | --- |
+| \`logo-name.webp\` | 480 × 121 | Header: the name block (PROPERTY / MANAGEMENT banner / PROFESSIONALS) as the banner-shaped wordmark |
+| \`logo-full.webp\` | 440 × 290 | Footer: the full logo on a warm white plate (its charcoal lettering would vanish on navy) |
+| \`favicon.ico\`, \`favicon-32.png\`, \`favicon-192.png\`, \`apple-touch-icon.png\` | 32 to 192 px | Browser tab and phone home-screen icons, from the logo's skyline and roofs |
+
+**Needs approval:** showing only the name block in the header (the full stacked logo is too tall to read at
+header size). If Bob has a horizontal logo file, use it instead. A true vector (SVG paths, not an embedded
+image) would give sharper results at every size.
+
+The skyline line drawing used in photo placeholders and as decoration is a simple illustration in the spirit
+of the logo, not a copy of it.
 `;
   write(join(DOCS, 'image-inventory.md'), md);
 }

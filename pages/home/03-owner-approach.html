@@ -3,14 +3,15 @@
   Background: #E9EDE9 pale sage gray (data-bg="sage")
   Layout: concise editorial statement. Heading on the left; on the right the approach
           paragraph is set as three details an owner cares about, then the approval note.
-  No photo in this section.
+  No photo in this section. The logo's skyline, drawn in line, fills the space under the heading on
+  desktop (decorative, hidden from screen readers and on small screens).
 -->
 <section class="pmp pmp-sec" id="pmp-home-owner-approach" data-bg="sage" aria-labelledby="pmp-home-owner-approach-title">
   <div class="pmp-wrap">
     <div class="pmp-home-approach__grid">
       <div class="pmp-home-approach__head">
-        <p class="pmp-eyebrow">Our approach</p>
         <h2 id="pmp-home-owner-approach-title">An owner’s approach to property care</h2>
+        <div class="pmp-home-approach__art" aria-hidden="true">{{motif}}</div>
       </div>
 
       <div class="pmp-home-approach__body">
@@ -82,7 +83,18 @@
   color: var(--pmp-navy);
 }
 
+#pmp-home-owner-approach .pmp-home-approach__art {
+  display: none;
+  --pmp-motif-fill: var(--pmp-sage);
+}
+
 @media (min-width: 900px) {
+  #pmp-home-owner-approach .pmp-home-approach__art {
+    display: block;
+    width: min(100%, 380px);
+    margin-top: 48px;
+  }
+
   #pmp-home-owner-approach .pmp-home-approach__grid {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     gap: clamp(40px, 6vw, 96px);

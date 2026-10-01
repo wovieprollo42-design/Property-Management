@@ -23,6 +23,9 @@ Every route opens directly and survives a refresh in the preview.
 
 ## Navigation
 
+**Every width:** a slim navy contact bar on top with the phone number and email (the full email from 720 px,
+"Email us" below that). It scrolls away while the main bar with the logo stays pinned.
+
 **Desktop header (1240 px and wider):** Home · Management Services (dropdown: Long-Term Rental
 Management, Short-Term Rental Management) · Available Rentals · Vacation Rentals · About · FAQs ·
 **Request a Management Quote** button.

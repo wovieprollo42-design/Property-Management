@@ -1,8 +1,10 @@
 <!--
   HOME · 01 HERO
-  Background: #F8F5EC ivory (data-bg="ivory")
-  Layout: asymmetric split. Owner-focused copy on the left, main property photo on the right
-          inside a thin offset gold frame. A ribbon at the bottom lists the work owners hand over.
+  Background: #F8F5EC ivory (data-bg="ivory"), with a #172D3B navy panel behind the photo that runs
+              to the right edge of the screen (clipped inside this section).
+  Layout: asymmetric split. Owner-focused copy on the left with the logo's gold ground arc under the
+          headline; the main property photo on the right in a thin offset gold frame over the navy panel.
+          A strip at the bottom names the work owners hand over.
   Photo slot: home-hero · source 1920 x 1200 px · ratio 8:5
   Alt text must describe the actual property, without implying a location or management
   relationship that has not been confirmed.
@@ -16,12 +18,14 @@
       <div class="pmp-home-hero__copy">
         <p class="pmp-eyebrow">Long-term and short-term rentals</p>
         <h1 class="pmp-h1-home" id="pmp-home-hero-title">Property management in East Central Minnesota</h1>
+        {{swoosh}}
         <p class="pmp-lead pmp-home-hero__lead">Owning a rental takes time, attention, and the right people. Property Management Professionals helps owners coordinate leasing, communication, maintenance, and the day-to-day work of caring for a rental.</p>
         <p class="pmp-home-hero__note">Tell us about your property and the support you need.</p>
         <div class="pmp-btns pmp-home-hero__actions">
-          <a class="pmp-btn pmp-btn--primary" href="/management-quote">Request a Management Quote {{arrow}}</a>
+          <a class="pmp-btn pmp-btn--primary pmp-btn--lg" href="/management-quote">Request a Management Quote {{arrow}}</a>
           <a class="pmp-textlink" href="#pmp-home-getting-started">How getting started works</a>
         </div>
+        <p class="pmp-home-hero__call">Prefer to talk first? <a href="tel:+16122108424">{{phone}}<span>(612) 210-8424</span></a></p>
       </div>
 
       <div class="pmp-home-hero__media">
@@ -52,19 +56,35 @@
 
 <style>
 #pmp-home-hero {
-  padding-top: clamp(40px, calc(18px + 4.4vw), 80px);
+  --hero-top: clamp(40px, calc(18px + 4.4vw), 88px);
+  position: relative;
+  overflow: clip;
+  padding-top: var(--hero-top);
   padding-bottom: 0;
 }
 
 #pmp-home-hero .pmp-home-hero__grid {
   display: grid;
-  gap: 48px;
+  gap: 56px;
   align-items: center;
 }
 
+#pmp-home-hero .pmp-home-hero__copy {
+  position: relative;
+  z-index: 1;
+}
+
+#pmp-home-hero .pmp-home-hero__copy h1 {
+  max-width: 11em;
+}
+
+#pmp-home-hero .pmp-swoosh {
+  margin-top: 18px;
+}
+
 #pmp-home-hero .pmp-home-hero__lead {
-  max-width: 34em;
-  margin-top: 24px;
+  max-width: 33em;
+  margin-top: 22px;
 }
 
 #pmp-home-hero .pmp-home-hero__note {
@@ -78,8 +98,62 @@
   margin-top: 32px;
 }
 
+#pmp-home-hero .pmp-btn--lg {
+  min-height: 56px;
+  padding: 14px 28px;
+  font-size: 17px;
+}
+
+#pmp-home-hero .pmp-home-hero__call {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--pmp-line);
+  font-size: 15px;
+}
+
+#pmp-home-hero .pmp-home-hero__call a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  font-family: var(--pmp-font-head);
+  font-weight: 700;
+  color: var(--pmp-navy);
+  text-decoration: none;
+}
+
+#pmp-home-hero .pmp-home-hero__call svg {
+  color: var(--pmp-gold);
+}
+
+#pmp-home-hero .pmp-home-hero__call a:hover span {
+  text-decoration: underline;
+  text-decoration-color: var(--pmp-gold);
+  text-underline-offset: 4px;
+}
+
+/* The navy panel: starts a little inside the photo column and runs to the screen edge. */
 #pmp-home-hero .pmp-home-hero__media {
-  padding: 0 18px 18px 0;
+  position: relative;
+  padding: 28px 0 28px 0;
+}
+
+#pmp-home-hero .pmp-home-hero__media::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 18%;
+  right: calc(-1 * var(--pmp-gutter) - 50vw);
+  background-color: var(--pmp-navy);
+}
+
+#pmp-home-hero .pmp-home-hero__media .pmp-marks {
+  margin-right: 18px;
 }
 
 #pmp-home-hero .pmp-home-hero__scope {
@@ -128,10 +202,36 @@
   color: var(--pmp-bronze);
 }
 
+@media (max-width: 899px) {
+  #pmp-home-hero .pmp-home-hero__media {
+    padding: 24px 0;
+  }
+
+  #pmp-home-hero .pmp-home-hero__media::before {
+    left: 24%;
+  }
+}
+
 @media (min-width: 900px) {
   #pmp-home-hero .pmp-home-hero__grid {
     grid-template-columns: minmax(0, 11fr) minmax(0, 13fr);
-    gap: clamp(40px, 5vw, 72px);
+    gap: clamp(40px, 5vw, 80px);
+    align-items: stretch;
+  }
+
+  #pmp-home-hero .pmp-home-hero__copy {
+    align-self: center;
+  }
+
+  #pmp-home-hero .pmp-home-hero__media {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 0 72px;
+  }
+
+  #pmp-home-hero .pmp-home-hero__media::before {
+    top: calc(-1 * var(--hero-top));
   }
 }
 

@@ -1,7 +1,7 @@
 <!--
   SHORT-TERM RENTAL MANAGEMENT · 01 HERO
-  Background: #F8F5EC ivory (data-bg="ivory")
-  Layout: same editorial pattern as the long-term page, so the two service pages read as a pair.
+  Background: #172D3B deep navy (data-bg="navy") with warm white text, as an emphasis section.
+  Layout: same pattern as the long-term hero, so the two service pages read as a pair.
   Photo slot: short-term-hero · source 1600 x 1000 px · ratio 8:5
   Avoid suggesting a specific amenity unless the pictured home offers it.
   Replace the placeholder with:
@@ -10,21 +10,22 @@
   Claim check: do not say OwnerRez, Vrbo, rate synchronization, or direct booking is connected
   until it has been tested.
 -->
-<section class="pmp pmp-sec" id="pmp-str-hero" data-bg="ivory" aria-labelledby="pmp-str-hero-title">
+<section class="pmp pmp-sec" id="pmp-str-hero" data-bg="navy" aria-labelledby="pmp-str-hero-title">
   <div class="pmp-wrap">
-    <p class="pmp-eyebrow">Management services · Short-term</p>
-    <h1 id="pmp-str-hero-title">Short-term rental management in East Central Minnesota</h1>
-
-    <div class="pmp-str-hero__row">
+    <div class="pmp-str-hero__grid">
       <div class="pmp-str-hero__copy">
-        <p class="pmp-lead">A vacation rental needs attention before, during, and after every stay. We help owners coordinate the people and tasks that keep the property ready for guests.</p>
+        <p class="pmp-ribbon">Management services</p>
+        <h1 id="pmp-str-hero-title">Short-term rental management in East Central Minnesota</h1>
+        {{swoosh}}
+        <p class="pmp-lead pmp-str-hero__lead">A vacation rental needs attention before, during, and after every stay. We help owners coordinate the people and tasks that keep the property ready for guests.</p>
         <div class="pmp-btns pmp-str-hero__actions">
-          <a class="pmp-btn pmp-btn--primary" href="/management-quote">Discuss Your Vacation Rental {{arrow}}</a>
+          <a class="pmp-btn pmp-btn--light" href="/management-quote">Discuss Your Vacation Rental {{arrow}}</a>
           <a class="pmp-textlink" href="#pmp-str-service-scope">See what is included</a>
         </div>
+        <p class="pmp-str-hero__call">Prefer to talk first? <a href="tel:+16122108424">{{phone}}<span>(612) 210-8424</span></a></p>
       </div>
 
-      <div class="pmp-str-hero__media pmp-marks">
+      <div class="pmp-str-hero__media pmp-marks pmp-marks--frame">
         <div class="pmp-ph pmp-ph--8x5" data-photo-slot="short-term-hero">
           <p class="pmp-ph__label">
             <span class="pmp-ph__tag">INSERT PHOTO</span>
@@ -39,33 +40,75 @@
 
 <style>
 #pmp-str-hero {
-  padding-top: clamp(40px, calc(18px + 4.4vw), 80px);
+  padding-block: clamp(48px, calc(24px + 5vw), 104px);
+}
+
+#pmp-str-hero .pmp-str-hero__grid {
+  display: grid;
+  gap: 48px;
+  align-items: center;
 }
 
 #pmp-str-hero h1 {
-  max-width: 17em;
+  max-width: 13em;
+  margin-top: 22px;
 }
 
-#pmp-str-hero .pmp-str-hero__row {
-  display: grid;
-  gap: 40px;
-  margin-top: clamp(28px, 4vw, 48px);
-  padding-top: clamp(28px, 4vw, 48px);
-  border-top: 1px solid var(--pmp-line-strong);
+#pmp-str-hero .pmp-swoosh {
+  margin-top: 18px;
 }
 
-#pmp-str-hero .pmp-str-hero__copy .pmp-lead {
+#pmp-str-hero .pmp-str-hero__lead {
   max-width: 32em;
+  margin-top: 22px;
+  color: rgba(255, 254, 251, 0.88);
 }
 
 #pmp-str-hero .pmp-str-hero__actions {
   margin-top: 32px;
 }
 
+#pmp-str-hero .pmp-str-hero__call {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--pmp-line-light);
+  font-size: 15px;
+  color: rgba(255, 254, 251, 0.82);
+}
+
+#pmp-str-hero .pmp-str-hero__call a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  font-family: var(--pmp-font-head);
+  font-weight: 700;
+  color: var(--pmp-white);
+  text-decoration: none;
+}
+
+#pmp-str-hero .pmp-str-hero__call svg {
+  color: var(--pmp-gold);
+}
+
+#pmp-str-hero .pmp-str-hero__call a:hover span {
+  text-decoration: underline;
+  text-decoration-color: var(--pmp-gold);
+  text-underline-offset: 4px;
+}
+
+#pmp-str-hero .pmp-str-hero__media {
+  margin: 0 18px 18px 0;
+}
+
 @media (min-width: 900px) {
-  #pmp-str-hero .pmp-str-hero__row {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    gap: clamp(40px, 6vw, 88px);
+  #pmp-str-hero .pmp-str-hero__grid {
+    grid-template-columns: minmax(0, 11fr) minmax(0, 13fr);
+    gap: clamp(40px, 5vw, 80px);
   }
 }
 </style>
