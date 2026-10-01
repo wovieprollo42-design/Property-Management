@@ -1,0 +1,149 @@
+<!-- Property Management Professionals · page transition (same motion as the CALEBrated site)
+     Paste ONCE in the website's Head tracking code (or in each page's Header tracking code).
+     Leaving a page: a charcoal curtain with Bob's logo drops over the page (420 ms), then the next
+     page opens. Arriving: the curtain lifts away (620 ms) while the page rises into place.
+     Only between pages of this site; never on a first visit; off for reduced motion. -->
+<style>
+html.pmp-arriving::before,
+.pmp-veil.pmp-veil {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 45;
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: linear-gradient(90deg, #1D1E22 0%, #26272C 55%, #303138 100%);
+  box-shadow: inset 0 -3px 0 #D2A437;
+  pointer-events: none;
+}
+
+html.pmp-arriving::after,
+.pmp-veil.pmp-veil::after {
+  content: "";
+  position: fixed;
+  top: calc(50% - 48px);
+  left: calc(50% - 73px);
+  z-index: 46;
+  width: 146px;
+  height: 96px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: #FFFFFF url("{{brand:logo-full.webp}}") center / 110px auto no-repeat;
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+@keyframes pmp-veil-cover {
+  from { transform: translate3d(0, -100vh, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes pmp-veil-reveal {
+  from { transform: translate3d(0, 0, 0); visibility: visible; }
+  to { transform: translate3d(0, -100vh, 0); visibility: hidden; }
+}
+
+@keyframes pmp-veil-rise {
+  from { transform: translate3d(0, 28px, 0); opacity: 0.6; }
+  to { transform: none; opacity: 1; }
+}
+
+.pmp-veil.pmp-veil {
+  animation: pmp-veil-cover 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+html.pmp-arriving::before,
+html.pmp-arriving::after {
+  animation: pmp-veil-reveal 620ms cubic-bezier(0.16, 1, 0.3, 1) 50ms both;
+}
+
+html.pmp-arriving #pmp-main,
+html.pmp-arriving #main {
+  animation: pmp-veil-rise 750ms cubic-bezier(0.16, 1, 0.3, 1) 100ms both;
+}
+
+@media (prefers-reduced-motion: reduce), print {
+  html.pmp-arriving::before,
+  html.pmp-arriving::after,
+  .pmp-veil.pmp-veil {
+    display: none;
+  }
+}
+</style>
+<script>
+(function () {
+  var w = window;
+  var d = document;
+  var root = d.documentElement;
+  if (w.pmpTransitionsReady) return;
+  w.pmpTransitionsReady = true;
+  var reduce = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Arriving from another page of this site: lift the curtain. Decided here, in the head,
+     before the page is painted, so nothing flashes. */
+  try {
+    var left = +w.sessionStorage.getItem('pmp-nav');
+    w.sessionStorage.removeItem('pmp-nav');
+    if (left && Date.now() - left < 15000 && !reduce) {
+      root.classList.add('pmp-arriving');
+      setTimeout(function () { root.classList.remove('pmp-arriving'); }, 1000);
+    }
+  } catch (e) {}
+  if (reduce) return;
+
+  /* A link to another page of this same website (not a new tab, phone, email or anchor). */
+  function samePage(a) {
+    if (!a || (a.target && a.target !== '_self') || a.hasAttribute('download')) return null;
+    var url;
+    try { url = new URL(a.getAttribute('href'), w.location.href); } catch (e) { return null; }
+    if (!/^https?:$/.test(url.protocol) || url.origin !== w.location.origin) return null;
+    if (url.pathname === w.location.pathname && url.search === w.location.search) return null;
+    return url;
+  }
+
+  /* Leaving: drop the curtain, then open the page. */
+  d.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var url = samePage(e.target.closest && e.target.closest('a[href]'));
+    if (!url || d.querySelector('.pmp-veil')) return;
+    e.preventDefault();
+    var veil = d.createElement('div');
+    veil.className = 'pmp-veil';
+    veil.setAttribute('aria-hidden', 'true');
+    d.body.appendChild(veil);
+    try { w.sessionStorage.setItem('pmp-nav', String(Date.now())); } catch (err) {}
+    setTimeout(function () { w.location.href = url.href; }, 420);
+  });
+
+  /* Pointing at or touching a link starts loading that page early. */
+  var fetched = {};
+  function prefetch(e) {
+    var url = samePage(e.target.closest && e.target.closest('a[href]'));
+    if (!url || fetched[url.href]) return;
+    fetched[url.href] = true;
+    var link = d.createElement('link');
+    link.rel = 'prefetch';
+    link.href = url.href;
+    d.head.appendChild(link);
+  }
+  d.addEventListener('pointerover', prefetch, { passive: true });
+  d.addEventListener('touchstart', prefetch, { passive: true });
+
+  /* Back button: a page restored from memory must not stay covered. */
+  w.addEventListener('pageshow', function (e) {
+    if (!e.persisted) return;
+    var veils = d.querySelectorAll('.pmp-veil');
+    for (var i = 0; i < veils.length; i++) veils[i].parentNode.removeChild(veils[i]);
+    root.classList.remove('pmp-arriving');
+  });
+})();
+</script>

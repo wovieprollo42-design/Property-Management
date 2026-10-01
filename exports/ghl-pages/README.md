@@ -34,6 +34,14 @@ The header links point to these exact paths, so keep the paths as listed.
 | Privacy Policy (review draft) | `/privacy-policy` | `privacy-policy.html` | 68 KB | Privacy Policy | Property Management Professionals | Learn how Property Management Professionals handles website inquiries, rental information, guest communications, and communication choices. | `noindex until the reviewed policy is approved, then index, follow` |
 | Terms of Service (review draft) | `/terms-of-service` | `terms-of-service.html` | 67 KB | Terms of Service | Property Management Professionals | Read website and messaging terms for Property Management Professionals, including inquiries, rental information, and communication preferences. | `noindex until the reviewed terms are approved, then index, follow` |
 
+## Page transition (once for the whole website)
+
+`page-transition.html` gives the same page-to-page motion as the CALEBrated site: a charcoal curtain with
+Bob's logo drops over the page, then lifts on the next page. Paste it **once** in the website's
+**Settings → Head tracking code** (if your GHL has no website-level field, paste it in every page's
+**Settings → Tracking code → Header**). It is not part of the page files, so the pages do not need
+to be pasted again for it.
+
 ## Animations and speed
 
 - Every animation moves or fades elements only (CSS transform and opacity), which the browser runs
