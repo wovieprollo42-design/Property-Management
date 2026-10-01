@@ -9,6 +9,15 @@ no GHL setting has been changed.
 
 ---
 
+## Live preview
+
+**https://property-management-professionals.vercel.app** (Vercel project `property-management-professionals`,
+account wovieprollo42). It is hidden from search engines on purpose (`noindex`) until launch.
+Code: https://github.com/wovieprollo42-design/Property-Management
+
+To publish changes: `npx vercel deploy --prod --yes --scope wovieprollo42-6481s-projects` from this folder.
+Vercel builds with `node build.mjs` and serves `dist/` (see `vercel.json`).
+
 ## 1. Open the preview
 
 You need [Node.js](https://nodejs.org) 18 or newer (no other installs, no `npm install`).
