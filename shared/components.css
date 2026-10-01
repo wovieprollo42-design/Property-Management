@@ -6,28 +6,45 @@
    ========================================================================== */
 
 /* ---------- Buttons ---------------------------------------------------------
-   Primary: navy. Secondary: warm white with a navy outline.
-   On navy: --light (warm white) and --outline-light.
-   Hover adds a gold baseline, the site's recurring architectural line. */
+   Primary: the logo's gold with charcoal text (6.5:1), pill shaped, with a light sheen that
+   sweeps across on hover. Secondary: charcoal outline. On charcoal: --light (white) and
+   --outline-light. Motion is transform and opacity only, so hover never causes layout work. */
 .pmp .pmp-btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 48px;
-  padding: 12px 22px;
-  font-family: var(--pmp-font-head);
-  font-size: 16px;
-  font-weight: 600;
+  min-height: 50px;
+  padding: 12px 26px;
+  font-family: var(--pmp-font-ui);
+  font-size: 15px;
+  font-weight: 700;
   line-height: 1.25;
-  letter-spacing: 0;
+  letter-spacing: 0.01em;
   text-align: center;
   text-decoration: none;
   text-transform: none;
-  border: 1px solid transparent;
-  border-radius: var(--pmp-radius);
+  border: 1.5px solid transparent;
+  border-radius: var(--pmp-radius-pill);
+  overflow: hidden;
+  isolation: isolate;
   cursor: pointer;
-  transition: box-shadow var(--pmp-dur) var(--pmp-ease), border-color var(--pmp-dur) var(--pmp-ease), background-color var(--pmp-dur) var(--pmp-ease);
+  transition: transform var(--pmp-dur) var(--pmp-ease), background-color var(--pmp-dur) var(--pmp-ease), border-color var(--pmp-dur) var(--pmp-ease), color var(--pmp-dur) var(--pmp-ease), box-shadow var(--pmp-dur) var(--pmp-ease);
+}
+
+.pmp .pmp-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  z-index: -1;
+  width: 45%;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.55) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: translateX(0) skewX(-18deg);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .pmp .pmp-btn svg {
@@ -36,43 +53,75 @@
   transition: transform var(--pmp-dur) var(--pmp-ease);
 }
 
-.pmp .pmp-btn:hover svg {
-  transform: translateX(3px);
-}
-
 .pmp .pmp-btn--primary {
-  background-color: var(--pmp-navy);
-  border-color: var(--pmp-navy);
-  color: var(--pmp-white);
+  background-color: var(--pmp-gold);
+  border-color: var(--pmp-gold);
+  color: var(--pmp-char);
+  box-shadow: 0 10px 24px -14px rgba(128, 96, 15, 0.9);
 }
 
 .pmp .pmp-btn--secondary {
-  background-color: var(--pmp-white);
-  border-color: var(--pmp-navy);
-  color: var(--pmp-navy);
+  background-color: transparent;
+  border-color: var(--pmp-char);
+  color: var(--pmp-char);
 }
 
 .pmp .pmp-btn--light {
-  background-color: var(--pmp-white);
-  border-color: var(--pmp-white);
-  color: var(--pmp-navy);
+  background-color: var(--pmp-paper);
+  border-color: var(--pmp-paper);
+  color: var(--pmp-char);
 }
 
 .pmp .pmp-btn--outline-light {
-  background-color: var(--pmp-navy);
-  border-color: rgba(255, 254, 251, 0.6);
-  color: var(--pmp-white);
+  background-color: transparent;
+  border-color: rgba(244, 241, 234, 0.5);
+  color: var(--pmp-on-dark);
 }
 
-.pmp .pmp-btn--primary:hover,
-.pmp .pmp-btn--secondary:hover,
-.pmp .pmp-btn--light:hover,
-.pmp .pmp-btn--outline-light:hover {
-  box-shadow: inset 0 -3px 0 var(--pmp-gold);
+@media (hover: hover) {
+  .pmp .pmp-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .pmp .pmp-btn:hover svg {
+    transform: translateX(4px);
+  }
+
+  .pmp .pmp-btn:hover::after {
+    opacity: 1;
+    transform: translateX(380%) skewX(-18deg);
+    transition: transform 700ms var(--pmp-ease), opacity 120ms linear;
+  }
+
+  .pmp .pmp-btn--primary:hover {
+    background-color: var(--pmp-gold-hi);
+    border-color: var(--pmp-gold-hi);
+    box-shadow: 0 16px 30px -14px rgba(128, 96, 15, 0.95);
+  }
+
+  .pmp .pmp-btn--secondary:hover {
+    background-color: var(--pmp-char);
+    color: var(--pmp-paper);
+  }
+
+  .pmp .pmp-btn--light:hover {
+    background-color: var(--pmp-gold);
+    border-color: var(--pmp-gold);
+  }
+
+  .pmp .pmp-btn--outline-light:hover {
+    border-color: var(--pmp-gold);
+    color: var(--pmp-gold-hi);
+  }
+
+  .pmp .pmp-btn--secondary::after,
+  .pmp .pmp-btn--outline-light::after {
+    display: none;
+  }
 }
 
-.pmp .pmp-btn--outline-light:hover {
-  border-color: var(--pmp-white);
+.pmp .pmp-btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .pmp .pmp-btns {
@@ -94,11 +143,11 @@
   align-items: center;
   gap: 8px;
   min-height: 44px;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: 16px;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
   text-decoration: underline;
   text-decoration-color: var(--pmp-gold);
   text-decoration-thickness: 1px;
@@ -121,15 +170,15 @@
   transform: translateX(3px);
 }
 
-.pmp[data-bg="navy"] .pmp-textlink,
+.pmp[data-bg="char"] .pmp-textlink,
 .pmp .pmp-dark .pmp-textlink {
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
 }
 
 /* ---------- Photo placeholder -------------------------------------------
-   A solid sage frame that reserves the photo's area. A line drawing in the
+   A solid stone frame that reserves the photo's area. A line drawing in the
    logo's spirit (towers, two roofs, a gold ground arc) sits in the middle;
-   "INSERT PHOTO" sits top left; a warm white caption bar at the bottom says
+   "INSERT PHOTO" sits top left; a white caption bar at the bottom says
    what belongs there, its source size, ratio and crop. Replace the whole
    .pmp-ph element with an <img class="pmp-photo pmp-photo--RATIO"> later. */
 .pmp .pmp-ph {
@@ -139,13 +188,13 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   padding: 0;
-  background-color: var(--pmp-sage);
+  background-color: var(--pmp-tray);
   background-image: url("{{placeholder-art}}");
   background-repeat: no-repeat;
   background-position: 50% 34%;
   background-size: min(58%, 420px) auto;
   border: 1px solid var(--pmp-line);
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 .pmp .pmp-ph--8x5 { aspect-ratio: 8 / 5; background-size: min(46%, 440px) auto; }
@@ -156,12 +205,12 @@
   width: 100%;
   margin-top: 64px;
   padding: 12px 16px 13px;
-  background-color: var(--pmp-white);
+  background-color: var(--pmp-paper);
   border-top: 1px solid var(--pmp-line);
   font-family: var(--pmp-font-body);
   font-size: 13px;
   line-height: 1.5;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 @media (max-width: 599px) {
@@ -184,11 +233,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 .pmp .pmp-ph__tag::before {
@@ -207,12 +256,12 @@
   display: block;
   margin-top: 3px;
   font-size: 12px;
-  color: var(--pmp-slate);
+  color: var(--pmp-muted);
 }
 
-/* ---------- Photo band: a photo layered behind a navy section's content ---
+/* ---------- Photo band: a photo layered behind a charcoal section's content ---
    The section gets .pmp-has-bg; its first child is <div class="pmp-ph pmp-ph--bg">.
-   Until a photo is approved the band stays solid navy with a small slot note. */
+   Until a photo is approved the band stays solid charcoal with a small slot note. */
 .pmp.pmp-has-bg {
   position: relative;
   isolation: isolate;
@@ -259,18 +308,20 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
   text-decoration: none;
-  background-color: var(--pmp-white);
+  background-color: var(--pmp-paper);
   border: 1px solid var(--pmp-line);
-  border-radius: var(--pmp-radius);
+  border-radius: var(--pmp-radius-lg);
   overflow: hidden;
   transition: box-shadow var(--pmp-dur) var(--pmp-ease), transform var(--pmp-dur) var(--pmp-ease);
 }
 
-.pmp .pmp-pcard:hover {
-  box-shadow: var(--pmp-shadow);
-  transform: translateY(-3px);
+@media (hover: hover) {
+  .pmp .pmp-pcard:hover {
+    box-shadow: var(--pmp-shadow-lg);
+    transform: translateY(-6px);
+  }
 }
 
 .pmp .pmp-pcard > .pmp-ph,
@@ -280,11 +331,11 @@
 }
 
 .pmp .pmp-pcard .pmp-photo {
-  transition: transform 600ms var(--pmp-ease);
+  transition: transform 900ms var(--pmp-ease-out);
 }
 
 .pmp .pmp-pcard:hover .pmp-photo {
-  transform: scale(1.04);
+  transform: scale(1.07);
 }
 
 .pmp .pmp-pcard__body {
@@ -298,14 +349,14 @@
 .pmp .pmp-pcard__meta {
   grid-column: 1;
   font-size: 14px;
-  color: var(--pmp-slate);
+  color: var(--pmp-muted);
 }
 
 .pmp .pmp-pcard__title {
   grid-column: 1;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: clamp(19px, calc(17px + 0.5vw), 23px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.015em;
 }
@@ -315,7 +366,7 @@
   grid-row: 1 / span 2;
   width: 22px;
   height: 22px;
-  color: var(--pmp-bronze);
+  color: var(--pmp-gold-deep);
   transition: transform var(--pmp-dur) var(--pmp-ease);
 }
 
@@ -325,30 +376,30 @@
 
 /* ---------- Brand motif and swoosh (inline SVG from {{motif}} / {{swoosh}}) */
 /* The roofs are filled with the surrounding background so the towers pass behind them.
-   A section can set --pmp-motif-fill on the motif's wrapper (for example to sage). */
+   A section can set --pmp-motif-fill on the motif's wrapper (for example to stone). */
 .pmp .pmp-motif {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.pmp .pmp-motif .m-line { stroke: var(--pmp-navy); }
-.pmp .pmp-motif .m-house { stroke: var(--pmp-navy); fill: var(--pmp-motif-fill, var(--pmp-ivory)); }
+.pmp .pmp-motif .m-line { stroke: var(--pmp-char); }
+.pmp .pmp-motif .m-house { stroke: var(--pmp-char); fill: var(--pmp-motif-fill, var(--pmp-ivory)); }
 .pmp .pmp-motif .m-gold { stroke: var(--pmp-gold); }
-.pmp .pmp-motif .m-soft { stroke: var(--pmp-navy); stroke-opacity: 0.35; }
+.pmp .pmp-motif .m-soft { stroke: var(--pmp-char); stroke-opacity: 0.35; }
 
 .pmp .pmp-dark .pmp-motif .m-house,
-.pmp[data-bg="navy"] .pmp-motif .m-house {
-  fill: var(--pmp-motif-fill, var(--pmp-navy));
+.pmp[data-bg="char"] .pmp-motif .m-house {
+  fill: var(--pmp-motif-fill, var(--pmp-char));
 }
 
 .pmp .pmp-dark .pmp-motif .m-line,
 .pmp .pmp-dark .pmp-motif .m-house,
 .pmp .pmp-dark .pmp-motif .m-soft,
-.pmp[data-bg="navy"] .pmp-motif .m-line,
-.pmp[data-bg="navy"] .pmp-motif .m-house,
-.pmp[data-bg="navy"] .pmp-motif .m-soft {
-  stroke: var(--pmp-white);
+.pmp[data-bg="char"] .pmp-motif .m-line,
+.pmp[data-bg="char"] .pmp-motif .m-house,
+.pmp[data-bg="char"] .pmp-motif .m-soft {
+  stroke: var(--pmp-paper);
 }
 
 .pmp .pmp-swoosh {
@@ -363,14 +414,14 @@
   align-items: center;
   min-height: 30px;
   padding: 6px 20px;
-  font-family: var(--pmp-font-head);
-  font-size: 12px;
+  font-family: var(--pmp-font-ui);
+  font-size: 11.5px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--pmp-white);
-  background-color: var(--pmp-navy);
+  color: var(--pmp-char);
+  background-color: var(--pmp-gold);
   clip-path: polygon(0 0, 100% 0, calc(100% - 9px) 50%, 100% 100%, 0 100%, 9px 50%);
 }
 
@@ -381,9 +432,9 @@
 }
 
 .pmp .pmp-dark .pmp-ribbon,
-.pmp[data-bg="navy"] .pmp-ribbon {
-  color: var(--pmp-navy);
-  background-color: var(--pmp-white);
+.pmp[data-bg="char"] .pmp-ribbon {
+  color: var(--pmp-char);
+  background-color: var(--pmp-gold);
 }
 
 /* ---------- Contact rows (phone and email) ------------------------------- */
@@ -423,7 +474,7 @@
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  background-color: var(--pmp-sage);
+  background-color: var(--pmp-tray);
 }
 
 .pmp .pmp-photo--8x5 { aspect-ratio: 8 / 5; }
@@ -472,6 +523,7 @@
   width: auto;
   height: auto;
   border: 1px solid var(--pmp-gold);
+  border-radius: calc(var(--pmp-radius-lg) + 4px);
 }
 
 .pmp .pmp-marks--frame::after {
@@ -505,35 +557,35 @@
    Marks where a GHL form, the PMS booking destination or the guest signup
    will go. It never pretends to work. */
 .pmp .pmp-slot {
-  background-color: var(--pmp-white);
+  background-color: var(--pmp-paper);
   border: 1px dashed var(--pmp-gold);
   border-radius: var(--pmp-radius-lg);
   padding: clamp(20px, 3vw, 32px);
-  color: var(--pmp-slate);
+  color: var(--pmp-muted);
 }
 
 .pmp .pmp-slot__tag {
   display: inline-block;
   margin-bottom: 12px;
   padding: 6px 10px;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--pmp-bronze);
+  color: var(--pmp-gold-deep);
   background-color: var(--pmp-ivory);
   border: 1px solid var(--pmp-gold);
   border-radius: 3px;
 }
 
 .pmp .pmp-slot__title {
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: 18px;
   font-weight: 700;
   line-height: 1.35;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 .pmp .pmp-slot__notes {
@@ -558,13 +610,13 @@
   top: 0.72em;
   width: 8px;
   height: 1px;
-  background-color: var(--pmp-bronze);
+  background-color: var(--pmp-gold-deep);
 }
 
 .pmp .pmp-slot code {
   font-family: Consolas, "Courier New", monospace;
   font-size: 0.92em;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 /* ---------- Pending detail token -----------------------------------------
@@ -573,21 +625,21 @@
 .pmp .pmp-pending {
   display: inline;
   padding: 1px 6px;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: 0.88em;
   font-weight: 600;
-  color: var(--pmp-bronze);
-  background-color: var(--pmp-white);
+  color: var(--pmp-gold-deep);
+  background-color: var(--pmp-paper);
   border: 1px dashed var(--pmp-gold);
   border-radius: 3px;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
-.pmp[data-bg="navy"] .pmp-pending,
+.pmp[data-bg="char"] .pmp-pending,
 .pmp .pmp-dark .pmp-pending {
-  color: var(--pmp-white);
-  background-color: var(--pmp-navy);
+  color: var(--pmp-paper);
+  background-color: var(--pmp-char);
 }
 
 /* ---------- Checklist with small gold ticks ------------------------------ */
@@ -640,7 +692,7 @@
   font-size: var(--pmp-h3);
   font-weight: 600;
   line-height: 1.35;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 .pmp .pmp-faq__icon {
@@ -651,7 +703,7 @@
   margin-top: 1px;
   border: 1px solid var(--pmp-line-strong);
   border-radius: 50%;
-  background-color: var(--pmp-white);
+  background-color: var(--pmp-paper);
   transition: border-color var(--pmp-dur) var(--pmp-ease), transform var(--pmp-dur) var(--pmp-ease);
 }
 
@@ -664,7 +716,7 @@
   width: 10px;
   height: 2px;
   margin: -1px 0 0 -5px;
-  background-color: var(--pmp-navy);
+  background-color: var(--pmp-char);
   transition: transform var(--pmp-dur) var(--pmp-ease);
 }
 
@@ -681,7 +733,7 @@
 }
 
 .pmp .pmp-faq__item > summary:hover .pmp-faq__icon {
-  border-color: var(--pmp-navy);
+  border-color: var(--pmp-char);
 }
 
 .pmp .pmp-faq__a {
@@ -703,9 +755,9 @@
   gap: 3px;
   padding-left: 14px;
   border-left: 2px solid var(--pmp-gold);
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   line-height: 1.1;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
   text-decoration: none;
 }
 
@@ -720,13 +772,78 @@
   font-weight: 700;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--pmp-bronze);
+  color: var(--pmp-gold-deep);
 }
 
 .pmp .pmp-wordmark--light {
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
 }
 
 .pmp .pmp-wordmark--light .pmp-wordmark__bottom {
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
+}
+
+/* ---------- Photo frame (.pmp-shot) ---------------------------------------
+   Wraps every real photo: rounded, clipped, with a warm stone fill while it loads.
+   Used by the preview's sample photos and by the full-page GHL exports. */
+.pmp .pmp-shot {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-color: var(--pmp-tray);
+  border-radius: var(--pmp-radius-lg);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.pmp .pmp-shot .pmp-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.pmp .pmp-shot .pmp-ph__label,
+.pmp .pmp-shot .pmp-ph__tag {
+  display: none;
+}
+
+.pmp .pmp-pcard > .pmp-shot {
+  border-radius: 0;
+  border-bottom: 3px solid var(--pmp-gold);
+}
+
+/* Photo bands: the photo is toned into a charcoal section, behind its content. */
+.pmp .pmp-shot--bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.pmp .pmp-shot--bg .pmp-photo {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  opacity: 0.2;
+  mix-blend-mode: luminosity;
+}
+
+/* ---------- FAQ answers ease open ----------------------------------------- */
+@keyframes pmp-open {
+  from { opacity: 0; transform: translate3d(0, -8px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pmp .pmp-faq__item[open] .pmp-faq__a {
+    animation: pmp-open 380ms var(--pmp-ease-out) both;
+  }
+}
+
+.pmp .pmp-faq__item[open] .pmp-faq__icon {
+  background-color: var(--pmp-gold);
+  transform: rotate(180deg);
 }

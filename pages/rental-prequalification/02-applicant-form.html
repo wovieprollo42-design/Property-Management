@@ -1,6 +1,6 @@
 <!--
   RENTAL PREQUALIFICATION · 02 APPLICANT FORM
-  Background: #FFFEFB warm white (data-bg="white")
+  Background: #FFFFFF white (data-bg="paper")
   Layout: one comfortable reading column with the applicant form slot.
 
   FORM SLOT (data-slot="applicant-form"): a SEPARATE applicant form goes here. It is not the owner form.
@@ -16,12 +16,12 @@
   In GHL: replace the whole <div class="pmp-slot" data-slot="applicant-form">...</div> block with the
   approved form element or embed. See docs/installation-guide.md.
 -->
-<section class="pmp pmp-sec" id="pmp-prequal-applicant-form" data-bg="white" aria-labelledby="pmp-prequal-applicant-form-title">
+<section class="pmp pmp-sec" id="pmp-prequal-applicant-form" data-bg="paper" aria-labelledby="pmp-prequal-applicant-form-title">
   <div class="pmp-wrap">
     <div class="pmp-read pmp-prequal-form__col">
       <h2 id="pmp-prequal-applicant-form-title">Complete your preliminary prequalification</h2>
 
-      <div class="pmp-slot pmp-prequal-form__slot" data-slot="applicant-form">
+      <div class="pmp-slot pmp-prequal-form__slot" data-slot="applicant-form" data-ghl-form-id="">
         <p class="pmp-slot__tag">Form slot · not connected</p>
         <p class="pmp-slot__title">Applicant prequalification form</p>
         <p class="pmp-prequal-form__desc">The approved applicant form will appear here: either the existing GHL form after it has been reviewed, or a DoorLoop preliminary form if Bob selects one. This preview does not collect or send anything.</p>
@@ -43,4 +43,49 @@
 #pmp-prequal-applicant-form .pmp-prequal-form__desc {
   margin-top: 8px;
 }
+
+#pmp-prequal-applicant-form .pmp-slot.is-connected {
+  padding: 0;
+  background: none;
+  border: 0;
+}
 </style>
+
+<script>
+(function () {
+  var root = document.getElementById('pmp-prequal-applicant-form');
+  if (!root || root.getAttribute('data-pmp-ready')) return;
+  root.setAttribute('data-pmp-ready', 'true');
+
+  /* Connect the GHL form: put the approved, tested form's ID in data-ghl-form-id on the slot.
+     Until then the "not connected" box stays, and nothing is collected or sent. */
+  var slot = root.querySelector('[data-ghl-form-id]');
+  var id = slot ? slot.getAttribute('data-ghl-form-id') : '';
+  if (!id || !/^[A-Za-z0-9]{8,40}$/.test(id)) return;
+
+  var frame = document.createElement('iframe');
+  frame.src = 'https://api.leadconnectorhq.com/widget/form/' + id;
+  frame.id = 'inline-' + id;
+  frame.title = 'Complete your preliminary prequalification';
+  frame.setAttribute('data-layout', "{'id':'INLINE'}");
+  frame.setAttribute('data-trigger-type', 'alwaysShow');
+  frame.setAttribute('data-activation-type', 'alwaysActivated');
+  frame.setAttribute('data-deactivation-type', 'neverDeactivate');
+  frame.setAttribute('data-layout-iframe-id', 'inline-' + id);
+  frame.setAttribute('data-form-id', id);
+  frame.setAttribute('data-height', '720');
+  frame.style.cssText = 'display:block;width:100%;height:720px;border:0;border-radius:12px;';
+  slot.innerHTML = '';
+  slot.classList.add('is-connected');
+  slot.appendChild(frame);
+
+  /* GHL's own helper sizes the form to its content; load it once per page. */
+  if (!window.pmpFormEmbedLoaded) {
+    window.pmpFormEmbedLoaded = true;
+    var script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }
+})();
+</script>

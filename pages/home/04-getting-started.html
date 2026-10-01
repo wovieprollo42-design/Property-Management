@@ -1,16 +1,16 @@
 <!--
   HOME · 04 GETTING STARTED (how it starts + the owner call to action)
-  Background: #172D3B deep navy (data-bg="navy") with warm white text, plus a photo band behind the
-              content (slot home-start-bg, shown toned into the navy). Set the GHL section to navy too.
+  Background: #26272C charcoal (data-bg="char") with white text, plus a photo band behind the
+              content (slot home-start-bg, shown toned into the charcoal). Set the GHL section to charcoal too.
   Layout: three numbered steps joined by a gold line, like marks on a plan.
           The owner call to action sits beside the heading.
   No photo in this section.
 -->
-<section class="pmp pmp-sec pmp-has-bg" id="pmp-home-getting-started" data-bg="navy" aria-labelledby="pmp-home-getting-started-title">
+<section class="pmp pmp-sec pmp-has-bg" id="pmp-home-getting-started" data-bg="char" aria-labelledby="pmp-home-getting-started-title">
   <div class="pmp-ph pmp-ph--bg" data-photo-slot="home-start-bg">
     <p class="pmp-ph__label">
       <span class="pmp-ph__tag">INSERT PHOTO</span>
-      <span class="pmp-ph__desc">Background: a calm, wide view of a managed property or its setting, toned into the navy.</span>
+      <span class="pmp-ph__desc">Background: a calm, wide view of a managed property or its setting, toned into the charcoal.</span>
       <span class="pmp-ph__spec">Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges.</span>
     </p>
   </div>
@@ -19,9 +19,11 @@
       <div>
         <h2 id="pmp-home-getting-started-title">Getting started is simple</h2>
       </div>
-      <a class="pmp-btn pmp-btn--light" href="/management-quote">Tell Us About Your Property {{arrow}}</a>
+      <a class="pmp-btn pmp-btn--primary" href="/management-quote">Tell Us About Your Property {{arrow}}</a>
     </div>
 
+    <div class="pmp-home-start__flow">
+    <span class="pmp-home-start__track" data-pmp-reveal="line" aria-hidden="true"></span>
     <ol class="pmp-home-start__steps">
       <li>
         <span class="pmp-home-start__num" aria-hidden="true">01</span>
@@ -36,6 +38,7 @@
         <p>Agree on the scope and next steps before onboarding.</p>
       </li>
     </ol>
+    </div>
   </div>
 </section>
 
@@ -72,7 +75,7 @@
   left: 0;
   width: 11px;
   height: 11px;
-  background-color: var(--pmp-navy);
+  background-color: var(--pmp-char);
   border: 2px solid var(--pmp-gold);
   transform: rotate(45deg);
 }
@@ -95,11 +98,19 @@
   display: none;
 }
 
+#pmp-home-getting-started .pmp-home-start__flow {
+  position: relative;
+}
+
+#pmp-home-getting-started .pmp-home-start__track {
+  display: none;
+}
+
 #pmp-home-getting-started .pmp-home-start__num {
   display: block;
   font-family: var(--pmp-font-head);
-  font-size: clamp(36px, calc(28px + 2vw), 52px);
-  font-weight: 700;
+  font-size: clamp(44px, calc(32px + 3vw), 72px);
+  font-weight: 600;
   line-height: 1;
   letter-spacing: -0.03em;
   color: var(--pmp-gold);
@@ -108,11 +119,11 @@
 #pmp-home-getting-started .pmp-home-start__steps p {
   max-width: 22em;
   margin-top: 14px;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: clamp(18px, calc(16.4px + 0.4vw), 21px);
   font-weight: 600;
   line-height: 1.4;
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
 }
 
 @media (min-width: 900px) {
@@ -129,7 +140,21 @@
     left: 0;
     right: 0;
     height: 1px;
+    background-color: rgba(210, 164, 55, 0.3);
+  }
+
+  /* A brighter gold line draws across the three steps as they arrive. */
+  #pmp-home-getting-started .pmp-home-start__track {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+    height: 2px;
+    margin-top: 0;
     background-color: var(--pmp-gold);
+    pointer-events: none;
   }
 
   #pmp-home-getting-started .pmp-home-start__steps li {

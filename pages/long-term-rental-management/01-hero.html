@@ -1,6 +1,6 @@
 <!--
   LONG-TERM RENTAL MANAGEMENT · 01 HERO
-  Background: #172D3B deep navy (data-bg="navy") with warm white text, as an emphasis section.
+  Background: #26272C charcoal (data-bg="char") with white text, as an emphasis section.
   Layout: copy on the left (ribbon label in the logo's banner shape, H1, the logo's gold ground arc,
           intro, quote button, call line); the service photo on the right in a thin offset gold frame.
   Photo slot: long-term-hero · source 1600 x 1000 px · ratio 8:5
@@ -9,16 +9,16 @@
     <img class="pmp-photo pmp-photo--8x5" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL PROPERTY"
          width="1600" height="1000" fetchpriority="high" decoding="async">
 -->
-<section class="pmp pmp-sec" id="pmp-ltr-hero" data-bg="navy" aria-labelledby="pmp-ltr-hero-title">
+<section class="pmp pmp-sec pmp-hero" id="pmp-ltr-hero" data-bg="char" aria-labelledby="pmp-ltr-hero-title">
   <div class="pmp-wrap">
     <div class="pmp-ltr-hero__grid">
       <div class="pmp-ltr-hero__copy">
         <p class="pmp-ribbon">Management services</p>
-        <h1 id="pmp-ltr-hero-title">Long-term rental management for local property owners</h1>
+        <h1 id="pmp-ltr-hero-title">Long-Term Rental Management for Local Property Owners</h1>
         {{swoosh}}
         <p class="pmp-lead pmp-ltr-hero__lead">From vacancies and tenant questions to payments and property care, rentals need steady attention. We help owners in East Central Minnesota manage these responsibilities with a clear plan for the property.</p>
         <div class="pmp-btns pmp-ltr-hero__actions">
-          <a class="pmp-btn pmp-btn--light" href="/management-quote">Request a Management Quote {{arrow}}</a>
+          <a class="pmp-btn pmp-btn--primary" href="/management-quote">Request a Management Quote {{arrow}}</a>
           <a class="pmp-textlink" href="#pmp-ltr-service-scope">See what is included</a>
         </div>
         <p class="pmp-ltr-hero__call">Prefer to talk first? <a href="tel:+16122108424">{{phone}}<span>(612) 210-8424</span></a></p>
@@ -60,7 +60,7 @@
 #pmp-ltr-hero .pmp-ltr-hero__lead {
   max-width: 32em;
   margin-top: 22px;
-  color: rgba(255, 254, 251, 0.88);
+  color: rgba(244, 241, 234, 0.88);
 }
 
 #pmp-ltr-hero .pmp-ltr-hero__actions {
@@ -76,7 +76,7 @@
   padding-top: 18px;
   border-top: 1px solid var(--pmp-line-light);
   font-size: 15px;
-  color: rgba(255, 254, 251, 0.82);
+  color: rgba(244, 241, 234, 0.82);
 }
 
 #pmp-ltr-hero .pmp-ltr-hero__call a {
@@ -84,9 +84,9 @@
   align-items: center;
   gap: 8px;
   min-height: 40px;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-weight: 700;
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
   text-decoration: none;
 }
 

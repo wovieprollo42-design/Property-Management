@@ -13,21 +13,21 @@ Set these in the GHL page settings (not inside a Custom JS/HTML element).
 
 ## Install order
 
-1. `exports/ghl/shared/header.html` (full-width section, background `#FFFEFB`)
-2. `01-hero.html` (full-width section, background `#172D3B`)
-3. `02-service-scope.html` (full-width section, background `#E9EDE9`)
-4. `03-plan-and-guest-experience.html` (full-width section, background `#FFFEFB`)
-5. `04-final-action.html` (full-width section, background `#F8F5EC`)
-6. `exports/ghl/shared/footer.html` (full-width section, background `#172D3B`)
+1. `exports/ghl/shared/header.html` (full-width section, background `#FFFFFF`)
+2. `01-hero.html` (full-width section, background `#26272C`)
+3. `02-service-scope.html` (full-width section, background `#EFEAE0`)
+4. `03-plan-and-guest-experience.html` (full-width section, background `#FFFFFF`)
+5. `04-final-action.html` (full-width section, background `#FAF7F1`)
+6. `exports/ghl/shared/footer.html` (full-width section, background `#26272C`)
 
 ## Section backgrounds
 
 | # | Snippet | GHL section and row background |
 | --- | --- | --- |
-| 1 | `01-hero.html` | Deep navy `#172D3B` |
-| 2 | `02-service-scope.html` | Pale sage gray `#E9EDE9` |
-| 3 | `03-plan-and-guest-experience.html` | Warm white `#FFFEFB` |
-| 4 | `04-final-action.html` | Warm ivory `#F8F5EC` |
+| 1 | `01-hero.html` | Charcoal `#26272C` |
+| 2 | `02-service-scope.html` | Warm stone `#EFEAE0` |
+| 3 | `03-plan-and-guest-experience.html` | White `#FFFFFF` |
+| 4 | `04-final-action.html` | Ivory `#FAF7F1` |
 
 Every GHL section and row: full width, padding 0, background set to the color above.
 See `docs/installation-guide.md` for the step-by-step install.

@@ -8,6 +8,16 @@ here, and the page settings (title, description, indexing) are set in GHL's page
 
 ---
 
+## Quickest way (recommended since 2026-10-01): one paste per page
+
+`exports/ghl-pages/` holds **one file per page** with the header, every section, the footer, all
+styles, the animations and the photos. Paste the whole file into **one** Custom JS/HTML element in a
+full-width section; nothing else is needed. Paths, titles, descriptions and indexing for every page
+are in `exports/ghl-pages/README.md`. The section-by-section route below still works if you prefer
+to build each page from separate sections.
+
+---
+
 ## What you are installing
 
 `exports/ghl/` holds one folder per page. Each `.html` file in a folder is **one section**, ready to
@@ -80,18 +90,18 @@ Background colors used by the sections:
 
 | Color | Hex | Used for |
 | --- | --- | --- |
-| Warm ivory | `#F8F5EC` | Page background and main sections |
-| Warm white | `#FFFEFB` | Header and light sections |
-| Pale sage gray | `#E9EDE9` | Alternate sections |
-| Deep navy | `#172D3B` | Footer and emphasis sections |
+| Ivory | `#FAF7F1` | Page background and main sections |
+| White | `#FFFFFF` | Header and light sections |
+| Warm stone | `#EFEAE0` | Alternate sections |
+| Charcoal (from the logo) | `#26272C` | Footer and emphasis sections |
 
-Also set the **page background** (page or site settings) to warm ivory `#F8F5EC`, so no gap between
+Also set the **page background** (page or site settings) to ivory `#FAF7F1`, so no gap between
 GHL rows ever shows a different color.
 
 ## Step 4 · Header, footer, logo and favicon
 
-1. On the first page, install `shared/header.html` as the **first** section (background `#FFFEFB`) and
-   `shared/footer.html` as the **last** section (background `#172D3B`).
+1. On the first page, install `shared/header.html` as the **first** section (background `#FFFFFF`) and
+   `shared/footer.html` as the **last** section (background `#26272C`).
 2. Save each as a **global section** if GHL offers it, then add the same global section to every
    other page. One edit then updates every page.
 3. **Sticky header:** in the preview the header stays at the top while scrolling. Inside GHL, a code
@@ -125,8 +135,8 @@ media library, copy its URL, and replace the whole placeholder `div` with:
 
 Use the ratio class of the slot (`--8x5`, `--4x3` or `--4x5`) and its source width and height.
 
-**Photo bands** (`pmp-ph--bg`, on navy sections such as Home "Getting started", Quote "What happens next"
-and Vacation "Hear about future stays") take a wide photo toned into the navy. Replace the placeholder with:
+**Photo bands** (`pmp-ph--bg`, on charcoal sections such as Home "Getting started", Quote "What happens next"
+and Vacation "Hear about future stays") take a wide photo toned into the charcoal. Replace the placeholder with:
 
 ```html
 <img class="pmp-photo" src="PHOTO-URL" alt="" width="1920" height="1080" loading="lazy" decoding="async"

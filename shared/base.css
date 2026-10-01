@@ -15,10 +15,13 @@
   font-size: var(--pmp-text);
   font-weight: 400;
   line-height: 1.6;
+  font-style: normal;
   letter-spacing: normal;
+  word-spacing: normal;
   text-align: left;
   text-transform: none;
-  color: var(--pmp-slate);
+  text-indent: 0;
+  color: var(--pmp-muted);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -30,38 +33,52 @@
   box-sizing: border-box;
 }
 
-/* Host-style shield. GHL themes often style bare p, li, div or a elements.
-   These resets use :where() so they outrank a host's bare element rules
-   (like "p { font-size: 14px }") but stay weaker than every class rule below
-   and in the section files. */
-.pmp :where(h1, h2, h3, h4, p, ul, ol, li, dl, dt, dd, figure, blockquote, details, summary,
-            div, nav, aside, article, section, header, footer, form, fieldset) {
+/* Host-style shield. GHL themes often style bare p, li, div or a elements, sometimes under
+   a class (".c-section div { padding: 5px }"). These resets weigh one class plus one element,
+   so they outrank such host rules (they load later), yet stay weaker than every class rule
+   below and in the section files. */
+.pmp :is(h1, h2, h3, h4, p, ul, ol, li, dl, dt, dd, figure, figcaption, blockquote, details,
+            summary, div, nav, aside, article, section, header, footer, main, address, form, fieldset,
+            span, a, button, label, em, strong, small, b, i, time, code, input, select, textarea) {
   margin: 0;
   padding: 0;
 }
 
-.pmp :where(p, li, dt, dd, span, a, em, small, label, figcaption, blockquote, summary, code) {
+.pmp :is(p, li, dt, dd, span, a, em, small, label, figcaption, blockquote, summary, code,
+            div, ul, ol, dl, nav, figure, section, article, aside, header, footer, main, address,
+            strong, b, i, time, button) {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+  font-style: inherit;
   line-height: inherit;
   letter-spacing: inherit;
+  word-spacing: inherit;
   text-transform: inherit;
   text-align: inherit;
   color: inherit;
 }
 
-.pmp :where(a) {
+/* Images keep their own size unless a class rule says otherwise (host rules like
+   "img { width: 50px }" stop here). */
+.pmp :is(img) {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.pmp :is(a) {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.pmp :where(div, nav, aside, article, section, header, footer, ul, ol, li, dl, details, summary) {
+.pmp :is(div, nav, aside, article, section, header, footer, ul, ol, li, dl, details, summary) {
   border: 0;
   background: none;
 }
 
-.pmp :where(ul, ol) {
+.pmp :is(ul, ol) {
   list-style: none;
 }
 
@@ -82,18 +99,18 @@
 
 /* Solid backgrounds. Every section wrapper names one with data-bg. */
 .pmp[data-bg="ivory"] { background-color: var(--pmp-ivory); }
-.pmp[data-bg="white"] { background-color: var(--pmp-white); }
-.pmp[data-bg="sage"]  { background-color: var(--pmp-sage); }
-.pmp[data-bg="navy"]  { background-color: var(--pmp-navy); color: var(--pmp-white); }
+.pmp[data-bg="paper"] { background-color: var(--pmp-paper); }
+.pmp[data-bg="tray"]  { background-color: var(--pmp-tray); }
+.pmp[data-bg="char"]  { background-color: var(--pmp-char); color: var(--pmp-paper); }
 
-/* Headings: Manrope, sentence case, navy on light, warm white on navy. */
+/* Headings: Manrope, sentence case, charcoal on light, white on charcoal. */
 .pmp h1,
 .pmp h2,
 .pmp h3,
 .pmp h4 {
   font-family: var(--pmp-font-head);
   font-weight: 700;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
   text-transform: none;
   text-wrap: balance;
 }
@@ -123,13 +140,13 @@
   letter-spacing: -0.01em;
 }
 
-.pmp[data-bg="navy"] h1,
-.pmp[data-bg="navy"] h2,
-.pmp[data-bg="navy"] h3,
+.pmp[data-bg="char"] h1,
+.pmp[data-bg="char"] h2,
+.pmp[data-bg="char"] h3,
 .pmp .pmp-dark h1,
 .pmp .pmp-dark h2,
 .pmp .pmp-dark h3 {
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
 }
 
 .pmp p {
@@ -138,26 +155,26 @@
 
 .pmp strong {
   font-weight: 600;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
-.pmp[data-bg="navy"] strong,
+.pmp[data-bg="char"] strong,
 .pmp .pmp-dark strong {
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
 }
 
-/* Visible keyboard focus: navy ring on light surfaces, gold ring on navy (4.4:1). */
+/* Visible keyboard focus: charcoal ring on light surfaces, gold ring on charcoal (4.4:1). */
 .pmp a:focus-visible,
 .pmp button:focus-visible,
 .pmp summary:focus-visible,
 .pmp [tabindex]:focus-visible {
-  outline: 2px solid var(--pmp-navy);
+  outline: 2px solid var(--pmp-char);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
-.pmp[data-bg="navy"] a:focus-visible,
-.pmp[data-bg="navy"] button:focus-visible,
+.pmp[data-bg="char"] a:focus-visible,
+.pmp[data-bg="char"] button:focus-visible,
 .pmp .pmp-dark a:focus-visible,
 .pmp .pmp-dark button:focus-visible {
   outline-color: var(--pmp-gold);
@@ -193,13 +210,13 @@
   align-items: center;
   gap: 12px;
   margin: 0 0 var(--pmp-s2);
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: 13px;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--pmp-bronze);
+  color: var(--pmp-gold-deep);
 }
 
 .pmp .pmp-eyebrow::before {
@@ -216,9 +233,9 @@
   }
 }
 
-.pmp[data-bg="navy"] .pmp-eyebrow,
+.pmp[data-bg="char"] .pmp-eyebrow,
 .pmp .pmp-dark .pmp-eyebrow {
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
 }
 
 .pmp .pmp-lead {
@@ -243,10 +260,10 @@
   border: 0 !important;
 }
 
-/* Navy panel inside a light section */
+/* Charcoal panel inside a light section */
 .pmp .pmp-dark {
-  background-color: var(--pmp-navy);
-  color: var(--pmp-white);
+  background-color: var(--pmp-char);
+  color: var(--pmp-paper);
 }
 
 @media (prefers-reduced-motion: reduce) {

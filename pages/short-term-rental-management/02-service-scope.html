@@ -1,20 +1,24 @@
 <!--
   SHORT-TERM RENTAL MANAGEMENT · 02 SERVICE SCOPE
-  Background: #E9EDE9 pale sage gray (data-bg="sage")
-  Layout: the photo on the left; on the right a two-column grid of the five services, each under a
-          short gold rule. The sixth cell restates that every service follows the agreed scope.
+  Background: #EFEAE0 warm stone (data-bg="tray")
+  Layout: heading and photo on top; below, "every stay" as a timeline with three phases (before,
+          during, after) and the five services set as cards under the phase they belong to.
+  Motion: on desktop a gold marker travels along the timeline and each phase lights up as it
+          passes (CSS only, paused while off screen, off for reduced motion). Phones get a still,
+          vertical timeline.
   Photo slot: short-term-guest-space · source 1200 x 900 px · ratio 4:3
   Replace the placeholder with:
     <img class="pmp-photo pmp-photo--4x3" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL ROOM"
          width="1200" height="900" loading="lazy" decoding="async">
 -->
-<section class="pmp pmp-sec" id="pmp-str-service-scope" data-bg="sage" aria-labelledby="pmp-str-service-scope-title">
+<section class="pmp pmp-sec" id="pmp-str-service-scope" data-bg="tray" aria-labelledby="pmp-str-service-scope-title" data-pmp-loop>
   <div class="pmp-wrap">
     <div class="pmp-str-scope__head">
-      <h2 id="pmp-str-service-scope-title">Support for your property and guests</h2>
-    </div>
-
-    <div class="pmp-str-scope__grid">
+      <div class="pmp-str-scope__intro">
+        <p class="pmp-eyebrow">Before, during and after every stay</p>
+        <h2 id="pmp-str-service-scope-title">Support for your property and guests</h2>
+        <p class="pmp-str-scope__text">Each service is part of the scope you agree to for your property.</p>
+      </div>
       <div class="pmp-str-scope__media pmp-marks">
         <div class="pmp-ph pmp-ph--4x3" data-photo-slot="short-term-guest-space">
           <p class="pmp-ph__label">
@@ -24,85 +28,309 @@
           </p>
         </div>
       </div>
+    </div>
 
-      <ul class="pmp-str-scope__list">
-        <li>
-          <h3>Listings</h3>
-          <p>Keep descriptions, photos, and guest information organized and accurate.</p>
-        </li>
-        <li>
-          <h3>Pricing strategy</h3>
-          <p>Review pricing and availability as part of the agreed scope.</p>
-        </li>
-        <li>
-          <h3>Guest communication</h3>
-          <p>Coordinate questions and stay information.</p>
-        </li>
-        <li>
-          <h3>Turnovers</h3>
-          <p>Coordinate cleaning between stays and follow up on reported property needs.</p>
-        </li>
-        <li>
-          <h3>Performance</h3>
-          <p>Review property activity and discuss practical improvements.</p>
-        </li>
-        <li class="pmp-str-scope__note">
-          <p>Each service is part of the scope you agree to for your property.</p>
-        </li>
-      </ul>
+    <div class="pmp-str-stay" aria-hidden="true">
+      <div class="pmp-str-stay__track">
+        <span class="pmp-str-stay__line"></span>
+        <span class="pmp-str-stay__runner"><span class="pmp-str-stay__marker">{{key}}</span></span>
+      </div>
+    </div>
+
+    <div class="pmp-str-scope__phases">
+      <div class="pmp-str-scope__phase pmp-str-scope__phase--1">
+        <p class="pmp-str-scope__when"><span class="pmp-str-scope__node" aria-hidden="true"></span>Before the stay</p>
+        <ul class="pmp-str-scope__cards">
+          <li class="pmp-card">
+            <span class="pmp-str-scope__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-8 9"/></svg></span>
+            <h3>Listings</h3>
+            <p>Keep descriptions, photos, and guest information organized and accurate.</p>
+          </li>
+          <li class="pmp-card">
+            <span class="pmp-str-scope__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg></span>
+            <h3>Pricing strategy</h3>
+            <p>Review pricing and availability as part of the agreed scope.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pmp-str-scope__phase pmp-str-scope__phase--2">
+        <p class="pmp-str-scope__when"><span class="pmp-str-scope__node" aria-hidden="true"></span>During the stay</p>
+        <ul class="pmp-str-scope__cards">
+          <li class="pmp-card">
+            <span class="pmp-str-scope__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span>
+            <h3>Guest communication</h3>
+            <p>Coordinate questions and stay information.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pmp-str-scope__phase pmp-str-scope__phase--3">
+        <p class="pmp-str-scope__when"><span class="pmp-str-scope__node" aria-hidden="true"></span>After the stay</p>
+        <ul class="pmp-str-scope__cards">
+          <li class="pmp-card">
+            <span class="pmp-str-scope__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></span>
+            <h3>Turnovers</h3>
+            <p>Coordinate cleaning between stays and follow up on reported property needs.</p>
+          </li>
+          <li class="pmp-card">
+            <span class="pmp-str-scope__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+            <h3>Performance</h3>
+            <p>Review property activity and discuss practical improvements.</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-#pmp-str-service-scope .pmp-str-scope__head h2 {
-  max-width: 14em;
+#pmp-str-service-scope {
+  --stay-time: 9s;
 }
 
-#pmp-str-service-scope .pmp-str-scope__grid {
+#pmp-str-service-scope .pmp-str-scope__head {
   display: grid;
-  gap: 48px;
-  margin-top: clamp(32px, 5vw, 56px);
+  gap: 40px;
+  align-items: center;
 }
 
-#pmp-str-service-scope .pmp-str-scope__list {
+#pmp-str-service-scope .pmp-str-scope__intro h2 {
+  max-width: 12em;
+}
+
+#pmp-str-service-scope .pmp-str-scope__text {
+  max-width: 30em;
+  margin-top: 16px;
+  font-size: var(--pmp-lead);
+  line-height: 1.55;
+}
+
+#pmp-str-service-scope .pmp-str-scope__media {
+  max-width: 520px;
+}
+
+/* ---- The stay timeline (desktop) ---- */
+#pmp-str-service-scope .pmp-str-stay {
+  display: none;
+}
+
+#pmp-str-service-scope .pmp-str-stay__track {
+  position: relative;
+  height: 56px;
+  overflow: clip;
+}
+
+#pmp-str-service-scope .pmp-str-stay__line {
+  position: absolute;
+  top: 27px;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  height: 2px;
+  background-image: linear-gradient(90deg, var(--pmp-gold-deep) 50%, transparent 50%);
+  background-size: 12px 2px;
+  opacity: 0.6;
+}
+
+/* The runner spans the line; moving it by its own width carries the marker end to end. */
+#pmp-str-service-scope .pmp-str-stay__runner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(100% / 6);
+  width: calc(100% * 2 / 3);
+}
+
+#pmp-str-service-scope .pmp-str-stay__marker {
+  position: absolute;
+  top: 4px;
+  left: -24px;
   display: grid;
-  gap: 32px;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: var(--pmp-char);
+  background-color: var(--pmp-gold);
+  border: 4px solid var(--pmp-tray);
+  border-radius: 50%;
+  box-shadow: 0 10px 22px -10px rgba(128, 96, 15, 0.9);
 }
 
-#pmp-str-service-scope .pmp-str-scope__list li {
-  padding-top: 18px;
-  border-top: 2px solid var(--pmp-gold);
+#pmp-str-service-scope .pmp-str-stay__marker svg {
+  width: 20px;
+  height: 20px;
 }
 
-#pmp-str-service-scope .pmp-str-scope__list p {
-  margin-top: 8px;
+/* ---- Phases and cards ---- */
+#pmp-str-service-scope .pmp-str-scope__phases {
+  display: grid;
+  gap: 36px;
+  margin-top: 48px;
 }
 
-#pmp-str-service-scope .pmp-str-scope__list .pmp-str-scope__note {
-  border-top: 1px solid var(--pmp-line-strong);
+#pmp-str-service-scope .pmp-str-scope__when {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pmp-gold-deep);
 }
 
-#pmp-str-service-scope .pmp-str-scope__note p {
-  margin-top: 0;
-  font-family: var(--pmp-font-head);
-  font-weight: 600;
-  line-height: 1.45;
-  color: var(--pmp-navy);
+#pmp-str-service-scope .pmp-str-scope__node {
+  width: 14px;
+  height: 14px;
+  background-color: var(--pmp-tray);
+  border: 3px solid var(--pmp-gold);
+  border-radius: 50%;
 }
 
-@media (min-width: 600px) {
-  #pmp-str-service-scope .pmp-str-scope__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 36px 32px;
+#pmp-str-service-scope .pmp-str-scope__cards {
+  display: grid;
+  gap: 14px;
+}
+
+#pmp-str-service-scope .pmp-card {
+  position: relative;
+  padding: 22px 22px 24px;
+  background-color: var(--pmp-paper);
+  border: 1px solid var(--pmp-line);
+  border-radius: var(--pmp-radius-lg);
+  transition: transform var(--pmp-dur) var(--pmp-ease), box-shadow var(--pmp-dur) var(--pmp-ease), border-color var(--pmp-dur) var(--pmp-ease);
+}
+
+#pmp-str-service-scope .pmp-str-scope__icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 14px;
+  color: var(--pmp-gold-deep);
+  background-color: rgba(210, 164, 55, 0.14);
+  border-radius: 12px;
+}
+
+#pmp-str-service-scope .pmp-str-scope__icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#pmp-str-service-scope .pmp-card p {
+  margin-top: 6px;
+}
+
+@media (hover: hover) {
+  #pmp-str-service-scope .pmp-card:hover {
+    border-color: var(--pmp-gold);
+    box-shadow: var(--pmp-shadow);
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 899px) {
+  /* Still, vertical timeline on phones and small tablets */
+  #pmp-str-service-scope .pmp-str-scope__phases {
+    position: relative;
+    padding-left: 28px;
+  }
+
+  #pmp-str-service-scope .pmp-str-scope__phases::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 6px;
+    width: 2px;
+    background-color: var(--pmp-gold);
+    opacity: 0.5;
+  }
+
+  #pmp-str-service-scope .pmp-str-scope__node {
+    margin-left: -28px;
+    flex: none;
   }
 }
 
 @media (min-width: 900px) {
-  #pmp-str-service-scope .pmp-str-scope__grid {
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    gap: clamp(48px, 6vw, 88px);
-    align-items: start;
+  #pmp-str-service-scope .pmp-str-scope__head {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    gap: clamp(48px, 6vw, 96px);
   }
+
+  #pmp-str-service-scope .pmp-str-scope__media {
+    justify-self: end;
+    width: 100%;
+  }
+
+  #pmp-str-service-scope .pmp-str-stay {
+    display: block;
+    margin-top: 56px;
+  }
+
+  #pmp-str-service-scope .pmp-str-scope__phases {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 8px;
+  }
+
+  #pmp-str-service-scope .pmp-str-scope__when {
+    justify-content: center;
+    margin-bottom: 22px;
+  }
+
+  #pmp-str-service-scope .pmp-str-scope__node {
+    display: none;
+  }
+
+  #pmp-str-service-scope .pmp-str-scope__phase--2 .pmp-str-scope__cards {
+    height: 100%;
+  }
+}
+
+/* Marker travels before -> during -> after, resting at each phase; phase labels light up. */
+@media (min-width: 900px) and (prefers-reduced-motion: no-preference) {
+  #pmp-str-service-scope .pmp-str-stay__runner {
+    animation: pmp-str-run var(--stay-time) var(--pmp-ease) infinite;
+  }
+
+  #pmp-str-service-scope .pmp-str-scope__phase--1 .pmp-str-scope__when { animation: pmp-str-lit-1 var(--stay-time) linear infinite; }
+  #pmp-str-service-scope .pmp-str-scope__phase--2 .pmp-str-scope__when { animation: pmp-str-lit-2 var(--stay-time) linear infinite; }
+  #pmp-str-service-scope .pmp-str-scope__phase--3 .pmp-str-scope__when { animation: pmp-str-lit-3 var(--stay-time) linear infinite; }
+
+  #pmp-str-service-scope.is-paused .pmp-str-stay__runner,
+  #pmp-str-service-scope.is-paused .pmp-str-scope__when {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes pmp-str-run {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  4%, 22% { transform: translate3d(0, 0, 0); opacity: 1; }
+  33%, 55% { transform: translate3d(50%, 0, 0); opacity: 1; }
+  66%, 92% { transform: translate3d(100%, 0, 0); opacity: 1; }
+  100% { transform: translate3d(100%, 0, 0); opacity: 0; }
+}
+
+@keyframes pmp-str-lit-1 {
+  0%, 26% { opacity: 1; }
+  32%, 100% { opacity: 0.45; }
+}
+
+@keyframes pmp-str-lit-2 {
+  0%, 28% { opacity: 0.45; }
+  34%, 59% { opacity: 1; }
+  65%, 100% { opacity: 0.45; }
+}
+
+@keyframes pmp-str-lit-3 {
+  0%, 61% { opacity: 0.45; }
+  67%, 94% { opacity: 1; }
+  100% { opacity: 0.45; }
 }
 </style>

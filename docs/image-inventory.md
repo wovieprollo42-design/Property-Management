@@ -21,10 +21,11 @@ recommended crop, and approval status (approved / not approved / unreviewed).
 | Page | Section | Slot | Ratio | What belongs there | Source size and crop guidance | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | Home | `01-hero.html` | `home-hero` | 8:5 | Approved exterior of a well-kept managed rental in natural daylight, with clear architecture. | Source 1920 × 1200 px · Display ratio 8:5 · Crop: keep the building near the center for mobile. | Placeholder |
+| Home | `01-hero.html` | `home-hero-2` | 4:3 | A second approved property: a vacation home or a bright rental interior. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the home or room centered. | Placeholder |
 | Home | `02-management-services.html` | `home-long-term` | 4:3 | An actual residential long-term rental, exterior or bright interior. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the whole home or main room in frame. | Placeholder |
 | Home | `02-management-services.html` | `home-short-term` | 4:3 | An actual vacation rental, exterior or inviting living space. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the whole home or main room in frame. | Placeholder |
 | Home | `03-owner-approach.html` | `home-approach` | 4:5 | Close detail of a cared-for managed property, such as its front entry. | Source 800 × 1000 px · Display ratio 4:5 · Crop: keep the detail centered. | Placeholder |
-| Home | `04-getting-started.html` | `home-start-bg` | bg | Background: a calm, wide view of a managed property or its setting, toned into the navy. | Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges. | Placeholder |
+| Home | `04-getting-started.html` | `home-start-bg` | bg | Background: a calm, wide view of a managed property or its setting, toned into the charcoal. | Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges. | Placeholder |
 | Home | `05-other-visitor-paths.html` | `home-path-rentals` | 4:3 | Inviting interior of a real long-term rental (not presented as available). | Source 1200 × 900 px · Display ratio 4:3 · Crop: the main room, level horizon. | Placeholder |
 | Home | `05-other-visitor-paths.html` | `home-path-vacation` | 4:3 | Approved vacation property or its lake or woodland setting. | Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the home or view centered. | Placeholder |
 | Long-Term Rental Management | `01-hero.html` | `long-term-hero` | 8:5 | Approved exterior or bright interior of a real long-term rental. | Source 1600 × 1000 px · Display ratio 8:5 · Crop: preserve the main architectural details. No resident belongings without permission. | Placeholder |
@@ -47,7 +48,7 @@ recommended crop, and approval status (approved / not approved / unreviewed).
 | FAQs | `04-next-steps.html` | `faqs-next-guests` | 4:3 | Approved vacation property or its lake or woodland setting. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the view centered. | Placeholder |
 | Management Quote | `01-intro.html` | `quote-intro` | 4:3 | Actual property detail or warm exterior. | Source 1200 × 900 px · Display ratio 4:3 · Crop: one clear detail; keep the image small so the form stays close. | Placeholder |
 | Management Quote | `02-owner-form.html` | `quote-aside` | 4:3 | Property detail from a real managed home, such as its address plate. | Source 1200 × 900 px · Display ratio 4:3 · Crop: detail centered. | Placeholder |
-| Management Quote | `03-what-happens-next.html` | `quote-next-bg` | bg | Background: a real managed home, toned into the navy. | Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges. | Placeholder |
+| Management Quote | `03-what-happens-next.html` | `quote-next-bg` | bg | Background: a real managed home, toned into the charcoal. | Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges. | Placeholder |
 | Owner Thank You | `01-confirmation.html` | `ty-owner` | 4:5 | Exterior of a real managed home. | Source 800 × 1000 px · Display ratio 4:5 · Crop: subject centered. | Placeholder |
 | Available Rentals | `01-intro.html` | `rentals-intro` | 4:3 | Inviting interior of a real long-term rental (general, not a listing). | Source 1200 × 900 px · Display ratio 4:3 · Crop: the main room. | Placeholder |
 | Available Rentals | `03-how-to-get-started.html` | `rentals-steps` | 4:5 | Move-in detail at a real rental, such as a key at the door. | Source 800 × 1000 px · Display ratio 4:5 · Crop: detail centered. | Placeholder |
@@ -56,14 +57,14 @@ recommended crop, and approval status (approved / not approved / unreviewed).
 | Applicant Thank You | `01-confirmation.html` | `ty-applicant` | 4:5 | Move-in detail at a real rental, such as a key at the door. | Source 800 × 1000 px · Display ratio 4:5 · Crop: subject centered. | Placeholder |
 | Vacation Rentals | `01-hero.html` | `vacation-hero` | 8:5 | One approved vacation home landscape. | Source 1920 × 1200 px · Display ratio 8:5 · Crop: keep the home right of center; the text panel covers the lower left on desktop. | Placeholder |
 | Vacation Rentals | `03-before-you-book.html` | `vacation-before` | 4:5 | Setting of an approved vacation property, such as its lake or dock. | Source 800 × 1000 px · Display ratio 4:5 · Crop: horizon in the upper third. | Placeholder |
-| Vacation Rentals | `04-guest-updates.html` | `vacation-updates-bg` | bg | Background: an approved property's lake or woodland view, toned into the navy. | Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges. | Placeholder |
+| Vacation Rentals | `04-guest-updates.html` | `vacation-updates-bg` | bg | Background: an approved property's lake or woodland view, toned into the charcoal. | Source 1920 × 1080 px · Display: full band · Crop: nothing important near the edges. | Placeholder |
 | Vacation Rentals | `05-owner-path.html` | `vacation-owner` | 4:3 | Exterior of an approved vacation property in its setting. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the home centered. | Placeholder |
 | Card templates | `02-current-listings.html` | `listing-card` | 4:3 | Approved current photo of this property, exterior or main room. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the same 4:3 crop on every card. Honest alt text. | Placeholder |
 | Card templates | `02-property-cards.html` | `vacation-card` | 4:3 | Approved property exterior or distinctive room. | Source 1200 × 900 px · Display ratio 4:3 · Crop: the same crop on every card. | Placeholder |
 
 ## Sample photos shown in the preview
 
-At the owner's request (2026-10-01) the preview shows realistic **sample stock photos** in 37 slots, so
+At the owner's request (2026-10-01) the preview shows realistic **sample stock photos** in 38 slots, so
 the design can be judged with real imagery. They are **not** Bob's properties.
 
 - Every sample carries a visible "Sample photo" tag and alt text beginning "Sample stock photo:".
@@ -78,6 +79,7 @@ the design can be judged with real imagery. They are **not** Bob's properties.
 | Slot | Sample shown | Photographer | Source page | Preview files |
 | --- | --- | --- | --- | --- |
 | `home-hero` | Two-story house with a two-car garage at dusk | Binyamin Mellish | https://stocksnap.io/photo/house-home-LJ515CPAKI | `shared/samples/home-hero-960.webp` (960 × 600), `home-hero-600.webp` |
+| `home-hero-2` | Wooden dock on a calm lake lined with pine trees | Aaron Burden | https://stocksnap.io/photo/dock-lake-XQEEEWL3SO | `shared/samples/vacation-hero-960.webp` (960 × 600), `vacation-hero-600.webp` |
 | `home-long-term` | Bright living room with a gray sofa and a coffee table | Nathan Fertig | https://stocksnap.io/photo/house-interior-WDVIQZEXML | `shared/samples/home-long-term-853.webp` (853 × 640), `home-long-term-600.webp` |
 | `home-short-term` | Log cabin among trees | Eneida Nieves | https://stocksnap.io/photo/log-cabin-T0BHAFEFFR | `shared/samples/home-short-term-855.webp` (855 × 641), `home-short-term-600.webp` |
 | `long-term-hero` | Single-story house with a front lawn and driveway | Binyamin Mellish | https://stocksnap.io/photo/house-home-L9VZ6SOGBB | `shared/samples/long-term-hero-960.webp` (960 × 600), `long-term-hero-600.webp` |
@@ -129,7 +131,7 @@ transparent background. Nothing was redrawn, recolored or stretched.
 
 | File | Size | Used for |
 | --- | --- | --- |
-| `logo-full.webp` | 440 × 290 | Header (full logo, as the owner asked on 2026-10-01) and footer (on a warm white plate, because its charcoal lettering would vanish on navy) |
+| `logo-full.webp` | 440 × 290 | Header (full logo, as the owner asked on 2026-10-01) and footer (on a white plate, because its charcoal lettering would vanish on charcoal) |
 | `logo-name.webp` | 480 × 121 | Not used on the site: the name block alone, kept as an option for tight spaces |
 | `favicon.ico`, `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` | 32 to 192 px | Browser tab and phone home-screen icons, from the logo's skyline and roofs |
 

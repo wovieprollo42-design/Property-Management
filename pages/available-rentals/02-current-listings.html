@@ -1,6 +1,6 @@
 <!--
   AVAILABLE RENTALS · 02 CURRENT LISTINGS
-  Background: #FFFEFB warm white (data-bg="white")
+  Background: #FFFFFF white (data-bg="paper")
   Layout: listing grid (two cards per row on desktop), or the honest empty state below when no
           listing is approved. No current public listing is approved by the Master Brief.
 
@@ -14,7 +14,7 @@
   needs verified fees, deposits, lease terms and requirements.
   Preview the populated layout at /preview-card-templates.
 -->
-<section class="pmp pmp-sec" id="pmp-rentals-current-listings" data-bg="white" aria-labelledby="pmp-rentals-current-listings-title">
+<section class="pmp pmp-sec" id="pmp-rentals-current-listings" data-bg="paper" aria-labelledby="pmp-rentals-current-listings-title">
   <div class="pmp-wrap">
     <div class="pmp-rentals-list__layout">
       <div class="pmp-rentals-list__head">
@@ -62,7 +62,7 @@
 
 #pmp-rentals-current-listings .pmp-listing {
   display: grid;
-  background-color: var(--pmp-white);
+  background-color: var(--pmp-paper);
   border: 1px solid var(--pmp-line);
   border-radius: var(--pmp-radius);
 }
@@ -82,10 +82,10 @@
   flex-wrap: wrap;
   gap: 6px 20px;
   margin-top: 12px;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: 15px;
   font-weight: 600;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 #pmp-rentals-current-listings .pmp-listing__terms {
@@ -106,13 +106,13 @@
   min-width: 7.5em;
   font-size: 14px;
   font-weight: 500;
-  color: var(--pmp-slate);
+  color: var(--pmp-muted);
 }
 
 #pmp-rentals-current-listings .pmp-listing__terms dd {
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-weight: 600;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 #pmp-rentals-current-listings .pmp-listing__feature {
@@ -137,11 +137,11 @@
 
 #pmp-rentals-current-listings .pmp-rentals-list__empty-title {
   max-width: 24em;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: clamp(20px, calc(17.6px + 0.6vw), 24px);
   font-weight: 700;
   line-height: 1.35;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 @media (min-width: 900px) {

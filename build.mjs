@@ -31,10 +31,10 @@ const DOCS = join(ROOT, 'docs');
 const BUILD_DATE = '2026-10-01';
 
 const BACKGROUNDS = {
-  ivory: { hex: '#F8F5EC', name: 'Warm ivory' },
-  white: { hex: '#FFFEFB', name: 'Warm white' },
-  sage: { hex: '#E9EDE9', name: 'Pale sage gray' },
-  navy: { hex: '#172D3B', name: 'Deep navy' },
+  ivory: { hex: '#FAF7F1', name: 'Ivory' },
+  paper: { hex: '#FFFFFF', name: 'White' },
+  tray: { hex: '#EFEAE0', name: 'Warm stone' },
+  char: { hex: '#26272C', name: 'Charcoal' },
 };
 
 const ICONS = {
@@ -43,12 +43,15 @@ const ICONS = {
   external: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M6.5 3H3.5A1.5 1.5 0 0 0 2 4.5v8A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V9.5M9.5 2H14v4.5M14 2 7.5 8.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 };
 
+// Key (the short-term timeline marker)
+ICONS.key = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M14 9l2 2"/></svg>';
+
 // Contact icons (line icons, currentColor)
 ICONS.phone = '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5.2 1.8 6.6 5 5.2 6.3a8.6 8.6 0 0 0 4.5 4.5L11 9.4l3.2 1.4-.5 2.6a1.4 1.4 0 0 1-1.5 1.1A11.9 11.9 0 0 1 1.5 3.8a1.4 1.4 0 0 1 1.1-1.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>';
 ICONS.mail = '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><rect x="1.5" y="3" width="13" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m2 4 6 5 6-5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>';
 
 // Brand motif: a line drawing of the logo's idea (towers behind two gabled roofs, over a gold
-// ground arc). Colors come from CSS classes so it works on light and navy sections.
+// ground arc). Colors come from CSS classes so it works on light and charcoal sections.
 // paint(kind) returns the color attributes for each layer: kind is line, gold, house or soft.
 const MOTIF_PATHS = (paint) => `
   <g ${paint('line')} stroke-width="2"><path d="M118 176V100h30v76"/><path d="M152 176V64h52v112"/><path d="M164 82h10M184 82h10M164 98h10M184 98h10M164 114h10M184 114h10"/><path d="M208 176V26h58v150"/><path d="M222 46h10M242 46h10M222 64h10M242 64h10M222 82h10M242 82h10M222 100h10M242 100h10"/><path d="M270 176V76h44v100"/><path d="M284 96h16M284 112h16M284 128h16"/><path d="M318 176v-62h30v62"/></g>
@@ -60,16 +63,16 @@ const MOTIF_PATHS = (paint) => `
   <path d="M74 248c96-20 236-20 332-4" ${paint('soft')} stroke-width="1.5"/>`;
 // Inline version: colors come from CSS (.pmp-motif .m-line and friends in components.css).
 ICONS.motif = `<svg class="pmp-motif" viewBox="0 0 480 260" width="480" height="260" aria-hidden="true" focusable="false" fill="none" stroke-linecap="round" stroke-linejoin="round">${MOTIF_PATHS((kind) => `class="m-${kind}"`).replace(/\n\s*/g, '')}</svg>`;
-ICONS.swoosh = '<svg class="pmp-swoosh" viewBox="0 0 240 20" width="240" height="20" aria-hidden="true" focusable="false" fill="none" stroke-linecap="round"><path d="M3 16C70 3 170 2 237 12" stroke="#AD8950" stroke-width="3"/><path d="M40 19c52-7 110-8 160-2" stroke="#172D3B" stroke-opacity=".35" stroke-width="1.2"/></svg>';
+ICONS.swoosh = '<svg class="pmp-swoosh" viewBox="0 0 240 20" width="240" height="20" aria-hidden="true" focusable="false" fill="none" stroke-linecap="round"><path pathLength="1" d="M3 16C70 3 170 2 237 12" stroke="#D2A437" stroke-width="3.5"/><path pathLength="1" d="M40 19c52-7 110-8 160-2" stroke="#9B9CA1" stroke-width="1.4"/></svg>';
 
-// The same drawing on the sage photo placeholders, as a CSS background (sage fill, softer lines).
+// The same drawing on the stone photo placeholders, as a CSS background (stone fill, softer lines).
 const PLACEHOLDER_ART = `data:image/svg+xml,${encodeURIComponent(
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" fill="none" stroke-linecap="round" stroke-linejoin="round">${MOTIF_PATHS(
     (kind) => ({
-      line: 'stroke="#172D3B" stroke-opacity=".38"',
-      gold: 'stroke="#AD8950"',
-      house: 'stroke="#172D3B" stroke-opacity=".38" fill="#E9EDE9"',
-      soft: 'stroke="#172D3B" stroke-opacity=".25"',
+      line: 'stroke="#26272C" stroke-opacity=".38"',
+      gold: 'stroke="#D2A437"',
+      house: 'stroke="#26272C" stroke-opacity=".38" fill="#EFEAE0"',
+      soft: 'stroke="#26272C" stroke-opacity=".25"',
     })[kind]
   ).replace(/\n\s*/g, '')}</svg>`
 )}`;
@@ -87,8 +90,12 @@ const brandUrl = (name, mode) => {
   const buf = brandFile(name);
   if (!buf) return '';
   if (mode === 'export') return `data:${BRAND_TYPES[name.slice(name.lastIndexOf('.'))]};base64,${buf.toString('base64')}`;
-  return `/assets/brand/${name}?v=${createHash('md5').update(buf).digest('hex').slice(0, 8)}`;
+  const path = `/assets/brand/${name}?v=${createHash('md5').update(buf).digest('hex').slice(0, 8)}`;
+  return mode === 'live' ? LIVE_BASE + path : path;
 };
+// Where the full-page GHL exports load the logo and photos from (the hosted preview). Upload the
+// files to the GHL media library and swap the addresses if the preview is ever taken down.
+const LIVE_BASE = 'https://property-management-professionals.vercel.app';
 const expandBrand = (html, mode) => html.replace(/\{\{brand:([\w.-]+)\}\}/g, (_, name) => brandUrl(name, mode));
 
 // Sample photos (preview only). shared/samples/samples.json maps a photo slot to a CC0 stock
@@ -108,10 +115,23 @@ function withSamplePhotos(html) {
   });
 }
 
+// Full-page GHL exports: the same photos, loaded from the hosted preview by full address, with a
+// plain description as alt text and no preview tag. Each <img> carries data-photo-slot so the
+// photo can be found and replaced with Bob's approved one (see exports/ghl-pages/README.md).
+function withLivePhotos(html) {
+  return html.replace(/<div class="pmp-ph pmp-ph--(\w+)" data-photo-slot="([^"]+)">([\s\S]*?)<\/div>/g, (all, ratio, slot) => {
+    const s = SAMPLES[slot];
+    if (!s) return all;
+    const load = HERO_SLOTS.has(slot) || slot === 'home-hero-2' ? 'fetchpriority="high"' : 'loading="lazy"';
+    const url = (file) => LIVE_BASE + sampleUrl(file);
+    return `<div class="pmp-shot pmp-shot--${ratio}"><img class="pmp-photo pmp-photo--${ratio}" data-photo-slot="${slot}" src="${url(s.large.file)}" srcset="${url(s.small.file)} ${s.small.width}w, ${url(s.large.file)} ${s.large.width}w" sizes="(min-width: 900px) 50vw, 100vw" alt="${s.alt}" width="${s.large.width}" height="${s.large.height}" ${load} decoding="async"></div>`;
+  });
+}
+
 const FONT_LINKS = [
   '<link rel="preconnect" href="https://fonts.googleapis.com">',
   '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-  '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Manrope:wght@600;700&display=swap">',
+  '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Montserrat:wght@400;500;600;700&display=swap">',
 ].join('\n');
 
 const errors = [];
@@ -131,7 +151,7 @@ function write(file, content) {
 
 const stripComments = (html) => html.replace(/<!--[\s\S]*?-->/g, '');
 const expandIcons = (html) =>
-  html.replace(/\{\{(arrow|caret|external|phone|mail|motif|swoosh)\}\}/g, (_, name) => ICONS[name]);
+  html.replace(/\{\{(arrow|caret|external|phone|mail|motif|swoosh|key)\}\}/g, (_, name) => ICONS[name]);
 const textOf = (html) =>
   html
     .replace(/<style[\s\S]*?<\/style>/g, ' ')
@@ -298,7 +318,8 @@ pages.sort((a, b) => ORDER.indexOf(a.route) - ORDER.indexOf(b.route));
 const tokensCss = read(join(SHARED_DIR, 'tokens.css'));
 const baseCss = read(join(SHARED_DIR, 'base.css'));
 const componentsCss = read(join(SHARED_DIR, 'components.css'));
-const coreCss = [tokensCss, baseCss, componentsCss].join('\n\n').replace('{{placeholder-art}}', PLACEHOLDER_ART);
+const motionCss = read(join(SHARED_DIR, 'motion.css'));
+const coreCss = [tokensCss, baseCss, componentsCss, motionCss].join('\n\n').replace('{{placeholder-art}}', PLACEHOLDER_ART);
 lintCss(coreCss, 'shared/core', ['.pmp']);
 const previewCss = read(join(SHARED_DIR, 'preview', 'preview.css'));
 
@@ -310,6 +331,8 @@ const coreVersion = hash(coreCss);
 const previewVersion = hash(previewCss);
 
 const previewJs = read(join(SHARED_DIR, 'preview', 'preview.js')).trim();
+// Shared motion script (scroll reveals, gold ribbon, rotating words). Safe to include more than once.
+const motionJs = read(join(SHARED_DIR, 'motion.js')).trim();
 const previewBar =
   '<div class="pmp-preview-bar" role="note"><p><strong>Design preview</strong>Not published. Photos are sample stock images until Bob’s own are approved; forms and booking links are placeholders. <a href="/preview-card-templates">View card templates</a></p><button type="button" class="pmp-preview-toggle" aria-pressed="false">Show photo slot details</button></div>';
 
@@ -429,7 +452,7 @@ function previewDocument(b) {
     .filter((s, i, all) => all.findIndex((x) => x.id === s.id) === i)
     .map((s) => `/* ${s.file} */\n${s.css}`)
     .join('\n\n');
-  const scripts = [header.js, ...sections.map((s) => s.js)].filter(Boolean);
+  const scripts = [header.js, ...sections.map((s) => s.js), footer.js].filter(Boolean);
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -464,6 +487,9 @@ ${withSamplePhotos(b.mainHtml)}
 </main>
 ${footer.html}
 ${scripts.map((js) => `<script>\n${js}\n</script>`).join('\n')}
+<script>
+${motionJs}
+</script>
 <script>
 ${previewJs}
 </script>
@@ -505,7 +531,7 @@ function snippet(label, component) {
 ${FONT_LINKS}
 <style>${coreMin}${minifyCss(component.css)}</style>
 ${component.html}
-${component.js ? `<script>\n${component.js}\n</script>\n` : ''}`, 'export');
+${component.js ? `<script>\n${component.js}\n</script>\n` : ''}<script>\n${motionJs}\n</script>\n`, 'export');
 }
 
 write(join(EXPORTS, 'shared', 'header.html'), snippet('Shared header', header));
@@ -525,6 +551,98 @@ for (const b of exportPages) {
   }
   write(join(dir, 'PAGE-SETTINGS.md'), pageSettings(b));
 }
+
+/* ---------- 2b. Full-page GHL exports (exports/ghl-pages/) --------------- */
+// One file per page = one GHL Custom JS/HTML element: header, every section, footer, all styles
+// and scripts, with the photos and the logo loaded by full address. This is the recommended way
+// to install the site; the per-section snippets above stay available for section-by-section work.
+
+const GHL_PAGES = join(ROOT, 'exports', 'ghl-pages');
+const ghlPageCss = read(join(SHARED_DIR, 'ghl-page.css'));
+lintCss(ghlPageCss, 'shared/ghl-page.css', ['.pmp-page']);
+const ghlFitJs = read(join(SHARED_DIR, 'ghl-fit.js')).trim();
+const ghlPageFiles = [];
+
+for (const b of exportPages) {
+  const p = b.page;
+  const file = p.route === '/' ? 'home.html' : `${p.route.slice(1)}.html`;
+  const sectionCss = b.sections
+    .filter((s) => s.css)
+    .filter((s, i, all) => all.findIndex((x) => x.id === s.id) === i)
+    .map((s) => minifyCss(s.css))
+    .join('');
+  const scripts = [header.js, ...b.sections.map((s) => s.js), footer.js, motionJs, ghlFitJs].filter(Boolean);
+  const html = `<!-- Property Management Professionals · ${p.name} (${p.route}) · built ${BUILD_DATE}
+     Paste this whole file into ONE GHL "Custom JS/HTML" element on the page ${p.route}.
+     Page title, description and indexing go in the GHL page settings: see exports/ghl-pages/README.md. -->
+${FONT_LINKS}
+<style>${coreMin}${minifyCss(header.css)}${minifyCss(footer.css)}${sectionCss}${minifyCss(ghlPageCss)}</style>
+<div class="pmp-page" id="pmp-page">
+<a class="pmp-page__skip" href="#pmp-main">Skip to main content</a>
+${header.html}
+<main id="pmp-main" tabindex="-1">
+${withLivePhotos(b.mainHtml)}
+</main>
+${footer.html}
+</div>
+${scripts.map((js) => `<script>\n${js}\n</script>`).join('\n')}
+`;
+  const out = expandBrand(html, 'live');
+  if (/\{\{[\w:.-]+\}\}/.test(out)) fail(`exports/ghl-pages/${file}`, 'an unexpanded {{placeholder}} is left in the export');
+  if (/\/assets\/(samples|brand)\/[^"]*"/.test(out.replace(new RegExp(LIVE_BASE.replace(/[.]/g, '\\.') + '/assets/', 'g'), ''))) fail(`exports/ghl-pages/${file}`, 'a relative /assets/ address would break on GHL');
+  write(join(GHL_PAGES, file), out);
+  ghlPageFiles.push({ page: p, file, size: Buffer.byteLength(out) });
+}
+
+write(join(GHL_PAGES, 'README.md'), `# Full-page GHL code (recommended)
+
+Generated by \`npm run build\` on ${BUILD_DATE}. Do not edit these files by hand: change the page
+in \`pages/\` or \`shared/\`, rebuild, and paste the new file.
+
+Each file below is one whole page: header, every section, footer, styles and scripts. It goes into
+**one** GHL **Custom JS/HTML** element. Nothing else is needed on the page.
+
+## Install one page
+
+1. In GHL open the website (or funnel) and add a page with the **path** from the table below.
+2. Add a **full-width section**, one row, one column, and drop in a **Custom JS/HTML** element.
+3. Open the element, paste the **entire** file, save. Set the section, row and column padding to 0
+   if GHL shows a gap; the code also removes that spacing by itself when the page is published.
+4. In the page **settings** set the title and the meta description from the table, and set the
+   thank-you pages and the legal review drafts to **noindex**.
+5. Preview on desktop and on the phone preview, then publish.
+
+The header links point to these exact paths, so keep the paths as listed.
+
+| Page | GHL path | File | Size | Title | Meta description | Indexing at launch |
+| --- | --- | --- | --- | --- | --- | --- |
+${ghlPageFiles.map((g) => `| ${g.page.name} | \`${g.page.route}\` | \`${g.file}\` | ${Math.round(g.size / 1024)} KB | ${g.page.title} | ${g.page.description} | \`${g.page.productionRobots}\` |`).join('\n')}
+
+## Animations and speed
+
+- Every animation moves or fades elements only (CSS transform and opacity), which the browser runs
+  on the graphics chip without re-laying out the page. No animation library is loaded.
+- Content below the first screen appears as it scrolls into view, through one IntersectionObserver.
+  Looping effects (the gold ribbon, the turning badge, the stay timeline, the rental cycle) pause
+  while they are off screen or the tab is hidden.
+- Visitors whose device asks for **reduced motion** get the page with no motion at all.
+- Inside the GHL editor scripts do not run, so everything simply shows, fully visible.
+
+## Photos
+
+The photos are realistic **sample stock photos** (CC0, free for commercial use) loaded from the hosted
+preview at ${LIVE_BASE}. They are **not** Bob's properties. Before launch, replace each with an
+approved photo: upload it to the GHL media library, then in the code find the image by its
+\`data-photo-slot="..."\` name and replace the \`src\` and \`srcset\` addresses (or delete \`srcset\`).
+Slot sizes and crop notes: \`docs/image-inventory.md\`.
+
+## Forms
+
+The quote and prequalification pages show a "not connected" form box. When the GHL form is approved
+and tested, find \`data-ghl-form-id=""\` in that page's code and put the form's ID between the quotes;
+the page then shows the live GHL form in that box. Set the form's own redirect in GHL to
+\`/management-thank-you\` or \`/prequalification-thank-you\`.
+`);
 
 function pageSettings(b) {
   const p = b.page;
@@ -546,9 +664,9 @@ Set these in the GHL page settings (not inside a Custom JS/HTML element).
 
 ## Install order
 
-1. \`exports/ghl/shared/header.html\` (full-width section, background \`#FFFEFB\`)
+1. \`exports/ghl/shared/header.html\` (full-width section, background \`#FFFFFF\`)
 ${b.sections.map((s, i) => `${i + 2}. \`${s.entry.split('/').pop()}\` (full-width section, background \`${BACKGROUNDS[s.bg].hex}\`)`).join('\n')}
-${b.sections.length + 2}. \`exports/ghl/shared/footer.html\` (full-width section, background \`#172D3B\`)
+${b.sections.length + 2}. \`exports/ghl/shared/footer.html\` (full-width section, background \`#26272C\`)
 
 ## Section backgrounds
 
@@ -594,8 +712,8 @@ ${builtPages.map((b) => `| \`${b.page.route}\` | ${b.page.name}${b.page.internal
 
 | Component | Source file | GHL export | Background |
 | --- | --- | --- | --- |
-| Header (wordmark, navigation, dropdown, mobile menu) | \`shared/header.html\` | \`exports/ghl/shared/header.html\` | Warm white \`#FFFEFB\` |
-| Footer | \`shared/footer.html\` | \`exports/ghl/shared/footer.html\` | Deep navy \`#172D3B\` |
+| Header (wordmark, navigation, dropdown, mobile menu) | \`shared/header.html\` | \`exports/ghl/shared/header.html\` | White \`#FFFFFF\` |
+| Footer | \`shared/footer.html\` | \`exports/ghl/shared/footer.html\` | charcoal \`#26272C\` |
 | Design tokens | \`shared/tokens.css\` | included in every snippet | |
 | Base type and layout | \`shared/base.css\` | included in every snippet | |
 | Buttons, placeholders, slots, FAQ accordion | \`shared/components.css\` | included in every snippet | |
@@ -742,7 +860,7 @@ transparent background. Nothing was redrawn, recolored or stretched.
 
 | File | Size | Used for |
 | --- | --- | --- |
-| \`logo-full.webp\` | 440 × 290 | Header (full logo, as the owner asked on 2026-10-01) and footer (on a warm white plate, because its charcoal lettering would vanish on navy) |
+| \`logo-full.webp\` | 440 × 290 | Header (full logo, as the owner asked on 2026-10-01) and footer (on a white plate, because its charcoal lettering would vanish on charcoal) |
 | \`logo-name.webp\` | 480 × 121 | Not used on the site: the name block alone, kept as an option for tight spaces |
 | \`favicon.ico\`, \`favicon-32.png\`, \`favicon-192.png\`, \`apple-touch-icon.png\` | 32 to 192 px | Browser tab and phone home-screen icons, from the logo's skyline and roofs |
 

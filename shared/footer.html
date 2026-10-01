@@ -1,12 +1,12 @@
 <!--
   SHARED FOOTER · used on every page and exported to exports/ghl/shared/footer.html
-  Background: #172D3B deep navy (data-bg="navy") with warm white text and a gold top line.
-  Logo: the full approved logo sits on a warm white plate, because its charcoal lettering would
-        disappear on navy. The logo itself is not recolored.
+  Background: #26272C charcoal (data-bg="char") with white text and a gold top line.
+  Logo: the full approved logo sits on a white plate, because its charcoal lettering would
+        disappear on charcoal. The logo itself is not recolored.
   Contact: phone and email confirmed by the owner on 2026-10-01.
   Still pending (dashed gold box): the confirmed legal identity and DBA wording.
 -->
-<footer class="pmp pmp-footer" id="pmp-footer" data-bg="navy">
+<footer class="pmp pmp-footer" id="pmp-footer" data-bg="char">
   <div class="pmp-wrap">
     <div class="pmp-footer__top">
       <div class="pmp-footer__brand">
@@ -23,7 +23,7 @@
       <div class="pmp-footer__side">
         <div class="pmp-footer__cta">
           <p class="pmp-footer__cta-title">Tell us about your property</p>
-          <a class="pmp-btn pmp-btn--light" href="/management-quote">Request a Management Quote {{arrow}}</a>
+          <a class="pmp-btn pmp-btn--primary" href="/management-quote">Request a Management Quote {{arrow}}</a>
         </div>
 
         <nav class="pmp-footer__nav" aria-label="Footer">
@@ -60,6 +60,7 @@
       <p class="pmp-footer__copy">© 2026 Property Management Professionals.</p>
     </div>
   </div>
+  <button type="button" class="pmp-top" aria-label="Back to top">{{arrow}}</button>
 </footer>
 
 <style>
@@ -67,7 +68,7 @@
   padding-block: clamp(56px, calc(36px + 4vw), 88px) 32px;
   border-top: 3px solid var(--pmp-gold);
   font-size: 16px;
-  color: rgba(255, 254, 251, 0.86);
+  color: rgba(244, 241, 234, 0.86);
 }
 
 #pmp-footer .pmp-footer__top {
@@ -79,7 +80,7 @@
   position: relative;
   display: inline-block;
   padding: 18px 24px;
-  background-color: var(--pmp-white);
+  background-color: var(--pmp-paper);
   border-radius: var(--pmp-radius);
   line-height: 0;
 }
@@ -104,7 +105,7 @@
   max-width: 30em;
   margin-top: 28px;
   font-size: 17px;
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
 }
 
 #pmp-footer .pmp-footer__contact {
@@ -112,7 +113,7 @@
   gap: 2px;
   margin-top: 12px;
   font-size: 15px;
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
 }
 
 #pmp-footer .pmp-footer__contact a:focus-visible {
@@ -131,11 +132,11 @@
 }
 
 #pmp-footer .pmp-footer__cta-title {
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: clamp(20px, calc(17.6px + 0.6vw), 24px);
   font-weight: 700;
   letter-spacing: -0.015em;
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
 }
 
 #pmp-footer .pmp-footer__nav {
@@ -148,12 +149,12 @@
 #pmp-footer .pmp-footer__label {
   margin-bottom: 14px;
   padding-bottom: 10px;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
   border-bottom: 1px solid var(--pmp-line-light);
 }
 
@@ -166,7 +167,7 @@
   align-items: center;
   min-height: 36px;
   font-size: 16px;
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 5px;
@@ -202,3 +203,27 @@
   }
 }
 </style>
+
+<script>
+(function () {
+  var root = document.getElementById('pmp-footer');
+  if (!root || root.getAttribute('data-pmp-ready')) return;
+  root.setAttribute('data-pmp-ready', 'true');
+
+  /* Back to top: appears after the first screen and a half. */
+  var btn = root.querySelector('.pmp-top');
+  var ticking = false;
+  function update() {
+    ticking = false;
+    btn.classList.toggle('is-shown', (window.pageYOffset || 0) > window.innerHeight * 1.5);
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
+  btn.addEventListener('click', function () {
+    var smooth = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
+  });
+})();
+</script>

@@ -1,6 +1,6 @@
 <!--
   VACATION RENTALS · 02 PROPERTY CARDS
-  Background: #FFFEFB warm white (data-bg="white")
+  Background: #FFFFFF white (data-bg="paper")
   Layout: property grid (three cards per row on wide screens) or the honest empty state, then the
           booking destination slot.
 
@@ -17,7 +17,7 @@
   widget (OwnerRez is the planned system) once booking, availability, payment, modification and
   cancellation flows have been tested. Remove the slot if the site only links out to booking pages.
 -->
-<section class="pmp pmp-sec" id="pmp-vacation-property-cards" data-bg="white" aria-labelledby="pmp-vacation-property-cards-title">
+<section class="pmp pmp-sec" id="pmp-vacation-property-cards" data-bg="paper" aria-labelledby="pmp-vacation-property-cards-title">
   <div class="pmp-wrap">
     <div class="pmp-vacation-cards__layout">
       <div class="pmp-vacation-cards__head">
@@ -76,7 +76,7 @@
 #pmp-vacation-property-cards .pmp-vacation-card {
   display: flex;
   flex-direction: column;
-  background-color: var(--pmp-white);
+  background-color: var(--pmp-paper);
   border: 1px solid var(--pmp-line);
   border-radius: var(--pmp-radius);
 }
@@ -101,10 +101,10 @@
 
 #pmp-vacation-property-cards .pmp-vacation-card__facts {
   margin-top: 14px;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: 15px;
   font-weight: 600;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 #pmp-vacation-property-cards .pmp-vacation-card__amenities {
@@ -134,11 +134,11 @@
 
 #pmp-vacation-property-cards .pmp-vacation-cards__empty-title {
   max-width: 24em;
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-size: clamp(20px, calc(17.6px + 0.6vw), 24px);
   font-weight: 700;
   line-height: 1.35;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 

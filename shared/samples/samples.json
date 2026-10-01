@@ -21,6 +21,28 @@
       "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
     }
   },
+  "home-hero-2": {
+    "alt": "Wooden dock on a calm lake lined with pine trees",
+    "large": {
+      "file": "vacation-hero-960.webp",
+      "width": 960,
+      "height": 600,
+      "kb": 50.9
+    },
+    "small": {
+      "file": "vacation-hero-600.webp",
+      "width": 600,
+      "height": 375,
+      "kb": 24.6
+    },
+    "credit": {
+      "title": "Dock Lake",
+      "creator": "Aaron Burden",
+      "source": "StockSnap via Openverse",
+      "landing": "https://stocksnap.io/photo/dock-lake-XQEEEWL3SO",
+      "license": "CC0 1.0 (public domain dedication): free for commercial use, no attribution required"
+    }
+  },
   "home-long-term": {
     "alt": "Bright living room with a gray sofa and a coffee table",
     "large": {

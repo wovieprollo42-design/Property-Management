@@ -1,8 +1,8 @@
 <!--
   HOME · 02 MANAGEMENT SERVICES (two ways we help owners)
-  Background: #FFFEFB warm white (data-bg="white")
-  Layout: two-service comparison as two tiles in contrasting finishes: long-term on warm white,
-          short-term on deep navy. Each has its photo, a ribbon label in the logo's banner shape,
+  Background: #FFFFFF white (data-bg="paper")
+  Layout: two-service comparison as two tiles in contrasting finishes: long-term on white,
+          short-term on charcoal. Each has its photo, a ribbon label in the logo's banner shape,
           the brief's service wording set as a checklist, and its page link.
   Photo slots: home-long-term, home-short-term · source 1200 x 900 px · ratio 4:3 each
   Confirm property type and photo permission before use.
@@ -10,7 +10,7 @@
     <img class="pmp-photo pmp-photo--4x3" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL PROPERTY"
          width="1200" height="900" loading="lazy" decoding="async">
 -->
-<section class="pmp pmp-sec" id="pmp-home-management-services" data-bg="white" aria-labelledby="pmp-home-management-services-title">
+<section class="pmp pmp-sec" id="pmp-home-management-services" data-bg="paper" aria-labelledby="pmp-home-management-services-title">
   <div class="pmp-wrap">
     <div class="pmp-home-services__head">
       <h2 id="pmp-home-management-services-title">Management that fits your rental</h2>
@@ -63,7 +63,7 @@
             <li>Performance reviews</li>
           </ul>
           <p class="pmp-home-services__scope">Within the agreed scope.</p>
-          <a class="pmp-btn pmp-btn--light" href="/short-term-rental-management">Explore Short-Term Management {{arrow}}</a>
+          <a class="pmp-btn pmp-btn--primary" href="/short-term-rental-management">Explore Short-Term Management {{arrow}}</a>
         </div>
       </article>
     </div>
@@ -108,8 +108,8 @@
 }
 
 #pmp-home-management-services .pmp-home-services__tile--dark {
-  background-color: var(--pmp-navy);
-  border-color: var(--pmp-navy);
+  background-color: var(--pmp-char);
+  border-color: var(--pmp-char);
 }
 
 #pmp-home-management-services .pmp-home-services__tile .pmp-ph,
@@ -150,9 +150,9 @@
   margin-top: 14px;
   padding: 18px 0;
   border-block: 1px solid var(--pmp-line);
-  font-family: var(--pmp-font-head);
+  font-family: var(--pmp-font-ui);
   font-weight: 600;
-  color: var(--pmp-navy);
+  color: var(--pmp-char);
 }
 
 #pmp-home-management-services .pmp-home-services__list li + li {
@@ -170,12 +170,12 @@
 
 #pmp-home-management-services .pmp-home-services__tile--dark .pmp-home-services__list {
   border-color: var(--pmp-line-light);
-  color: var(--pmp-white);
+  color: var(--pmp-paper);
 }
 
 #pmp-home-management-services .pmp-home-services__tile--dark .pmp-home-services__lead,
 #pmp-home-management-services .pmp-home-services__tile--dark .pmp-home-services__scope {
-  color: rgba(255, 254, 251, 0.86);
+  color: rgba(244, 241, 234, 0.86);
 }
 
 @media (min-width: 600px) {

@@ -27,8 +27,8 @@ Every page is assembled from the shared header, its own ordered sections (listed
 
 | Component | Source file | GHL export | Background |
 | --- | --- | --- | --- |
-| Header (wordmark, navigation, dropdown, mobile menu) | `shared/header.html` | `exports/ghl/shared/header.html` | Warm white `#FFFEFB` |
-| Footer | `shared/footer.html` | `exports/ghl/shared/footer.html` | Deep navy `#172D3B` |
+| Header (wordmark, navigation, dropdown, mobile menu) | `shared/header.html` | `exports/ghl/shared/header.html` | White `#FFFFFF` |
+| Footer | `shared/footer.html` | `exports/ghl/shared/footer.html` | charcoal `#26272C` |
 | Design tokens | `shared/tokens.css` | included in every snippet | |
 | Base type and layout | `shared/base.css` | included in every snippet | |
 | Buttons, placeholders, slots, FAQ accordion | `shared/components.css` | included in every snippet | |
@@ -36,136 +36,136 @@ Every page is assembled from the shared header, its own ordered sections (listed
 
 ## Home · `/`
 
-H1: Property management in East Central Minnesota
+H1: Property Management in East Central Minnesota
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/home/01-hero.html` | `#pmp-home-hero` | Warm ivory `#F8F5EC` | home-hero (8:5) | · | · | `exports/ghl/home/01-hero.html` |
-| 2 | `pages/home/02-management-services.html` | `#pmp-home-management-services` | Warm white `#FFFEFB` | home-long-term (4:3), home-short-term (4:3) | · | · | `exports/ghl/home/02-management-services.html` |
-| 3 | `pages/home/03-owner-approach.html` | `#pmp-home-owner-approach` | Pale sage gray `#E9EDE9` | home-approach (4:5) | · | · | `exports/ghl/home/03-owner-approach.html` |
-| 4 | `pages/home/04-getting-started.html` | `#pmp-home-getting-started` | Deep navy `#172D3B` | home-start-bg (bg) | · | · | `exports/ghl/home/04-getting-started.html` |
-| 5 | `pages/home/05-other-visitor-paths.html` | `#pmp-home-other-visitor-paths` | Warm ivory `#F8F5EC` | home-path-rentals (4:3), home-path-vacation (4:3) | · | · | `exports/ghl/home/05-other-visitor-paths.html` |
+| 1 | `pages/home/01-hero.html` | `#pmp-home-hero` | Ivory `#FAF7F1` | home-hero (8:5), home-hero-2 (4:3) | · | · | `exports/ghl/home/01-hero.html` |
+| 2 | `pages/home/02-management-services.html` | `#pmp-home-management-services` | White `#FFFFFF` | home-long-term (4:3), home-short-term (4:3) | · | · | `exports/ghl/home/02-management-services.html` |
+| 3 | `pages/home/03-owner-approach.html` | `#pmp-home-owner-approach` | Warm stone `#EFEAE0` | home-approach (4:5) | · | · | `exports/ghl/home/03-owner-approach.html` |
+| 4 | `pages/home/04-getting-started.html` | `#pmp-home-getting-started` | Charcoal `#26272C` | home-start-bg (bg) | · | · | `exports/ghl/home/04-getting-started.html` |
+| 5 | `pages/home/05-other-visitor-paths.html` | `#pmp-home-other-visitor-paths` | Ivory `#FAF7F1` | home-path-rentals (4:3), home-path-vacation (4:3) | · | · | `exports/ghl/home/05-other-visitor-paths.html` |
 
 ## Long-Term Rental Management · `/long-term-rental-management`
 
-H1: Long-term rental management for local property owners
+H1: Long-Term Rental Management for Local Property Owners
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/long-term-rental-management/01-hero.html` | `#pmp-ltr-hero` | Deep navy `#172D3B` | long-term-hero (8:5) | · | · | `exports/ghl/long-term-rental-management/01-hero.html` |
-| 2 | `pages/long-term-rental-management/02-service-scope.html` | `#pmp-ltr-service-scope` | Warm white `#FFFEFB` | long-term-property-care (4:3) | · | · | `exports/ghl/long-term-rental-management/02-service-scope.html` |
-| 3 | `pages/long-term-rental-management/03-scope-and-transition.html` | `#pmp-ltr-scope-and-transition` | Pale sage gray `#E9EDE9` | long-term-transition (4:3) | · | · | `exports/ghl/long-term-rental-management/03-scope-and-transition.html` |
-| 4 | `pages/long-term-rental-management/04-final-action.html` | `#pmp-ltr-final-action` | Warm ivory `#F8F5EC` | long-term-cta (4:5) | · | · | `exports/ghl/long-term-rental-management/04-final-action.html` |
+| 1 | `pages/long-term-rental-management/01-hero.html` | `#pmp-ltr-hero` | Charcoal `#26272C` | long-term-hero (8:5) | · | · | `exports/ghl/long-term-rental-management/01-hero.html` |
+| 2 | `pages/long-term-rental-management/02-service-scope.html` | `#pmp-ltr-service-scope` | White `#FFFFFF` | long-term-property-care (4:3) | · | · | `exports/ghl/long-term-rental-management/02-service-scope.html` |
+| 3 | `pages/long-term-rental-management/03-scope-and-transition.html` | `#pmp-ltr-scope-and-transition` | Warm stone `#EFEAE0` | long-term-transition (4:3) | · | · | `exports/ghl/long-term-rental-management/03-scope-and-transition.html` |
+| 4 | `pages/long-term-rental-management/04-final-action.html` | `#pmp-ltr-final-action` | Ivory `#FAF7F1` | long-term-cta (4:5) | · | · | `exports/ghl/long-term-rental-management/04-final-action.html` |
 
 ## Short-Term Rental Management · `/short-term-rental-management`
 
-H1: Short-term rental management in East Central Minnesota
+H1: Short-Term Rental Management in East Central Minnesota
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/short-term-rental-management/01-hero.html` | `#pmp-str-hero` | Deep navy `#172D3B` | short-term-hero (8:5) | · | · | `exports/ghl/short-term-rental-management/01-hero.html` |
-| 2 | `pages/short-term-rental-management/02-service-scope.html` | `#pmp-str-service-scope` | Pale sage gray `#E9EDE9` | short-term-guest-space (4:3) | · | · | `exports/ghl/short-term-rental-management/02-service-scope.html` |
-| 3 | `pages/short-term-rental-management/03-plan-and-guest-experience.html` | `#pmp-str-plan-and-guest-experience` | Warm white `#FFFEFB` | short-term-guest-experience (4:3) | · | · | `exports/ghl/short-term-rental-management/03-plan-and-guest-experience.html` |
-| 4 | `pages/short-term-rental-management/04-final-action.html` | `#pmp-str-final-action` | Warm ivory `#F8F5EC` | short-term-cta (4:5) | · | · | `exports/ghl/short-term-rental-management/04-final-action.html` |
+| 1 | `pages/short-term-rental-management/01-hero.html` | `#pmp-str-hero` | Charcoal `#26272C` | short-term-hero (8:5) | · | · | `exports/ghl/short-term-rental-management/01-hero.html` |
+| 2 | `pages/short-term-rental-management/02-service-scope.html` | `#pmp-str-service-scope` | Warm stone `#EFEAE0` | short-term-guest-space (4:3) | · | · | `exports/ghl/short-term-rental-management/02-service-scope.html` |
+| 3 | `pages/short-term-rental-management/03-plan-and-guest-experience.html` | `#pmp-str-plan-and-guest-experience` | White `#FFFFFF` | short-term-guest-experience (4:3) | · | · | `exports/ghl/short-term-rental-management/03-plan-and-guest-experience.html` |
+| 4 | `pages/short-term-rental-management/04-final-action.html` | `#pmp-str-final-action` | Ivory `#FAF7F1` | short-term-cta (4:5) | · | · | `exports/ghl/short-term-rental-management/04-final-action.html` |
 
 ## About · `/about`
 
-H1: A practical approach to rental property management
+H1: A Practical Approach to Rental Property Management
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/about/01-hero.html` | `#pmp-about-hero` | Warm ivory `#F8F5EC` | about-hero (8:5) | · | · | `exports/ghl/about/01-hero.html` |
-| 2 | `pages/about/02-leadership.html` | `#pmp-about-leadership` | Deep navy `#172D3B` | about-bob-portrait (4:5) | · | · | `exports/ghl/about/02-leadership.html` |
-| 3 | `pages/about/03-principles.html` | `#pmp-about-principles` | Pale sage gray `#E9EDE9` | about-principles (4:5) | · | · | `exports/ghl/about/03-principles.html` |
-| 4 | `pages/about/04-related-business-and-cta.html` | `#pmp-about-related-business-and-cta` | Warm ivory `#F8F5EC` | about-maintenance (4:3) | · | · | `exports/ghl/about/04-related-business-and-cta.html` |
+| 1 | `pages/about/01-hero.html` | `#pmp-about-hero` | Ivory `#FAF7F1` | about-hero (8:5) | · | · | `exports/ghl/about/01-hero.html` |
+| 2 | `pages/about/02-leadership.html` | `#pmp-about-leadership` | Charcoal `#26272C` | about-bob-portrait (4:5) | · | · | `exports/ghl/about/02-leadership.html` |
+| 3 | `pages/about/03-principles.html` | `#pmp-about-principles` | Warm stone `#EFEAE0` | about-principles (4:5) | · | · | `exports/ghl/about/03-principles.html` |
+| 4 | `pages/about/04-related-business-and-cta.html` | `#pmp-about-related-business-and-cta` | Ivory `#FAF7F1` | about-maintenance (4:3) | · | · | `exports/ghl/about/04-related-business-and-cta.html` |
 
 ## FAQs · `/faqs`
 
-H1: Property management questions, answered
+H1: Property Management Questions, Answered
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/faqs/01-intro.html` | `#pmp-faqs-intro` | Warm ivory `#F8F5EC` | faqs-intro (4:3) | · | · | `exports/ghl/faqs/01-intro.html` |
-| 2 | `pages/faqs/02-owner-questions.html` | `#pmp-faqs-owner-questions` | Warm white `#FFFEFB` | faqs-owners (4:5) | · | · | `exports/ghl/faqs/02-owner-questions.html` |
-| 3 | `pages/faqs/03-renter-questions.html` | `#pmp-faqs-renter-questions` | Pale sage gray `#E9EDE9` | faqs-renters (4:5) | · | · | `exports/ghl/faqs/03-renter-questions.html` |
-| 4 | `pages/faqs/04-next-steps.html` | `#pmp-faqs-next-steps` | Warm ivory `#F8F5EC` | faqs-next-owners (4:3), faqs-next-renters (4:3), faqs-next-guests (4:3) | · | · | `exports/ghl/faqs/04-next-steps.html` |
+| 1 | `pages/faqs/01-intro.html` | `#pmp-faqs-intro` | Ivory `#FAF7F1` | faqs-intro (4:3) | · | · | `exports/ghl/faqs/01-intro.html` |
+| 2 | `pages/faqs/02-owner-questions.html` | `#pmp-faqs-owner-questions` | White `#FFFFFF` | faqs-owners (4:5) | · | · | `exports/ghl/faqs/02-owner-questions.html` |
+| 3 | `pages/faqs/03-renter-questions.html` | `#pmp-faqs-renter-questions` | Warm stone `#EFEAE0` | faqs-renters (4:5) | · | · | `exports/ghl/faqs/03-renter-questions.html` |
+| 4 | `pages/faqs/04-next-steps.html` | `#pmp-faqs-next-steps` | Ivory `#FAF7F1` | faqs-next-owners (4:3), faqs-next-renters (4:3), faqs-next-guests (4:3) | · | · | `exports/ghl/faqs/04-next-steps.html` |
 
 ## Management Quote · `/management-quote`
 
-H1: Tell us about your property
+H1: Tell Us About Your Property
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/management-quote/01-intro.html` | `#pmp-quote-intro` | Warm ivory `#F8F5EC` | quote-intro (4:3) | · | · | `exports/ghl/management-quote/01-intro.html` |
-| 2 | `pages/management-quote/02-owner-form.html` | `#pmp-quote-owner-form` | Warm white `#FFFEFB` | quote-aside (4:3) | ghl-owner-form | · | `exports/ghl/management-quote/02-owner-form.html` |
-| 3 | `pages/management-quote/03-what-happens-next.html` | `#pmp-quote-what-happens-next` | Deep navy `#172D3B` | quote-next-bg (bg) | · | · | `exports/ghl/management-quote/03-what-happens-next.html` |
-| 4 | `pages/management-quote/04-rental-instead.html` | `#pmp-quote-rental-instead` | Warm ivory `#F8F5EC` | · | · | · | `exports/ghl/management-quote/04-rental-instead.html` |
+| 1 | `pages/management-quote/01-intro.html` | `#pmp-quote-intro` | Ivory `#FAF7F1` | quote-intro (4:3) | · | · | `exports/ghl/management-quote/01-intro.html` |
+| 2 | `pages/management-quote/02-owner-form.html` | `#pmp-quote-owner-form` | White `#FFFFFF` | quote-aside (4:3) | ghl-owner-form | · | `exports/ghl/management-quote/02-owner-form.html` |
+| 3 | `pages/management-quote/03-what-happens-next.html` | `#pmp-quote-what-happens-next` | Charcoal `#26272C` | quote-next-bg (bg) | · | · | `exports/ghl/management-quote/03-what-happens-next.html` |
+| 4 | `pages/management-quote/04-rental-instead.html` | `#pmp-quote-rental-instead` | Ivory `#FAF7F1` | · | · | · | `exports/ghl/management-quote/04-rental-instead.html` |
 
 ## Owner Thank You · `/management-thank-you`
 
-H1: Thanks for telling us about your property
+H1: Thanks for Telling Us About Your Property
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/thank-you/management-thank-you/01-confirmation.html` | `#pmp-ty-owner-confirmation` | Warm ivory `#F8F5EC` | ty-owner (4:5) | · | · | `exports/ghl/thank-you/management-thank-you/01-confirmation.html` |
+| 1 | `pages/thank-you/management-thank-you/01-confirmation.html` | `#pmp-ty-owner-confirmation` | Ivory `#FAF7F1` | ty-owner (4:5) | · | · | `exports/ghl/thank-you/management-thank-you/01-confirmation.html` |
 
 ## Available Rentals · `/available-rentals`
 
-H1: Find your next rental in East Central Minnesota
+H1: Find Your Next Rental in East Central Minnesota
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/available-rentals/01-intro.html` | `#pmp-rentals-intro` | Warm ivory `#F8F5EC` | rentals-intro (4:3) | · | · | `exports/ghl/available-rentals/01-intro.html` |
-| 2 | `pages/available-rentals/02-current-listings.html` | `#pmp-rentals-current-listings` | Warm white `#FFFEFB` | · | · | · | `exports/ghl/available-rentals/02-current-listings.html` |
-| 3 | `pages/available-rentals/03-how-to-get-started.html` | `#pmp-rentals-how-to-get-started` | Pale sage gray `#E9EDE9` | rentals-steps (4:5) | · | · | `exports/ghl/available-rentals/03-how-to-get-started.html` |
+| 1 | `pages/available-rentals/01-intro.html` | `#pmp-rentals-intro` | Ivory `#FAF7F1` | rentals-intro (4:3) | · | · | `exports/ghl/available-rentals/01-intro.html` |
+| 2 | `pages/available-rentals/02-current-listings.html` | `#pmp-rentals-current-listings` | White `#FFFFFF` | · | · | · | `exports/ghl/available-rentals/02-current-listings.html` |
+| 3 | `pages/available-rentals/03-how-to-get-started.html` | `#pmp-rentals-how-to-get-started` | Warm stone `#EFEAE0` | rentals-steps (4:5) | · | · | `exports/ghl/available-rentals/03-how-to-get-started.html` |
 
 ## Rental Prequalification · `/rental-prequalification`
 
-H1: Interested in renting one of our properties?
+H1: Interested in Renting One of Our Properties?
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/rental-prequalification/01-intro.html` | `#pmp-prequal-intro` | Warm ivory `#F8F5EC` | prequal-intro (4:3) | · | · | `exports/ghl/rental-prequalification/01-intro.html` |
-| 2 | `pages/rental-prequalification/02-applicant-form.html` | `#pmp-prequal-applicant-form` | Warm white `#FFFEFB` | · | applicant-form | · | `exports/ghl/rental-prequalification/02-applicant-form.html` |
-| 3 | `pages/rental-prequalification/03-expectations.html` | `#pmp-prequal-expectations` | Pale sage gray `#E9EDE9` | prequal-rental-exterior (4:3) | · | · | `exports/ghl/rental-prequalification/03-expectations.html` |
+| 1 | `pages/rental-prequalification/01-intro.html` | `#pmp-prequal-intro` | Ivory `#FAF7F1` | prequal-intro (4:3) | · | · | `exports/ghl/rental-prequalification/01-intro.html` |
+| 2 | `pages/rental-prequalification/02-applicant-form.html` | `#pmp-prequal-applicant-form` | White `#FFFFFF` | · | applicant-form | · | `exports/ghl/rental-prequalification/02-applicant-form.html` |
+| 3 | `pages/rental-prequalification/03-expectations.html` | `#pmp-prequal-expectations` | Warm stone `#EFEAE0` | prequal-rental-exterior (4:3) | · | · | `exports/ghl/rental-prequalification/03-expectations.html` |
 
 ## Applicant Thank You · `/prequalification-thank-you`
 
-H1: Your preliminary prequalification has been received
+H1: Your Preliminary Prequalification Has Been Received
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/thank-you/prequalification-thank-you/01-confirmation.html` | `#pmp-ty-applicant-confirmation` | Warm ivory `#F8F5EC` | ty-applicant (4:5) | · | · | `exports/ghl/thank-you/prequalification-thank-you/01-confirmation.html` |
+| 1 | `pages/thank-you/prequalification-thank-you/01-confirmation.html` | `#pmp-ty-applicant-confirmation` | Ivory `#FAF7F1` | ty-applicant (4:5) | · | · | `exports/ghl/thank-you/prequalification-thank-you/01-confirmation.html` |
 
 ## Vacation Rentals · `/vacation-rentals`
 
-H1: Find your next East Central Minnesota getaway
+H1: Find Your Next East Central Minnesota Getaway
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/vacation-rentals/01-hero.html` | `#pmp-vacation-hero` | Warm ivory `#F8F5EC` | vacation-hero (8:5) | · | · | `exports/ghl/vacation-rentals/01-hero.html` |
-| 2 | `pages/vacation-rentals/02-property-cards.html` | `#pmp-vacation-property-cards` | Warm white `#FFFEFB` | · | pms-booking | · | `exports/ghl/vacation-rentals/02-property-cards.html` |
-| 3 | `pages/vacation-rentals/03-before-you-book.html` | `#pmp-vacation-before-you-book` | Pale sage gray `#E9EDE9` | vacation-before (4:5) | · | · | `exports/ghl/vacation-rentals/03-before-you-book.html` |
-| 4 | `pages/vacation-rentals/04-guest-updates.html` | `#pmp-vacation-guest-updates` | Deep navy `#172D3B` | vacation-updates-bg (bg) | guest-email-signup | · | `exports/ghl/vacation-rentals/04-guest-updates.html` |
-| 5 | `pages/vacation-rentals/05-owner-path.html` | `#pmp-vacation-owner-path` | Warm white `#FFFEFB` | vacation-owner (4:3) | · | · | `exports/ghl/vacation-rentals/05-owner-path.html` |
+| 1 | `pages/vacation-rentals/01-hero.html` | `#pmp-vacation-hero` | Ivory `#FAF7F1` | vacation-hero (8:5) | · | · | `exports/ghl/vacation-rentals/01-hero.html` |
+| 2 | `pages/vacation-rentals/02-property-cards.html` | `#pmp-vacation-property-cards` | White `#FFFFFF` | · | pms-booking | · | `exports/ghl/vacation-rentals/02-property-cards.html` |
+| 3 | `pages/vacation-rentals/03-before-you-book.html` | `#pmp-vacation-before-you-book` | Warm stone `#EFEAE0` | vacation-before (4:5) | · | · | `exports/ghl/vacation-rentals/03-before-you-book.html` |
+| 4 | `pages/vacation-rentals/04-guest-updates.html` | `#pmp-vacation-guest-updates` | Charcoal `#26272C` | vacation-updates-bg (bg) | guest-email-signup | · | `exports/ghl/vacation-rentals/04-guest-updates.html` |
+| 5 | `pages/vacation-rentals/05-owner-path.html` | `#pmp-vacation-owner-path` | White `#FFFFFF` | vacation-owner (4:3) | · | · | `exports/ghl/vacation-rentals/05-owner-path.html` |
 
 ## Privacy Policy (review draft) · `/privacy-policy`
 
-H1: Privacy policy
+H1: Privacy Policy
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/legal/privacy-policy/01-title.html` | `#pmp-privacy-title` | Warm ivory `#F8F5EC` | · | · | 3 | `exports/ghl/legal/privacy-policy/01-title.html` |
-| 2 | `pages/legal/privacy-policy/02-policy-content.html` | `#pmp-privacy-policy-content` | Warm white `#FFFEFB` | · | · | 6 | `exports/ghl/legal/privacy-policy/02-policy-content.html` |
+| 1 | `pages/legal/privacy-policy/01-title.html` | `#pmp-privacy-title` | Ivory `#FAF7F1` | · | · | 3 | `exports/ghl/legal/privacy-policy/01-title.html` |
+| 2 | `pages/legal/privacy-policy/02-policy-content.html` | `#pmp-privacy-policy-content` | White `#FFFFFF` | · | · | 6 | `exports/ghl/legal/privacy-policy/02-policy-content.html` |
 
 ## Terms of Service (review draft) · `/terms-of-service`
 
-H1: Terms of service
+H1: Terms of Service
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/legal/terms-of-service/01-title.html` | `#pmp-terms-title` | Warm ivory `#F8F5EC` | · | · | 2 | `exports/ghl/legal/terms-of-service/01-title.html` |
-| 2 | `pages/legal/terms-of-service/02-terms-content.html` | `#pmp-terms-terms-content` | Warm white `#FFFEFB` | · | · | 2 | `exports/ghl/legal/terms-of-service/02-terms-content.html` |
+| 1 | `pages/legal/terms-of-service/01-title.html` | `#pmp-terms-title` | Ivory `#FAF7F1` | · | · | 2 | `exports/ghl/legal/terms-of-service/01-title.html` |
+| 2 | `pages/legal/terms-of-service/02-terms-content.html` | `#pmp-terms-terms-content` | White `#FFFFFF` | · | · | 2 | `exports/ghl/legal/terms-of-service/02-terms-content.html` |
 
 ## Page not found (404) · `/404`
 
@@ -173,7 +173,7 @@ H1: We could not find that page
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/not-found/01-message.html` | `#pmp-not-found-message` | Warm ivory `#F8F5EC` | · | · | · | not exported |
+| 1 | `pages/not-found/01-message.html` | `#pmp-not-found-message` | Ivory `#FAF7F1` | · | · | · | not exported |
 
 ## Card templates · `/preview-card-templates`
 
@@ -181,9 +181,9 @@ H1: Card templates
 
 | # | Section file | Section ID | Background | Photo slots | Integration slots | Pending details | GHL export |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | `pages/card-templates/01-intro.html` | `#pmp-card-templates-intro` | Warm ivory `#F8F5EC` | · | · | · | not exported |
-| 2 | `pages/available-rentals/02-current-listings.html` (reused) | `#pmp-rentals-current-listings` | Warm white `#FFFEFB` | listing-card (4:3), listing-card (4:3) | · | 14 | not exported |
-| 3 | `pages/vacation-rentals/02-property-cards.html` (reused) | `#pmp-vacation-property-cards` | Warm white `#FFFEFB` | vacation-card (4:3), vacation-card (4:3) | pms-booking | 14 | not exported |
+| 1 | `pages/card-templates/01-intro.html` | `#pmp-card-templates-intro` | Ivory `#FAF7F1` | · | · | · | not exported |
+| 2 | `pages/available-rentals/02-current-listings.html` (reused) | `#pmp-rentals-current-listings` | White `#FFFFFF` | listing-card (4:3), listing-card (4:3) | · | 14 | not exported |
+| 3 | `pages/vacation-rentals/02-property-cards.html` (reused) | `#pmp-vacation-property-cards` | White `#FFFFFF` | vacation-card (4:3), vacation-card (4:3) | pms-booking | 14 | not exported |
 
 ## External links in the preview
 

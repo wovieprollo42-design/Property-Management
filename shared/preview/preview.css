@@ -21,7 +21,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #F8F5EC;
+  background-color: #FAF7F1;
 }
 
 body {
@@ -40,15 +40,15 @@ main:focus {
   z-index: 100;
   padding: 12px 18px;
   font: 600 15px/1.2 "Manrope", Arial, sans-serif;
-  color: #FFFEFB;
-  background-color: #172D3B;
+  color: #FFFFFF;
+  background-color: #26272C;
   border-radius: 4px;
   text-decoration: none;
 }
 
 .pmp-skip:focus {
   top: 12px;
-  outline: 2px solid #AD8950;
+  outline: 2px solid #D2A437;
   outline-offset: 2px;
 }
 
@@ -62,10 +62,10 @@ main:focus {
   margin: 0;
   padding: 8px 20px;
   font: 500 13px/1.45 "DM Sans", Arial, sans-serif;
-  color: #43535B;
+  color: #595A61;
   text-align: center;
-  background-color: #E9EDE9;
-  border-bottom: 1px dashed #AD8950;
+  background-color: #EFEAE0;
+  border-bottom: 1px dashed #D2A437;
 }
 
 .pmp-preview-bar p {
@@ -76,19 +76,19 @@ main:focus {
   min-height: 32px;
   padding: 4px 12px;
   font: 600 12px/1.2 "Manrope", Arial, sans-serif;
-  color: #172D3B;
-  background-color: #FFFEFB;
-  border: 1px solid #AD8950;
+  color: #26272C;
+  background-color: #FFFFFF;
+  border: 1px solid #D2A437;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .pmp-preview-toggle:hover {
-  box-shadow: inset 0 -2px 0 #AD8950;
+  box-shadow: inset 0 -2px 0 #D2A437;
 }
 
 .pmp-preview-toggle:focus-visible {
-  outline: 2px solid #172D3B;
+  outline: 2px solid #26272C;
   outline-offset: 2px;
 }
 
@@ -97,7 +97,7 @@ main:focus {
   position: relative;
   display: block;
   width: 100%;
-  background-color: #E9EDE9;
+  background-color: #EFEAE0;
   overflow: hidden;
 }
 
@@ -118,10 +118,10 @@ main:focus {
   font: 700 10.5px/1.2 "Manrope", Arial, sans-serif;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #172D3B;
-  background-color: #FFFEFB;
+  color: #26272C;
+  background-color: #FFFFFF;
   border-radius: 3px;
-  box-shadow: 0 1px 2px rgba(23, 45, 59, 0.25);
+  box-shadow: 0 1px 2px rgba(38, 39, 44, 0.25);
 }
 
 .pmp .pmp-shot .pmp-ph__label,
@@ -131,10 +131,10 @@ main:focus {
 
 /* Photo cards: the shot sits flush with a gold rule under it */
 .pmp .pmp-pcard > .pmp-shot {
-  border-bottom: 3px solid #AD8950;
+  border-bottom: 3px solid #D2A437;
 }
 
-/* Photo bands: the sample photo is toned into the navy section behind the content */
+/* Photo bands: the sample photo is toned into the charcoal section behind the content */
 .pmp .pmp-shot--bg {
   position: absolute;
   inset: 0;
@@ -197,18 +197,18 @@ html.pmp-show-slots .pmp .pmp-shot .pmp-ph__label {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 12px;
-  color: #70562B;
+  color: #8A6514;
   margin-right: 6px;
 }
 
 .pmp-preview-bar a {
-  color: #172D3B;
+  color: #26272C;
   font-weight: 600;
   text-underline-offset: 3px;
-  text-decoration-color: #AD8950;
+  text-decoration-color: #D2A437;
 }
 
 .pmp-preview-bar a:focus-visible {
-  outline: 2px solid #172D3B;
+  outline: 2px solid #26272C;
   outline-offset: 2px;
 }

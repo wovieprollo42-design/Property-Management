@@ -18,6 +18,26 @@ Code: https://github.com/wovieprollo42-design/Property-Management
 To publish changes: `npx vercel deploy --prod --yes --scope wovieprollo42-6481s-projects` from this folder.
 Vercel builds with `node build.mjs` and serves `dist/` (see `vercel.json`).
 
+## Brand and motion (updated 2026-10-01)
+
+At the owner's request the site now follows **Bob's logo**: charcoal `#26272C` and the logo's gold
+`#D2A437` (gold buttons with charcoal text), Fraunces headings like the logo's PROPERTY lettering and
+Montserrat for everything else like MANAGEMENT / PROFESSIONALS. The same family as the rental
+pre-qualification landing page. Only Bob's own logo is used (header, footer, favicons and the round
+badge on Home, which shows the logo's skyline).
+
+Motion is there to keep visitors interested without slowing GHL down: hero entrances, a gold ribbon of
+services, a rotating "We help coordinate ..." line, photo reveals, a "rental cycle" dial on the
+long-term page, a "before, during, after every stay" timeline on the short-term page, a self-drawing
+check on the thank-you pages, a reading-progress line and a back-to-top button. Everything is CSS
+transform/opacity with one small script (`shared/motion.js`), pauses off screen, and switches off for
+visitors who ask for reduced motion. Measured with the CPU slowed 4x: 60 frames per second while
+scrolling, no long tasks during scroll, layout shift 0.04 or less.
+
+**GHL:** paste one file per page from `exports/ghl-pages/` (see its README). Tested inside a hostile
+GHL-style host page (nested section/row/column wrappers with padding, hidden overflow and aggressive
+theme CSS): full width, header stays pinned, no style leaks, no script errors, on desktop and phone.
+
 ## 1. Open the preview
 
 You need [Node.js](https://nodejs.org) 18 or newer (no other installs, no `npm install`).
@@ -48,6 +68,8 @@ shared/                         used by every page
   brand/                        the approved logo, web files cut from it, and favicons
   samples/                      sample stock photos shown in the PREVIEW only (samples.json maps slot to photo)
   tokens.css                    brand colors, fonts, sizes, spacing (change a brand value here)
+  motion.css / motion.js        scroll reveals, gold ribbon, rotating words, reduced-motion handling
+  ghl-page.css / ghl-fit.js     page wrapper and GHL wrapper fit, only in exports/ghl-pages/
   base.css                      scoped type, layout and backgrounds
   components.css                buttons, photo placeholders, form slots, FAQ accordion, wordmark
   header.html                   header, Management Services dropdown, mobile menu
@@ -67,6 +89,7 @@ pages/                          one folder per page, one file per section
   not-found/                    the 404 page
   card-templates/               internal preview of listing cards (not a public page)
 
+exports/ghl-pages/              GENERATED one paste-ready GHL file per page (recommended)
 exports/ghl/                    GENERATED paste-ready GHL snippets, one folder per page
 docs/                           brief, route map, inventories, install guide, launch checklist
 dist/                           GENERATED preview site (not stored in git)

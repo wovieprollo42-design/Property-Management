@@ -1,0 +1,47 @@
+/* ==========================================================================
+   GHL page shell · only in the full-page GHL exports (exports/ghl-pages/)
+   --------------------------------------------------------------------------
+   The wrapper that holds a whole page inside one GHL Custom JS/HTML element.
+   ========================================================================== */
+.pmp-page:is(#pmp-page) {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #FAF7F1;
+  overflow-x: clip;
+  text-align: left;
+}
+
+.pmp-page:is(#pmp-page) main {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.pmp-page:is(#pmp-page) main:focus {
+  outline: none;
+}
+
+/* Skip link: hidden until a keyboard user tabs to it */
+.pmp-page:is(#pmp-page) .pmp-page__skip {
+  position: absolute;
+  top: -200px;
+  left: 16px;
+  z-index: 100;
+  padding: 12px 18px;
+  font: 700 15px/1.2 "Montserrat", Arial, sans-serif;
+  color: #26272C;
+  background-color: #D2A437;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.pmp-page:is(#pmp-page) .pmp-page__skip:focus {
+  top: 12px;
+  outline: 2px solid #26272C;
+  outline-offset: 2px;
+}

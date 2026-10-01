@@ -10,33 +10,43 @@
    ========================================================================== */
 
 .pmp {
-  /* Brand palette (Master Brief, sections 2 and 13) */
-  --pmp-navy: #172D3B;    /* headings, primary buttons, footer, emphasis   */
-  --pmp-ivory: #F8F5EC;   /* page and main sections                        */
-  --pmp-gold: #AD8950;    /* decorative only: lines, marks, focus on navy  */
-  --pmp-bronze: #70562B;  /* small accent text on light surfaces           */
-  --pmp-slate: #43535B;   /* body text                                     */
-  --pmp-white: #FFFEFB;   /* header, cards, reading areas                  */
-  --pmp-sage: #E9EDE9;    /* alternate sections and photo placeholders     */
+  /* Brand palette, taken from the owner's logo (2026-10-01): charcoal lettering and towers,
+     bright gold roofs and MANAGEMENT banner, silver ground arc. Same family as the rental
+     pre-qualification landing page, so Bob's sites read as one brand. */
+  --pmp-ink: #1D1E22;       /* deepest charcoal: footer, photo overlays                 */
+  --pmp-char: #26272C;      /* logo charcoal: headings, dark sections, text on gold      */
+  --pmp-char-2: #303138;    /* raised cards on charcoal                                  */
+  --pmp-gold: #D2A437;      /* logo gold: primary buttons (charcoal text 6.5:1), marks   */
+  --pmp-gold-hi: #E8C56B;   /* gold highlight: sheen and hover on dark                   */
+  --pmp-gold-deep: #80600F; /* gold for small text on light surfaces (5.4:1 on ivory)    */
+  --pmp-silver: #9B9CA1;    /* the logo's gray arc: quiet details                        */
+  --pmp-muted: #595A61;     /* body text on light surfaces (6.4:1)                       */
+  --pmp-ivory: #FAF7F1;     /* page and main sections                                    */
+  --pmp-paper: #FFFFFF;     /* header, cards, reading areas                              */
+  --pmp-tray: #EFEAE0;      /* alternate sections                                        */
+  --pmp-on-dark: #F4F1EA;   /* text on charcoal                                          */
+  --pmp-on-dark-muted: #BDB9B0; /* secondary text on charcoal (7.6:1)                    */
 
-  /* Hairlines (navy or warm white at low opacity; borders only, never fills) */
-  --pmp-line: rgba(23, 45, 59, 0.16);
-  --pmp-line-strong: rgba(23, 45, 59, 0.34);
-  --pmp-line-light: rgba(255, 254, 251, 0.24);
+  /* Hairlines (charcoal or warm white at low opacity; borders only, never fills) */
+  --pmp-line: rgba(38, 39, 44, 0.13);
+  --pmp-line-strong: rgba(38, 39, 44, 0.3);
+  --pmp-line-light: rgba(244, 241, 234, 0.18);
 
-  /* Type families: Manrope for headings, navigation and buttons; DM Sans for body.
-     Arial is the fallback, so the layout holds if web fonts do not load. */
-  --pmp-font-head: "Manrope", Arial, sans-serif;
-  --pmp-font-body: "DM Sans", Arial, sans-serif;
+  /* Type families, echoing the logo: a strong serif like its PROPERTY lettering for headings
+     (Fraunces), the wide geometric sans of MANAGEMENT / PROFESSIONALS for everything else
+     (Montserrat). Georgia and Arial are the fallbacks, so the layout holds without web fonts. */
+  --pmp-font-head: "Fraunces", Georgia, "Times New Roman", serif;
+  --pmp-font-body: "Montserrat", Arial, sans-serif;
+  --pmp-font-ui: "Montserrat", Arial, sans-serif;
 
   /* Type scale. Each value slides between the mobile and desktop size in the brief. */
-  --pmp-text: clamp(16px, calc(14.6px + 0.36vw), 18px);      /* body 16 -> 18      */
+  --pmp-text: clamp(16px, calc(15.3px + 0.18vw), 17px);      /* body 16 -> 17      */
   --pmp-text-sm: clamp(14px, calc(13.3px + 0.18vw), 15px);   /* notes and labels   */
   --pmp-lead: clamp(18px, calc(16.2px + 0.45vw), 21px);      /* intro paragraphs   */
-  --pmp-h1-home: clamp(36px, calc(24.5px + 2.95vw), 56px);   /* home H1 36 -> 56   */
-  --pmp-h1: clamp(32px, calc(25.4px + 1.7vw), 44px);         /* other H1 32 -> 44  */
-  --pmp-h2: clamp(26px, calc(22.7px + 0.85vw), 32px);        /* H2 26 -> 32        */
-  --pmp-h3: clamp(20px, calc(18.9px + 0.28vw), 22px);        /* H3 20 -> 22        */
+  --pmp-h1-home: clamp(40px, calc(24px + 4.1vw), 68px);   /* home H1 40 -> 68   */
+  --pmp-h1: clamp(34px, calc(24px + 2.6vw), 54px);         /* other H1 34 -> 54  */
+  --pmp-h2: clamp(28px, calc(21.5px + 1.7vw), 42px);       /* H2 28 -> 42        */
+  --pmp-h3: clamp(20px, calc(18.2px + 0.47vw), 24px);      /* H3 20 -> 24        */
 
   /* 8 px spacing scale */
   --pmp-s1: 8px;
@@ -55,11 +65,15 @@
   --pmp-sec-pad: clamp(48px, calc(34px + 3.6vw), 88px);      /* section padding    */
 
   /* Shape, depth and motion */
-  --pmp-radius: 4px;
-  --pmp-radius-lg: 6px;
-  --pmp-shadow: 0 1px 2px rgba(23, 45, 59, 0.06), 0 12px 32px -16px rgba(23, 45, 59, 0.22);
+  --pmp-radius: 10px;
+  --pmp-radius-lg: 18px;
+  --pmp-radius-pill: 999px;
+  --pmp-shadow: 0 1px 2px rgba(29, 30, 34, 0.06), 0 18px 40px -22px rgba(29, 30, 34, 0.35);
+  --pmp-shadow-lg: 0 2px 4px rgba(29, 30, 34, 0.06), 0 34px 70px -34px rgba(29, 30, 34, 0.5);
   --pmp-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --pmp-dur: 180ms;
+  --pmp-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --pmp-dur: 200ms;
+  --pmp-dur-slow: 750ms;
 
   /* Breakpoints (documented here; CSS media queries cannot read variables):
      600px  small tablet · 900px  split layouts · 1180px  full desktop navigation */

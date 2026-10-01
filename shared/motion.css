@@ -1,0 +1,358 @@
+/* ==========================================================================
+   Property Management Professionals · Motion
+   --------------------------------------------------------------------------
+   Built for GHL: every effect is CSS transform or opacity (the two properties
+   a browser animates on the GPU without re-laying out the page), there is no
+   animation library, and nothing runs while it is off screen.
+
+   Safe by default:
+   - Without JavaScript (for example inside the GHL editor) everything is
+     visible. Only elements that shared/motion.js "arms" start hidden, and it
+     arms only elements below the first screen, so nothing visible flickers.
+   - Hero entrances are pure CSS keyframes, so they play on the first paint.
+   - "Reduce motion" in the visitor's system settings turns all of it off.
+   ========================================================================== */
+
+/* ---------- Hero entrance (first section of every page, class pmp-hero) -- */
+@keyframes pmp-rise {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes pmp-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pmp-curtain {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+@keyframes pmp-settle {
+  from { transform: scale(1.14); }
+  to { transform: scale(1); }
+}
+
+@keyframes pmp-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pmp.pmp-hero :is(.pmp-eyebrow, .pmp-ribbon, h1, .pmp-lead, .pmp-btns, [data-pmp-step]) {
+    animation: pmp-rise 900ms var(--pmp-ease-out) both;
+  }
+
+  .pmp.pmp-hero :is(.pmp-eyebrow, .pmp-ribbon) { animation-delay: 60ms; }
+  .pmp.pmp-hero h1 { animation-delay: 140ms; }
+  .pmp.pmp-hero .pmp-lead { animation-delay: 300ms; }
+  .pmp.pmp-hero .pmp-btns { animation-delay: 440ms; }
+  .pmp.pmp-hero [data-pmp-step] { animation-delay: calc(380ms + var(--pmp-step, 0) * 110ms); }
+
+  /* Hero photos: a charcoal curtain with a gold edge slides away while the photo settles. */
+  .pmp.pmp-hero .pmp-shot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background-color: var(--pmp-char);
+    box-shadow: inset -5px 0 0 var(--pmp-gold);
+    transform-origin: right center;
+    animation: pmp-curtain 1100ms var(--pmp-ease-out) 250ms both;
+    pointer-events: none;
+  }
+
+  .pmp.pmp-hero .pmp-shot .pmp-photo {
+    animation: pmp-settle 1800ms var(--pmp-ease-out) 250ms both;
+  }
+
+  /* The gold swoosh under a hero headline draws itself (pathLength="1" on each path). */
+  .pmp.pmp-hero .pmp-swoosh path {
+    stroke-dasharray: 1;
+    animation: pmp-draw 1200ms var(--pmp-ease-out) 650ms both;
+  }
+}
+
+/* ---------- Scroll reveal (armed by motion.js) --------------------------- */
+.pmp [data-pmp-armed] {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+}
+
+.pmp [data-pmp-armed="fade"] { transform: none; }
+.pmp [data-pmp-armed="left"] { transform: translate3d(-36px, 0, 0); }
+.pmp [data-pmp-armed="right"] { transform: translate3d(36px, 0, 0); }
+.pmp [data-pmp-armed="zoom"] { transform: scale(0.94); }
+
+.pmp [data-pmp-armed].pmp-in {
+  opacity: 1;
+  transform: none;
+  transition: opacity 800ms var(--pmp-ease-out), transform 900ms var(--pmp-ease-out);
+  transition-delay: var(--pmp-d, 0ms);
+}
+
+/* Photos reveal behind the same gold-edged curtain as the hero. */
+.pmp .pmp-shot[data-pmp-armed] {
+  opacity: 1;
+  transform: none;
+}
+
+.pmp .pmp-shot[data-pmp-armed]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background-color: var(--pmp-char);
+  box-shadow: inset -5px 0 0 var(--pmp-gold);
+  transform-origin: right center;
+  pointer-events: none;
+}
+
+.pmp .pmp-shot[data-pmp-armed] .pmp-photo {
+  transform: scale(1.14);
+}
+
+.pmp .pmp-shot[data-pmp-armed].pmp-in::after {
+  transform: scaleX(0);
+  transition: transform 1000ms var(--pmp-ease-out) var(--pmp-d, 0ms);
+}
+
+.pmp .pmp-shot[data-pmp-armed].pmp-in .pmp-photo {
+  transform: none;
+  transition: transform 1600ms var(--pmp-ease-out) var(--pmp-d, 0ms);
+}
+
+/* Lines that draw across when they arrive (steps tracks, dividers). */
+.pmp [data-pmp-armed="line"] {
+  opacity: 1;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.pmp [data-pmp-armed="line"].pmp-in {
+  transform: scaleX(1);
+  transition: transform 1400ms var(--pmp-ease-out) var(--pmp-d, 0ms);
+}
+
+/* ---------- Gold ribbon marquee (the logo's MANAGEMENT banner, in motion) -- */
+.pmp .pmp-marquee {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  padding: 14px 0;
+  background-color: var(--pmp-gold);
+  color: var(--pmp-char);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 50%, 100% 100%, 0 100%, 14px 50%);
+}
+
+.pmp .pmp-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: pmp-marquee 38s linear infinite;
+}
+
+.pmp .pmp-marquee.is-paused .pmp-marquee__track,
+.pmp .is-paused .pmp-marquee__track {
+  animation-play-state: paused;
+}
+
+@media (hover: hover) {
+  .pmp .pmp-marquee:hover .pmp-marquee__track {
+    animation-play-state: paused;
+  }
+}
+
+.pmp .pmp-marquee__list {
+  display: flex;
+  flex: none;
+  align-items: center;
+}
+
+.pmp .pmp-marquee__list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding-right: 22px;
+  font-family: var(--pmp-font-ui);
+  font-size: clamp(13px, calc(11.5px + 0.4vw), 16px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pmp .pmp-marquee__list li::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background-color: var(--pmp-char);
+  transform: rotate(45deg);
+}
+
+@keyframes pmp-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+/* ---------- Rotating word (hero "Help with ...") ------------------------- */
+.pmp .pmp-rotator {
+  position: relative;
+  display: inline-grid;
+  height: 1.35em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.pmp .pmp-rotator__word {
+  grid-area: 1 / 1;
+  white-space: nowrap;
+  color: var(--pmp-gold-deep);
+  transform: translate3d(0, 110%, 0);
+  opacity: 0;
+  transition: transform 650ms var(--pmp-ease-out), opacity 450ms var(--pmp-ease);
+}
+
+.pmp .pmp-rotator__word.is-on {
+  transform: none;
+  opacity: 1;
+}
+
+.pmp .pmp-rotator__word.is-off {
+  transform: translate3d(0, -110%, 0);
+  opacity: 0;
+}
+
+/* Without the script the first word simply shows. */
+.pmp .pmp-rotator:not(.is-live) .pmp-rotator__word:first-child {
+  transform: none;
+  opacity: 1;
+}
+
+/* ---------- Gentle float (decorative badges and chips) ------------------- */
+@keyframes pmp-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
+}
+
+@keyframes pmp-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Back to top -------------------------------------------------- */
+.pmp .pmp-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: var(--pmp-char);
+  background-color: var(--pmp-gold);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 12px 26px -12px rgba(29, 30, 34, 0.6);
+  cursor: pointer;
+  opacity: 0;
+  transform: translate3d(0, 16px, 0) scale(0.9);
+  pointer-events: none;
+  transition: opacity 300ms var(--pmp-ease), transform 300ms var(--pmp-ease-out);
+}
+
+.pmp .pmp-top.is-shown {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.pmp .pmp-top svg {
+  width: 18px;
+  height: 18px;
+  transform: rotate(-90deg);
+}
+
+@media (hover: hover) {
+  .pmp .pmp-top:hover {
+    background-color: var(--pmp-gold-hi);
+  }
+}
+
+@media print {
+  .pmp [data-pmp-armed],
+  .pmp [data-pmp-armed] .pmp-photo {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .pmp [data-pmp-armed]::after,
+  .pmp .pmp-top {
+    display: none !important;
+  }
+}
+
+/* ---------- Reduced motion: stop everything ------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .pmp [data-pmp-armed],
+  .pmp [data-pmp-armed] .pmp-photo {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .pmp [data-pmp-armed]::after {
+    display: none !important;
+  }
+
+  .pmp .pmp-marquee__track {
+    animation: none;
+  }
+
+  .pmp .pmp-rotator__word {
+    transition: none;
+  }
+}
+
+/* ---------- Thank-you seal: the check draws itself, two gold rings ping out -- */
+.pmp .pmp-celebrate {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.pmp .pmp-celebrate::before,
+.pmp .pmp-celebrate::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 2px solid var(--pmp-gold);
+  border-radius: 12px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes pmp-ping {
+  from { opacity: 0.9; transform: scale(0.8); }
+  to { opacity: 0; transform: scale(2); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pmp .pmp-draw rect,
+  .pmp .pmp-draw path {
+    stroke-dasharray: 1;
+    animation: pmp-draw 800ms var(--pmp-ease-out) 250ms both;
+  }
+
+  .pmp .pmp-draw path {
+    animation-delay: 750ms;
+  }
+
+  .pmp .pmp-celebrate::before {
+    animation: pmp-ping 1300ms var(--pmp-ease-out) 1150ms both;
+  }
+
+  .pmp .pmp-celebrate::after {
+    animation: pmp-ping 1300ms var(--pmp-ease-out) 1450ms both;
+  }
+}

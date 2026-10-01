@@ -1,8 +1,12 @@
 <!--
   LONG-TERM RENTAL MANAGEMENT · 02 SERVICE SCOPE
-  Background: #FFFEFB warm white (data-bg="white")
-  Layout: a numbered specification list on the right; the heading and a property-care photo stay
-          in view on the left while the list scrolls (desktop only).
+  Background: #FFFFFF white (data-bg="paper")
+  Layout: the five service areas as a numbered list on the right; the heading and a property-care
+          photo stay in view on the left while the list scrolls (desktop only).
+  Interaction ("the rental cycle"): a charcoal dial on the photo walks through the five stages
+          while the section is on screen, and the matching list item lights up with a gold bar.
+          Pointing at an item selects it; clicking one stops the auto-advance. Without JavaScript,
+          or with reduced motion, it is a plain list. Every word stays in the page for search.
   Photo slot: long-term-property-care · source 1200 x 900 px · ratio 4:3
   Choose a genuine turnover or property-care scene rather than staged paperwork.
   Replace the placeholder with:
@@ -10,10 +14,11 @@
          width="1200" height="900" loading="lazy" decoding="async">
   Scope note: do not describe standalone tenant placement as a package until Bob confirms it.
 -->
-<section class="pmp pmp-sec" id="pmp-ltr-service-scope" data-bg="white" aria-labelledby="pmp-ltr-service-scope-title">
+<section class="pmp pmp-sec" id="pmp-ltr-service-scope" data-bg="paper" aria-labelledby="pmp-ltr-service-scope-title">
   <div class="pmp-wrap">
     <div class="pmp-ltr-scope__grid">
       <div class="pmp-ltr-scope__aside">
+        <p class="pmp-eyebrow">Service scope</p>
         <h2 id="pmp-ltr-service-scope-title">Support throughout the rental cycle</h2>
         <div class="pmp-ltr-scope__media pmp-marks">
           <div class="pmp-ph pmp-ph--4x3" data-photo-slot="long-term-property-care">
@@ -22,6 +27,28 @@
               <span class="pmp-ph__desc">Real, approved turnover or property-care scene at a long-term rental.</span>
               <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: keep the work being done in frame.</span>
             </p>
+          </div>
+
+          <div class="pmp-ltr-cycle" aria-hidden="true">
+            <svg class="pmp-ltr-cycle__ring" viewBox="0 0 120 120" width="120" height="120" focusable="false">
+              <circle class="pmp-ltr-cycle__track" cx="60" cy="60" r="48"/>
+              <g class="pmp-ltr-cycle__spin"><circle class="pmp-ltr-cycle__arc" cx="60" cy="60" r="48" pathLength="100"/></g>
+              <circle class="pmp-ltr-cycle__dot" cx="60" cy="12" r="5"/>
+              <circle class="pmp-ltr-cycle__dot" cx="105.7" cy="45.2" r="5"/>
+              <circle class="pmp-ltr-cycle__dot" cx="88.2" cy="98.8" r="5"/>
+              <circle class="pmp-ltr-cycle__dot" cx="31.8" cy="98.8" r="5"/>
+              <circle class="pmp-ltr-cycle__dot" cx="14.3" cy="45.2" r="5"/>
+            </svg>
+            <span class="pmp-ltr-cycle__text">
+              <span class="pmp-ltr-cycle__label">The rental cycle</span>
+              <span class="pmp-ltr-cycle__names">
+                <span class="pmp-ltr-cycle__name">Marketing and leasing</span>
+                <span class="pmp-ltr-cycle__name">Screening and placement</span>
+                <span class="pmp-ltr-cycle__name">Rent collection and reporting</span>
+                <span class="pmp-ltr-cycle__name">Tenant communication</span>
+                <span class="pmp-ltr-cycle__name">Maintenance coordination</span>
+              </span>
+            </span>
           </div>
         </div>
       </div>
@@ -68,6 +95,10 @@
 </section>
 
 <style>
+#pmp-ltr-service-scope {
+  --pmp-stage: 0;
+}
+
 #pmp-ltr-service-scope .pmp-ltr-scope__grid {
   display: grid;
   gap: 40px;
@@ -78,33 +109,176 @@
 }
 
 #pmp-ltr-service-scope .pmp-ltr-scope__media {
+  position: relative;
   margin-top: 36px;
+  padding-bottom: 56px;
 }
 
+/* ---- The dial: a charcoal card overlapping the photo's lower edge ---- */
+#pmp-ltr-service-scope .pmp-ltr-cycle {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px 12px 12px;
+  color: var(--pmp-on-dark);
+  background-color: var(--pmp-char);
+  border-radius: var(--pmp-radius-lg);
+  box-shadow: var(--pmp-shadow-lg);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__ring {
+  flex: none;
+  width: 76px;
+  height: 76px;
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__track {
+  fill: none;
+  stroke: rgba(244, 241, 234, 0.16);
+  stroke-width: 6;
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__arc {
+  fill: none;
+  stroke: var(--pmp-gold);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 14 86;
+  stroke-dashoffset: 7;
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__spin {
+  transform-origin: 60px 60px;
+  transform: rotate(calc(var(--pmp-stage) * 72deg - 90deg));
+  transition: transform 700ms var(--pmp-ease-out);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__dot {
+  fill: var(--pmp-char);
+  stroke: rgba(244, 241, 234, 0.5);
+  stroke-width: 2;
+  transition: fill 300ms var(--pmp-ease), stroke 300ms var(--pmp-ease);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__dot.is-on {
+  fill: var(--pmp-gold);
+  stroke: var(--pmp-gold);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__text {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pmp-gold);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__names {
+  display: grid;
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__name {
+  grid-area: 1 / 1;
+  font-family: var(--pmp-font-head);
+  font-size: clamp(17px, calc(15px + 0.5vw), 21px);
+  font-weight: 600;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 400ms var(--pmp-ease), transform 500ms var(--pmp-ease-out);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-cycle__name:first-child,
+#pmp-ltr-service-scope.is-live .pmp-ltr-cycle__name.is-on {
+  opacity: 1;
+  transform: none;
+}
+
+#pmp-ltr-service-scope.is-live .pmp-ltr-cycle__name:first-child:not(.is-on) {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+}
+
+/* ---- The list ---- */
 #pmp-ltr-service-scope .pmp-ltr-scope__list {
+  position: relative;
   border-top: 1px solid var(--pmp-line-strong);
 }
 
 #pmp-ltr-service-scope .pmp-ltr-scope__list li {
+  position: relative;
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-columns: 52px minmax(0, 1fr);
   gap: 12px;
-  padding: 26px 0 28px;
+  padding: 24px 16px 26px 0;
   border-bottom: 1px solid var(--pmp-line-strong);
+  transition: background-color 400ms var(--pmp-ease);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__list li::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: 0;
+  width: 4px;
+  background-color: var(--pmp-gold);
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 500ms var(--pmp-ease-out);
 }
 
 #pmp-ltr-service-scope .pmp-ltr-scope__num {
-  padding-top: 5px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 12px;
   font-family: var(--pmp-font-head);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--pmp-bronze);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--pmp-gold-deep);
+  border: 1.5px solid var(--pmp-gold);
+  border-radius: 50%;
+  transition: background-color 400ms var(--pmp-ease), color 400ms var(--pmp-ease), transform 400ms var(--pmp-ease-out);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__list h3 {
+  padding-top: 6px;
 }
 
 #pmp-ltr-service-scope .pmp-ltr-scope__list p {
   max-width: 34em;
   margin-top: 8px;
+}
+
+#pmp-ltr-service-scope.is-live .pmp-ltr-scope__list li {
+  cursor: pointer;
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__list li.is-active {
+  background-color: var(--pmp-ivory);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__list li.is-active::before {
+  transform: scaleY(1);
+}
+
+#pmp-ltr-service-scope .pmp-ltr-scope__list li.is-active .pmp-ltr-scope__num {
+  color: var(--pmp-char);
+  background-color: var(--pmp-gold);
+  transform: scale(1.08);
 }
 
 @media (min-width: 900px) {
@@ -120,8 +294,75 @@
   }
 
   #pmp-ltr-service-scope .pmp-ltr-scope__list li {
-    grid-template-columns: 64px minmax(0, 1fr);
-    padding: 32px 0 34px;
+    grid-template-columns: 76px minmax(0, 1fr);
+    padding: 30px 24px 32px 0;
+  }
+
+  #pmp-ltr-service-scope .pmp-ltr-scope__num {
+    width: 46px;
+    height: 46px;
+    margin-left: 18px;
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pmp-ltr-service-scope .pmp-ltr-cycle__spin,
+  #pmp-ltr-service-scope .pmp-ltr-cycle__name,
+  #pmp-ltr-service-scope .pmp-ltr-scope__list li::before {
+    transition: none;
   }
 }
 </style>
+
+<script>
+(function () {
+  var root = document.getElementById('pmp-ltr-service-scope');
+  if (!root || root.getAttribute('data-pmp-ready')) return;
+  root.setAttribute('data-pmp-ready', 'true');
+
+  var items = root.querySelectorAll('.pmp-ltr-scope__list > li');
+  var dots = root.querySelectorAll('.pmp-ltr-cycle__dot');
+  var names = root.querySelectorAll('.pmp-ltr-cycle__name');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var at = -1;
+  var visible = false;
+  var holding = false;
+  var chosen = false;
+
+  function set(i) {
+    if (i === at) return;
+    at = i;
+    for (var k = 0; k < items.length; k++) {
+      items[k].classList.toggle('is-active', k === i);
+      if (dots[k]) dots[k].classList.toggle('is-on', k === i);
+      if (names[k]) names[k].classList.toggle('is-on', k === i);
+    }
+    root.style.setProperty('--pmp-stage', i);
+  }
+
+  root.classList.add('is-live');
+  set(0);
+
+  Array.prototype.forEach.call(items, function (item, i) {
+    item.addEventListener('pointerenter', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      holding = true;
+      set(i);
+    });
+    item.addEventListener('pointerleave', function () { holding = false; });
+    item.addEventListener('click', function () { chosen = true; set(i); });
+  });
+
+  /* Walk through the stages only while the list is on screen. */
+  if (reduce || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (entries) {
+    visible = entries[0].isIntersecting;
+  }, { threshold: 0.2 }).observe(root.querySelector('.pmp-ltr-scope__list'));
+
+  setInterval(function () {
+    if (!visible || holding || chosen || document.hidden) return;
+    set((at + 1) % items.length);
+  }, 3200);
+})();
+</script>

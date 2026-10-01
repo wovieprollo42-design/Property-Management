@@ -1,35 +1,54 @@
 <!--
   HOME · 01 HERO
-  Background: #F8F5EC ivory (data-bg="ivory"), with a #172D3B navy panel behind the photo that runs
-              to the right edge of the screen (clipped inside this section).
-  Layout: asymmetric split. Owner-focused copy on the left with the logo's gold ground arc under the
-          headline; the main property photo on the right in a thin offset gold frame over the navy panel.
-          A strip at the bottom names the work owners hand over.
-  Photo slot: home-hero · source 1920 x 1200 px · ratio 8:5
+  Background: #FAF7F1 ivory (data-bg="ivory"), with a #26272C charcoal slab behind the photos that
+              runs to the right edge of the screen (clipped inside this section).
+  Layout: owner-focused copy on the left: the logo's gold banner as a label, the H1 with a gold
+          swoosh that draws itself, the brief's intro, a rotating "We help coordinate ..." line and
+          the two actions. On the right, a photo collage: the main property photo, a second smaller
+          photo, a slowly turning round badge with the logo's skyline in the middle, and two floating
+          service tags. A gold ribbon of the services scrolls along the bottom of the section.
+  Motion: CSS only for the entrance (plays on first paint, also inside GHL); the rotating words
+          and the ribbon pause while off screen (shared/motion.js). All of it stops for visitors
+          who ask for reduced motion.
+  Photo slots: home-hero · source 1920 x 1200 px · ratio 8:5
+               home-hero-2 · source 1200 x 900 px · ratio 4:3
   Alt text must describe the actual property, without implying a location or management
   relationship that has not been confirmed.
-  Replace the placeholder with:
+  Replace each placeholder with:
     <img class="pmp-photo pmp-photo--8x5" src="PHOTO-URL" alt="DESCRIBE THE ACTUAL PROPERTY"
          width="1920" height="1200" fetchpriority="high" decoding="async">
 -->
-<section class="pmp pmp-sec" id="pmp-home-hero" data-bg="ivory" aria-labelledby="pmp-home-hero-title">
+<section class="pmp pmp-sec pmp-hero" id="pmp-home-hero" data-bg="ivory" aria-labelledby="pmp-home-hero-title" data-pmp-loop>
   <div class="pmp-wrap">
     <div class="pmp-home-hero__grid">
       <div class="pmp-home-hero__copy">
-        <p class="pmp-eyebrow">Long-term and short-term rentals</p>
-        <h1 class="pmp-h1-home" id="pmp-home-hero-title">Property management in East Central Minnesota</h1>
+        <p class="pmp-ribbon">Long-term and short-term rentals</p>
+        <h1 class="pmp-h1-home" id="pmp-home-hero-title">Property Management in East Central Minnesota</h1>
         {{swoosh}}
-        <p class="pmp-lead pmp-home-hero__lead">Owning a rental takes time, attention, and the right people. Property Management Professionals helps owners coordinate leasing, communication, maintenance, and the day-to-day work of caring for a rental.</p>
-        <p class="pmp-home-hero__note">Tell us about your property and the support you need.</p>
+        <p class="pmp-lead pmp-home-hero__lead">Owning a rental takes time, attention, and the right people. Property Management Professionals helps owners coordinate leasing, communication, maintenance, and the day-to-day work of caring for a rental. Tell us about your property and the support you need.</p>
+
+        <p class="pmp-home-hero__rotate" data-pmp-step style="--pmp-step: 1">
+          <span class="pmp-home-hero__rotate-label">We help coordinate</span>
+          <span class="pmp-rotator" aria-hidden="true">
+            <span class="pmp-rotator__word">leasing</span>
+            <span class="pmp-rotator__word">tenant communication</span>
+            <span class="pmp-rotator__word">rent collection</span>
+            <span class="pmp-rotator__word">maintenance</span>
+            <span class="pmp-rotator__word">guest turnovers</span>
+            <span class="pmp-rotator__word">reporting</span>
+          </span>
+          <span class="pmp-sr">leasing, tenant communication, rent collection, maintenance, guest turnovers and reporting.</span>
+        </p>
+
         <div class="pmp-btns pmp-home-hero__actions">
           <a class="pmp-btn pmp-btn--primary pmp-btn--lg" href="/management-quote">Request a Management Quote {{arrow}}</a>
-          <a class="pmp-textlink" href="#pmp-home-getting-started">How getting started works</a>
+          <a class="pmp-btn pmp-btn--secondary pmp-btn--lg pmp-home-hero__call" href="tel:+16122108424">{{phone}}<span>(612) 210-8424</span></a>
         </div>
-        <p class="pmp-home-hero__call">Prefer to talk first? <a href="tel:+16122108424">{{phone}}<span>(612) 210-8424</span></a></p>
+        <p class="pmp-home-hero__how" data-pmp-step style="--pmp-step: 3"><a class="pmp-textlink" href="#pmp-home-getting-started">How getting started works {{arrow}}</a></p>
       </div>
 
       <div class="pmp-home-hero__media">
-        <div class="pmp-marks pmp-marks--frame">
+        <div class="pmp-home-hero__main pmp-marks pmp-marks--frame">
           <div class="pmp-ph pmp-ph--8x5" data-photo-slot="home-hero">
             <p class="pmp-ph__label">
               <span class="pmp-ph__tag">INSERT PHOTO</span>
@@ -38,17 +57,51 @@
             </p>
           </div>
         </div>
+
+        <div class="pmp-home-hero__second">
+          <div class="pmp-ph pmp-ph--4x3" data-photo-slot="home-hero-2">
+            <p class="pmp-ph__label">
+              <span class="pmp-ph__tag">INSERT PHOTO</span>
+              <span class="pmp-ph__desc">A second approved property: a vacation home or a bright rental interior.</span>
+              <span class="pmp-ph__spec">Source 1200 × 900 px · Display ratio 4:3 · Crop: the home or room centered.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="pmp-home-hero__badge" aria-hidden="true">
+          <svg class="pmp-home-hero__badge-ring" viewBox="0 0 200 200" width="200" height="200" focusable="false">
+            <defs><path id="pmp-home-hero-ring" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs>
+            <text><textPath href="#pmp-home-hero-ring" startOffset="0" textLength="486" lengthAdjust="spacing">PROPERTY MANAGEMENT · PROFESSIONALS ·</textPath></text>
+          </svg>
+          <img class="pmp-home-hero__badge-logo" src="{{brand:favicon-192.png}}" alt="" width="192" height="192" decoding="async">
+        </div>
+
+        <p class="pmp-home-hero__tag pmp-home-hero__tag--a" aria-hidden="true"><span class="pmp-home-hero__dot"></span>Long-term rentals</p>
+        <p class="pmp-home-hero__tag pmp-home-hero__tag--b" aria-hidden="true"><span class="pmp-home-hero__dot"></span>Vacation rentals</p>
       </div>
     </div>
+  </div>
 
-    <div class="pmp-home-hero__scope">
-      <p class="pmp-home-hero__scope-label">The work we help owners coordinate</p>
-      <ul class="pmp-home-hero__scope-list">
-        <li><span class="pmp-home-hero__num">01</span>Leasing coordination</li>
-        <li><span class="pmp-home-hero__num">02</span>Tenant and guest communication</li>
-        <li><span class="pmp-home-hero__num">03</span>Maintenance coordination</li>
-        <li><span class="pmp-home-hero__num">04</span>Turnovers</li>
-        <li><span class="pmp-home-hero__num">05</span>Reporting</li>
+  <div class="pmp-marquee pmp-home-hero__ribbon" data-pmp-loop>
+    <p class="pmp-sr">The work we help owners coordinate:</p>
+    <div class="pmp-marquee__track">
+      <ul class="pmp-marquee__list">
+        <li>Leasing coordination</li>
+        <li>Tenant communication</li>
+        <li>Rent collection</li>
+        <li>Maintenance coordination</li>
+        <li>Guest communication</li>
+        <li>Turnovers</li>
+        <li>Reporting</li>
+      </ul>
+      <ul class="pmp-marquee__list" aria-hidden="true">
+        <li>Leasing coordination</li>
+        <li>Tenant communication</li>
+        <li>Rent collection</li>
+        <li>Maintenance coordination</li>
+        <li>Guest communication</li>
+        <li>Turnovers</li>
+        <li>Reporting</li>
       </ul>
     </div>
   </div>
@@ -56,7 +109,7 @@
 
 <style>
 #pmp-home-hero {
-  --hero-top: clamp(40px, calc(18px + 4.4vw), 88px);
+  --hero-top: clamp(36px, calc(16px + 4vw), 76px);
   position: relative;
   overflow: clip;
   padding-top: var(--hero-top);
@@ -65,199 +118,319 @@
 
 #pmp-home-hero .pmp-home-hero__grid {
   display: grid;
-  gap: 56px;
+  gap: 48px;
   align-items: center;
 }
 
 #pmp-home-hero .pmp-home-hero__copy {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-#pmp-home-hero .pmp-home-hero__copy h1 {
-  max-width: 11em;
-}
-
-#pmp-home-hero .pmp-swoosh {
-  margin-top: 18px;
-}
-
-#pmp-home-hero .pmp-home-hero__lead {
-  max-width: 33em;
+#pmp-home-hero .pmp-ribbon + h1 {
   margin-top: 22px;
 }
 
-#pmp-home-hero .pmp-home-hero__note {
+#pmp-home-hero h1 {
+  max-width: 12em;
+  font-size: clamp(40px, calc(26px + 3.3vw), 62px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+}
+
+#pmp-home-hero .pmp-swoosh {
+  width: min(300px, 70%);
+  margin-top: 16px;
+}
+
+#pmp-home-hero .pmp-home-hero__lead {
   max-width: 34em;
-  margin-top: 14px;
-  font-weight: 500;
-  color: var(--pmp-navy);
+  margin-top: 20px;
+  font-size: clamp(17px, calc(15.6px + 0.36vw), 19px);
+}
+
+/* "We help coordinate [word]": the word slides up and out every few seconds. */
+#pmp-home-hero .pmp-home-hero__rotate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 22px;
+  padding: 12px 18px;
+  font-family: var(--pmp-font-head);
+  font-size: clamp(19px, calc(16.5px + 0.6vw), 24px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--pmp-char);
+  background-color: var(--pmp-paper);
+  border: 1px solid var(--pmp-line);
+  border-left: 4px solid var(--pmp-gold);
+  border-radius: 0 var(--pmp-radius) var(--pmp-radius) 0;
+  box-shadow: var(--pmp-shadow);
+}
+
+#pmp-home-hero .pmp-home-hero__rotate-label {
+  font-family: var(--pmp-font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pmp-muted);
+}
+
+#pmp-home-hero .pmp-rotator {
+  min-width: 11.5em;
 }
 
 #pmp-home-hero .pmp-home-hero__actions {
-  margin-top: 32px;
+  margin-top: 30px;
 }
 
 #pmp-home-hero .pmp-btn--lg {
   min-height: 56px;
-  padding: 14px 28px;
-  font-size: 17px;
-}
-
-#pmp-home-hero .pmp-home-hero__call {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px 10px;
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px solid var(--pmp-line);
-  font-size: 15px;
-}
-
-#pmp-home-hero .pmp-home-hero__call a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 40px;
-  font-family: var(--pmp-font-head);
-  font-weight: 700;
-  color: var(--pmp-navy);
-  text-decoration: none;
+  padding: 14px 30px;
+  font-size: 16px;
 }
 
 #pmp-home-hero .pmp-home-hero__call svg {
-  color: var(--pmp-gold);
+  color: var(--pmp-gold-deep);
 }
 
-#pmp-home-hero .pmp-home-hero__call a:hover span {
-  text-decoration: underline;
-  text-decoration-color: var(--pmp-gold);
-  text-underline-offset: 4px;
+#pmp-home-hero .pmp-home-hero__how {
+  margin-top: 14px;
 }
 
-/* The navy panel: starts a little inside the photo column and runs to the screen edge. */
+/* ---- Photo collage ---- */
 #pmp-home-hero .pmp-home-hero__media {
   position: relative;
-  padding: 28px 0 28px 0;
+  padding: 40px 0 72px;
 }
 
+/* Charcoal slab: starts inside the photo column and runs to the screen edge. */
 #pmp-home-hero .pmp-home-hero__media::before {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 18%;
+  left: 22%;
   right: calc(-1 * var(--pmp-gutter) - 50vw);
-  background-color: var(--pmp-navy);
+  background-color: var(--pmp-char);
+  border-radius: var(--pmp-radius-lg) 0 0 var(--pmp-radius-lg);
 }
 
-#pmp-home-hero .pmp-home-hero__media .pmp-marks {
-  margin-right: 18px;
+#pmp-home-hero .pmp-home-hero__main {
+  margin-right: 20px;
 }
 
-#pmp-home-hero .pmp-home-hero__scope {
-  margin-top: clamp(56px, calc(40px + 3.5vw), 96px);
-  border-top: 1px solid var(--pmp-line-strong);
+#pmp-home-hero .pmp-home-hero__main .pmp-shot {
+  box-shadow: var(--pmp-shadow-lg);
 }
 
-#pmp-home-hero .pmp-home-hero__scope-label {
-  padding: 18px 0 4px;
-  font-family: var(--pmp-font-head);
+#pmp-home-hero .pmp-home-hero__second {
+  position: absolute;
+  left: -4%;
+  bottom: 18px;
+  z-index: 3;
+  width: 40%;
+  max-width: 240px;
+  padding: 6px;
+  background-color: var(--pmp-paper);
+  border-radius: calc(var(--pmp-radius-lg) + 4px);
+  box-shadow: var(--pmp-shadow-lg);
+  transform: rotate(-4deg);
+}
+
+#pmp-home-hero .pmp-home-hero__second .pmp-shot {
+  border-radius: var(--pmp-radius);
+}
+
+/* Round badge: the logo's skyline in the middle, the name turning slowly around it. */
+#pmp-home-hero .pmp-home-hero__badge {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: clamp(104px, 12vw, 148px);
+  aspect-ratio: 1;
+  background-color: var(--pmp-paper);
+  border: 3px solid var(--pmp-gold);
+  border-radius: 50%;
+  box-shadow: var(--pmp-shadow-lg);
+}
+
+#pmp-home-hero .pmp-home-hero__badge-ring {
+  position: absolute;
+  inset: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  font-family: var(--pmp-font-ui);
+  font-size: 17px;
+  font-weight: 700;
+  fill: var(--pmp-char);
+}
+
+#pmp-home-hero .pmp-home-hero__badge-logo {
+  width: 54%;
+  height: auto;
+}
+
+/* Floating service tags */
+#pmp-home-hero .pmp-home-hero__tag {
+  position: absolute;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 10px 12px;
+  font-family: var(--pmp-font-ui);
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--pmp-bronze);
+  line-height: 1;
+  color: var(--pmp-char);
+  background-color: var(--pmp-paper);
+  border-radius: var(--pmp-radius-pill);
+  box-shadow: 0 14px 30px -14px rgba(29, 30, 34, 0.55);
+  white-space: nowrap;
 }
 
-#pmp-home-hero .pmp-home-hero__scope-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 20px;
+#pmp-home-hero .pmp-home-hero__dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--pmp-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(210, 164, 55, 0.25);
 }
 
-#pmp-home-hero .pmp-home-hero__scope-list li {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 16px 0 18px;
-  font-family: var(--pmp-font-head);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.35;
-  color: var(--pmp-navy);
-  border-bottom: 1px solid var(--pmp-line);
+#pmp-home-hero .pmp-home-hero__tag--a {
+  top: 46%;
+  right: -2px;
 }
 
-#pmp-home-hero .pmp-home-hero__scope-list li:last-child {
-  grid-column: 1 / -1;
-  border-bottom: 0;
+#pmp-home-hero .pmp-home-hero__tag--b {
+  bottom: 30px;
+  right: 18%;
+  color: var(--pmp-on-dark);
+  background-color: var(--pmp-ink);
 }
 
-#pmp-home-hero .pmp-home-hero__num {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--pmp-bronze);
+/* ---- Ribbon along the bottom ---- */
+#pmp-home-hero .pmp-home-hero__ribbon {
+  width: 104%;
+  margin: clamp(40px, 5vw, 72px) 0 0 -2%;
+  transform: rotate(-1.2deg);
+  transform-origin: center;
 }
 
-@media (max-width: 899px) {
+/* ---- Motion (decorative; off for reduced motion) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  #pmp-home-hero .pmp-home-hero__badge {
+    animation: pmp-fade 900ms var(--pmp-ease) 900ms both;
+  }
+
+  #pmp-home-hero .pmp-home-hero__badge-ring {
+    animation: pmp-spin 26s linear infinite;
+  }
+
+  #pmp-home-hero .pmp-home-hero__second {
+    animation: pmp-home-hero-drop 1000ms var(--pmp-ease-out) 700ms both;
+  }
+
+  #pmp-home-hero .pmp-home-hero__tag--a {
+    animation: pmp-fade 600ms var(--pmp-ease) 1100ms both, pmp-float 5.5s ease-in-out 1700ms infinite;
+  }
+
+  #pmp-home-hero .pmp-home-hero__tag--b {
+    animation: pmp-fade 600ms var(--pmp-ease) 1300ms both, pmp-float 6.5s ease-in-out 1900ms infinite;
+  }
+
+  #pmp-home-hero.is-paused .pmp-home-hero__badge-ring,
+  #pmp-home-hero.is-paused .pmp-home-hero__tag {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes pmp-home-hero-drop {
+  from { opacity: 0; transform: translate3d(0, 40px, 0) rotate(-10deg); }
+  to { opacity: 1; transform: rotate(-4deg); }
+}
+
+@media (max-width: 599px) {
+  #pmp-home-hero .pmp-btn--lg {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  #pmp-home-hero .pmp-home-hero__rotate {
+    width: 100%;
+  }
+
+  #pmp-home-hero .pmp-rotator {
+    min-width: 0;
+  }
+
   #pmp-home-hero .pmp-home-hero__media {
-    padding: 24px 0;
+    padding: 28px 0 64px;
   }
 
-  #pmp-home-hero .pmp-home-hero__media::before {
-    left: 24%;
+  #pmp-home-hero .pmp-home-hero__main {
+    margin-right: 10px;
+  }
+
+  #pmp-home-hero .pmp-home-hero__badge {
+    top: -6px;
+    right: -6px;
+  }
+
+  #pmp-home-hero .pmp-home-hero__second {
+    left: -2%;
+    bottom: 14px;
+    width: 44%;
+  }
+
+  #pmp-home-hero .pmp-home-hero__tag {
+    padding: 8px 12px 8px 10px;
+    font-size: 12px;
+  }
+
+  #pmp-home-hero .pmp-home-hero__tag--a {
+    top: auto;
+    bottom: 22px;
+    right: 0;
+  }
+
+  #pmp-home-hero .pmp-home-hero__tag--b {
+    display: none;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 980px) {
   #pmp-home-hero .pmp-home-hero__grid {
-    grid-template-columns: minmax(0, 11fr) minmax(0, 13fr);
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     gap: clamp(40px, 5vw, 80px);
-    align-items: stretch;
-  }
-
-  #pmp-home-hero .pmp-home-hero__copy {
-    align-self: center;
   }
 
   #pmp-home-hero .pmp-home-hero__media {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 24px 0 72px;
+    padding: 64px 0 96px;
   }
 
   #pmp-home-hero .pmp-home-hero__media::before {
     top: calc(-1 * var(--hero-top));
-  }
-}
-
-@media (min-width: 1100px) {
-  #pmp-home-hero .pmp-home-hero__scope {
-    display: grid;
-    grid-template-columns: 200px minmax(0, 1fr);
-    align-items: stretch;
+    bottom: -40px;
   }
 
-  #pmp-home-hero .pmp-home-hero__scope-label {
-    padding: 26px 24px 32px 0;
-    line-height: 1.5;
+  #pmp-home-hero .pmp-home-hero__second {
+    left: -9%;
+    bottom: 26px;
   }
 
-  #pmp-home-hero .pmp-home-hero__scope-list {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    column-gap: 0;
-  }
-
-  #pmp-home-hero .pmp-home-hero__scope-list li,
-  #pmp-home-hero .pmp-home-hero__scope-list li:last-child {
-    grid-column: auto;
-    padding: 24px 20px 36px;
-    border-bottom: 0;
-    border-left: 1px solid var(--pmp-line);
+  #pmp-home-hero .pmp-home-hero__badge {
+    top: 16px;
+    right: -14px;
   }
 }
 </style>
